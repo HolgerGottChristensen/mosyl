@@ -1,0 +1,251 @@
+[2022-04-19 08:05:47] Executing startup tasks
+[2022-04-19 08:05:47] OpenJDK Runtime Environment 17.0.2+8
+[2022-04-19 08:05:47] Product self.product.version
+[2022-04-19 08:05:47] Workspace /Users/holgerchristensen/mosyl/Project_Task/Runtime
+[2022-04-19 08:05:47] Bundle org.eclipse.oomph.setup 1.22.0.v20211015-0620, build=5278, branch=a397d5c292b0ea2e68079e5b704e713bfeb15d34
+[2022-04-19 08:05:47] Bundle org.eclipse.oomph.setup.core 1.22.0.v20211021-1010, build=5278, branch=a397d5c292b0ea2e68079e5b704e713bfeb15d34
+[2022-04-19 08:05:47] Bundle org.eclipse.oomph.setup.p2 1.17.0.v20210601-0619, build=5278, branch=a397d5c292b0ea2e68079e5b704e713bfeb15d34
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.ant.ui/org.eclipse.ant.ui.commentsColor
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.ant.ui/org.eclipse.ant.ui.constantStringsColor
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.ant.ui/org.eclipse.ant.ui.constantStringsColor_italic
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.ant.ui/org.eclipse.ant.ui.debugColor
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.ant.ui/org.eclipse.ant.ui.dtdColor
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.ant.ui/org.eclipse.ant.ui.errorColor
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.ant.ui/org.eclipse.ant.ui.informationColor
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.ant.ui/org.eclipse.ant.ui.processingInstructionsColor
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.ant.ui/org.eclipse.ant.ui.processingInstructionsColor_bold
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.ant.ui/org.eclipse.ant.ui.tagsColor
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.ant.ui/org.eclipse.ant.ui.tagsColor_bold
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.ant.ui/org.eclipse.ant.ui.textColor
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.ant.ui/overriddenByCSS
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.changedDebugElement = 255,0,0
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.consoleBackground = 255,255,255
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.errorColor = 255,0,0
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.inColor = 0,200,125
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.MemoryHistoryKnownColor = 0,0,0
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.MemoryHistoryUnknownColor = 114,119,129
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.outColor = 0,0,0
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.debug.ui/org.eclipse.debug.ui.PREF_CHANGED_VALUE_BACKGROUND = 255,255,0
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.debug.ui/overriddenByCSS
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.e4.ui.css.swt.theme/themeid = org.eclipse.e4.ui.css.theme.e4_default
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.e4.ui.workbench.renderers.swt/enableMRU = true
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.e4.ui.workbench.renderers.swt/themeEnabled = false
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.e4.ui.workbench.renderers.swt/USE_ROUND_TABS = false
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/content_assist_completion_replacement_background = 255,255,0
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/content_assist_completion_replacement_foreground = 255,0,0
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/content_assist_parameters_background = 255,255,255
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/content_assist_parameters_foreground = 0,0,0
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/java_bracket = 0,0,0
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/java_comment_task_tag = 127,159,191
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/java_default = 0,0,0
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/java_doc_default = 63,95,191
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/java_doc_keyword = 127,159,191
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/java_doc_link = 63,63,191
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/java_doc_tag = 127,127,159
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/java_keyword = 127,0,85
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/java_keyword_bold = true
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/java_keyword_return = 127,0,85
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/java_keyword_return_bold = true
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/java_multi_line_comment = 63,127,95
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/java_operator = 0,0,0
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/java_single_line_comment = 63,127,95
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/java_string = 42,0,255
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/matchingBracketsColor = 127,0,85
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/overriddenByCSS
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/pf_coloring_argument = 127,0,85
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/pf_coloring_assignment = 0,0,0
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/pf_coloring_comment = 63,127,95
+[2022-04-19 08:05:47] Performing Preference /instance/org.eclipse.jdt.ui/pf_coloring_key = 0,0,0
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/pf_coloring_value = 42,0,255
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.abstractClass.color = 139,136,22
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.abstractClass.enabled = false
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.abstractMethodInvocation.color = 0,0,0
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.abstractMethodInvocation.enabled = false
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.annotation.color = 100,100,100
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.annotation.italic = false
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.annotationElementReference.color = 0,0,0
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.annotationElementReference.enabled = false
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.class.color = 0,80,50
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.class.enabled = false
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.deprecatedMember.color = 0,0,0
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.enum.color = 100,70,50
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.enum.enabled = false
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.enum.italic = false
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.field.color = 0,0,192
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.inheritedField.color = 0,0,192
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.inheritedMethodInvocation.color = 0,0,0
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.inheritedMethodInvocation.enabled = false
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.interface.color = 50,63,112
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.interface.enabled = false
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.localVariable.color = 106,62,62
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.localVariableDeclaration.bold = true
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.localVariableDeclaration.color = 106,62,62
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.localVariableDeclaration.enabled = false
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.method.color = 0,0,0
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.method.enabled = false
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.methodDeclarationName.bold = true
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.methodDeclarationName.color = 0,0,0
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.methodDeclarationName.enabled = false
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.number.color = 42,0,255
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.number.enabled = false
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.parameterVariable.color = 106,62,62
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.parameterVariable.enabled = false
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.restrictedKeywords.bold = true
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.restrictedKeywords.color = 127,0,85
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.staticField.color = 0,0,192
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.staticFinalField.color = 0,0,192
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.staticMethodInvocation.color = 0,0,0
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.typeArgument.color = 13,100,0
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.typeArgument.enabled = false
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.typeParameter.bold = true
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.typeParameter.color = 100,70,50
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/semanticHighlighting.typeParameter.enabled = false
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.jdt.ui/sourceHoverBackgroundColor
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.mylyn.wikitext.ui/block-bc
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.mylyn.wikitext.ui/block-h1
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.mylyn.wikitext.ui/block-h2
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.mylyn.wikitext.ui/block-h3
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.mylyn.wikitext.ui/block-h4
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.mylyn.wikitext.ui/block-h5
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.mylyn.wikitext.ui/block-h6
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.mylyn.wikitext.ui/overriddenByCSS
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.mylyn.wikitext.ui/phrase-code
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.pde.ui/editor.color.default
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.pde.ui/editor.color.externalized_string
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.pde.ui/editor.color.externalized_string_italic
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.pde.ui/editor.color.header_assignment
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.pde.ui/editor.color.header_assignment_bold
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.pde.ui/editor.color.header_attributes
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.pde.ui/editor.color.header_key
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.pde.ui/editor.color.header_key_bold
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.pde.ui/editor.color.header_osgi
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.pde.ui/editor.color.header_value
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.pde.ui/editor.color.header_value_italic
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.pde.ui/editor.color.instr
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.pde.ui/editor.color.instr_bold
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.pde.ui/editor.color.string
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.pde.ui/editor.color.string_italic
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.pde.ui/editor.color.tag
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.pde.ui/editor.color.tag_bold
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.pde.ui/editor.color.xml_comment
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.pde.ui/overriddenByCSS
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.tm4e.registry/org.eclipse.tm4e.registry.grammars = []
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.tm4e.ui/org.eclipse.tm4e.ui.themeAssociations = []
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.tm4e.ui/org.eclipse.tm4e.ui.themes = []
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/AbstractTextEditor.Color.Background = 255,255,255
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/AbstractTextEditor.Color.Background.SystemDefault = true
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/AbstractTextEditor.Color.FindScope = 185,176,180
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/AbstractTextEditor.Color.Foreground = 0,0,0
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/AbstractTextEditor.Color.Foreground.SystemDefault = true
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/AbstractTextEditor.Color.SelectionBackground
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/AbstractTextEditor.Color.SelectionBackground.SystemDefault = true
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/AbstractTextEditor.Color.SelectionForeground
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/AbstractTextEditor.Color.SelectionForeground.SystemDefault = true
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/Accessibility.UseSaturatedColors = true
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/asOccurencesIndicationColor
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/breakpointIndicationColor = 0,0,255
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/currentIPColor = 198,219,174
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/currentLineColor = 232,242,254
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/deletionIndicationColor = 0,0,0
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/filteredSearchResultIndicationColor = 237,237,252
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/fullcoverage_color = 192,255,192
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/hyperlinkColor = 65,156,255
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/hyperlinkColor.SystemDefault = true
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/infoIndicationColor = 130,160,190
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/lineNumberColor = 120,120,120
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/linked.slave.color = 180,215,255
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/LSP4EReadOccurrenceIndicationColor = 212,212,212
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/LSP4ETextOccurrenceIndicationColor = 212,212,212
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/LSP4EWriteOccurrenceIndicationColor = 240,216,168
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/matchingTagIndicationColor
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/nocoverage_color = 255,160,160
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/occurrenceIndicationColor = 212,212,212
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/overriddenByCSS
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/overrideIndicatorColor = 180,207,205
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/partialcoverage_color = 255,255,128
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/printMarginColor = 176,180,185
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/searchResultHighlighting = true
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/searchResultIndication = false
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/searchResultIndicationColor = 206,204,247
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/searchResultTextStyle = NONE
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/secondaryIPColor = 219,235,204
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/spellingIndicationColor = 255,128,64
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/TextOccurrenceIndicationColor = 212,212,212
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.editors/writeOccurrenceIndicationColor = 240,216,168
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.genericeditor/matchingBracketsColor
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.genericeditor/overriddenByCSS
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/ACTIVE_HYPERLINK_COLOR = 46,109,179
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/CONFLICTING_COLOR = 255,0,0
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/CONTENT_ASSIST_BACKGROUND_COLOR = 30,30,30
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/CONTENT_ASSIST_FOREGROUND_COLOR = 255,255,255
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/EDITION_COLOR = 0,0,0
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/ERROR_COLOR = 255,0,0
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/HYPERLINK_COLOR = 65,156,255
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/INCOMING_COLOR = 0,0,255
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.egit.ui.DiffAddBackgroundColor = 221,255,221
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.egit.ui.DiffAddForegroundColor = 0,0,0
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.egit.ui.DiffHeadlineBackgroundColor = 170,170,170
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.egit.ui.DiffHeadlineForegroundColor = 0,0,0
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.egit.ui.DiffHunkBackgroundColor = 234,242,245
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.egit.ui.DiffHunkForegroundColor = 153,153,153
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.egit.ui.DiffRemoveBackgroundColor = 255,221,221
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.egit.ui.DiffRemoveForegroundColor = 0,0,0
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.egit.ui.IgnoredResourceBackgroundColor = 30,30,30
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.egit.ui.IgnoredResourceForegroundColor = 255,255,255
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.egit.ui.UncommittedChangeBackgroundColor = 30,30,30
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.egit.ui.UncommittedChangeForegroundColor = 255,255,255
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.jdt.ui.ColoredLabels.inherited = 0,0,128
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.jdt.ui.ColoredLabels.writeaccess_highlight = 240,216,168
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.jdt.ui.Javadoc.backgroundColor = 236,235,236
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.jdt.ui.Javadoc.foregroundColor = 0,0,0
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.jface.REVISION_NEWEST_COLOR = 199,134,57
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.jface.REVISION_OLDEST_COLOR = 241,225,206
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.search.ui.match.highlight = 206,204,247
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.ui.editors.rangeIndicatorColor = 63,99,139
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.ACTIVE_NOFOCUS_TAB_BG_END = 255,255,255
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.ACTIVE_NOFOCUS_TAB_BG_START = 255,255,255
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.ACTIVE_NOFOCUS_TAB_TEXT_COLOR = 16,16,16
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.ACTIVE_TAB_BG_END = 255,255,255
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.ACTIVE_TAB_BG_START = 230,230,230
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.ACTIVE_TAB_INNER_KEYLINE_COLOR = 255,255,255
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.ACTIVE_TAB_OUTER_KEYLINE_COLOR = 230,230,230
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.ACTIVE_TAB_OUTLINE_COLOR = 182,188,204
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.ACTIVE_TAB_TEXT_COLOR = 0,0,0
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.ACTIVE_UNSELECTED_TABS_COLOR_END = 255,255,255
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.ACTIVE_UNSELECTED_TABS_COLOR_START = 255,255,255
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.HOVER_BACKGROUND = 236,235,236
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.HOVER_FOREGROUND = 0,0,0
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.INACTIVE_TAB_BG_END = 255,255,255
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.INACTIVE_TAB_BG_START = 240,240,240
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.INACTIVE_TAB_INNER_KEYLINE_COLOR = 255,255,255
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.INACTIVE_TAB_OUTER_KEYLINE_COLOR = 255,255,255
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.INACTIVE_TAB_OUTLINE_COLOR = 182,188,204
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.INACTIVE_TAB_TEXT_COLOR = 255,255,255
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.INACTIVE_UNSELECTED_TABS_COLOR_END = 255,255,255
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.INACTIVE_UNSELECTED_TABS_COLOR_START = 255,255,255
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.INFORMATION_BACKGROUND = 236,235,236
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/org.eclipse.ui.workbench.INFORMATION_FOREGROUND = 0,0,0
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/OUTGOING_COLOR = 0,0,0
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/overriddenByCSS
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.ui.workbench/RESOLVED_COLOR = 0,255,0
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.xtext.ui/overriddenByCSS
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.xtext.ui/syntaxColorer.comment.color
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.xtext.ui/syntaxColorer.default.color
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.xtext.ui/syntaxColorer.error.color
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.xtext.ui/syntaxColorer.keyword.color
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.xtext.ui/syntaxColorer.keyword.style
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.xtext.ui/syntaxColorer.number.color
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.xtext.ui/syntaxColorer.punctuation.color
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.xtext.ui/syntaxColorer.string.color
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.xtext.ui/syntaxColorer.task.color
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.xtext.ui/syntaxColorer.task.style
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.xtext.ui/syntaxColorer.xbase.annotation.color
+[2022-04-19 08:05:48] Performing Preference /instance/org.eclipse.xtext.ui/syntaxColorer.xbase.deprecated.members.color
+[2022-04-19 08:05:49] Performing Preference /instance/org.eclipse.xtext.ui/syntaxColorer.xbase.deprecated.members.style
+[2022-04-19 08:05:49] Performing Preference /instance/org.eclipse.xtext.ui/syntaxColorer.xbase.extension.method.invacation.color
+[2022-04-19 08:05:49] Performing Preference /instance/org.eclipse.xtext.ui/syntaxColorer.xbase.field.color
+[2022-04-19 08:05:49] Performing Preference /instance/org.eclipse.xtext.ui/syntaxColorer.xbase.static.field.color
+[2022-04-19 08:05:49] Performing Preference /instance/org.eclipse.xtext.ui/syntaxColorer.xbase.static.field.style
+[2022-04-19 08:05:49] Performing Preference /instance/org.eclipse.xtext.ui/syntaxColorer.xbase.static.method.invocation.color
+[2022-04-19 08:05:49] Performing Preference /instance/org.eclipse.xtext.ui/syntaxColorer.xbase.static.method.invocation.style
+[2022-04-19 08:05:49] 
