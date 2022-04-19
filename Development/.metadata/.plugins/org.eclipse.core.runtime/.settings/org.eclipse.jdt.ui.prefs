@@ -1,6 +1,6 @@
 content_assist_completion_replacement_background=255,255,0
 content_assist_completion_replacement_foreground=255,0,0
-content_assist_number_of_computers=12
+content_assist_number_of_computers=14
 content_assist_parameters_background=255,255,255
 content_assist_parameters_foreground=0,0,0
 content_assist_proposals_background=52,57,61
@@ -22,7 +22,7 @@ java_operator=0,0,0
 java_single_line_comment=63,127,95
 java_string=42,0,255
 matchingBracketsColor=127,0,85
-org.eclipse.jdt.ui.formatterprofiles.version=21
+org.eclipse.jdt.ui.formatterprofiles.version=22
 pf_coloring_argument=127,0,85
 pf_coloring_assignment=0,0,0
 pf_coloring_comment=63,127,95
