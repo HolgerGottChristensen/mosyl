@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="graphical" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:validation="http://www.eclipse.org/sirius/description/validation/1.1.0" name="graphical" version="12.0.0.2017041100">
   <ownedViewpoints name="Network Viewpoint" modelFileExtension="network">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Network Diagram Representation" domainClass="network.Network" enablePopupBars="true">
       <metamodel href="../../org.mdse.pts.network/model/Network.ecore#/"/>
+      <validationSet name="valid">
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="negative distance leg" level="ERROR" message="The leg must not have a negative distance" targetClass="network.Leg">
+          <audits auditExpression="aql: self.distance > 0"/>
+          <fixes>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool:SetValue" featureName="distance" valueExpression="aql: -self.distance"/>
+            </initialOperation>
+          </fixes>
+        </ownedRules>
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="Leg should not connect to itself" level="ERROR" message="The leg should not have both endpoints point to the same node" targetClass="network.Leg">
+          <audits auditExpression="aql: self.source != self.target"/>
+        </ownedRules>
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="station name conflict" level="ERROR" message="Two stations must not have the same name" targetClass="network.Station">
+          <audits auditExpression="aql: not self.eContainer().stations->excluding(self).name->includes(self.name)"/>
+        </ownedRules>
+      </validationSet>
       <defaultLayer name="Default">
         <nodeMappings name="Station Node" labelDirectEdit="//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Station%20name%20edit%20tool']" semanticCandidatesExpression="feature:stations" domainClass="network.Station">
           <style xsi:type="style:DotDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" iconPath="/org.mdse.pts.network.dsl/icons/transparent.gif">
@@ -20,43 +36,43 @@
           </style>
         </edgeMappings>
         <toolSections name="General Tool Section" label="General">
-          <ownedTools xsi:type="tool:NodeCreationDescription" name="Station Creation Tool" nodeMappings="//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@nodeMappings[name='Station%20Node']" iconPath="/org.mdse.pts.network.dsl/icons/Station.gif">
+          <ownedTools xsi:type="tool_1:NodeCreationDescription" name="Station Creation Tool" nodeMappings="//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@nodeMappings[name='Station%20Node']" iconPath="/org.mdse.pts.network.dsl/icons/Station.gif">
             <variable name="container"/>
             <viewVariable name="containerView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="network.Station" referenceName="stations">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="New Station"/>
+              <firstModelOperations xsi:type="tool:CreateInstance" typeName="network.Station" referenceName="stations">
+                <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="New Station"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Leg Creation Tool" label="Leg" edgeMappings="//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@edgeMappings[name='Leg%20Edge']" iconPath="/org.mdse.pts.network.dsl/icons/Leg.gif">
+          <ownedTools xsi:type="tool_1:EdgeCreationDescription" name="Leg Creation Tool" label="Leg" edgeMappings="//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@edgeMappings[name='Leg%20Edge']" iconPath="/org.mdse.pts.network.dsl/icons/Leg.gif">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
             <targetViewVariable name="targetView"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: self.eContainer()">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="network.Leg" referenceName="legs">
-                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="stations" valueExpression="aql: Sequence{source, target}"/>
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="New Leg"/>
-                    <subModelOperations xsi:type="tool_1:SetValue" featureName="distance" valueExpression="100"/>
+              <firstModelOperations xsi:type="tool:ChangeContext" browseExpression="aql: self.eContainer()">
+                <subModelOperations xsi:type="tool:CreateInstance" typeName="network.Leg" referenceName="legs">
+                  <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:instance">
+                    <subModelOperations xsi:type="tool:SetValue" featureName="stations" valueExpression="aql: Sequence{source, target}"/>
+                    <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="New Leg"/>
+                    <subModelOperations xsi:type="tool:SetValue" featureName="distance" valueExpression="100"/>
                   </subModelOperations>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:DirectEditLabel" name="Station name edit tool">
-            <mask mask="{name}"/>
+          <ownedTools xsi:type="tool_1:DirectEditLabel" name="Station name edit tool">
+            <mask mask="{0}"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:name"/>
+              <firstModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="var:0"/>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:DirectEditLabel" name="Edit Leg name tool">
+          <ownedTools xsi:type="tool_1:DirectEditLabel" name="Edit Leg name tool">
             <mask mask="{0}: {1} km"/>
             <initialOperation>
-              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="distance" valueExpression="var:1"/>
+              <firstModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="var:0">
+                <subModelOperations xsi:type="tool:SetValue" featureName="distance" valueExpression="var:1"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
