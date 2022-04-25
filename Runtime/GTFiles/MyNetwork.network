@@ -3,7 +3,7 @@
   <stations name="Name" legs="//@legs.0 //@legs.1 //@legs.2"/>
   <stations name="Name" legs="//@legs.0 //@legs.1"/>
   <stations name="Hejsa" legs="//@legs.2"/>
-  <legs name="i" distance="567" stations="//@stations.1 //@stations.0"/>
+  <legs name="" distance="567" stations="//@stations.1 //@stations.0"/>
   <legs name="Legawd awdawd" distance="100" stations="//@stations.0 //@stations.1"/>
   <legs name="21" distance="12" stations="//@stations.2 //@stations.0"/>
 </network:Network>

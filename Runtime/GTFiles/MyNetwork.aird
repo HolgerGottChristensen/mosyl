@@ -15,7 +15,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']"/>
         <target xmi:type="network:Network" href="MyNetwork.network#/"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_KAcYQMSJEey5w_mn-q_0BA" name="new Network Diagram Representation" repPath="#_KATOUMSJEey5w_mn-q_0BA" changeId="aba51e08-9cc9-4ea3-8ffe-8a2bc1cb0e2a">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_KAcYQMSJEey5w_mn-q_0BA" name="new Network Diagram Representation" repPath="#_KATOUMSJEey5w_mn-q_0BA" changeId="275a3039-32f2-4387-8dc8-b90563cf8844">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']"/>
         <target xmi:type="network:Network" href="MyNetwork.network#/"/>
       </ownedRepresentationDescriptors>
@@ -197,7 +197,7 @@
         <styles xmi:type="notation:DiagramStyle" xmi:id="_KAfbksSJEey5w_mn-q_0BA"/>
         <edges xmi:type="notation:Edge" xmi:id="_JFRoIsSXEey7TeGJDmTspw" type="4001" element="_JFAiYsSXEey7TeGJDmTspw" source="_KAyWgMSJEey5w_mn-q_0BA" target="_KAro0MSJEey5w_mn-q_0BA">
           <children xmi:type="notation:Node" xmi:id="_JFSPM8SXEey7TeGJDmTspw" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JFSPNMSXEey7TeGJDmTspw" x="-37" y="15"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JFSPNMSXEey7TeGJDmTspw" x="-10" y="25"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_JFSPNcSXEey7TeGJDmTspw" type="6002">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_JFSPNsSXEey7TeGJDmTspw" y="-10"/>
@@ -281,7 +281,7 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@nodeMappings[name='Station%20Node']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_JFAiYsSXEey7TeGJDmTspw" name="i: 567 km" sourceNode="_KAolgMSJEey5w_mn-q_0BA" targetNode="_KAliMMSJEey5w_mn-q_0BA">
+    <ownedDiagramElements xmi:type="diagram:DEdge" uid="_JFAiYsSXEey7TeGJDmTspw" name="567 km" sourceNode="_KAolgMSJEey5w_mn-q_0BA" targetNode="_KAliMMSJEey5w_mn-q_0BA">
       <target xmi:type="network:Leg" href="MyNetwork.network#//@legs.0"/>
       <semanticElements xmi:type="network:Leg" href="MyNetwork.network#//@legs.0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_JFAiY8SXEey7TeGJDmTspw" targetArrow="NoDecoration" size="2">
