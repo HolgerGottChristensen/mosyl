@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:network="http://mdse.org/pts/network" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_TS1EoL_eEeyM0uTADbvREg" selectedViews="_p2fCUL_fEeyjrM6K65Nx0A" version="15.0.0.202201261500">
+    <semanticResources>MyNetwork.network</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_VxKvUL_eEeyM0uTADbvREg">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.mdse.pts.network.graphical/description/graphical.odesign#//@ownedViewpoints[name='Network%20Viewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_eBauQL_eEeyM0uTADbvREg" name="new Network Diagram Representation" repPath="#_eBaHML_eEeyM0uTADbvREg" changeId="0affacea-60bb-480d-940c-7fd06160ef9c">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.mdse.pts.network.graphical/description/graphical.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']"/>
+        <target xmi:type="network:Network" href="MyNetwork.network#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" uid="_VxQO4L_eEeyM0uTADbvREg">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_a87pkL_eEeyM0uTADbvREg" name="new Network Diagram Description" repPath="#_a87CgL_eEeyM0uTADbvREg" changeId="d76f7b29-91e3-4059-9707-ac3e9bf5459c">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']"/>
+        <target xmi:type="network:Network" href="MyNetwork.network#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" uid="_p2fCUL_fEeyjrM6K65Nx0A">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/resource/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_qGxhEL_fEeyjrM6K65Nx0A" name="new Network Diagram Representation" repPath="#_qGsBgL_fEeyjrM6K65Nx0A" changeId="4d862a18-5496-45ff-b6a7-d60532b6a729">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']"/>
+        <target xmi:type="network:Network" href="MyNetwork.network#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_a87CgL_eEeyM0uTADbvREg">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_a9MIQL_eEeyM0uTADbvREg" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_a9MIQb_eEeyM0uTADbvREg" type="Sirius" element="_a87CgL_eEeyM0uTADbvREg" measurementUnit="Pixel">
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_a9MIQr_eEeyM0uTADbvREg"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_a9MvUL_eEeyM0uTADbvREg" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_a9MvUb_eEeyM0uTADbvREg"/>
+    </ownedAnnotationEntries>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_a87Cgb_eEeyM0uTADbvREg"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']/@defaultLayer"/>
+    <target xmi:type="network:Network" href="MyNetwork.network#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_eBaHML_eEeyM0uTADbvREg">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_eBbVUb_eEeyM0uTADbvREg" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_eBbVUr_eEeyM0uTADbvREg" type="Sirius" element="_eBaHML_eEeyM0uTADbvREg" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_eBmUcL_eEeyM0uTADbvREg" type="2001" element="_eBeYoL_eEeyM0uTADbvREg">
+          <children xmi:type="notation:Node" xmi:id="_eBnikL_eEeyM0uTADbvREg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_eBnikb_eEeyM0uTADbvREg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_eBpXwL_eEeyM0uTADbvREg" type="3003" element="_eBhb8L_eEeyM0uTADbvREg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_eBpXwb_eEeyM0uTADbvREg" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eBpXwr_eEeyM0uTADbvREg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_eBmUcb_eEeyM0uTADbvREg" fontColor="4108284" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eBmUcr_eEeyM0uTADbvREg" x="40" y="120" width="165" height="125"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_eBowsL_eEeyM0uTADbvREg" type="2001" element="_eBiqEL_eEeyM0uTADbvREg">
+          <children xmi:type="notation:Node" xmi:id="_eBows7_eEeyM0uTADbvREg" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_eBowtL_eEeyM0uTADbvREg" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_eBpXw7_eEeyM0uTADbvREg" type="3003" element="_eBiqEb_eEeyM0uTADbvREg">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_eBpXxL_eEeyM0uTADbvREg" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eBpXxb_eEeyM0uTADbvREg"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_eBowsb_eEeyM0uTADbvREg" fontColor="4108284" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eBowsr_eEeyM0uTADbvREg" x="244" y="112" width="257" height="173"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_eBbVU7_eEeyM0uTADbvREg"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_eBjRIL_eEeyM0uTADbvREg" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_eBjRIb_eEeyM0uTADbvREg"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_eBeYoL_eEeyM0uTADbvREg" name="Name" width="8" height="4" resizeKind="NSEW">
+      <target xmi:type="network:Station" href="MyNetwork.network#//@stations.0"/>
+      <semanticElements xmi:type="network:Station" href="MyNetwork.network#//@stations.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_eBhb8L_eEeyM0uTADbvREg" labelSize="12" labelColor="252,175,62" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="8" height="4" color="138,226,52">
+        <description xmi:type="style:SquareDescription" href="platform:/plugin/org.mdse.pts.network.graphical/description/graphical.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@nodeMappings[name='Station%20Node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.mdse.pts.network.graphical/description/graphical.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@nodeMappings[name='Station%20Node']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_eBiqEL_eEeyM0uTADbvREg" name="GOdavs" width="8" height="4" resizeKind="NSEW">
+      <target xmi:type="network:Station" href="MyNetwork.network#//@stations.1"/>
+      <semanticElements xmi:type="network:Station" href="MyNetwork.network#//@stations.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_eBiqEb_eEeyM0uTADbvREg" labelSize="12" labelColor="252,175,62" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="8" height="4" color="138,226,52">
+        <description xmi:type="style:SquareDescription" href="platform:/plugin/org.mdse.pts.network.graphical/description/graphical.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@nodeMappings[name='Station%20Node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.mdse.pts.network.graphical/description/graphical.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@nodeMappings[name='Station%20Node']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.mdse.pts.network.graphical/description/graphical.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_eBaHMb_eEeyM0uTADbvREg"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.mdse.pts.network.graphical/description/graphical.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer"/>
+    <target xmi:type="network:Network" href="MyNetwork.network#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_qGsBgL_fEeyjrM6K65Nx0A">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_qG2ZkL_fEeyjrM6K65Nx0A" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_qG2Zkb_fEeyjrM6K65Nx0A" type="Sirius" element="_qGsBgL_fEeyjrM6K65Nx0A" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_qHAxoL_fEeyjrM6K65Nx0A" type="2001" element="_qG9HQL_fEeyjrM6K65Nx0A">
+          <children xmi:type="notation:Node" xmi:id="_qHB_wL_fEeyjrM6K65Nx0A" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_qHB_wb_fEeyjrM6K65Nx0A" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_qHCm0L_fEeyjrM6K65Nx0A" type="3003" element="_qG-VYL_fEeyjrM6K65Nx0A">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_qHCm0b_fEeyjrM6K65Nx0A" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qHCm0r_fEeyjrM6K65Nx0A"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_qHAxob_fEeyjrM6K65Nx0A" fontColor="4108284" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qHAxor_fEeyjrM6K65Nx0A" x="32" y="84" width="153" height="129"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_qHB_wr_fEeyjrM6K65Nx0A" type="2001" element="_qG-8cb_fEeyjrM6K65Nx0A">
+          <children xmi:type="notation:Node" xmi:id="_qHB_xb_fEeyjrM6K65Nx0A" type="5002">
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_qHB_xr_fEeyjrM6K65Nx0A" y="5"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_qHCm07_fEeyjrM6K65Nx0A" type="3003" element="_qG-8cr_fEeyjrM6K65Nx0A">
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_qHCm1L_fEeyjrM6K65Nx0A" fontName=".AppleSystemUIFont"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qHCm1b_fEeyjrM6K65Nx0A"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_qHB_w7_fEeyjrM6K65Nx0A" fontColor="4108284" fontName=".AppleSystemUIFont" fontHeight="12"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qHB_xL_fEeyjrM6K65Nx0A" x="220" y="84" width="157" height="129"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_qG2Zkr_fEeyjrM6K65Nx0A"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_qG_jgL_fEeyjrM6K65Nx0A" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_qG_jgb_fEeyjrM6K65Nx0A"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_qG9HQL_fEeyjrM6K65Nx0A" name="Name" width="8" height="4" resizeKind="NSEW">
+      <target xmi:type="network:Station" href="MyNetwork.network#//@stations.0"/>
+      <semanticElements xmi:type="network:Station" href="MyNetwork.network#//@stations.0"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_qG-VYL_fEeyjrM6K65Nx0A" labelSize="12" labelColor="252,175,62" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="8" height="4" color="252,233,79">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@nodeMappings[name='Station%20Node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@nodeMappings[name='Station%20Node']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_qG-8cb_fEeyjrM6K65Nx0A" name="GOdavs" width="8" height="4" resizeKind="NSEW">
+      <target xmi:type="network:Station" href="MyNetwork.network#//@stations.1"/>
+      <semanticElements xmi:type="network:Station" href="MyNetwork.network#//@stations.1"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:Square" uid="_qG-8cr_fEeyjrM6K65Nx0A" labelSize="12" labelColor="252,175,62" borderSize="2" borderSizeComputationExpression="2" labelPosition="node" width="8" height="4" color="252,233,79">
+        <description xmi:type="style:SquareDescription" href="platform:/resource/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@nodeMappings[name='Station%20Node']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:NodeMapping" href="platform:/resource/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@nodeMappings[name='Station%20Node']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/resource/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_qGvr4L_fEeyjrM6K65Nx0A"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/resource/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer"/>
+    <target xmi:type="network:Network" href="MyNetwork.network#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

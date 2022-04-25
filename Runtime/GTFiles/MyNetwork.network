@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="ASCII"?>
+<network:Network xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:network="http://mdse.org/pts/network" name="awd">
+  <stations name="Name" legs="//@legs.0"/>
+  <stations name="GOdavs" legs="//@legs.0"/>
+  <legs name="i" distance="567" stations="//@stations.1 //@stations.0"/>
+</network:Network>
