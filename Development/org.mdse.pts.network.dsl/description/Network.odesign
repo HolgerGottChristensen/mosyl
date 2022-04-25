@@ -29,6 +29,23 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="Leg Creation Tool" label="Leg" edgeMappings="//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@edgeMappings[name='Leg%20Edge']" iconPath="/org.mdse.pts.network.dsl/icons/Leg.gif">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="aql: self.eContainer()">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="network.Leg" referenceName="legs">
+                  <subModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:instance">
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="stations" valueExpression="aql: Sequence{source, target}"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="New Leg"/>
+                    <subModelOperations xsi:type="tool_1:SetValue" featureName="distance" valueExpression="100"/>
+                  </subModelOperations>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>

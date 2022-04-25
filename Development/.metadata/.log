@@ -7506,3 +7506,6 @@ java.lang.Error: SWT Resource was not properly disposed
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
+
+!ENTRY org.eclipse.sirius.common.acceleo.aql 2 0 2022-04-25 16:51:34.001
+!MESSAGE Could not find Java extension class org.mdse.pts.network.graphical.Services
