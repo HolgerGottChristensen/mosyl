@@ -55,7 +55,7 @@
                 <subModelOperations xsi:type="tool:CreateInstance" typeName="network.Leg" referenceName="legs">
                   <subModelOperations xsi:type="tool:ChangeContext" browseExpression="var:instance">
                     <subModelOperations xsi:type="tool:SetValue" featureName="stations" valueExpression="aql: Sequence{source, target}"/>
-                    <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="New Leg"/>
+                    <subModelOperations xsi:type="tool:SetValue" featureName="name" valueExpression="aql: ''"/>
                     <subModelOperations xsi:type="tool:SetValue" featureName="distance" valueExpression="100"/>
                   </subModelOperations>
                 </subModelOperations>
