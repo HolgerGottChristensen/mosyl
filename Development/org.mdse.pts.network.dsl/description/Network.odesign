@@ -4,14 +4,14 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Network Diagram Representation" domainClass="network.Network" enablePopupBars="true">
       <metamodel href="../../org.mdse.pts.network/model/Network.ecore#/"/>
       <defaultLayer name="Default">
-        <nodeMappings name="Station Node" semanticCandidatesExpression="feature:stations" domainClass="network.Station">
+        <nodeMappings name="Station Node" labelDirectEdit="//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Station%20name%20edit%20tool']" semanticCandidatesExpression="feature:stations" domainClass="network.Station">
           <style xsi:type="style:DotDescription" borderSizeComputationExpression="2" labelSize="12" showIcon="false" iconPath="/org.mdse.pts.network.dsl/icons/transparent.gif">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
           </style>
         </nodeMappings>
-        <edgeMappings name="Leg Edge" sourceMapping="//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@nodeMappings[name='Station%20Node']" targetMapping="//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@nodeMappings[name='Station%20Node']" targetFinderExpression="aql: self.stations->at(2)" sourceFinderExpression="aql: self.stations->at(1)" domainClass="network.Leg" useDomainElement="true">
+        <edgeMappings name="Leg Edge" labelDirectEdit="//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Edit%20Leg%20name%20tool']" sourceMapping="//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@nodeMappings[name='Station%20Node']" targetMapping="//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@nodeMappings[name='Station%20Node']" targetFinderExpression="aql: self.stations->at(2)" sourceFinderExpression="aql: self.stations->at(1)" domainClass="network.Leg" useDomainElement="true">
           <style targetArrow="NoDecoration" sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription labelSize="12" showIcon="false" labelExpression="aql: self.name + ': ' + self.distance + ' km'">
@@ -43,6 +43,20 @@
                     <subModelOperations xsi:type="tool_1:SetValue" featureName="distance" valueExpression="100"/>
                   </subModelOperations>
                 </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Station name edit tool">
+            <mask mask="{name}"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:name"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:DirectEditLabel" name="Edit Leg name tool">
+            <mask mask="{0}: {1} km"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="distance" valueExpression="var:1"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
