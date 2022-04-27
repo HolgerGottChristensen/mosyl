@@ -2,14 +2,24 @@
  */
 package org.mdse.pts.depot.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 
+import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.mdse.pts.depot.Coach;
+import org.mdse.pts.depot.CoachClass;
 import org.mdse.pts.depot.Depot;
 import org.mdse.pts.depot.DepotFactory;
 import org.mdse.pts.depot.DepotPackage;
+import org.mdse.pts.depot.DiningCoach;
+import org.mdse.pts.depot.Locomotive;
+import org.mdse.pts.depot.PassengerCoach;
+import org.mdse.pts.depot.Root;
+import org.mdse.pts.depot.Train;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +34,50 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 	 * @generated
 	 */
 	private EClass depotEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass trainEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass locomotiveEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass diningCoachEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass passengerCoachEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass coachEClass = null;
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass rootEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum coachClassEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -101,6 +155,132 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getDepot_Train() {
+		return (EReference)depotEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTrain() {
+		return trainEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getTrain_Coach() {
+		return (EReference)trainEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTrain_Name() {
+		return (EAttribute)trainEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getLocomotive() {
+		return locomotiveEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getDiningCoach() {
+		return diningCoachEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getPassengerCoach() {
+		return passengerCoachEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPassengerCoach_Class() {
+		return (EAttribute)passengerCoachEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCoach() {
+		return coachEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getCoach_WagonNumber() {
+		return (EAttribute)coachEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getCoach_Train() {
+		return (EReference)coachEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getRoot() {
+		return rootEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getRoot_Depot() {
+		return (EReference)rootEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getCoachClass() {
+		return coachClassEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public DepotFactory getDepotFactory() {
 		return (DepotFactory)getEFactoryInstance();
@@ -126,6 +306,28 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 
 		// Create classes and their features
 		depotEClass = createEClass(DEPOT);
+		createEReference(depotEClass, DEPOT__TRAIN);
+
+		trainEClass = createEClass(TRAIN);
+		createEReference(trainEClass, TRAIN__COACH);
+		createEAttribute(trainEClass, TRAIN__NAME);
+
+		locomotiveEClass = createEClass(LOCOMOTIVE);
+
+		diningCoachEClass = createEClass(DINING_COACH);
+
+		passengerCoachEClass = createEClass(PASSENGER_COACH);
+		createEAttribute(passengerCoachEClass, PASSENGER_COACH__CLASS);
+
+		coachEClass = createEClass(COACH);
+		createEAttribute(coachEClass, COACH__WAGON_NUMBER);
+		createEReference(coachEClass, COACH__TRAIN);
+
+		rootEClass = createEClass(ROOT);
+		createEReference(rootEClass, ROOT__DEPOT);
+
+		// Create enums
+		coachClassEEnum = createEEnum(COACH_CLASS);
 	}
 
 	/**
@@ -156,9 +358,36 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		locomotiveEClass.getESuperTypes().add(this.getCoach());
+		diningCoachEClass.getESuperTypes().add(this.getCoach());
+		passengerCoachEClass.getESuperTypes().add(this.getCoach());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(depotEClass, Depot.class, "Depot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getDepot_Train(), this.getTrain(), null, "train", null, 0, -1, Depot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(trainEClass, Train.class, "Train", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTrain_Coach(), this.getCoach(), this.getCoach_Train(), "coach", null, 0, -1, Train.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrain_Name(), ecorePackage.getEString(), "name", null, 0, 1, Train.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(locomotiveEClass, Locomotive.class, "Locomotive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(diningCoachEClass, DiningCoach.class, "DiningCoach", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(passengerCoachEClass, PassengerCoach.class, "PassengerCoach", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPassengerCoach_Class(), this.getCoachClass(), "class", "Economy", 0, 1, PassengerCoach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(coachEClass, Coach.class, "Coach", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCoach_WagonNumber(), ecorePackage.getEInt(), "wagonNumber", null, 0, 1, Coach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCoach_Train(), this.getTrain(), this.getTrain_Coach(), "train", null, 0, 1, Coach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(rootEClass, Root.class, "Root", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRoot_Depot(), this.getDepot(), null, "depot", null, 1, 1, Root.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(coachClassEEnum, CoachClass.class, "CoachClass");
+		addEEnumLiteral(coachClassEEnum, CoachClass.FIRST_CLASS);
+		addEEnumLiteral(coachClassEEnum, CoachClass.ECONOMY);
 
 		// Create resource
 		createResource(eNS_URI);

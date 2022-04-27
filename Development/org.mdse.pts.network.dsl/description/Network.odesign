@@ -18,6 +18,9 @@
         <ownedRules xsi:type="validation:SemanticValidationRule" name="station name conflict" level="ERROR" message="Two stations must not have the same name" targetClass="network.Station">
           <audits auditExpression="aql: not self.eContainer().stations->excluding(self).name->includes(self.name)"/>
         </ownedRules>
+        <ownedRules xsi:type="validation:SemanticValidationRule" name="No unnamed legs when multiple legs" level="ERROR" message="There are multiple legs between the two nodes and because of that they have to contain names." targetClass="network.Leg">
+          <audits auditExpression="aql: self.stations->at(1).legs->intersection(self.stations->at(2).legs)->size() &lt;= 1 or self.stations->at(1).legs->intersection(self.stations->at(2).legs)->select(m | m.name = '')->size() > 0"/>
+        </ownedRules>
       </validationSet>
       <defaultLayer name="Default">
         <nodeMappings name="Station Node" labelDirectEdit="//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='Station%20name%20edit%20tool']" semanticCandidatesExpression="feature:stations" domainClass="network.Station">
