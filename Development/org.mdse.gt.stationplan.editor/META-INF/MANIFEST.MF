@@ -9,7 +9,6 @@ Bundle-Activator: org.mdse.gt.stationplan.presentation.StationPlanEditorPlugin$I
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: org.mdse.gt.stationplan.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  org.mdse.gt.stationplan.edit;visibility:=reexport,
