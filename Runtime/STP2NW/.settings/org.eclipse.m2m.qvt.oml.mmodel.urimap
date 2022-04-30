@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uriMap:MappingContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uriMap="http:///www.eclipse.org/m2m/qvt/oml/MModelUriMap/1.0.0">
+  <mapping sourceURI="http://mdse.org/gt/stationplan" targetURI="platform:/resource/org.mdse.gt.stationplan/model/StationPlan.ecore"/>
+  <mapping sourceURI="http://mdse.org/pts/network" targetURI="platform:/resource/org.mdse.pts.network/model/Network.ecore"/>
+</uriMap:MappingContainer>
