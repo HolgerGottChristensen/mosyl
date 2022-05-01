@@ -62,7 +62,6 @@ public class DepotFactoryImpl extends EFactoryImpl implements DepotFactory {
 			case DepotPackage.LOCOMOTIVE: return createLocomotive();
 			case DepotPackage.DINING_COACH: return createDiningCoach();
 			case DepotPackage.PASSENGER_COACH: return createPassengerCoach();
-			case DepotPackage.COACH: return createCoach();
 			case DepotPackage.ROOT: return createRoot();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -79,6 +78,8 @@ public class DepotFactoryImpl extends EFactoryImpl implements DepotFactory {
 		switch (eDataType.getClassifierID()) {
 			case DepotPackage.COACH_CLASS:
 				return createCoachClassFromString(eDataType, initialValue);
+			case DepotPackage.TRAIN_TYPE:
+				return createTrainTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -94,6 +95,8 @@ public class DepotFactoryImpl extends EFactoryImpl implements DepotFactory {
 		switch (eDataType.getClassifierID()) {
 			case DepotPackage.COACH_CLASS:
 				return convertCoachClassToString(eDataType, instanceValue);
+			case DepotPackage.TRAIN_TYPE:
+				return convertTrainTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -154,16 +157,6 @@ public class DepotFactoryImpl extends EFactoryImpl implements DepotFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Coach createCoach() {
-		CoachImpl coach = new CoachImpl();
-		return coach;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Root createRoot() {
 		RootImpl root = new RootImpl();
 		return root;
@@ -186,6 +179,26 @@ public class DepotFactoryImpl extends EFactoryImpl implements DepotFactory {
 	 * @generated
 	 */
 	public String convertCoachClassToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TrainType createTrainTypeFromString(EDataType eDataType, String initialValue) {
+		TrainType result = TrainType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTrainTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

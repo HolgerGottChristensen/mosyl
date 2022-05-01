@@ -67,15 +67,6 @@ public interface DepotFactory extends EFactory {
 	PassengerCoach createPassengerCoach();
 
 	/**
-	 * Returns a new object of class '<em>Coach</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Coach</em>'.
-	 * @generated
-	 */
-	Coach createCoach();
-
-	/**
 	 * Returns a new object of class '<em>Root</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

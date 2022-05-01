@@ -187,29 +187,6 @@ public class DepotItemProviderAdapterFactory extends DepotAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.mdse.pts.depot.Coach} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CoachItemProvider coachItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mdse.pts.depot.Coach}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCoachAdapter() {
-		if (coachItemProvider == null) {
-			coachItemProvider = new CoachItemProvider(this);
-		}
-
-		return coachItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link org.mdse.pts.depot.Root} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -336,7 +313,6 @@ public class DepotItemProviderAdapterFactory extends DepotAdapterFactory impleme
 		if (locomotiveItemProvider != null) locomotiveItemProvider.dispose();
 		if (diningCoachItemProvider != null) diningCoachItemProvider.dispose();
 		if (passengerCoachItemProvider != null) passengerCoachItemProvider.dispose();
-		if (coachItemProvider != null) coachItemProvider.dispose();
 		if (rootItemProvider != null) rootItemProvider.dispose();
 	}
 
