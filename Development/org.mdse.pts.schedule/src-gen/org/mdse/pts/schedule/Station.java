@@ -2,6 +2,8 @@
  */
 package org.mdse.pts.schedule;
 
+import network.Leg;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,8 +17,9 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.mdse.pts.schedule.Station#getPlatform <em>Platform</em>}</li>
  *   <li>{@link org.mdse.pts.schedule.Station#getStoppedTime <em>Stopped Time</em>}</li>
- *   <li>{@link org.mdse.pts.schedule.Station#getStationreference <em>Stationreference</em>}</li>
  *   <li>{@link org.mdse.pts.schedule.Station#getVia <em>Via</em>}</li>
+ *   <li>{@link org.mdse.pts.schedule.Station#getReference <em>Reference</em>}</li>
+ *   <li>{@link org.mdse.pts.schedule.Station#isRotate <em>Rotate</em>}</li>
  * </ul>
  *
  * @see org.mdse.pts.schedule.SchedulePackage#getStation()
@@ -69,47 +72,69 @@ public interface Station extends EObject {
 	void setStoppedTime(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Stationreference</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Via</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Stationreference</em>' containment reference.
-	 * @see #setStationreference(StationReference)
-	 * @see org.mdse.pts.schedule.SchedulePackage#getStation_Stationreference()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	StationReference getStationreference();
-
-	/**
-	 * Sets the value of the '{@link org.mdse.pts.schedule.Station#getStationreference <em>Stationreference</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Stationreference</em>' containment reference.
-	 * @see #getStationreference()
-	 * @generated
-	 */
-	void setStationreference(StationReference value);
-
-	/**
-	 * Returns the value of the '<em><b>Via</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Via</em>' containment reference.
-	 * @see #setVia(LegReference)
+	 * @return the value of the '<em>Via</em>' reference.
+	 * @see #setVia(Leg)
 	 * @see org.mdse.pts.schedule.SchedulePackage#getStation_Via()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
-	LegReference getVia();
+	Leg getVia();
 
 	/**
-	 * Sets the value of the '{@link org.mdse.pts.schedule.Station#getVia <em>Via</em>}' containment reference.
+	 * Sets the value of the '{@link org.mdse.pts.schedule.Station#getVia <em>Via</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Via</em>' containment reference.
+	 * @param value the new value of the '<em>Via</em>' reference.
 	 * @see #getVia()
 	 * @generated
 	 */
-	void setVia(LegReference value);
+	void setVia(Leg value);
+
+	/**
+	 * Returns the value of the '<em><b>Reference</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Reference</em>' reference.
+	 * @see #setReference(network.Station)
+	 * @see org.mdse.pts.schedule.SchedulePackage#getStation_Reference()
+	 * @model required="true"
+	 * @generated
+	 */
+	network.Station getReference();
+
+	/**
+	 * Sets the value of the '{@link org.mdse.pts.schedule.Station#getReference <em>Reference</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Reference</em>' reference.
+	 * @see #getReference()
+	 * @generated
+	 */
+	void setReference(network.Station value);
+
+	/**
+	 * Returns the value of the '<em><b>Rotate</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rotate</em>' attribute.
+	 * @see #setRotate(boolean)
+	 * @see org.mdse.pts.schedule.SchedulePackage#getStation_Rotate()
+	 * @model required="true"
+	 * @generated
+	 */
+	boolean isRotate();
+
+	/**
+	 * Sets the value of the '{@link org.mdse.pts.schedule.Station#isRotate <em>Rotate</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Rotate</em>' attribute.
+	 * @see #isRotate()
+	 * @generated
+	 */
+	void setRotate(boolean value);
 
 } // Station

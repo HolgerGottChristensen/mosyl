@@ -31,31 +31,13 @@ public interface ScheduleFactory extends EFactory {
 	Schedule createSchedule();
 
 	/**
-	 * Returns a new object of class '<em>Network Reference</em>'.
+	 * Returns a new object of class '<em>Train Schedule</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Network Reference</em>'.
+	 * @return a new object of class '<em>Train Schedule</em>'.
 	 * @generated
 	 */
-	NetworkReference createNetworkReference();
-
-	/**
-	 * Returns a new object of class '<em>Depot Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Depot Reference</em>'.
-	 * @generated
-	 */
-	DepotReference createDepotReference();
-
-	/**
-	 * Returns a new object of class '<em>Train</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Train</em>'.
-	 * @generated
-	 */
-	Train createTrain();
+	TrainSchedule createTrainSchedule();
 
 	/**
 	 * Returns a new object of class '<em>Start Time</em>'.
@@ -85,31 +67,13 @@ public interface ScheduleFactory extends EFactory {
 	Station createStation();
 
 	/**
-	 * Returns a new object of class '<em>Station Reference</em>'.
+	 * Returns a new object of class '<em>Route</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Station Reference</em>'.
+	 * @return a new object of class '<em>Route</em>'.
 	 * @generated
 	 */
-	StationReference createStationReference();
-
-	/**
-	 * Returns a new object of class '<em>Leg Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Leg Reference</em>'.
-	 * @generated
-	 */
-	LegReference createLegReference();
-
-	/**
-	 * Returns a new object of class '<em>Train Reference</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Train Reference</em>'.
-	 * @generated
-	 */
-	TrainReference createTrainReference();
+	Route createRoute();
 
 	/**
 	 * Returns the package supported by this factory.

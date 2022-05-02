@@ -21,11 +21,12 @@
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Schedule.ecore#//Schedule/networkreference"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Schedule.ecore#//Schedule/depotreference"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//Schedule/trains"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//Schedule/routes"/>
     </genClasses>
-    <genClasses ecoreClass="Schedule.ecore#//Train">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Schedule.ecore#//Train/reference"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//Train/starttimes"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//Train/stops"/>
+    <genClasses ecoreClass="Schedule.ecore#//TrainSchedule">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Schedule.ecore#//TrainSchedule/reference"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//TrainSchedule/starttimes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Schedule.ecore#//TrainSchedule/route"/>
     </genClasses>
     <genClasses ecoreClass="Schedule.ecore#//StartTime">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//StartTime/weekdays"/>
@@ -40,6 +41,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Station/stoppedTime"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Schedule.ecore#//Station/via"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Schedule.ecore#//Station/reference"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Station/rotate"/>
+    </genClasses>
+    <genClasses ecoreClass="Schedule.ecore#//Route">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//Route/stops"/>
     </genClasses>
   </genPackages>
   <genPackages prefix="Network" ecorePackage="../../org.mdse.pts.network/model/Network.ecore#/">

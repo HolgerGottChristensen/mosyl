@@ -2,23 +2,31 @@
  */
 package org.mdse.pts.schedule.impl;
 
+import depot.Root;
+
 import java.util.Collection;
+
+import network.Network;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import org.mdse.pts.schedule.DepotReference;
-import org.mdse.pts.schedule.NetworkReference;
+
+import org.mdse.pts.schedule.Route;
 import org.mdse.pts.schedule.Schedule;
 import org.mdse.pts.schedule.SchedulePackage;
-import org.mdse.pts.schedule.Train;
+import org.mdse.pts.schedule.TrainSchedule;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,29 +39,32 @@ import org.mdse.pts.schedule.Train;
  *   <li>{@link org.mdse.pts.schedule.impl.ScheduleImpl#getNetworkreference <em>Networkreference</em>}</li>
  *   <li>{@link org.mdse.pts.schedule.impl.ScheduleImpl#getDepotreference <em>Depotreference</em>}</li>
  *   <li>{@link org.mdse.pts.schedule.impl.ScheduleImpl#getTrains <em>Trains</em>}</li>
+ *   <li>{@link org.mdse.pts.schedule.impl.ScheduleImpl#getRoutes <em>Routes</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ScheduleImpl extends MinimalEObjectImpl.Container implements Schedule {
 	/**
-	 * The cached value of the '{@link #getNetworkreference() <em>Networkreference</em>}' containment reference.
+	 * The cached value of the '{@link #getNetworkreference() <em>Networkreference</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getNetworkreference()
 	 * @generated
 	 * @ordered
 	 */
-	protected NetworkReference networkreference;
+	protected Network networkreference;
+
 	/**
-	 * The cached value of the '{@link #getDepotreference() <em>Depotreference</em>}' containment reference list.
+	 * The cached value of the '{@link #getDepotreference() <em>Depotreference</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDepotreference()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<DepotReference> depotreference;
+	protected EList<Root> depotreference;
+
 	/**
 	 * The cached value of the '{@link #getTrains() <em>Trains</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -62,7 +73,17 @@ public class ScheduleImpl extends MinimalEObjectImpl.Container implements Schedu
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Train> trains;
+	protected EList<TrainSchedule> trains;
+
+	/**
+	 * The cached value of the '{@link #getRoutes() <em>Routes</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoutes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Route> routes;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -89,7 +110,15 @@ public class ScheduleImpl extends MinimalEObjectImpl.Container implements Schedu
 	 * @generated
 	 */
 	@Override
-	public NetworkReference getNetworkreference() {
+	public Network getNetworkreference() {
+		if (networkreference != null && networkreference.eIsProxy()) {
+			InternalEObject oldNetworkreference = (InternalEObject)networkreference;
+			networkreference = (Network)eResolveProxy(oldNetworkreference);
+			if (networkreference != oldNetworkreference) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.SCHEDULE__NETWORKREFERENCE, oldNetworkreference, networkreference));
+			}
+		}
 		return networkreference;
 	}
 
@@ -98,14 +127,21 @@ public class ScheduleImpl extends MinimalEObjectImpl.Container implements Schedu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetNetworkreference(NetworkReference newNetworkreference, NotificationChain msgs) {
-		NetworkReference oldNetworkreference = networkreference;
+	public Network basicGetNetworkreference() {
+		return networkreference;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setNetworkreference(Network newNetworkreference) {
+		Network oldNetworkreference = networkreference;
 		networkreference = newNetworkreference;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SchedulePackage.SCHEDULE__NETWORKREFERENCE, oldNetworkreference, newNetworkreference);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.SCHEDULE__NETWORKREFERENCE, oldNetworkreference, networkreference));
 	}
 
 	/**
@@ -114,29 +150,9 @@ public class ScheduleImpl extends MinimalEObjectImpl.Container implements Schedu
 	 * @generated
 	 */
 	@Override
-	public void setNetworkreference(NetworkReference newNetworkreference) {
-		if (newNetworkreference != networkreference) {
-			NotificationChain msgs = null;
-			if (networkreference != null)
-				msgs = ((InternalEObject)networkreference).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SchedulePackage.SCHEDULE__NETWORKREFERENCE, null, msgs);
-			if (newNetworkreference != null)
-				msgs = ((InternalEObject)newNetworkreference).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SchedulePackage.SCHEDULE__NETWORKREFERENCE, null, msgs);
-			msgs = basicSetNetworkreference(newNetworkreference, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.SCHEDULE__NETWORKREFERENCE, newNetworkreference, newNetworkreference));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<DepotReference> getDepotreference() {
+	public EList<Root> getDepotreference() {
 		if (depotreference == null) {
-			depotreference = new EObjectContainmentEList<DepotReference>(DepotReference.class, this, SchedulePackage.SCHEDULE__DEPOTREFERENCE);
+			depotreference = new EObjectResolvingEList<Root>(Root.class, this, SchedulePackage.SCHEDULE__DEPOTREFERENCE);
 		}
 		return depotreference;
 	}
@@ -147,9 +163,9 @@ public class ScheduleImpl extends MinimalEObjectImpl.Container implements Schedu
 	 * @generated
 	 */
 	@Override
-	public EList<Train> getTrains() {
+	public EList<TrainSchedule> getTrains() {
 		if (trains == null) {
-			trains = new EObjectContainmentEList<Train>(Train.class, this, SchedulePackage.SCHEDULE__TRAINS);
+			trains = new EObjectContainmentEList<TrainSchedule>(TrainSchedule.class, this, SchedulePackage.SCHEDULE__TRAINS);
 		}
 		return trains;
 	}
@@ -160,14 +176,25 @@ public class ScheduleImpl extends MinimalEObjectImpl.Container implements Schedu
 	 * @generated
 	 */
 	@Override
+	public EList<Route> getRoutes() {
+		if (routes == null) {
+			routes = new EObjectContainmentEList<Route>(Route.class, this, SchedulePackage.SCHEDULE__ROUTES);
+		}
+		return routes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case SchedulePackage.SCHEDULE__NETWORKREFERENCE:
-				return basicSetNetworkreference(null, msgs);
-			case SchedulePackage.SCHEDULE__DEPOTREFERENCE:
-				return ((InternalEList<?>)getDepotreference()).basicRemove(otherEnd, msgs);
 			case SchedulePackage.SCHEDULE__TRAINS:
 				return ((InternalEList<?>)getTrains()).basicRemove(otherEnd, msgs);
+			case SchedulePackage.SCHEDULE__ROUTES:
+				return ((InternalEList<?>)getRoutes()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -181,11 +208,14 @@ public class ScheduleImpl extends MinimalEObjectImpl.Container implements Schedu
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SchedulePackage.SCHEDULE__NETWORKREFERENCE:
-				return getNetworkreference();
+				if (resolve) return getNetworkreference();
+				return basicGetNetworkreference();
 			case SchedulePackage.SCHEDULE__DEPOTREFERENCE:
 				return getDepotreference();
 			case SchedulePackage.SCHEDULE__TRAINS:
 				return getTrains();
+			case SchedulePackage.SCHEDULE__ROUTES:
+				return getRoutes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -200,15 +230,19 @@ public class ScheduleImpl extends MinimalEObjectImpl.Container implements Schedu
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SchedulePackage.SCHEDULE__NETWORKREFERENCE:
-				setNetworkreference((NetworkReference)newValue);
+				setNetworkreference((Network)newValue);
 				return;
 			case SchedulePackage.SCHEDULE__DEPOTREFERENCE:
 				getDepotreference().clear();
-				getDepotreference().addAll((Collection<? extends DepotReference>)newValue);
+				getDepotreference().addAll((Collection<? extends Root>)newValue);
 				return;
 			case SchedulePackage.SCHEDULE__TRAINS:
 				getTrains().clear();
-				getTrains().addAll((Collection<? extends Train>)newValue);
+				getTrains().addAll((Collection<? extends TrainSchedule>)newValue);
+				return;
+			case SchedulePackage.SCHEDULE__ROUTES:
+				getRoutes().clear();
+				getRoutes().addAll((Collection<? extends Route>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -223,13 +257,16 @@ public class ScheduleImpl extends MinimalEObjectImpl.Container implements Schedu
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case SchedulePackage.SCHEDULE__NETWORKREFERENCE:
-				setNetworkreference((NetworkReference)null);
+				setNetworkreference((Network)null);
 				return;
 			case SchedulePackage.SCHEDULE__DEPOTREFERENCE:
 				getDepotreference().clear();
 				return;
 			case SchedulePackage.SCHEDULE__TRAINS:
 				getTrains().clear();
+				return;
+			case SchedulePackage.SCHEDULE__ROUTES:
+				getRoutes().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -249,6 +286,8 @@ public class ScheduleImpl extends MinimalEObjectImpl.Container implements Schedu
 				return depotreference != null && !depotreference.isEmpty();
 			case SchedulePackage.SCHEDULE__TRAINS:
 				return trains != null && !trains.isEmpty();
+			case SchedulePackage.SCHEDULE__ROUTES:
+				return routes != null && !routes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

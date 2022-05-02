@@ -8,7 +8,9 @@ Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Export-Package: org.mdse.pts.schedule.tests
+Export-Package: depot.tests,
+ network.tests,
+ org.mdse.pts.schedule.tests
 Require-Bundle: org.eclipse.core.runtime,
  org.mdse.pts.schedule;visibility:=reexport,
  org.eclipse.emf.ecore.xmi;visibility:=reexport,

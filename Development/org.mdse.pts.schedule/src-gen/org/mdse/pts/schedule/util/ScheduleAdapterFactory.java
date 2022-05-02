@@ -72,16 +72,8 @@ public class ScheduleAdapterFactory extends AdapterFactoryImpl {
 				return createScheduleAdapter();
 			}
 			@Override
-			public Adapter caseNetworkReference(NetworkReference object) {
-				return createNetworkReferenceAdapter();
-			}
-			@Override
-			public Adapter caseDepotReference(DepotReference object) {
-				return createDepotReferenceAdapter();
-			}
-			@Override
-			public Adapter caseTrain(Train object) {
-				return createTrainAdapter();
+			public Adapter caseTrainSchedule(TrainSchedule object) {
+				return createTrainScheduleAdapter();
 			}
 			@Override
 			public Adapter caseStartTime(StartTime object) {
@@ -96,16 +88,8 @@ public class ScheduleAdapterFactory extends AdapterFactoryImpl {
 				return createStationAdapter();
 			}
 			@Override
-			public Adapter caseStationReference(StationReference object) {
-				return createStationReferenceAdapter();
-			}
-			@Override
-			public Adapter caseLegReference(LegReference object) {
-				return createLegReferenceAdapter();
-			}
-			@Override
-			public Adapter caseTrainReference(TrainReference object) {
-				return createTrainReferenceAdapter();
+			public Adapter caseRoute(Route object) {
+				return createRouteAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -142,44 +126,16 @@ public class ScheduleAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.mdse.pts.schedule.NetworkReference <em>Network Reference</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.mdse.pts.schedule.TrainSchedule <em>Train Schedule</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.mdse.pts.schedule.NetworkReference
+	 * @see org.mdse.pts.schedule.TrainSchedule
 	 * @generated
 	 */
-	public Adapter createNetworkReferenceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.mdse.pts.schedule.DepotReference <em>Depot Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.mdse.pts.schedule.DepotReference
-	 * @generated
-	 */
-	public Adapter createDepotReferenceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.mdse.pts.schedule.Train <em>Train</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.mdse.pts.schedule.Train
-	 * @generated
-	 */
-	public Adapter createTrainAdapter() {
+	public Adapter createTrainScheduleAdapter() {
 		return null;
 	}
 
@@ -226,44 +182,16 @@ public class ScheduleAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.mdse.pts.schedule.StationReference <em>Station Reference</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.mdse.pts.schedule.Route <em>Route</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.mdse.pts.schedule.StationReference
+	 * @see org.mdse.pts.schedule.Route
 	 * @generated
 	 */
-	public Adapter createStationReferenceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.mdse.pts.schedule.LegReference <em>Leg Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.mdse.pts.schedule.LegReference
-	 * @generated
-	 */
-	public Adapter createLegReferenceAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.mdse.pts.schedule.TrainReference <em>Train Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.mdse.pts.schedule.TrainReference
-	 * @generated
-	 */
-	public Adapter createTrainReferenceAdapter() {
+	public Adapter createRouteAdapter() {
 		return null;
 	}
 

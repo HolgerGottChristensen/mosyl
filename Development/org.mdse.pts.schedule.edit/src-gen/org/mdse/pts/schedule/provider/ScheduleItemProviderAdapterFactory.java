@@ -95,72 +95,26 @@ public class ScheduleItemProviderAdapterFactory extends ScheduleAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.mdse.pts.schedule.NetworkReference} instances.
+	 * This keeps track of the one adapter used for all {@link org.mdse.pts.schedule.TrainSchedule} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected NetworkReferenceItemProvider networkReferenceItemProvider;
+	protected TrainScheduleItemProvider trainScheduleItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.mdse.pts.schedule.NetworkReference}.
+	 * This creates an adapter for a {@link org.mdse.pts.schedule.TrainSchedule}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createNetworkReferenceAdapter() {
-		if (networkReferenceItemProvider == null) {
-			networkReferenceItemProvider = new NetworkReferenceItemProvider(this);
+	public Adapter createTrainScheduleAdapter() {
+		if (trainScheduleItemProvider == null) {
+			trainScheduleItemProvider = new TrainScheduleItemProvider(this);
 		}
 
-		return networkReferenceItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.mdse.pts.schedule.DepotReference} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DepotReferenceItemProvider depotReferenceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mdse.pts.schedule.DepotReference}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDepotReferenceAdapter() {
-		if (depotReferenceItemProvider == null) {
-			depotReferenceItemProvider = new DepotReferenceItemProvider(this);
-		}
-
-		return depotReferenceItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.mdse.pts.schedule.Train} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected TrainItemProvider trainItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mdse.pts.schedule.Train}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createTrainAdapter() {
-		if (trainItemProvider == null) {
-			trainItemProvider = new TrainItemProvider(this);
-		}
-
-		return trainItemProvider;
+		return trainScheduleItemProvider;
 	}
 
 	/**
@@ -233,72 +187,26 @@ public class ScheduleItemProviderAdapterFactory extends ScheduleAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.mdse.pts.schedule.StationReference} instances.
+	 * This keeps track of the one adapter used for all {@link org.mdse.pts.schedule.Route} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StationReferenceItemProvider stationReferenceItemProvider;
+	protected RouteItemProvider routeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.mdse.pts.schedule.StationReference}.
+	 * This creates an adapter for a {@link org.mdse.pts.schedule.Route}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createStationReferenceAdapter() {
-		if (stationReferenceItemProvider == null) {
-			stationReferenceItemProvider = new StationReferenceItemProvider(this);
+	public Adapter createRouteAdapter() {
+		if (routeItemProvider == null) {
+			routeItemProvider = new RouteItemProvider(this);
 		}
 
-		return stationReferenceItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.mdse.pts.schedule.LegReference} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected LegReferenceItemProvider legReferenceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mdse.pts.schedule.LegReference}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createLegReferenceAdapter() {
-		if (legReferenceItemProvider == null) {
-			legReferenceItemProvider = new LegReferenceItemProvider(this);
-		}
-
-		return legReferenceItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.mdse.pts.schedule.TrainReference} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected TrainReferenceItemProvider trainReferenceItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mdse.pts.schedule.TrainReference}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createTrainReferenceAdapter() {
-		if (trainReferenceItemProvider == null) {
-			trainReferenceItemProvider = new TrainReferenceItemProvider(this);
-		}
-
-		return trainReferenceItemProvider;
+		return routeItemProvider;
 	}
 
 	/**
@@ -407,15 +315,11 @@ public class ScheduleItemProviderAdapterFactory extends ScheduleAdapterFactory i
 	@Override
 	public void dispose() {
 		if (scheduleItemProvider != null) scheduleItemProvider.dispose();
-		if (networkReferenceItemProvider != null) networkReferenceItemProvider.dispose();
-		if (depotReferenceItemProvider != null) depotReferenceItemProvider.dispose();
-		if (trainItemProvider != null) trainItemProvider.dispose();
+		if (trainScheduleItemProvider != null) trainScheduleItemProvider.dispose();
 		if (startTimeItemProvider != null) startTimeItemProvider.dispose();
 		if (timeItemProvider != null) timeItemProvider.dispose();
 		if (stationItemProvider != null) stationItemProvider.dispose();
-		if (stationReferenceItemProvider != null) stationReferenceItemProvider.dispose();
-		if (legReferenceItemProvider != null) legReferenceItemProvider.dispose();
-		if (trainReferenceItemProvider != null) trainReferenceItemProvider.dispose();
+		if (routeItemProvider != null) routeItemProvider.dispose();
 	}
 
 }

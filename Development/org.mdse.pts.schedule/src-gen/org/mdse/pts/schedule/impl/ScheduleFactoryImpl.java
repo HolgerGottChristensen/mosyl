@@ -58,15 +58,11 @@ public class ScheduleFactoryImpl extends EFactoryImpl implements ScheduleFactory
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case SchedulePackage.SCHEDULE: return createSchedule();
-			case SchedulePackage.NETWORK_REFERENCE: return createNetworkReference();
-			case SchedulePackage.DEPOT_REFERENCE: return createDepotReference();
-			case SchedulePackage.TRAIN: return createTrain();
+			case SchedulePackage.TRAIN_SCHEDULE: return createTrainSchedule();
 			case SchedulePackage.START_TIME: return createStartTime();
 			case SchedulePackage.TIME: return createTime();
 			case SchedulePackage.STATION: return createStation();
-			case SchedulePackage.STATION_REFERENCE: return createStationReference();
-			case SchedulePackage.LEG_REFERENCE: return createLegReference();
-			case SchedulePackage.TRAIN_REFERENCE: return createTrainReference();
+			case SchedulePackage.ROUTE: return createRoute();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -119,31 +115,9 @@ public class ScheduleFactoryImpl extends EFactoryImpl implements ScheduleFactory
 	 * @generated
 	 */
 	@Override
-	public NetworkReference createNetworkReference() {
-		NetworkReferenceImpl networkReference = new NetworkReferenceImpl();
-		return networkReference;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public DepotReference createDepotReference() {
-		DepotReferenceImpl depotReference = new DepotReferenceImpl();
-		return depotReference;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Train createTrain() {
-		TrainImpl train = new TrainImpl();
-		return train;
+	public TrainSchedule createTrainSchedule() {
+		TrainScheduleImpl trainSchedule = new TrainScheduleImpl();
+		return trainSchedule;
 	}
 
 	/**
@@ -185,31 +159,9 @@ public class ScheduleFactoryImpl extends EFactoryImpl implements ScheduleFactory
 	 * @generated
 	 */
 	@Override
-	public StationReference createStationReference() {
-		StationReferenceImpl stationReference = new StationReferenceImpl();
-		return stationReference;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public LegReference createLegReference() {
-		LegReferenceImpl legReference = new LegReferenceImpl();
-		return legReference;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public TrainReference createTrainReference() {
-		TrainReferenceImpl trainReference = new TrainReferenceImpl();
-		return trainReference;
+	public Route createRoute() {
+		RouteImpl route = new RouteImpl();
+		return route;
 	}
 
 	/**

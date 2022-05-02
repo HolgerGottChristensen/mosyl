@@ -1,0 +1,86 @@
+/**
+ */
+package org.mdse.pts.schedule;
+
+import depot.Train;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Train Schedule</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.mdse.pts.schedule.TrainSchedule#getReference <em>Reference</em>}</li>
+ *   <li>{@link org.mdse.pts.schedule.TrainSchedule#getStarttimes <em>Starttimes</em>}</li>
+ *   <li>{@link org.mdse.pts.schedule.TrainSchedule#getRoute <em>Route</em>}</li>
+ * </ul>
+ *
+ * @see org.mdse.pts.schedule.SchedulePackage#getTrainSchedule()
+ * @model
+ * @generated
+ */
+public interface TrainSchedule extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Reference</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Reference</em>' reference.
+	 * @see #setReference(Train)
+	 * @see org.mdse.pts.schedule.SchedulePackage#getTrainSchedule_Reference()
+	 * @model required="true"
+	 * @generated
+	 */
+	Train getReference();
+
+	/**
+	 * Sets the value of the '{@link org.mdse.pts.schedule.TrainSchedule#getReference <em>Reference</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Reference</em>' reference.
+	 * @see #getReference()
+	 * @generated
+	 */
+	void setReference(Train value);
+
+	/**
+	 * Returns the value of the '<em><b>Starttimes</b></em>' containment reference list.
+	 * The list contents are of type {@link org.mdse.pts.schedule.StartTime}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Starttimes</em>' containment reference list.
+	 * @see org.mdse.pts.schedule.SchedulePackage#getTrainSchedule_Starttimes()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<StartTime> getStarttimes();
+
+	/**
+	 * Returns the value of the '<em><b>Route</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Route</em>' reference.
+	 * @see #setRoute(Route)
+	 * @see org.mdse.pts.schedule.SchedulePackage#getTrainSchedule_Route()
+	 * @model
+	 * @generated
+	 */
+	Route getRoute();
+
+	/**
+	 * Sets the value of the '{@link org.mdse.pts.schedule.TrainSchedule#getRoute <em>Route</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Route</em>' reference.
+	 * @see #getRoute()
+	 * @generated
+	 */
+	void setRoute(Route value);
+
+} // TrainSchedule

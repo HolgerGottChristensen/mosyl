@@ -11,8 +11,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -24,7 +22,6 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.mdse.pts.schedule.ScheduleFactory;
 import org.mdse.pts.schedule.SchedulePackage;
 import org.mdse.pts.schedule.Station;
 
@@ -65,6 +62,7 @@ public class StationItemProvider
 
 			addPlatformPropertyDescriptor(object);
 			addStoppedTimePropertyDescriptor(object);
+			addRotatePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -114,34 +112,25 @@ public class StationItemProvider
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Rotate feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(SchedulePackage.Literals.STATION__STATIONREFERENCE);
-			childrenFeatures.add(SchedulePackage.Literals.STATION__VIA);
-		}
-		return childrenFeatures;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
+	protected void addRotatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Station_rotate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Station_rotate_feature", "_UI_Station_type"),
+				 SchedulePackage.Literals.STATION__ROTATE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -184,11 +173,8 @@ public class StationItemProvider
 		switch (notification.getFeatureID(Station.class)) {
 			case SchedulePackage.STATION__PLATFORM:
 			case SchedulePackage.STATION__STOPPED_TIME:
+			case SchedulePackage.STATION__ROTATE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case SchedulePackage.STATION__STATIONREFERENCE:
-			case SchedulePackage.STATION__VIA:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -204,16 +190,6 @@ public class StationItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SchedulePackage.Literals.STATION__STATIONREFERENCE,
-				 ScheduleFactory.eINSTANCE.createStationReference()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SchedulePackage.Literals.STATION__VIA,
-				 ScheduleFactory.eINSTANCE.createLegReference()));
 	}
 
 	/**
