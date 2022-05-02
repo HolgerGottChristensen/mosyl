@@ -3,17 +3,15 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="schedule" nsURI="http://mdse.org/pts/schedule" nsPrefix="schedule">
   <eClassifiers xsi:type="ecore:EClass" name="Schedule">
     <eStructuralFeatures xsi:type="ecore:EReference" name="networkreference" lowerBound="1"
-        eType="#//NetworkReference" containment="true"/>
+        eType="ecore:EClass ../../org.mdse.pts.network/model/Network.ecore#//Network"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="depotreference" lowerBound="1"
-        upperBound="-1" eType="#//DepotReference" containment="true"/>
+        upperBound="-1" eType="ecore:EClass ../../org.mdse.pts.depot/model/Depot.ecore#//Root"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="trains" lowerBound="1"
         upperBound="-1" eType="#//Train" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NetworkReference"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DepotReference"/>
   <eClassifiers xsi:type="ecore:EClass" name="Train">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="trainreference" upperBound="-1"
-        eType="#//TrainReference" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" lowerBound="1"
+        eType="ecore:EClass ../../org.mdse.pts.depot/model/Depot.ecore#//Train"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="starttimes" upperBound="-1"
         eType="#//StartTime" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stops" lowerBound="2" upperBound="-1"
@@ -43,12 +41,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="platform" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stoppedTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="stationreference" lowerBound="1"
-        eType="#//StationReference" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="via" eType="#//LegReference"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="via" eType="ecore:EClass ../../org.mdse.pts.network/model/Network.ecore#//Leg"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" lowerBound="1"
+        eType="ecore:EClass ../../org.mdse.pts.network/model/Network.ecore#//Station"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StationReference"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LegReference"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TrainReference"/>
 </ecore:EPackage>
