@@ -1,5 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="schedule" nsURI="http://mdse.org/pts/schedule" nsPrefix="schedule">
-  <eClassifiers xsi:type="ecore:EClass" name="Schedule"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Schedule">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="networkreference" lowerBound="1"
+        eType="#//NetworkReference" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="depotreference" lowerBound="1"
+        upperBound="-1" eType="#//DepotReference" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trains" lowerBound="1"
+        upperBound="-1" eType="#//Train" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NetworkReference"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DepotReference"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Train">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="trainreference" upperBound="-1"
+        eType="#//TrainReference" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="starttimes" upperBound="-1"
+        eType="#//StartTime" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stops" lowerBound="2" upperBound="-1"
+        eType="#//Station" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StartTime">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weekdays" lowerBound="1"
+        upperBound="-1" eType="#//Weekday"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="timestamps" lowerBound="1"
+        upperBound="-1" eType="#//Time" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Weekday">
+    <eLiterals name="MONDAY"/>
+    <eLiterals name="TUESDAY" value="1"/>
+    <eLiterals name="WEDNESDAY" value="2"/>
+    <eLiterals name="THURSDAY" value="3"/>
+    <eLiterals name="FRIDAY" value="4"/>
+    <eLiterals name="SATURDAY" value="5"/>
+    <eLiterals name="SUNDAY" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Time">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hour" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByte"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minute" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByte"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Station">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="platform" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stoppedTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stationreference" lowerBound="1"
+        eType="#//StationReference" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="via" eType="#//LegReference"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StationReference"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LegReference"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TrainReference"/>
 </ecore:EPackage>
