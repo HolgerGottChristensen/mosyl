@@ -9,6 +9,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="coach" upperBound="-1"
         eType="#//Coach" containment="true" eOpposite="#//Coach/train"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//TrainType"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Locomotive" eSuperTypes="#//Coach"/>
   <eClassifiers xsi:type="ecore:EClass" name="DiningCoach" eSuperTypes="#//Coach"/>
@@ -16,9 +17,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="class" eType="#//CoachClass"
         defaultValueLiteral="Economy"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Coach">
+  <eClassifiers xsi:type="ecore:EClass" name="Coach" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="wagonNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="train" eType="#//Train"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="train" lowerBound="1" eType="#//Train"
         eOpposite="#//Train/coach"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="CoachClass">
@@ -28,5 +29,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="Root">
     <eStructuralFeatures xsi:type="ecore:EReference" name="depot" lowerBound="1" eType="#//Depot"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TrainType">
+    <eLiterals name="Regional"/>
+    <eLiterals name="Intercity" value="1"/>
   </eClassifiers>
 </ecore:EPackage>

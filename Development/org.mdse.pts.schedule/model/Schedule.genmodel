@@ -18,8 +18,8 @@
       <genEnumLiterals ecoreEnumLiteral="Schedule.ecore#//Weekday/SUNDAY"/>
     </genEnums>
     <genClasses ecoreClass="Schedule.ecore#//Schedule">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Schedule.ecore#//Schedule/networkreference"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Schedule.ecore#//Schedule/depotreference"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Schedule.ecore#//Schedule/network"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Schedule.ecore#//Schedule/depot"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//Schedule/trains"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//Schedule/routes"/>
     </genClasses>
@@ -68,12 +68,17 @@
       <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.depot/model/Depot.ecore#//CoachClass/FirstClass"/>
       <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.depot/model/Depot.ecore#//CoachClass/Economy"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../org.mdse.pts.depot/model/Depot.ecore#//TrainType">
+      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.depot/model/Depot.ecore#//TrainType/Regional"/>
+      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.depot/model/Depot.ecore#//TrainType/Intercity"/>
+    </genEnums>
     <genClasses ecoreClass="../../org.mdse.pts.depot/model/Depot.ecore#//Depot">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.mdse.pts.depot/model/Depot.ecore#//Depot/train"/>
     </genClasses>
     <genClasses ecoreClass="../../org.mdse.pts.depot/model/Depot.ecore#//Train">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.mdse.pts.depot/model/Depot.ecore#//Train/coach"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pts.depot/model/Depot.ecore#//Train/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pts.depot/model/Depot.ecore#//Train/type"/>
     </genClasses>
     <genClasses ecoreClass="../../org.mdse.pts.depot/model/Depot.ecore#//Locomotive"/>
     <genClasses ecoreClass="../../org.mdse.pts.depot/model/Depot.ecore#//DiningCoach"/>
