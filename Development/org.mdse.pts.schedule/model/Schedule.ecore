@@ -12,8 +12,7 @@
         eType="#//Route" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TrainSchedule">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" lowerBound="1"
-        eType="ecore:EClass ../../org.mdse.pts.depot/model/Depot.ecore#//Train"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="train" lowerBound="1" eType="ecore:EClass ../../org.mdse.pts.depot/model/Depot.ecore#//Train"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="starttimes" upperBound="-1"
         eType="#//StartTime" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="route" eType="#//Route"/>
@@ -38,18 +37,18 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="minute" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByte"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Station">
+  <eClassifiers xsi:type="ecore:EClass" name="Stop">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="platform" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="stoppedTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="via" eType="ecore:EClass ../../org.mdse.pts.network/model/Network.ecore#//Leg"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="station" lowerBound="1"
         eType="ecore:EClass ../../org.mdse.pts.network/model/Network.ecore#//Station"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rotate" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Route">
     <eStructuralFeatures xsi:type="ecore:EReference" name="stops" lowerBound="2" upperBound="-1"
-        eType="#//Station" containment="true"/>
+        eType="#//Stop" containment="true"/>
   </eClassifiers>
 </ecore:EPackage>

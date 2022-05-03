@@ -24,7 +24,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//Schedule/routes"/>
     </genClasses>
     <genClasses ecoreClass="Schedule.ecore#//TrainSchedule">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Schedule.ecore#//TrainSchedule/reference"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Schedule.ecore#//TrainSchedule/train"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//TrainSchedule/starttimes"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Schedule.ecore#//TrainSchedule/route"/>
     </genClasses>
@@ -36,12 +36,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Time/hour"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Time/minute"/>
     </genClasses>
-    <genClasses ecoreClass="Schedule.ecore#//Station">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Station/platform"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Station/stoppedTime"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Schedule.ecore#//Station/via"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Schedule.ecore#//Station/reference"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Station/rotate"/>
+    <genClasses ecoreClass="Schedule.ecore#//Stop">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Stop/platform"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Stop/stoppedTime"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Schedule.ecore#//Stop/via"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Schedule.ecore#//Stop/station"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Stop/rotate"/>
     </genClasses>
     <genClasses ecoreClass="Schedule.ecore#//Route">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//Route/stops"/>
