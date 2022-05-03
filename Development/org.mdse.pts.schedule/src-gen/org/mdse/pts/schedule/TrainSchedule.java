@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.mdse.pts.schedule.TrainSchedule#getReference <em>Reference</em>}</li>
+ *   <li>{@link org.mdse.pts.schedule.TrainSchedule#getTrain <em>Train</em>}</li>
  *   <li>{@link org.mdse.pts.schedule.TrainSchedule#getStarttimes <em>Starttimes</em>}</li>
  *   <li>{@link org.mdse.pts.schedule.TrainSchedule#getRoute <em>Route</em>}</li>
  * </ul>
@@ -28,26 +28,26 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface TrainSchedule extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Reference</b></em>' reference.
+	 * Returns the value of the '<em><b>Train</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Reference</em>' reference.
-	 * @see #setReference(Train)
-	 * @see org.mdse.pts.schedule.SchedulePackage#getTrainSchedule_Reference()
+	 * @return the value of the '<em>Train</em>' reference.
+	 * @see #setTrain(Train)
+	 * @see org.mdse.pts.schedule.SchedulePackage#getTrainSchedule_Train()
 	 * @model required="true"
 	 * @generated
 	 */
-	Train getReference();
+	Train getTrain();
 
 	/**
-	 * Sets the value of the '{@link org.mdse.pts.schedule.TrainSchedule#getReference <em>Reference</em>}' reference.
+	 * Sets the value of the '{@link org.mdse.pts.schedule.TrainSchedule#getTrain <em>Train</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Reference</em>' reference.
-	 * @see #getReference()
+	 * @param value the new value of the '<em>Train</em>' reference.
+	 * @see #getTrain()
 	 * @generated
 	 */
-	void setReference(Train value);
+	void setTrain(Train value);
 
 	/**
 	 * Returns the value of the '<em><b>Starttimes</b></em>' containment reference list.

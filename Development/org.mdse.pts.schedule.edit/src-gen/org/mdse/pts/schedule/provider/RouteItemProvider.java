@@ -151,7 +151,7 @@ public class RouteItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(SchedulePackage.Literals.ROUTE__STOPS,
-				 ScheduleFactory.eINSTANCE.createStation()));
+				 ScheduleFactory.eINSTANCE.createStop()));
 	}
 
 	/**

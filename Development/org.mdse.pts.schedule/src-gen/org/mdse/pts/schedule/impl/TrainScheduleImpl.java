@@ -33,7 +33,7 @@ import org.mdse.pts.schedule.TrainSchedule;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdse.pts.schedule.impl.TrainScheduleImpl#getReference <em>Reference</em>}</li>
+ *   <li>{@link org.mdse.pts.schedule.impl.TrainScheduleImpl#getTrain <em>Train</em>}</li>
  *   <li>{@link org.mdse.pts.schedule.impl.TrainScheduleImpl#getStarttimes <em>Starttimes</em>}</li>
  *   <li>{@link org.mdse.pts.schedule.impl.TrainScheduleImpl#getRoute <em>Route</em>}</li>
  * </ul>
@@ -42,14 +42,14 @@ import org.mdse.pts.schedule.TrainSchedule;
  */
 public class TrainScheduleImpl extends MinimalEObjectImpl.Container implements TrainSchedule {
 	/**
-	 * The cached value of the '{@link #getReference() <em>Reference</em>}' reference.
+	 * The cached value of the '{@link #getTrain() <em>Train</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReference()
+	 * @see #getTrain()
 	 * @generated
 	 * @ordered
 	 */
-	protected Train reference;
+	protected Train train;
 
 	/**
 	 * The cached value of the '{@link #getStarttimes() <em>Starttimes</em>}' containment reference list.
@@ -96,16 +96,16 @@ public class TrainScheduleImpl extends MinimalEObjectImpl.Container implements T
 	 * @generated
 	 */
 	@Override
-	public Train getReference() {
-		if (reference != null && reference.eIsProxy()) {
-			InternalEObject oldReference = (InternalEObject)reference;
-			reference = (Train)eResolveProxy(oldReference);
-			if (reference != oldReference) {
+	public Train getTrain() {
+		if (train != null && train.eIsProxy()) {
+			InternalEObject oldTrain = (InternalEObject)train;
+			train = (Train)eResolveProxy(oldTrain);
+			if (train != oldTrain) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.TRAIN_SCHEDULE__REFERENCE, oldReference, reference));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.TRAIN_SCHEDULE__TRAIN, oldTrain, train));
 			}
 		}
-		return reference;
+		return train;
 	}
 
 	/**
@@ -113,8 +113,8 @@ public class TrainScheduleImpl extends MinimalEObjectImpl.Container implements T
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Train basicGetReference() {
-		return reference;
+	public Train basicGetTrain() {
+		return train;
 	}
 
 	/**
@@ -123,11 +123,11 @@ public class TrainScheduleImpl extends MinimalEObjectImpl.Container implements T
 	 * @generated
 	 */
 	@Override
-	public void setReference(Train newReference) {
-		Train oldReference = reference;
-		reference = newReference;
+	public void setTrain(Train newTrain) {
+		Train oldTrain = train;
+		train = newTrain;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.TRAIN_SCHEDULE__REFERENCE, oldReference, reference));
+			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.TRAIN_SCHEDULE__TRAIN, oldTrain, train));
 	}
 
 	/**
@@ -205,9 +205,9 @@ public class TrainScheduleImpl extends MinimalEObjectImpl.Container implements T
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case SchedulePackage.TRAIN_SCHEDULE__REFERENCE:
-				if (resolve) return getReference();
-				return basicGetReference();
+			case SchedulePackage.TRAIN_SCHEDULE__TRAIN:
+				if (resolve) return getTrain();
+				return basicGetTrain();
 			case SchedulePackage.TRAIN_SCHEDULE__STARTTIMES:
 				return getStarttimes();
 			case SchedulePackage.TRAIN_SCHEDULE__ROUTE:
@@ -226,8 +226,8 @@ public class TrainScheduleImpl extends MinimalEObjectImpl.Container implements T
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case SchedulePackage.TRAIN_SCHEDULE__REFERENCE:
-				setReference((Train)newValue);
+			case SchedulePackage.TRAIN_SCHEDULE__TRAIN:
+				setTrain((Train)newValue);
 				return;
 			case SchedulePackage.TRAIN_SCHEDULE__STARTTIMES:
 				getStarttimes().clear();
@@ -248,8 +248,8 @@ public class TrainScheduleImpl extends MinimalEObjectImpl.Container implements T
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case SchedulePackage.TRAIN_SCHEDULE__REFERENCE:
-				setReference((Train)null);
+			case SchedulePackage.TRAIN_SCHEDULE__TRAIN:
+				setTrain((Train)null);
 				return;
 			case SchedulePackage.TRAIN_SCHEDULE__STARTTIMES:
 				getStarttimes().clear();
@@ -269,8 +269,8 @@ public class TrainScheduleImpl extends MinimalEObjectImpl.Container implements T
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case SchedulePackage.TRAIN_SCHEDULE__REFERENCE:
-				return reference != null;
+			case SchedulePackage.TRAIN_SCHEDULE__TRAIN:
+				return train != null;
 			case SchedulePackage.TRAIN_SCHEDULE__STARTTIMES:
 				return starttimes != null && !starttimes.isEmpty();
 			case SchedulePackage.TRAIN_SCHEDULE__ROUTE:

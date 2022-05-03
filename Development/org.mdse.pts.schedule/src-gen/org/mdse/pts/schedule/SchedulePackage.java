@@ -132,13 +132,13 @@ public interface SchedulePackage extends EPackage {
 	int TRAIN_SCHEDULE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Reference</b></em>' reference.
+	 * The feature id for the '<em><b>Train</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRAIN_SCHEDULE__REFERENCE = 0;
+	int TRAIN_SCHEDULE__TRAIN = 0;
 
 	/**
 	 * The feature id for the '<em><b>Starttimes</b></em>' containment reference list.
@@ -269,14 +269,14 @@ public interface SchedulePackage extends EPackage {
 	int TIME_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.mdse.pts.schedule.impl.StationImpl <em>Station</em>}' class.
+	 * The meta object id for the '{@link org.mdse.pts.schedule.impl.StopImpl <em>Stop</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.mdse.pts.schedule.impl.StationImpl
-	 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getStation()
+	 * @see org.mdse.pts.schedule.impl.StopImpl
+	 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getStop()
 	 * @generated
 	 */
-	int STATION = 4;
+	int STOP = 4;
 
 	/**
 	 * The feature id for the '<em><b>Platform</b></em>' attribute.
@@ -285,7 +285,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATION__PLATFORM = 0;
+	int STOP__PLATFORM = 0;
 
 	/**
 	 * The feature id for the '<em><b>Stopped Time</b></em>' attribute.
@@ -294,7 +294,7 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATION__STOPPED_TIME = 1;
+	int STOP__STOPPED_TIME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Via</b></em>' reference.
@@ -303,16 +303,16 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATION__VIA = 2;
+	int STOP__VIA = 2;
 
 	/**
-	 * The feature id for the '<em><b>Reference</b></em>' reference.
+	 * The feature id for the '<em><b>Station</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATION__REFERENCE = 3;
+	int STOP__STATION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Rotate</b></em>' attribute.
@@ -321,25 +321,25 @@ public interface SchedulePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STATION__ROTATE = 4;
+	int STOP__ROTATE = 4;
 
 	/**
-	 * The number of structural features of the '<em>Station</em>' class.
+	 * The number of structural features of the '<em>Stop</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATION_FEATURE_COUNT = 5;
+	int STOP_FEATURE_COUNT = 5;
 
 	/**
-	 * The number of operations of the '<em>Station</em>' class.
+	 * The number of operations of the '<em>Stop</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STATION_OPERATION_COUNT = 0;
+	int STOP_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.mdse.pts.schedule.impl.RouteImpl <em>Route</em>}' class.
@@ -454,15 +454,15 @@ public interface SchedulePackage extends EPackage {
 	EClass getTrainSchedule();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.mdse.pts.schedule.TrainSchedule#getReference <em>Reference</em>}'.
+	 * Returns the meta object for the reference '{@link org.mdse.pts.schedule.TrainSchedule#getTrain <em>Train</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Reference</em>'.
-	 * @see org.mdse.pts.schedule.TrainSchedule#getReference()
+	 * @return the meta object for the reference '<em>Train</em>'.
+	 * @see org.mdse.pts.schedule.TrainSchedule#getTrain()
 	 * @see #getTrainSchedule()
 	 * @generated
 	 */
-	EReference getTrainSchedule_Reference();
+	EReference getTrainSchedule_Train();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.mdse.pts.schedule.TrainSchedule#getStarttimes <em>Starttimes</em>}'.
@@ -551,69 +551,69 @@ public interface SchedulePackage extends EPackage {
 	EAttribute getTime_Minute();
 
 	/**
-	 * Returns the meta object for class '{@link org.mdse.pts.schedule.Station <em>Station</em>}'.
+	 * Returns the meta object for class '{@link org.mdse.pts.schedule.Stop <em>Stop</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Station</em>'.
-	 * @see org.mdse.pts.schedule.Station
+	 * @return the meta object for class '<em>Stop</em>'.
+	 * @see org.mdse.pts.schedule.Stop
 	 * @generated
 	 */
-	EClass getStation();
+	EClass getStop();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.mdse.pts.schedule.Station#getPlatform <em>Platform</em>}'.
+	 * Returns the meta object for the attribute '{@link org.mdse.pts.schedule.Stop#getPlatform <em>Platform</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Platform</em>'.
-	 * @see org.mdse.pts.schedule.Station#getPlatform()
-	 * @see #getStation()
+	 * @see org.mdse.pts.schedule.Stop#getPlatform()
+	 * @see #getStop()
 	 * @generated
 	 */
-	EAttribute getStation_Platform();
+	EAttribute getStop_Platform();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.mdse.pts.schedule.Station#getStoppedTime <em>Stopped Time</em>}'.
+	 * Returns the meta object for the attribute '{@link org.mdse.pts.schedule.Stop#getStoppedTime <em>Stopped Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Stopped Time</em>'.
-	 * @see org.mdse.pts.schedule.Station#getStoppedTime()
-	 * @see #getStation()
+	 * @see org.mdse.pts.schedule.Stop#getStoppedTime()
+	 * @see #getStop()
 	 * @generated
 	 */
-	EAttribute getStation_StoppedTime();
+	EAttribute getStop_StoppedTime();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.mdse.pts.schedule.Station#getVia <em>Via</em>}'.
+	 * Returns the meta object for the reference '{@link org.mdse.pts.schedule.Stop#getVia <em>Via</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Via</em>'.
-	 * @see org.mdse.pts.schedule.Station#getVia()
-	 * @see #getStation()
+	 * @see org.mdse.pts.schedule.Stop#getVia()
+	 * @see #getStop()
 	 * @generated
 	 */
-	EReference getStation_Via();
+	EReference getStop_Via();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.mdse.pts.schedule.Station#getReference <em>Reference</em>}'.
+	 * Returns the meta object for the reference '{@link org.mdse.pts.schedule.Stop#getStation <em>Station</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Reference</em>'.
-	 * @see org.mdse.pts.schedule.Station#getReference()
-	 * @see #getStation()
+	 * @return the meta object for the reference '<em>Station</em>'.
+	 * @see org.mdse.pts.schedule.Stop#getStation()
+	 * @see #getStop()
 	 * @generated
 	 */
-	EReference getStation_Reference();
+	EReference getStop_Station();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.mdse.pts.schedule.Station#isRotate <em>Rotate</em>}'.
+	 * Returns the meta object for the attribute '{@link org.mdse.pts.schedule.Stop#isRotate <em>Rotate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Rotate</em>'.
-	 * @see org.mdse.pts.schedule.Station#isRotate()
-	 * @see #getStation()
+	 * @see org.mdse.pts.schedule.Stop#isRotate()
+	 * @see #getStop()
 	 * @generated
 	 */
-	EAttribute getStation_Rotate();
+	EAttribute getStop_Rotate();
 
 	/**
 	 * Returns the meta object for class '{@link org.mdse.pts.schedule.Route <em>Route</em>}'.
@@ -722,12 +722,12 @@ public interface SchedulePackage extends EPackage {
 		EClass TRAIN_SCHEDULE = eINSTANCE.getTrainSchedule();
 
 		/**
-		 * The meta object literal for the '<em><b>Reference</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Train</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TRAIN_SCHEDULE__REFERENCE = eINSTANCE.getTrainSchedule_Reference();
+		EReference TRAIN_SCHEDULE__TRAIN = eINSTANCE.getTrainSchedule_Train();
 
 		/**
 		 * The meta object literal for the '<em><b>Starttimes</b></em>' containment reference list feature.
@@ -798,14 +798,14 @@ public interface SchedulePackage extends EPackage {
 		EAttribute TIME__MINUTE = eINSTANCE.getTime_Minute();
 
 		/**
-		 * The meta object literal for the '{@link org.mdse.pts.schedule.impl.StationImpl <em>Station</em>}' class.
+		 * The meta object literal for the '{@link org.mdse.pts.schedule.impl.StopImpl <em>Stop</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.mdse.pts.schedule.impl.StationImpl
-		 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getStation()
+		 * @see org.mdse.pts.schedule.impl.StopImpl
+		 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getStop()
 		 * @generated
 		 */
-		EClass STATION = eINSTANCE.getStation();
+		EClass STOP = eINSTANCE.getStop();
 
 		/**
 		 * The meta object literal for the '<em><b>Platform</b></em>' attribute feature.
@@ -813,7 +813,7 @@ public interface SchedulePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STATION__PLATFORM = eINSTANCE.getStation_Platform();
+		EAttribute STOP__PLATFORM = eINSTANCE.getStop_Platform();
 
 		/**
 		 * The meta object literal for the '<em><b>Stopped Time</b></em>' attribute feature.
@@ -821,7 +821,7 @@ public interface SchedulePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STATION__STOPPED_TIME = eINSTANCE.getStation_StoppedTime();
+		EAttribute STOP__STOPPED_TIME = eINSTANCE.getStop_StoppedTime();
 
 		/**
 		 * The meta object literal for the '<em><b>Via</b></em>' reference feature.
@@ -829,15 +829,15 @@ public interface SchedulePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATION__VIA = eINSTANCE.getStation_Via();
+		EReference STOP__VIA = eINSTANCE.getStop_Via();
 
 		/**
-		 * The meta object literal for the '<em><b>Reference</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Station</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference STATION__REFERENCE = eINSTANCE.getStation_Reference();
+		EReference STOP__STATION = eINSTANCE.getStop_Station();
 
 		/**
 		 * The meta object literal for the '<em><b>Rotate</b></em>' attribute feature.
@@ -845,7 +845,7 @@ public interface SchedulePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STATION__ROTATE = eINSTANCE.getStation_Rotate();
+		EAttribute STOP__ROTATE = eINSTANCE.getStop_Rotate();
 
 		/**
 		 * The meta object literal for the '{@link org.mdse.pts.schedule.impl.RouteImpl <em>Route</em>}' class.

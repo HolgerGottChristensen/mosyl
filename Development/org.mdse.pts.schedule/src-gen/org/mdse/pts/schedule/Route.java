@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface Route extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Stops</b></em>' containment reference list.
-	 * The list contents are of type {@link org.mdse.pts.schedule.Station}.
+	 * The list contents are of type {@link org.mdse.pts.schedule.Stop}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Stops</em>' containment reference list.
@@ -33,6 +33,6 @@ public interface Route extends EObject {
 	 * @model containment="true" lower="2"
 	 * @generated
 	 */
-	EList<Station> getStops();
+	EList<Stop> getStops();
 
 } // Route

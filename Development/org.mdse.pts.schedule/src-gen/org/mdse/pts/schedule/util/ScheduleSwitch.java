@@ -90,9 +90,9 @@ public class ScheduleSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SchedulePackage.STATION: {
-				Station station = (Station)theEObject;
-				T result = caseStation(station);
+			case SchedulePackage.STOP: {
+				Stop stop = (Stop)theEObject;
+				T result = caseStop(stop);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -167,17 +167,17 @@ public class ScheduleSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Station</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Stop</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Station</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Stop</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseStation(Station object) {
+	public T caseStop(Stop object) {
 		return null;
 	}
 

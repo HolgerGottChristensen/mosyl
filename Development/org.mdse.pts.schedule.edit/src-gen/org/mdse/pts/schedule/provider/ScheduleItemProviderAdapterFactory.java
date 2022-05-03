@@ -164,26 +164,26 @@ public class ScheduleItemProviderAdapterFactory extends ScheduleAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.mdse.pts.schedule.Station} instances.
+	 * This keeps track of the one adapter used for all {@link org.mdse.pts.schedule.Stop} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StationItemProvider stationItemProvider;
+	protected StopItemProvider stopItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.mdse.pts.schedule.Station}.
+	 * This creates an adapter for a {@link org.mdse.pts.schedule.Stop}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createStationAdapter() {
-		if (stationItemProvider == null) {
-			stationItemProvider = new StationItemProvider(this);
+	public Adapter createStopAdapter() {
+		if (stopItemProvider == null) {
+			stopItemProvider = new StopItemProvider(this);
 		}
 
-		return stationItemProvider;
+		return stopItemProvider;
 	}
 
 	/**
@@ -318,7 +318,7 @@ public class ScheduleItemProviderAdapterFactory extends ScheduleAdapterFactory i
 		if (trainScheduleItemProvider != null) trainScheduleItemProvider.dispose();
 		if (startTimeItemProvider != null) startTimeItemProvider.dispose();
 		if (timeItemProvider != null) timeItemProvider.dispose();
-		if (stationItemProvider != null) stationItemProvider.dispose();
+		if (stopItemProvider != null) stopItemProvider.dispose();
 		if (routeItemProvider != null) routeItemProvider.dispose();
 	}
 

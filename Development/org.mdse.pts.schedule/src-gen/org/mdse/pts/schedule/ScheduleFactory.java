@@ -58,13 +58,13 @@ public interface ScheduleFactory extends EFactory {
 	Time createTime();
 
 	/**
-	 * Returns a new object of class '<em>Station</em>'.
+	 * Returns a new object of class '<em>Stop</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Station</em>'.
+	 * @return a new object of class '<em>Stop</em>'.
 	 * @generated
 	 */
-	Station createStation();
+	Stop createStop();
 
 	/**
 	 * Returns a new object of class '<em>Route</em>'.

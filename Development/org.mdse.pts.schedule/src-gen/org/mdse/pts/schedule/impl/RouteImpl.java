@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.mdse.pts.schedule.Route;
 import org.mdse.pts.schedule.SchedulePackage;
-import org.mdse.pts.schedule.Station;
+import org.mdse.pts.schedule.Stop;
 
 /**
  * <!-- begin-user-doc -->
@@ -42,7 +42,7 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Station> stops;
+	protected EList<Stop> stops;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,9 +69,9 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route {
 	 * @generated
 	 */
 	@Override
-	public EList<Station> getStops() {
+	public EList<Stop> getStops() {
 		if (stops == null) {
-			stops = new EObjectContainmentEList<Station>(Station.class, this, SchedulePackage.ROUTE__STOPS);
+			stops = new EObjectContainmentEList<Stop>(Stop.class, this, SchedulePackage.ROUTE__STOPS);
 		}
 		return stops;
 	}
@@ -115,7 +115,7 @@ public class RouteImpl extends MinimalEObjectImpl.Container implements Route {
 		switch (featureID) {
 			case SchedulePackage.ROUTE__STOPS:
 				getStops().clear();
-				getStops().addAll((Collection<? extends Station>)newValue);
+				getStops().addAll((Collection<? extends Stop>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

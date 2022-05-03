@@ -61,7 +61,7 @@ public class ScheduleFactoryImpl extends EFactoryImpl implements ScheduleFactory
 			case SchedulePackage.TRAIN_SCHEDULE: return createTrainSchedule();
 			case SchedulePackage.START_TIME: return createStartTime();
 			case SchedulePackage.TIME: return createTime();
-			case SchedulePackage.STATION: return createStation();
+			case SchedulePackage.STOP: return createStop();
 			case SchedulePackage.ROUTE: return createRoute();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -148,9 +148,9 @@ public class ScheduleFactoryImpl extends EFactoryImpl implements ScheduleFactory
 	 * @generated
 	 */
 	@Override
-	public Station createStation() {
-		StationImpl station = new StationImpl();
-		return station;
+	public Stop createStop() {
+		StopImpl stop = new StopImpl();
+		return stop;
 	}
 
 	/**

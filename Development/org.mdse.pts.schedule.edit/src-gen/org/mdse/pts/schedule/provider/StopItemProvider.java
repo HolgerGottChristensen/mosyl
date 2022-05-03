@@ -23,15 +23,15 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.mdse.pts.schedule.SchedulePackage;
-import org.mdse.pts.schedule.Station;
+import org.mdse.pts.schedule.Stop;
 
 /**
- * This is the item provider adapter for a {@link org.mdse.pts.schedule.Station} object.
+ * This is the item provider adapter for a {@link org.mdse.pts.schedule.Stop} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class StationItemProvider 
+public class StopItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -45,7 +45,7 @@ public class StationItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public StationItemProvider(AdapterFactory adapterFactory) {
+	public StopItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -78,9 +78,9 @@ public class StationItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Station_platform_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Station_platform_feature", "_UI_Station_type"),
-				 SchedulePackage.Literals.STATION__PLATFORM,
+				 getString("_UI_Stop_platform_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Stop_platform_feature", "_UI_Stop_type"),
+				 SchedulePackage.Literals.STOP__PLATFORM,
 				 true,
 				 false,
 				 false,
@@ -100,9 +100,9 @@ public class StationItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Station_stoppedTime_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Station_stoppedTime_feature", "_UI_Station_type"),
-				 SchedulePackage.Literals.STATION__STOPPED_TIME,
+				 getString("_UI_Stop_stoppedTime_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Stop_stoppedTime_feature", "_UI_Stop_type"),
+				 SchedulePackage.Literals.STOP__STOPPED_TIME,
 				 true,
 				 false,
 				 false,
@@ -122,9 +122,9 @@ public class StationItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Station_rotate_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Station_rotate_feature", "_UI_Station_type"),
-				 SchedulePackage.Literals.STATION__ROTATE,
+				 getString("_UI_Stop_rotate_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Stop_rotate_feature", "_UI_Stop_type"),
+				 SchedulePackage.Literals.STOP__ROTATE,
 				 true,
 				 false,
 				 false,
@@ -134,14 +134,14 @@ public class StationItemProvider
 	}
 
 	/**
-	 * This returns Station.gif.
+	 * This returns Stop.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Station"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Stop"));
 	}
 
 	/**
@@ -152,10 +152,10 @@ public class StationItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Station)object).getPlatform();
+		String label = ((Stop)object).getPlatform();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Station_type") :
-			getString("_UI_Station_type") + " " + label;
+			getString("_UI_Stop_type") :
+			getString("_UI_Stop_type") + " " + label;
 	}
 
 
@@ -170,10 +170,10 @@ public class StationItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Station.class)) {
-			case SchedulePackage.STATION__PLATFORM:
-			case SchedulePackage.STATION__STOPPED_TIME:
-			case SchedulePackage.STATION__ROTATE:
+		switch (notification.getFeatureID(Stop.class)) {
+			case SchedulePackage.STOP__PLATFORM:
+			case SchedulePackage.STOP__STOPPED_TIME:
+			case SchedulePackage.STOP__ROTATE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
