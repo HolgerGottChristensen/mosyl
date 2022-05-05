@@ -20,6 +20,7 @@ import org.mdse.pts.depot.Locomotive;
 import org.mdse.pts.depot.PassengerCoach;
 import org.mdse.pts.depot.Root;
 import org.mdse.pts.depot.Train;
+import org.mdse.pts.depot.TrainType;
 
 /**
  * <!-- begin-user-doc -->
@@ -83,6 +84,13 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 	 * @generated
 	 */
 	private EEnum coachClassEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum trainTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -195,6 +203,15 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getTrain_Type() {
+		return (EAttribute)trainEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getLocomotive() {
 		return locomotiveEClass;
 	}
@@ -285,6 +302,15 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getTrainType() {
+		return trainTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public DepotFactory getDepotFactory() {
 		return (DepotFactory)getEFactoryInstance();
 	}
@@ -314,6 +340,7 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 		trainEClass = createEClass(TRAIN);
 		createEReference(trainEClass, TRAIN__COACH);
 		createEAttribute(trainEClass, TRAIN__NAME);
+		createEAttribute(trainEClass, TRAIN__TYPE);
 
 		locomotiveEClass = createEClass(LOCOMOTIVE);
 
@@ -331,6 +358,7 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 
 		// Create enums
 		coachClassEEnum = createEEnum(COACH_CLASS);
+		trainTypeEEnum = createEEnum(TRAIN_TYPE);
 	}
 
 	/**
@@ -372,6 +400,7 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 		initEClass(trainEClass, Train.class, "Train", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTrain_Coach(), this.getCoach(), this.getCoach_Train(), "coach", null, 0, -1, Train.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTrain_Name(), ecorePackage.getEString(), "name", null, 0, 1, Train.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTrain_Type(), this.getTrainType(), "type", null, 0, 1, Train.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(locomotiveEClass, Locomotive.class, "Locomotive", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -380,7 +409,7 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 		initEClass(passengerCoachEClass, PassengerCoach.class, "PassengerCoach", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPassengerCoach_Class(), this.getCoachClass(), "class", "Economy", 0, 1, PassengerCoach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(coachEClass, Coach.class, "Coach", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(coachEClass, Coach.class, "Coach", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCoach_WagonNumber(), ecorePackage.getEInt(), "wagonNumber", null, 0, 1, Coach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCoach_Train(), this.getTrain(), this.getTrain_Coach(), "train", null, 0, 1, Coach.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -391,6 +420,10 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 		initEEnum(coachClassEEnum, CoachClass.class, "CoachClass");
 		addEEnumLiteral(coachClassEEnum, CoachClass.FIRST_CLASS);
 		addEEnumLiteral(coachClassEEnum, CoachClass.ECONOMY);
+
+		initEEnum(trainTypeEEnum, TrainType.class, "TrainType");
+		addEEnumLiteral(trainTypeEEnum, TrainType.REGIONAL);
+		addEEnumLiteral(trainTypeEEnum, TrainType.INTERCITY);
 
 		// Create resource
 		createResource(eNS_URI);

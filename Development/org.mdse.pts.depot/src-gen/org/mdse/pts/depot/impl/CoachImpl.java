@@ -31,7 +31,7 @@ import org.mdse.pts.depot.Train;
  *
  * @generated
  */
-public class CoachImpl extends MinimalEObjectImpl.Container implements Coach {
+public abstract class CoachImpl extends MinimalEObjectImpl.Container implements Coach {
 	/**
 	 * The default value of the '{@link #getWagonNumber() <em>Wagon Number</em>}' attribute.
 	 * <!-- begin-user-doc -->

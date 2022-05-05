@@ -9,7 +9,11 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="coach" upperBound="-1"
         eType="#//Coach" containment="true" eOpposite="#//Coach/train"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+<<<<<<< HEAD
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//TrainType"/>
+=======
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//TrainType"/>
+>>>>>>> f904cbcee0aff45d39942d5c7727fa28767a2217
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Locomotive" eSuperTypes="#//Coach"/>
   <eClassifiers xsi:type="ecore:EClass" name="DiningCoach" eSuperTypes="#//Coach"/>
@@ -31,7 +35,12 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="TrainType">
+<<<<<<< HEAD
     <eLiterals name="Regional"/>
     <eLiterals name="Intercity" value="1"/>
+=======
+    <eLiterals name="REGIONAL"/>
+    <eLiterals name="INTERCITY" value="1"/>
+>>>>>>> f904cbcee0aff45d39942d5c7727fa28767a2217
   </eClassifiers>
 </ecore:EPackage>

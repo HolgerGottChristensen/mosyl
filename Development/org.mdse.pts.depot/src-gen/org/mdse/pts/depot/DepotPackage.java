@@ -123,13 +123,22 @@ public interface DepotPackage extends EPackage {
 	int TRAIN__NAME = 1;
 
 	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAIN__TYPE = 2;
+
+	/**
 	 * The number of structural features of the '<em>Train</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRAIN_FEATURE_COUNT = 2;
+	int TRAIN_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Train</em>' class.
@@ -382,6 +391,17 @@ public interface DepotPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.mdse.pts.depot.TrainType <em>Train Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.mdse.pts.depot.TrainType
+	 * @see org.mdse.pts.depot.impl.DepotPackageImpl#getTrainType()
+	 * @generated
+	 */
+	int TRAIN_TYPE = 8;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.mdse.pts.depot.Depot <em>Depot</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -433,6 +453,17 @@ public interface DepotPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getTrain_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.mdse.pts.depot.Train#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see org.mdse.pts.depot.Train#getType()
+	 * @see #getTrain()
+	 * @generated
+	 */
+	EAttribute getTrain_Type();
 
 	/**
 	 * Returns the meta object for class '{@link org.mdse.pts.depot.Locomotive <em>Locomotive</em>}'.
@@ -539,6 +570,16 @@ public interface DepotPackage extends EPackage {
 	EEnum getCoachClass();
 
 	/**
+	 * Returns the meta object for enum '{@link org.mdse.pts.depot.TrainType <em>Train Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Train Type</em>'.
+	 * @see org.mdse.pts.depot.TrainType
+	 * @generated
+	 */
+	EEnum getTrainType();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -604,6 +645,14 @@ public interface DepotPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TRAIN__NAME = eINSTANCE.getTrain_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TRAIN__TYPE = eINSTANCE.getTrain_Type();
 
 		/**
 		 * The meta object literal for the '{@link org.mdse.pts.depot.impl.LocomotiveImpl <em>Locomotive</em>}' class.
@@ -696,6 +745,16 @@ public interface DepotPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum COACH_CLASS = eINSTANCE.getCoachClass();
+
+		/**
+		 * The meta object literal for the '{@link org.mdse.pts.depot.TrainType <em>Train Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.mdse.pts.depot.TrainType
+		 * @see org.mdse.pts.depot.impl.DepotPackageImpl#getTrainType()
+		 * @generated
+		 */
+		EEnum TRAIN_TYPE = eINSTANCE.getTrainType();
 
 	}
 

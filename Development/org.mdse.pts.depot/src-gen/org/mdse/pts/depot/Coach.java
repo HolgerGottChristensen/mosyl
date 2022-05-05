@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see org.mdse.pts.depot.DepotPackage#getCoach()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Coach extends EObject {
