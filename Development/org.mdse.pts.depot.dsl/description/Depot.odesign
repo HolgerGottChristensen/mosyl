@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" name="Depot" version="12.0.0.2017041100">
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="Depot" version="12.0.0.2017041100">
   <ownedViewpoints name="Depot Viewpoint" modelFileExtension="depot">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Depot Diagram Representation" domainClass="depot.Depot">
       <defaultLayer name="Default">
@@ -52,6 +52,49 @@
             <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
         </containerMappings>
+        <toolSections name="General">
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Train" containerMappings="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='depot']/@subContainerMappings[name='Train%20container']" iconPath="/org.mdse.pts.depot.dsl/icons/TrainIcon.gif">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="depot.Train" referenceName="train">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="New Train"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Locomotive" containerMappings="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='depot']/@subContainerMappings[name='Train%20container']/@subContainerMappings[name='coach']" iconPath="/org.mdse.pts.depot.dsl/icons/LocomotiveIcon.gif">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="depot.Locomotive" referenceName="coach"/>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="1st Classs Coach" containerMappings="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='depot']/@subContainerMappings[name='Train%20container']/@subContainerMappings[name='coach']" iconPath="/org.mdse.pts.depot.dsl/icons/PassengerCoachFirstClassIcon.gif">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="depot.PassengerCoach" referenceName="coach">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="class" valueExpression="aql: depot::CoachClass::FirstClass"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Economy Coach" containerMappings="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='depot']/@subContainerMappings[name='Train%20container']/@subContainerMappings[name='coach']" iconPath="/org.mdse.pts.depot.dsl/icons/PassengerCoachSecondClassIcon.gif">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="depot.PassengerCoach" referenceName="coach">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="class" valueExpression="aql: depot::CoachClass::Economy"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:ContainerCreationDescription" name="Dining Coach" containerMappings="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='depot']/@subContainerMappings[name='Train%20container']/@subContainerMappings[name='coach']" iconPath="/org.mdse.pts.depot.dsl/icons/DiningCoachIcon.gif">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:CreateInstance" typeName="depot.DiningCoach" referenceName="coach"/>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
       </defaultLayer>
     </ownedRepresentations>
     <ownedJavaExtensions qualifiedClassName="org.mdse.pts.depot.dsl.Services"/>
