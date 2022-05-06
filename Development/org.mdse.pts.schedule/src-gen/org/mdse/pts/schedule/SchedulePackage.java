@@ -68,22 +68,22 @@ public interface SchedulePackage extends EPackage {
 	int SCHEDULE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Networkreference</b></em>' reference.
+	 * The feature id for the '<em><b>Network</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULE__NETWORKREFERENCE = 0;
+	int SCHEDULE__NETWORK = 0;
 
 	/**
-	 * The feature id for the '<em><b>Depotreference</b></em>' reference list.
+	 * The feature id for the '<em><b>Depot</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULE__DEPOTREFERENCE = 1;
+	int SCHEDULE__DEPOT = 1;
 
 	/**
 	 * The feature id for the '<em><b>Trains</b></em>' containment reference list.
@@ -400,26 +400,26 @@ public interface SchedulePackage extends EPackage {
 	EClass getSchedule();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.mdse.pts.schedule.Schedule#getNetworkreference <em>Networkreference</em>}'.
+	 * Returns the meta object for the reference '{@link org.mdse.pts.schedule.Schedule#getNetwork <em>Network</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Networkreference</em>'.
-	 * @see org.mdse.pts.schedule.Schedule#getNetworkreference()
+	 * @return the meta object for the reference '<em>Network</em>'.
+	 * @see org.mdse.pts.schedule.Schedule#getNetwork()
 	 * @see #getSchedule()
 	 * @generated
 	 */
-	EReference getSchedule_Networkreference();
+	EReference getSchedule_Network();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.mdse.pts.schedule.Schedule#getDepotreference <em>Depotreference</em>}'.
+	 * Returns the meta object for the reference list '{@link org.mdse.pts.schedule.Schedule#getDepot <em>Depot</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Depotreference</em>'.
-	 * @see org.mdse.pts.schedule.Schedule#getDepotreference()
+	 * @return the meta object for the reference list '<em>Depot</em>'.
+	 * @see org.mdse.pts.schedule.Schedule#getDepot()
 	 * @see #getSchedule()
 	 * @generated
 	 */
-	EReference getSchedule_Depotreference();
+	EReference getSchedule_Depot();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link org.mdse.pts.schedule.Schedule#getTrains <em>Trains</em>}'.
@@ -680,20 +680,20 @@ public interface SchedulePackage extends EPackage {
 		EClass SCHEDULE = eINSTANCE.getSchedule();
 
 		/**
-		 * The meta object literal for the '<em><b>Networkreference</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Network</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SCHEDULE__NETWORKREFERENCE = eINSTANCE.getSchedule_Networkreference();
+		EReference SCHEDULE__NETWORK = eINSTANCE.getSchedule_Network();
 
 		/**
-		 * The meta object literal for the '<em><b>Depotreference</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Depot</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SCHEDULE__DEPOTREFERENCE = eINSTANCE.getSchedule_Depotreference();
+		EReference SCHEDULE__DEPOT = eINSTANCE.getSchedule_Depot();
 
 		/**
 		 * The meta object literal for the '<em><b>Trains</b></em>' containment reference list feature.

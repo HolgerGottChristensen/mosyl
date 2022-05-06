@@ -19,8 +19,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.mdse.pts.schedule.Schedule#getNetworkreference <em>Networkreference</em>}</li>
- *   <li>{@link org.mdse.pts.schedule.Schedule#getDepotreference <em>Depotreference</em>}</li>
+ *   <li>{@link org.mdse.pts.schedule.Schedule#getNetwork <em>Network</em>}</li>
+ *   <li>{@link org.mdse.pts.schedule.Schedule#getDepot <em>Depot</em>}</li>
  *   <li>{@link org.mdse.pts.schedule.Schedule#getTrains <em>Trains</em>}</li>
  *   <li>{@link org.mdse.pts.schedule.Schedule#getRoutes <em>Routes</em>}</li>
  * </ul>
@@ -31,38 +31,38 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Schedule extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Networkreference</b></em>' reference.
+	 * Returns the value of the '<em><b>Network</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Networkreference</em>' reference.
-	 * @see #setNetworkreference(Network)
-	 * @see org.mdse.pts.schedule.SchedulePackage#getSchedule_Networkreference()
+	 * @return the value of the '<em>Network</em>' reference.
+	 * @see #setNetwork(Network)
+	 * @see org.mdse.pts.schedule.SchedulePackage#getSchedule_Network()
 	 * @model required="true"
 	 * @generated
 	 */
-	Network getNetworkreference();
+	Network getNetwork();
 
 	/**
-	 * Sets the value of the '{@link org.mdse.pts.schedule.Schedule#getNetworkreference <em>Networkreference</em>}' reference.
+	 * Sets the value of the '{@link org.mdse.pts.schedule.Schedule#getNetwork <em>Network</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Networkreference</em>' reference.
-	 * @see #getNetworkreference()
+	 * @param value the new value of the '<em>Network</em>' reference.
+	 * @see #getNetwork()
 	 * @generated
 	 */
-	void setNetworkreference(Network value);
+	void setNetwork(Network value);
 
 	/**
-	 * Returns the value of the '<em><b>Depotreference</b></em>' reference list.
+	 * Returns the value of the '<em><b>Depot</b></em>' reference list.
 	 * The list contents are of type {@link depot.Root}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Depotreference</em>' reference list.
-	 * @see org.mdse.pts.schedule.SchedulePackage#getSchedule_Depotreference()
+	 * @return the value of the '<em>Depot</em>' reference list.
+	 * @see org.mdse.pts.schedule.SchedulePackage#getSchedule_Depot()
 	 * @model required="true"
 	 * @generated
 	 */
-	EList<Root> getDepotreference();
+	EList<Root> getDepot();
 
 	/**
 	 * Returns the value of the '<em><b>Trains</b></em>' containment reference list.

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Timetable -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.mdse.pts.timetable.presentation.TimetableModelWizardID"
+            name="%_UI_TimetableModelWizard_label"
+            class="org.mdse.pts.timetable.presentation.TimetableModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/TimetableModelFile.gif">
+         <description>%_UI_TimetableModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Timetable -->
+      <editor
+            id="org.mdse.pts.timetable.presentation.TimetableEditorID"
+            name="%_UI_TimetableEditor_label"
+            icon="icons/full/obj16/TimetableModelFile.gif"
+            extensions="timetable"
+            class="org.mdse.pts.timetable.presentation.TimetableEditor"
+            contributorClass="org.mdse.pts.timetable.presentation.TimetableActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Timetable -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="network.presentation.NetworkModelWizardID"
+            name="%_UI_NetworkModelWizard_label"
+            class="network.presentation.NetworkModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/NetworkModelFile.gif">
+         <description>%_UI_NetworkModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Timetable -->
+      <editor
+            id="network.presentation.NetworkEditorID"
+            name="%_UI_NetworkEditor_label"
+            icon="icons/full/obj16/NetworkModelFile.gif"
+            extensions="network"
+            class="network.presentation.NetworkEditor"
+            contributorClass="network.presentation.NetworkActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Timetable -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="depot.presentation.DepotModelWizardID"
+            name="%_UI_DepotModelWizard_label"
+            class="depot.presentation.DepotModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/DepotModelFile.gif">
+         <description>%_UI_DepotModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Timetable -->
+      <editor
+            id="depot.presentation.DepotEditorID"
+            name="%_UI_DepotEditor_label"
+            icon="icons/full/obj16/DepotModelFile.gif"
+            extensions="depot"
+            class="depot.presentation.DepotEditor"
+            contributorClass="depot.presentation.DepotActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

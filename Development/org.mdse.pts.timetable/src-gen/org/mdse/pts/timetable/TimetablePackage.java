@@ -2,8 +2,10 @@
  */
 package org.mdse.pts.timetable;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -65,13 +67,31 @@ public interface TimetablePackage extends EPackage {
 	int TIMETABLE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Table</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMETABLE__TABLE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Station</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMETABLE__STATION = 1;
+
+	/**
 	 * The number of structural features of the '<em>Timetable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMETABLE_FEATURE_COUNT = 0;
+	int TIMETABLE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Timetable</em>' class.
@@ -84,6 +104,292 @@ public interface TimetablePackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.mdse.pts.timetable.impl.TableImpl <em>Table</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.mdse.pts.timetable.impl.TableImpl
+	 * @see org.mdse.pts.timetable.impl.TimetablePackageImpl#getTable()
+	 * @generated
+	 */
+	int TABLE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Junctures</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE__JUNCTURES = 0;
+
+	/**
+	 * The feature id for the '<em><b>Station</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE__STATION = 1;
+
+	/**
+	 * The number of structural features of the '<em>Table</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Table</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.mdse.pts.timetable.impl.JunctureImpl <em>Juncture</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.mdse.pts.timetable.impl.JunctureImpl
+	 * @see org.mdse.pts.timetable.impl.TimetablePackageImpl#getJuncture()
+	 * @generated
+	 */
+	int JUNCTURE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Platform</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JUNCTURE__PLATFORM = 0;
+
+	/**
+	 * The feature id for the '<em><b>Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JUNCTURE__TIME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Train</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JUNCTURE__TRAIN = 2;
+
+	/**
+	 * The number of structural features of the '<em>Juncture</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JUNCTURE_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Juncture</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JUNCTURE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.mdse.pts.timetable.impl.ArrivalImpl <em>Arrival</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.mdse.pts.timetable.impl.ArrivalImpl
+	 * @see org.mdse.pts.timetable.impl.TimetablePackageImpl#getArrival()
+	 * @generated
+	 */
+	int ARRIVAL = 2;
+
+	/**
+	 * The feature id for the '<em><b>Platform</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRIVAL__PLATFORM = JUNCTURE__PLATFORM;
+
+	/**
+	 * The feature id for the '<em><b>Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRIVAL__TIME = JUNCTURE__TIME;
+
+	/**
+	 * The feature id for the '<em><b>Train</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRIVAL__TRAIN = JUNCTURE__TRAIN;
+
+	/**
+	 * The feature id for the '<em><b>Origin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRIVAL__ORIGIN = JUNCTURE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Arrival</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRIVAL_FEATURE_COUNT = JUNCTURE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Arrival</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRIVAL_OPERATION_COUNT = JUNCTURE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.mdse.pts.timetable.impl.DepartureImpl <em>Departure</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.mdse.pts.timetable.impl.DepartureImpl
+	 * @see org.mdse.pts.timetable.impl.TimetablePackageImpl#getDeparture()
+	 * @generated
+	 */
+	int DEPARTURE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Platform</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPARTURE__PLATFORM = JUNCTURE__PLATFORM;
+
+	/**
+	 * The feature id for the '<em><b>Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPARTURE__TIME = JUNCTURE__TIME;
+
+	/**
+	 * The feature id for the '<em><b>Train</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPARTURE__TRAIN = JUNCTURE__TRAIN;
+
+	/**
+	 * The feature id for the '<em><b>Destination</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPARTURE__DESTINATION = JUNCTURE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Departure</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPARTURE_FEATURE_COUNT = JUNCTURE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Departure</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPARTURE_OPERATION_COUNT = JUNCTURE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link org.mdse.pts.timetable.impl.StationImpl <em>Station</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.mdse.pts.timetable.impl.StationImpl
+	 * @see org.mdse.pts.timetable.impl.TimetablePackageImpl#getStation()
+	 * @generated
+	 */
+	int STATION = 5;
+
+	/**
+	 * The number of structural features of the '<em>Station</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATION_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Station</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATION_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.mdse.pts.timetable.impl.TrainImpl <em>Train</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.mdse.pts.timetable.impl.TrainImpl
+	 * @see org.mdse.pts.timetable.impl.TimetablePackageImpl#getTrain()
+	 * @generated
+	 */
+	int TRAIN = 6;
+
+	/**
+	 * The number of structural features of the '<em>Train</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAIN_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Train</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRAIN_OPERATION_COUNT = 0;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.mdse.pts.timetable.Timetable <em>Timetable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -92,6 +398,165 @@ public interface TimetablePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTimetable();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.mdse.pts.timetable.Timetable#getTable <em>Table</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Table</em>'.
+	 * @see org.mdse.pts.timetable.Timetable#getTable()
+	 * @see #getTimetable()
+	 * @generated
+	 */
+	EReference getTimetable_Table();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.mdse.pts.timetable.Timetable#getStation <em>Station</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Station</em>'.
+	 * @see org.mdse.pts.timetable.Timetable#getStation()
+	 * @see #getTimetable()
+	 * @generated
+	 */
+	EReference getTimetable_Station();
+
+	/**
+	 * Returns the meta object for class '{@link org.mdse.pts.timetable.Table <em>Table</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Table</em>'.
+	 * @see org.mdse.pts.timetable.Table
+	 * @generated
+	 */
+	EClass getTable();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.mdse.pts.timetable.Table#getJunctures <em>Junctures</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Junctures</em>'.
+	 * @see org.mdse.pts.timetable.Table#getJunctures()
+	 * @see #getTable()
+	 * @generated
+	 */
+	EReference getTable_Junctures();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.mdse.pts.timetable.Table#getStation <em>Station</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Station</em>'.
+	 * @see org.mdse.pts.timetable.Table#getStation()
+	 * @see #getTable()
+	 * @generated
+	 */
+	EReference getTable_Station();
+
+	/**
+	 * Returns the meta object for class '{@link org.mdse.pts.timetable.Arrival <em>Arrival</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Arrival</em>'.
+	 * @see org.mdse.pts.timetable.Arrival
+	 * @generated
+	 */
+	EClass getArrival();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.mdse.pts.timetable.Arrival#getOrigin <em>Origin</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Origin</em>'.
+	 * @see org.mdse.pts.timetable.Arrival#getOrigin()
+	 * @see #getArrival()
+	 * @generated
+	 */
+	EReference getArrival_Origin();
+
+	/**
+	 * Returns the meta object for class '{@link org.mdse.pts.timetable.Departure <em>Departure</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Departure</em>'.
+	 * @see org.mdse.pts.timetable.Departure
+	 * @generated
+	 */
+	EClass getDeparture();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.mdse.pts.timetable.Departure#getDestination <em>Destination</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Destination</em>'.
+	 * @see org.mdse.pts.timetable.Departure#getDestination()
+	 * @see #getDeparture()
+	 * @generated
+	 */
+	EReference getDeparture_Destination();
+
+	/**
+	 * Returns the meta object for class '{@link org.mdse.pts.timetable.Juncture <em>Juncture</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Juncture</em>'.
+	 * @see org.mdse.pts.timetable.Juncture
+	 * @generated
+	 */
+	EClass getJuncture();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.mdse.pts.timetable.Juncture#getPlatform <em>Platform</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Platform</em>'.
+	 * @see org.mdse.pts.timetable.Juncture#getPlatform()
+	 * @see #getJuncture()
+	 * @generated
+	 */
+	EAttribute getJuncture_Platform();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.mdse.pts.timetable.Juncture#getTime <em>Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Time</em>'.
+	 * @see org.mdse.pts.timetable.Juncture#getTime()
+	 * @see #getJuncture()
+	 * @generated
+	 */
+	EAttribute getJuncture_Time();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.mdse.pts.timetable.Juncture#getTrain <em>Train</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Train</em>'.
+	 * @see org.mdse.pts.timetable.Juncture#getTrain()
+	 * @see #getJuncture()
+	 * @generated
+	 */
+	EReference getJuncture_Train();
+
+	/**
+	 * Returns the meta object for class '{@link org.mdse.pts.timetable.Station <em>Station</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Station</em>'.
+	 * @see org.mdse.pts.timetable.Station
+	 * @generated
+	 */
+	EClass getStation();
+
+	/**
+	 * Returns the meta object for class '{@link org.mdse.pts.timetable.Train <em>Train</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Train</em>'.
+	 * @see org.mdse.pts.timetable.Train
+	 * @generated
+	 */
+	EClass getTrain();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -125,6 +590,123 @@ public interface TimetablePackage extends EPackage {
 		 * @generated
 		 */
 		EClass TIMETABLE = eINSTANCE.getTimetable();
+		/**
+		 * The meta object literal for the '<em><b>Table</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TIMETABLE__TABLE = eINSTANCE.getTimetable_Table();
+		/**
+		 * The meta object literal for the '<em><b>Station</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TIMETABLE__STATION = eINSTANCE.getTimetable_Station();
+		/**
+		 * The meta object literal for the '{@link org.mdse.pts.timetable.impl.TableImpl <em>Table</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.mdse.pts.timetable.impl.TableImpl
+		 * @see org.mdse.pts.timetable.impl.TimetablePackageImpl#getTable()
+		 * @generated
+		 */
+		EClass TABLE = eINSTANCE.getTable();
+		/**
+		 * The meta object literal for the '<em><b>Junctures</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TABLE__JUNCTURES = eINSTANCE.getTable_Junctures();
+		/**
+		 * The meta object literal for the '<em><b>Station</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TABLE__STATION = eINSTANCE.getTable_Station();
+		/**
+		 * The meta object literal for the '{@link org.mdse.pts.timetable.impl.ArrivalImpl <em>Arrival</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.mdse.pts.timetable.impl.ArrivalImpl
+		 * @see org.mdse.pts.timetable.impl.TimetablePackageImpl#getArrival()
+		 * @generated
+		 */
+		EClass ARRIVAL = eINSTANCE.getArrival();
+		/**
+		 * The meta object literal for the '<em><b>Origin</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ARRIVAL__ORIGIN = eINSTANCE.getArrival_Origin();
+		/**
+		 * The meta object literal for the '{@link org.mdse.pts.timetable.impl.DepartureImpl <em>Departure</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.mdse.pts.timetable.impl.DepartureImpl
+		 * @see org.mdse.pts.timetable.impl.TimetablePackageImpl#getDeparture()
+		 * @generated
+		 */
+		EClass DEPARTURE = eINSTANCE.getDeparture();
+		/**
+		 * The meta object literal for the '<em><b>Destination</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DEPARTURE__DESTINATION = eINSTANCE.getDeparture_Destination();
+		/**
+		 * The meta object literal for the '{@link org.mdse.pts.timetable.impl.JunctureImpl <em>Juncture</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.mdse.pts.timetable.impl.JunctureImpl
+		 * @see org.mdse.pts.timetable.impl.TimetablePackageImpl#getJuncture()
+		 * @generated
+		 */
+		EClass JUNCTURE = eINSTANCE.getJuncture();
+		/**
+		 * The meta object literal for the '<em><b>Platform</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JUNCTURE__PLATFORM = eINSTANCE.getJuncture_Platform();
+		/**
+		 * The meta object literal for the '<em><b>Time</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JUNCTURE__TIME = eINSTANCE.getJuncture_Time();
+		/**
+		 * The meta object literal for the '<em><b>Train</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference JUNCTURE__TRAIN = eINSTANCE.getJuncture_Train();
+		/**
+		 * The meta object literal for the '{@link org.mdse.pts.timetable.impl.StationImpl <em>Station</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.mdse.pts.timetable.impl.StationImpl
+		 * @see org.mdse.pts.timetable.impl.TimetablePackageImpl#getStation()
+		 * @generated
+		 */
+		EClass STATION = eINSTANCE.getStation();
+		/**
+		 * The meta object literal for the '{@link org.mdse.pts.timetable.impl.TrainImpl <em>Train</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.mdse.pts.timetable.impl.TrainImpl
+		 * @see org.mdse.pts.timetable.impl.TimetablePackageImpl#getTrain()
+		 * @generated
+		 */
+		EClass TRAIN = eINSTANCE.getTrain();
 
 	}
 

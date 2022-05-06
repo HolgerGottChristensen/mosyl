@@ -52,8 +52,8 @@
       <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.depot/model/Depot.ecore#//CoachClass/Economy"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../org.mdse.pts.depot/model/Depot.ecore#//TrainType">
-      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.depot/model/Depot.ecore#//TrainType/REGIONAL"/>
-      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.depot/model/Depot.ecore#//TrainType/INTERCITY"/>
+      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.depot/model/Depot.ecore#//TrainType/Regional"/>
+      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.depot/model/Depot.ecore#//TrainType/Intercity"/>
     </genEnums>
     <genClasses ecoreClass="../../org.mdse.pts.depot/model/Depot.ecore#//Depot">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.mdse.pts.depot/model/Depot.ecore#//Depot/train"/>

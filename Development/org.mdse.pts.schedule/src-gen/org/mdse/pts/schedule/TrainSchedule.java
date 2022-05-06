@@ -68,7 +68,7 @@ public interface TrainSchedule extends EObject {
 	 * @return the value of the '<em>Route</em>' reference.
 	 * @see #setRoute(Route)
 	 * @see org.mdse.pts.schedule.SchedulePackage#getTrainSchedule_Route()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	Route getRoute();
