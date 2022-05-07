@@ -23,3 +23,4 @@ Require-Bundle: org.eclipse.core.runtime,
  org.mdse.pts.depot;visibility:=reexport,
  org.mdse.pts.network;visibility:=reexport
 Bundle-ActivationPolicy: lazy
+Import-Package: org.eclipse.ui

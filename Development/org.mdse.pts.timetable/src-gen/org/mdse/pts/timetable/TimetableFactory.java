@@ -31,6 +31,60 @@ public interface TimetableFactory extends EFactory {
 	Timetable createTimetable();
 
 	/**
+	 * Returns a new object of class '<em>Table</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Table</em>'.
+	 * @generated
+	 */
+	Table createTable();
+
+	/**
+	 * Returns a new object of class '<em>Arrival</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Arrival</em>'.
+	 * @generated
+	 */
+	Arrival createArrival();
+
+	/**
+	 * Returns a new object of class '<em>Departure</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Departure</em>'.
+	 * @generated
+	 */
+	Departure createDeparture();
+
+	/**
+	 * Returns a new object of class '<em>Juncture</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Juncture</em>'.
+	 * @generated
+	 */
+	Juncture createJuncture();
+
+	/**
+	 * Returns a new object of class '<em>Station</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Station</em>'.
+	 * @generated
+	 */
+	Station createStation();
+
+	/**
+	 * Returns a new object of class '<em>Train</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Train</em>'.
+	 * @generated
+	 */
+	Train createTrain();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
