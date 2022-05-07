@@ -90,12 +90,22 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 		return modelIsValid;
 	}
 	
+	private boolean validateRoute(Route route) {
+		boolean modelIsValid = false;
+		
+		modelIsValid &= validateRouteIsNavigateable(route);
+		modelIsValid &= validateStopExistsOnceInRoute(route);
+		
+		return modelIsValid;
+	}
+	
 	private boolean validateSchedule(Schedule schedule) {
 		boolean modelIsValid = false;
 		
 		modelIsValid &= validateRouteIsUniqueToSchedule(schedule);
 		modelIsValid &= validateRouteExistsInNetwork(schedule);
 		modelIsValid &= validateTrainExistsInDepot(schedule);
+		modelIsValid &= validateDepotExistsOnce(schedule);
 		
 		return modelIsValid;
 	}
@@ -106,6 +116,32 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 		modelIsValid &= validateTrainCoachesForReversableStop(trainSchedule);
 		
 		return modelIsValid;
+	}
+	
+	private boolean validateStopExistsOnceInRoute(Route route) {
+		boolean stationExistsOnce = false;
+		boolean stopExistsOnce = false;
+		
+		List<network.Station> stations = route.getStops().stream()
+				.map(s -> s.getStation())
+				.collect(Collectors.toList());
+		HashSet<network.Station> stationSet = new HashSet<>(stations);
+		stationExistsOnce = stationSet.size() == stations.size();
+		stopExistsOnce = route.getStops().size() == new HashSet<>(route.getStops()).size();
+		
+		if(!stationExistsOnce || !stopExistsOnce) {
+			constraintViolated(route, route.toString() + ": contains the same station/stop multiple times");
+		}
+		return stationExistsOnce;
+	}
+	
+	private boolean validateDepotExistsOnce(Schedule schedule) {
+		boolean depotExistsOnce = schedule.getDepot().size() == new HashSet<>(schedule.getDepot()).size();
+		
+		if(!depotExistsOnce) {
+			constraintViolated(schedule, schedule.toString() + ": contains the same depot multiple times");
+		}
+		return depotExistsOnce;
 	}
 	
 	private boolean validateRouteExistsInNetwork(Schedule schedule) {
@@ -164,14 +200,6 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 			return twiceLocomotive;
 		}
 		return true;
-	}
-	
-	private boolean validateRoute(Route route) {
-		boolean modelIsValid = false;
-		
-		modelIsValid &= validateRouteIsNavigateable(route);
-		
-		return modelIsValid;
 	}
 	
 	private boolean validateRouteIsNavigateable(Route route) {
