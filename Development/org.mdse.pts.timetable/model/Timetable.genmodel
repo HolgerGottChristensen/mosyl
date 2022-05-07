@@ -10,7 +10,7 @@
       ecorePackage="Timetable.ecore#/">
     <genClasses ecoreClass="Timetable.ecore#//Timetable">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Timetable.ecore#//Timetable/table"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Timetable.ecore#//Timetable/station"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Timetable.ecore#//Timetable/station"/>
     </genClasses>
     <genClasses ecoreClass="Timetable.ecore#//Table">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Timetable.ecore#//Table/junctures"/>

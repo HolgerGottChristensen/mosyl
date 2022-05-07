@@ -5,13 +5,13 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="table" upperBound="-1"
         eType="#//Table" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="station" upperBound="-1"
-        eType="ecore:EClass ../../org.mdse.pts.network/model/Network.ecore#//Station"
-        containment="true"/>
+        eType="ecore:EClass ../../org.mdse.pts.network/model/Network.ecore#//Station"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Table">
     <eStructuralFeatures xsi:type="ecore:EReference" name="junctures" upperBound="-1"
         eType="#//Juncture" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="station" eType="ecore:EClass ../../org.mdse.pts.network/model/Network.ecore#//Station"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="station" lowerBound="1"
+        eType="ecore:EClass ../../org.mdse.pts.network/model/Network.ecore#//Station"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Arrival" eSuperTypes="#//Juncture">
     <eStructuralFeatures xsi:type="ecore:EReference" name="origin" lowerBound="1"

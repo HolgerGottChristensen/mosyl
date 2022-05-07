@@ -51,22 +51,18 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 			Schedule schedule = (Schedule) eObject;
 			modelIsValid &= validateSchedule(schedule);
 		}
-		
 		if (SchedulePackage.eINSTANCE.getTrainSchedule().equals(eClass)) {
 			TrainSchedule trainSchedule = (TrainSchedule) eObject;
 			modelIsValid &= validateTrainSchedule(trainSchedule);
 		}
-		
 		if (SchedulePackage.eINSTANCE.getRoute().equals(eClass)) {
 			Route route = (Route) eObject;
 			modelIsValid &= validateRoute(route);
 		}
-		
 		if (SchedulePackage.eINSTANCE.getTime().equals(eClass)) {
 			Time time = (Time) eObject;
 			modelIsValid &= validateTime(time);
 		}
-		
 		if (SchedulePackage.eINSTANCE.getStop().equals(eClass)) {
 			Stop stop = (Stop) eObject;
 			modelIsValid &= validateStop(stop);
@@ -75,12 +71,10 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 		if(!modelIsValid) {
 			constraintViolated(eObject, eObject.toString() + ": some problem occured");
 		}
-		
 		return modelIsValid;
 	}
 	
 	private boolean validateStop(Stop stop) {
-		//TODO figure out how to skip the last element 
 		boolean modelIsValid = false;
 				
 		modelIsValid &= validateLegsbetweenSameStopsHaveNames(stop);
@@ -89,7 +83,6 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 	}
 	
 	private boolean validateTime(Time time) {
-		//TODO figure out how to skip the last element 
 		boolean modelIsValid = false;
 		
 		modelIsValid &= validateTimeIsConsistent(time);
@@ -98,7 +91,6 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 	}
 	
 	private boolean validateSchedule(Schedule schedule) {
-		//TODO figure out how to skip the last element 
 		boolean modelIsValid = false;
 		
 		modelIsValid &= validateRouteIsUniqueToSchedule(schedule);
@@ -109,7 +101,6 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 	}
 	
 	private boolean validateTrainSchedule(TrainSchedule trainSchedule) {
-		//TODO figure out how to skip the last element 
 		boolean modelIsValid = false;
 		
 		modelIsValid &= validateTrainCoachesForReversableStop(trainSchedule);
@@ -118,7 +109,6 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 	}
 	
 	private boolean validateRouteExistsInNetwork(Schedule schedule) {
-		//TODO figure out how to skip the last element 
 		boolean existsInNetwork = true;
 		
 		for(Route r : schedule.getRoutes()) {
@@ -130,12 +120,10 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 		if(!existsInNetwork) {
 			constraintViolated(schedule, schedule.toString() + ": some station does not exist in the network of the schedules");
 		}
-		
 		return existsInNetwork;
 	}
 	
 	private boolean validateTrainExistsInDepot(Schedule schedule) {
-		//TODO figure out how to skip the last element 
 		boolean existsInDepot = true;
 		
 		existsInDepot &= schedule.getTrains().stream().allMatch(t -> {
@@ -145,13 +133,10 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 		if(!existsInDepot) {
 			constraintViolated(schedule, schedule.toString() + ": some train does not exist in the depots of the schedules");
 		}
-		
 		return existsInDepot;
 	}
 	
 	private boolean validateRouteIsUniqueToSchedule(Schedule schedule) {
-		//TODO figure out how to skip the last element
-		
 		boolean isUnique = true;
 		
 		for(TrainSchedule ts1 : schedule.getTrains()) {
@@ -164,13 +149,10 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 		if(!isUnique) {
 			constraintViolated(schedule, schedule.toString() + ": some route is used more than once by multiple train schedules");
 		}
-		
 		return isUnique;
 	}
 	
 	private boolean validateTrainCoachesForReversableStop(TrainSchedule trainSchedule) {
-		//TODO figure out how to skip the last element 
-		
 		if(trainSchedule.getRoute().getStops().stream().anyMatch(stop -> stop.isRotate())) {
 			List<depot.Coach> coaches = trainSchedule.getTrain().getCoach().stream()
 					.filter(coach -> Locomotive.class.isInstance(coach))
@@ -181,13 +163,10 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 			}
 			return twiceLocomotive;
 		}
-		
 		return true;
 	}
 	
-	
 	private boolean validateRoute(Route route) {
-		//TODO figure out how to skip the last element 
 		boolean modelIsValid = false;
 		
 		modelIsValid &= validateRouteIsNavigateable(route);
@@ -196,9 +175,6 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 	}
 	
 	private boolean validateRouteIsNavigateable(Route route) {
-		//TODO figure out how to skip the last element 
-		
-		
 		//solve connected components problem
 		boolean[] marked = new boolean[route.getStops().size()];
 		int count = 0;
@@ -219,13 +195,11 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 			}
 		}
 		
-		
 		boolean singleComponent = count == 1;
-		
+
 		if(!singleComponent) {
 			constraintViolated(route, route.toString() + ": route is not navigateable");
 		}
-		
 		return singleComponent;
 	}
 	
@@ -235,7 +209,6 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 		if(!isConsistent) {
 			constraintViolated(time, time.getHour() + ":" + time.getMinute() + " is not a valid time");
 		}
-		
 		return isConsistent;
 	}
 	
@@ -249,12 +222,11 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 				.collect(Collectors.toList());
 		
 		HashSet<network.Station> stationSet = new HashSet<>(stationList);
-		specifiable = stationList.size() == stationSet.size();
+		specifiable = stationList.size() == stationSet.size() || stop.getVia() != null;
 		
 		if(!specifiable) {
 			constraintViolated(stop, stop.getStation().getName() + ": is sourced for from a station with unspecifiable legs to this stop");
 		}
-		
 		return specifiable;
 	}
 	
@@ -276,10 +248,8 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 		for(Stop s : r2.getStops()) {
 			if (!r2.getStops().contains(s)) return false;
 		}
-		
 		return true;
 	}
-	
 	
 	//Utility method
 	protected boolean constraintViolated(EObject object, String message) {
