@@ -11,6 +11,5 @@
       <coach xsi:type="depot:PassengerCoach"/>
       <coach xsi:type="depot:Locomotive"/>
     </train>
-    <train/>
   </depot>
 </depot:Root>

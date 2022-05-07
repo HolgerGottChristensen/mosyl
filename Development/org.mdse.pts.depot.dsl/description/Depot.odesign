@@ -4,8 +4,8 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Depot Diagram Representation" domainClass="depot.Depot">
       <defaultLayer name="Default">
         <containerMappings name="depot" domainClass="depot.Depot" childrenPresentation="VerticalStack">
-          <subContainerMappings name="Train container" semanticCandidatesExpression="feature:eAllContents" domainClass="depot.Train" dropDescriptions="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='coach%20to%20different%20train']" childrenPresentation="HorizontalStack">
-            <subContainerMappings name="coach" semanticCandidatesExpression="feature:eAllContents" domainClass="depot.Coach">
+          <subContainerMappings name="Train container" labelDirectEdit="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@subSections[name='Edit']/@ownedTools[name='Train%20name']" semanticCandidatesExpression="feature:eAllContents" domainClass="depot.Train" dropDescriptions="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@ownedTools[name='coach%20to%20different%20train']" childrenPresentation="HorizontalStack">
+            <subContainerMappings name="coach" labelDirectEdit="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@subSections[name='Edit']/@ownedTools[name='Wagon%20number']" semanticCandidatesExpression="feature:eAllContents" domainClass="depot.Coach">
               <conditionnalStyles predicateExpression="aql: self.oclIsTypeOf(depot::Locomotive) and self.eContainer().coach->at(1) = self">
                 <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql: 'Locomotive: ' + self.wagonNumber" hideLabelByDefault="true" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.mdse.pts.depot.dsl/symbols/LocomotiveLeading.png">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -19,7 +19,7 @@
                 </style>
               </conditionnalStyles>
               <conditionnalStyles predicateExpression="aql: self.oclIsTypeOf(depot::Locomotive) and self.eContainer().coach->at(1) &lt;> self">
-                <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql: 'Locomotive: ' + self.wagonNumber" hideLabelByDefault="true" workspacePath="/org.mdse.pts.depot.dsl/symbols/LocomotiveTrailing.png">
+                <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql: 'Locomotive: ' + self.wagonNumber" hideLabelByDefault="true" sizeComputationExpression="-1" workspacePath="/org.mdse.pts.depot.dsl/symbols/LocomotiveTrailing.png">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 </style>
@@ -45,7 +45,7 @@
               <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </subContainerMappings>
-          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="aql: 'Train Depot'">
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="12" labelExpression="aql: 'Train Depot'" labelAlignment="LEFT">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
@@ -101,10 +101,24 @@
             <newViewContainer name="newContainerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:newSemanticContainer">
-                <subModelOperations xsi:type="tool_1:SetValue" featureName="coach" valueExpression="var:element"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="coaches" valueExpression="aql: newSemanticContainer."/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
+          <subSections name="Edit">
+            <ownedTools xsi:type="tool:DirectEditLabel" name="Wagon number">
+              <mask mask="{0}"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:SetValue" featureName="wagonNumber" valueExpression="var:0"/>
+              </initialOperation>
+            </ownedTools>
+            <ownedTools xsi:type="tool:DirectEditLabel" name="Train name">
+              <mask mask="{0}"/>
+              <initialOperation>
+                <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
+              </initialOperation>
+            </ownedTools>
+          </subSections>
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
