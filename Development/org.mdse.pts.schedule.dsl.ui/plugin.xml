@@ -7,7 +7,7 @@
 			class="org.mdse.pts.schedule.dsl.ui.ScheduleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
 			contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
 			default="true"
-			extensions="schedule"
+			extensions="trainschedule"
 			id="org.mdse.pts.schedule.dsl.Schedule"
 			name="Schedule Editor">
 		</editor>
@@ -207,7 +207,7 @@
 	<extension point="org.eclipse.core.contenttype.contentTypes">
 		<content-type
 			base-type="org.eclipse.core.runtime.text"
-			file-extensions="schedule"
+			file-extensions="trainschedule"
 			id="org.mdse.pts.schedule.dsl.Schedule.contenttype"
 			name="Schedule File"
 			priority="normal">
@@ -404,7 +404,7 @@
 	<extension point="org.eclipse.compare.contentViewers">
 		<viewer id="org.mdse.pts.schedule.dsl.Schedule.compare.contentViewers"
 			class="org.mdse.pts.schedule.dsl.ui.ScheduleExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-			extensions="schedule">
+			extensions="trainschedule">
 		</viewer>
 		<contentTypeBinding
 			contentTypeId="org.mdse.pts.schedule.dsl.Schedule.contenttype"
@@ -413,7 +413,7 @@
 	<extension point="org.eclipse.compare.contentMergeViewers">
 		<viewer id="org.mdse.pts.schedule.dsl.Schedule.compare.contentMergeViewers"
 			class="org.mdse.pts.schedule.dsl.ui.ScheduleExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
-			extensions="schedule" label="Schedule Compare">
+			extensions="trainschedule" label="Schedule Compare">
 		</viewer>
 		<contentTypeBinding
 			contentTypeId="org.mdse.pts.schedule.dsl.Schedule.contenttype"
@@ -422,12 +422,12 @@
 	<extension point="org.eclipse.ui.editors.documentProviders">
 		<provider id="org.mdse.pts.schedule.dsl.Schedule.editors.documentProviders"
 			class="org.mdse.pts.schedule.dsl.ui.ScheduleExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
-			extensions="schedule">
+			extensions="trainschedule">
 		</provider>
 	</extension>
 	<extension point="org.eclipse.team.core.fileTypes">
 		<fileTypes
-			extension="schedule"
+			extension="trainschedule"
 			type="text">
 		</fileTypes>
 	</extension>

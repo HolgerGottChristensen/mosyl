@@ -13,7 +13,6 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -62,31 +61,8 @@ public class TrainScheduleItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addRoutePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Route feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addRoutePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_TrainSchedule_route_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_TrainSchedule_route_feature", "_UI_TrainSchedule_type"),
-				 SchedulePackage.Literals.TRAIN_SCHEDULE__ROUTE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -102,6 +78,7 @@ public class TrainScheduleItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SchedulePackage.Literals.TRAIN_SCHEDULE__STARTTIMES);
+			childrenFeatures.add(SchedulePackage.Literals.TRAIN_SCHEDULE__STOPS);
 		}
 		return childrenFeatures;
 	}
@@ -155,6 +132,7 @@ public class TrainScheduleItemProvider
 
 		switch (notification.getFeatureID(TrainSchedule.class)) {
 			case SchedulePackage.TRAIN_SCHEDULE__STARTTIMES:
+			case SchedulePackage.TRAIN_SCHEDULE__STOPS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -176,6 +154,11 @@ public class TrainScheduleItemProvider
 			(createChildParameter
 				(SchedulePackage.Literals.TRAIN_SCHEDULE__STARTTIMES,
 				 ScheduleFactory.eINSTANCE.createStartTime()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(SchedulePackage.Literals.TRAIN_SCHEDULE__STOPS,
+				 ScheduleFactory.eINSTANCE.createStop()));
 	}
 
 	/**

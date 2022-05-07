@@ -186,29 +186,6 @@ public class DepotItemProviderAdapterFactory extends DepotAdapterFactory impleme
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link depot.Coach} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected CoachItemProvider coachItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link depot.Coach}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createCoachAdapter() {
-		if (coachItemProvider == null) {
-			coachItemProvider = new CoachItemProvider(this);
-		}
-
-		return coachItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link depot.Root} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

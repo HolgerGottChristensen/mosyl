@@ -35,7 +35,7 @@ public class TimeImpl extends MinimalEObjectImpl.Container implements Time {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final byte HOUR_EDEFAULT = 0x00;
+	protected static final int HOUR_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getHour() <em>Hour</em>}' attribute.
@@ -45,7 +45,7 @@ public class TimeImpl extends MinimalEObjectImpl.Container implements Time {
 	 * @generated
 	 * @ordered
 	 */
-	protected byte hour = HOUR_EDEFAULT;
+	protected int hour = HOUR_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getMinute() <em>Minute</em>}' attribute.
@@ -55,7 +55,7 @@ public class TimeImpl extends MinimalEObjectImpl.Container implements Time {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final byte MINUTE_EDEFAULT = 0x00;
+	protected static final int MINUTE_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getMinute() <em>Minute</em>}' attribute.
@@ -65,7 +65,7 @@ public class TimeImpl extends MinimalEObjectImpl.Container implements Time {
 	 * @generated
 	 * @ordered
 	 */
-	protected byte minute = MINUTE_EDEFAULT;
+	protected int minute = MINUTE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -92,7 +92,7 @@ public class TimeImpl extends MinimalEObjectImpl.Container implements Time {
 	 * @generated
 	 */
 	@Override
-	public byte getHour() {
+	public int getHour() {
 		return hour;
 	}
 
@@ -102,8 +102,8 @@ public class TimeImpl extends MinimalEObjectImpl.Container implements Time {
 	 * @generated
 	 */
 	@Override
-	public void setHour(byte newHour) {
-		byte oldHour = hour;
+	public void setHour(int newHour) {
+		int oldHour = hour;
 		hour = newHour;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.TIME__HOUR, oldHour, hour));
@@ -115,7 +115,7 @@ public class TimeImpl extends MinimalEObjectImpl.Container implements Time {
 	 * @generated
 	 */
 	@Override
-	public byte getMinute() {
+	public int getMinute() {
 		return minute;
 	}
 
@@ -125,8 +125,8 @@ public class TimeImpl extends MinimalEObjectImpl.Container implements Time {
 	 * @generated
 	 */
 	@Override
-	public void setMinute(byte newMinute) {
-		byte oldMinute = minute;
+	public void setMinute(int newMinute) {
+		int oldMinute = minute;
 		minute = newMinute;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.TIME__MINUTE, oldMinute, minute));
@@ -157,10 +157,10 @@ public class TimeImpl extends MinimalEObjectImpl.Container implements Time {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case SchedulePackage.TIME__HOUR:
-				setHour((Byte)newValue);
+				setHour((Integer)newValue);
 				return;
 			case SchedulePackage.TIME__MINUTE:
-				setMinute((Byte)newValue);
+				setMinute((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

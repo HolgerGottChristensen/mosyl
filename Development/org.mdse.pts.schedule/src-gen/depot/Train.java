@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link depot.Train#getCoach <em>Coach</em>}</li>
  *   <li>{@link depot.Train#getName <em>Name</em>}</li>
+ *   <li>{@link depot.Train#getType <em>Type</em>}</li>
  * </ul>
  *
  * @see depot.DepotPackage#getTrain()
@@ -59,5 +60,30 @@ public interface Train extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link depot.TrainType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Type</em>' attribute.
+	 * @see depot.TrainType
+	 * @see #setType(TrainType)
+	 * @see depot.DepotPackage#getTrain_Type()
+	 * @model required="true"
+	 * @generated
+	 */
+	TrainType getType();
+
+	/**
+	 * Sets the value of the '{@link depot.Train#getType <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * @see depot.TrainType
+	 * @see #getType()
+	 * @generated
+	 */
+	void setType(TrainType value);
 
 } // Train

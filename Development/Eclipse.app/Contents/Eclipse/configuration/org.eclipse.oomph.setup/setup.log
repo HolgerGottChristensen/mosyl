@@ -814,3 +814,21 @@
 [2022-04-30 14:59:59] Performing Preference /instance/org.eclipse.xtext.ui/syntaxColorer.xbase.static.method.invocation.color
 [2022-04-30 14:59:59] Performing Preference /instance/org.eclipse.xtext.ui/syntaxColorer.xbase.static.method.invocation.style
 [2022-04-30 14:59:59] 
+[2022-05-07 14:18:13] Executing startup tasks
+[2022-05-07 14:18:13] OpenJDK Runtime Environment 17.0.2+8
+[2022-05-07 14:18:13] Product self.product.version
+[2022-05-07 14:18:13] Workspace /Users/holgerchristensen/mosyl/Project_Task/Runtime
+[2022-05-07 14:18:13] Bundle org.eclipse.oomph.setup 1.23.0.v20220301-0958, build=5396, branch=0ca218831ae58471d57f6865eb1ac482255de190
+[2022-05-07 14:18:13] Bundle org.eclipse.oomph.setup.core 1.23.0.v20220301-0958, build=5396, branch=0ca218831ae58471d57f6865eb1ac482255de190
+[2022-05-07 14:18:13] Bundle org.eclipse.oomph.setup.p2 1.18.0.v20220301-0958, build=5396, branch=0ca218831ae58471d57f6865eb1ac482255de190
+[2022-05-07 14:18:13] Performing Preference /instance/org.eclipse.ui.genericeditor/matchingBracketsColor
+[2022-05-07 14:18:13] 
+[2022-05-07 18:22:29] Executing startup tasks
+[2022-05-07 18:22:29] OpenJDK Runtime Environment 17.0.2+8
+[2022-05-07 18:22:29] Product self.product.version
+[2022-05-07 18:22:29] Workspace /Users/holgerchristensen/mosyl/Project_Task/Runtime
+[2022-05-07 18:22:29] Bundle org.eclipse.oomph.setup 1.23.0.v20220301-0958, build=5396, branch=0ca218831ae58471d57f6865eb1ac482255de190
+[2022-05-07 18:22:29] Bundle org.eclipse.oomph.setup.core 1.23.0.v20220301-0958, build=5396, branch=0ca218831ae58471d57f6865eb1ac482255de190
+[2022-05-07 18:22:29] Bundle org.eclipse.oomph.setup.p2 1.18.0.v20220301-0958, build=5396, branch=0ca218831ae58471d57f6865eb1ac482255de190
+[2022-05-07 18:22:29] Performing Preference /instance/org.eclipse.jdt.ui/sourceHoverBackgroundColor
+[2022-05-07 18:22:30] 

@@ -1,13 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<schedule:Schedule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:schedule="http://mdse.org/pts/schedule">
-  <trains>
-    <starttimes>
-      <timestamps/>
-      <timestamps/>
-    </starttimes>
-  </trains>
-  <routes>
-    <stops/>
-    <stops platform="A1" stoppedTime="5" rotate="true"/>
-  </routes>
-</schedule:Schedule>
+schedule

@@ -62,7 +62,6 @@ public class ScheduleFactoryImpl extends EFactoryImpl implements ScheduleFactory
 			case SchedulePackage.START_TIME: return createStartTime();
 			case SchedulePackage.TIME: return createTime();
 			case SchedulePackage.STOP: return createStop();
-			case SchedulePackage.ROUTE: return createRoute();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -151,17 +150,6 @@ public class ScheduleFactoryImpl extends EFactoryImpl implements ScheduleFactory
 	public Stop createStop() {
 		StopImpl stop = new StopImpl();
 		return stop;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Route createRoute() {
-		RouteImpl route = new RouteImpl();
-		return route;
 	}
 
 	/**

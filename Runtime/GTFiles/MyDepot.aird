@@ -4,7 +4,7 @@
     <semanticResources>MyDepot.depot</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_uq1wAMWvEeyUFK50AcKtlg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_u3wxsMWvEeyUFK50AcKtlg" name="new Depot Diagram Representation" repPath="#_u3vjkMWvEeyUFK50AcKtlg" changeId="cd5df999-6f0d-4e68-bc22-2f429b107ca6">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_u3wxsMWvEeyUFK50AcKtlg" name="new Depot Diagram Representation" repPath="#_u3vjkMWvEeyUFK50AcKtlg" changeId="2f8a44de-2212-4bd7-bfea-c43cf07c3deb">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']"/>
         <target xmi:type="depot:Depot" href="MyDepot.depot#//@depot"/>
       </ownedRepresentationDescriptors>
@@ -121,7 +121,8 @@
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_u35UkMWvEeyUFK50AcKtlg" name="Train: My first train" width="30" childrenPresentation="HorizontalStack">
         <target xmi:type="depot:Train" href="MyDepot.depot#//@depot/@train.0"/>
         <semanticElements xmi:type="depot:Train" href="MyDepot.depot#//@depot/@train.0"/>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_u35UkcWvEeyUFK50AcKtlg" labelSize="12" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,255,255">
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_u35UkcWvEeyUFK50AcKtlg" labelSize="12" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,255,255">
+          <labelFormat>bold</labelFormat>
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='depot']/@subContainerMappings[name='Train%20container']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='depot']/@subContainerMappings[name='Train%20container']"/>
@@ -161,7 +162,8 @@
       <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_u35Uk8WvEeyUFK50AcKtlg" name="Train: My second train" width="30" childrenPresentation="HorizontalStack">
         <target xmi:type="depot:Train" href="MyDepot.depot#//@depot/@train.1"/>
         <semanticElements xmi:type="depot:Train" href="MyDepot.depot#//@depot/@train.1"/>
-        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_u35UlMWvEeyUFK50AcKtlg" labelSize="12" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,255,255">
+        <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_u35UlMWvEeyUFK50AcKtlg" labelSize="12" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,255,255">
+          <labelFormat>bold</labelFormat>
           <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='depot']/@subContainerMappings[name='Train%20container']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@containerMappings[name='depot']/@subContainerMappings[name='Train%20container']"/>

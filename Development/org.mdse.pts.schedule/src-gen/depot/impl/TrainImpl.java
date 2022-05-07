@@ -5,6 +5,7 @@ package depot.impl;
 import depot.Coach;
 import depot.DepotPackage;
 import depot.Train;
+import depot.TrainType;
 
 import java.util.Collection;
 
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link depot.impl.TrainImpl#getCoach <em>Coach</em>}</li>
  *   <li>{@link depot.impl.TrainImpl#getName <em>Name</em>}</li>
+ *   <li>{@link depot.impl.TrainImpl#getType <em>Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +68,26 @@ public class TrainImpl extends MinimalEObjectImpl.Container implements Train {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final TrainType TYPE_EDEFAULT = TrainType.REGIONAL;
+
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected TrainType type = TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -127,6 +149,29 @@ public class TrainImpl extends MinimalEObjectImpl.Container implements Train {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public TrainType getType() {
+		return type;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setType(TrainType newType) {
+		TrainType oldType = type;
+		type = newType == null ? TYPE_EDEFAULT : newType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DepotPackage.TRAIN__TYPE, oldType, type));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -163,6 +208,8 @@ public class TrainImpl extends MinimalEObjectImpl.Container implements Train {
 				return getCoach();
 			case DepotPackage.TRAIN__NAME:
 				return getName();
+			case DepotPackage.TRAIN__TYPE:
+				return getType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -183,6 +230,9 @@ public class TrainImpl extends MinimalEObjectImpl.Container implements Train {
 			case DepotPackage.TRAIN__NAME:
 				setName((String)newValue);
 				return;
+			case DepotPackage.TRAIN__TYPE:
+				setType((TrainType)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -201,6 +251,9 @@ public class TrainImpl extends MinimalEObjectImpl.Container implements Train {
 			case DepotPackage.TRAIN__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case DepotPackage.TRAIN__TYPE:
+				setType(TYPE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -217,6 +270,8 @@ public class TrainImpl extends MinimalEObjectImpl.Container implements Train {
 				return coach != null && !coach.isEmpty();
 			case DepotPackage.TRAIN__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case DepotPackage.TRAIN__TYPE:
+				return type != TYPE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -233,6 +288,8 @@ public class TrainImpl extends MinimalEObjectImpl.Container implements Train {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", type: ");
+		result.append(type);
 		result.append(')');
 		return result.toString();
 	}

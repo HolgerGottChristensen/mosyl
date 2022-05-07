@@ -18,7 +18,6 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.mdse.pts.schedule.Route;
 import org.mdse.pts.schedule.Schedule;
 import org.mdse.pts.schedule.ScheduleFactory;
 import org.mdse.pts.schedule.SchedulePackage;
@@ -69,13 +68,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	private EClass stopEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass routeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -171,7 +163,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	@Override
-	public EReference getSchedule_Networkreference() {
+	public EReference getSchedule_Network() {
 		return (EReference)scheduleEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -181,7 +173,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	@Override
-	public EReference getSchedule_Depotreference() {
+	public EReference getSchedule_Depot() {
 		return (EReference)scheduleEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -193,16 +185,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	@Override
 	public EReference getSchedule_Trains() {
 		return (EReference)scheduleEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSchedule_Routes() {
-		return (EReference)scheduleEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -241,7 +223,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	@Override
-	public EReference getTrainSchedule_Route() {
+	public EReference getTrainSchedule_Stops() {
 		return (EReference)trainScheduleEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -371,26 +353,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	@Override
-	public EClass getRoute() {
-		return routeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getRoute_Stops() {
-		return (EReference)routeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EEnum getWeekday() {
 		return weekdayEEnum;
 	}
@@ -425,15 +387,14 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 
 		// Create classes and their features
 		scheduleEClass = createEClass(SCHEDULE);
-		createEReference(scheduleEClass, SCHEDULE__NETWORKREFERENCE);
-		createEReference(scheduleEClass, SCHEDULE__DEPOTREFERENCE);
+		createEReference(scheduleEClass, SCHEDULE__NETWORK);
+		createEReference(scheduleEClass, SCHEDULE__DEPOT);
 		createEReference(scheduleEClass, SCHEDULE__TRAINS);
-		createEReference(scheduleEClass, SCHEDULE__ROUTES);
 
 		trainScheduleEClass = createEClass(TRAIN_SCHEDULE);
 		createEReference(trainScheduleEClass, TRAIN_SCHEDULE__TRAIN);
 		createEReference(trainScheduleEClass, TRAIN_SCHEDULE__STARTTIMES);
-		createEReference(trainScheduleEClass, TRAIN_SCHEDULE__ROUTE);
+		createEReference(trainScheduleEClass, TRAIN_SCHEDULE__STOPS);
 
 		startTimeEClass = createEClass(START_TIME);
 		createEAttribute(startTimeEClass, START_TIME__WEEKDAYS);
@@ -449,9 +410,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		createEReference(stopEClass, STOP__VIA);
 		createEReference(stopEClass, STOP__STATION);
 		createEAttribute(stopEClass, STOP__ROTATE);
-
-		routeEClass = createEClass(ROUTE);
-		createEReference(routeEClass, ROUTE__STOPS);
 
 		// Create enums
 		weekdayEEnum = createEEnum(WEEKDAY);
@@ -492,23 +450,22 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(scheduleEClass, Schedule.class, "Schedule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getSchedule_Networkreference(), theNetworkPackage.getNetwork(), null, "networkreference", null, 1, 1, Schedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSchedule_Depotreference(), theDepotPackage.getRoot(), null, "depotreference", null, 1, -1, Schedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSchedule_Network(), theNetworkPackage.getNetwork(), null, "network", null, 1, 1, Schedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSchedule_Depot(), theDepotPackage.getRoot(), null, "depot", null, 1, -1, Schedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSchedule_Trains(), this.getTrainSchedule(), null, "trains", null, 1, -1, Schedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSchedule_Routes(), this.getRoute(), null, "routes", null, 0, -1, Schedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(trainScheduleEClass, TrainSchedule.class, "TrainSchedule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTrainSchedule_Train(), theDepotPackage.getTrain(), null, "train", null, 1, 1, TrainSchedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTrainSchedule_Starttimes(), this.getStartTime(), null, "starttimes", null, 0, -1, TrainSchedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTrainSchedule_Route(), this.getRoute(), null, "route", null, 0, 1, TrainSchedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTrainSchedule_Stops(), this.getStop(), null, "stops", null, 2, -1, TrainSchedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(startTimeEClass, StartTime.class, "StartTime", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStartTime_Weekdays(), this.getWeekday(), "weekdays", null, 1, -1, StartTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStartTime_Timestamps(), this.getTime(), null, "timestamps", null, 1, -1, StartTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(timeEClass, Time.class, "Time", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTime_Hour(), ecorePackage.getEByte(), "hour", null, 1, 1, Time.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTime_Minute(), ecorePackage.getEByte(), "minute", null, 1, 1, Time.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTime_Hour(), ecorePackage.getEInt(), "hour", null, 1, 1, Time.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTime_Minute(), ecorePackage.getEInt(), "minute", null, 1, 1, Time.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stopEClass, Stop.class, "Stop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStop_Platform(), ecorePackage.getEString(), "platform", null, 1, 1, Stop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -516,9 +473,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		initEReference(getStop_Via(), theNetworkPackage.getLeg(), null, "via", null, 0, 1, Stop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStop_Station(), theNetworkPackage.getStation(), null, "station", null, 1, 1, Stop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStop_Rotate(), ecorePackage.getEBoolean(), "rotate", null, 1, 1, Stop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(routeEClass, Route.class, "Route", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRoute_Stops(), this.getStop(), null, "stops", null, 2, -1, Route.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(weekdayEEnum, Weekday.class, "Weekday");

@@ -187,29 +187,6 @@ public class ScheduleItemProviderAdapterFactory extends ScheduleAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.mdse.pts.schedule.Route} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected RouteItemProvider routeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mdse.pts.schedule.Route}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createRouteAdapter() {
-		if (routeItemProvider == null) {
-			routeItemProvider = new RouteItemProvider(this);
-		}
-
-		return routeItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -319,7 +296,6 @@ public class ScheduleItemProviderAdapterFactory extends ScheduleAdapterFactory i
 		if (startTimeItemProvider != null) startTimeItemProvider.dispose();
 		if (timeItemProvider != null) timeItemProvider.dispose();
 		if (stopItemProvider != null) stopItemProvider.dispose();
-		if (routeItemProvider != null) routeItemProvider.dispose();
 	}
 
 }

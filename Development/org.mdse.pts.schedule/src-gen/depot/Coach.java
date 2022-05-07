@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see depot.DepotPackage#getCoach()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Coach extends EObject {
@@ -53,7 +53,7 @@ public interface Coach extends EObject {
 	 * @see #setTrain(Train)
 	 * @see depot.DepotPackage#getCoach_Train()
 	 * @see depot.Train#getCoach
-	 * @model opposite="coach" transient="false"
+	 * @model opposite="coach" required="true" transient="false"
 	 * @generated
 	 */
 	Train getTrain();

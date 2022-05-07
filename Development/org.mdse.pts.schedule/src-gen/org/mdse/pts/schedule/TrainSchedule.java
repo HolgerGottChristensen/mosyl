@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.mdse.pts.schedule.TrainSchedule#getTrain <em>Train</em>}</li>
  *   <li>{@link org.mdse.pts.schedule.TrainSchedule#getStarttimes <em>Starttimes</em>}</li>
- *   <li>{@link org.mdse.pts.schedule.TrainSchedule#getRoute <em>Route</em>}</li>
+ *   <li>{@link org.mdse.pts.schedule.TrainSchedule#getStops <em>Stops</em>}</li>
  * </ul>
  *
  * @see org.mdse.pts.schedule.SchedulePackage#getTrainSchedule()
@@ -62,25 +62,15 @@ public interface TrainSchedule extends EObject {
 	EList<StartTime> getStarttimes();
 
 	/**
-	 * Returns the value of the '<em><b>Route</b></em>' reference.
+	 * Returns the value of the '<em><b>Stops</b></em>' containment reference list.
+	 * The list contents are of type {@link org.mdse.pts.schedule.Stop}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Route</em>' reference.
-	 * @see #setRoute(Route)
-	 * @see org.mdse.pts.schedule.SchedulePackage#getTrainSchedule_Route()
-	 * @model
+	 * @return the value of the '<em>Stops</em>' containment reference list.
+	 * @see org.mdse.pts.schedule.SchedulePackage#getTrainSchedule_Stops()
+	 * @model containment="true" lower="2"
 	 * @generated
 	 */
-	Route getRoute();
-
-	/**
-	 * Sets the value of the '{@link org.mdse.pts.schedule.TrainSchedule#getRoute <em>Route</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Route</em>' reference.
-	 * @see #getRoute()
-	 * @generated
-	 */
-	void setRoute(Route value);
+	EList<Stop> getStops();
 
 } // TrainSchedule

@@ -20,9 +20,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.mdse.pts.schedule.Route;
 import org.mdse.pts.schedule.SchedulePackage;
 import org.mdse.pts.schedule.StartTime;
+import org.mdse.pts.schedule.Stop;
 import org.mdse.pts.schedule.TrainSchedule;
 
 /**
@@ -35,7 +35,7 @@ import org.mdse.pts.schedule.TrainSchedule;
  * <ul>
  *   <li>{@link org.mdse.pts.schedule.impl.TrainScheduleImpl#getTrain <em>Train</em>}</li>
  *   <li>{@link org.mdse.pts.schedule.impl.TrainScheduleImpl#getStarttimes <em>Starttimes</em>}</li>
- *   <li>{@link org.mdse.pts.schedule.impl.TrainScheduleImpl#getRoute <em>Route</em>}</li>
+ *   <li>{@link org.mdse.pts.schedule.impl.TrainScheduleImpl#getStops <em>Stops</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,14 +62,14 @@ public class TrainScheduleImpl extends MinimalEObjectImpl.Container implements T
 	protected EList<StartTime> starttimes;
 
 	/**
-	 * The cached value of the '{@link #getRoute() <em>Route</em>}' reference.
+	 * The cached value of the '{@link #getStops() <em>Stops</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRoute()
+	 * @see #getStops()
 	 * @generated
 	 * @ordered
 	 */
-	protected Route route;
+	protected EList<Stop> stops;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -149,38 +149,11 @@ public class TrainScheduleImpl extends MinimalEObjectImpl.Container implements T
 	 * @generated
 	 */
 	@Override
-	public Route getRoute() {
-		if (route != null && route.eIsProxy()) {
-			InternalEObject oldRoute = (InternalEObject)route;
-			route = (Route)eResolveProxy(oldRoute);
-			if (route != oldRoute) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SchedulePackage.TRAIN_SCHEDULE__ROUTE, oldRoute, route));
-			}
+	public EList<Stop> getStops() {
+		if (stops == null) {
+			stops = new EObjectContainmentEList<Stop>(Stop.class, this, SchedulePackage.TRAIN_SCHEDULE__STOPS);
 		}
-		return route;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Route basicGetRoute() {
-		return route;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setRoute(Route newRoute) {
-		Route oldRoute = route;
-		route = newRoute;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SchedulePackage.TRAIN_SCHEDULE__ROUTE, oldRoute, route));
+		return stops;
 	}
 
 	/**
@@ -193,6 +166,8 @@ public class TrainScheduleImpl extends MinimalEObjectImpl.Container implements T
 		switch (featureID) {
 			case SchedulePackage.TRAIN_SCHEDULE__STARTTIMES:
 				return ((InternalEList<?>)getStarttimes()).basicRemove(otherEnd, msgs);
+			case SchedulePackage.TRAIN_SCHEDULE__STOPS:
+				return ((InternalEList<?>)getStops()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -210,9 +185,8 @@ public class TrainScheduleImpl extends MinimalEObjectImpl.Container implements T
 				return basicGetTrain();
 			case SchedulePackage.TRAIN_SCHEDULE__STARTTIMES:
 				return getStarttimes();
-			case SchedulePackage.TRAIN_SCHEDULE__ROUTE:
-				if (resolve) return getRoute();
-				return basicGetRoute();
+			case SchedulePackage.TRAIN_SCHEDULE__STOPS:
+				return getStops();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -233,8 +207,9 @@ public class TrainScheduleImpl extends MinimalEObjectImpl.Container implements T
 				getStarttimes().clear();
 				getStarttimes().addAll((Collection<? extends StartTime>)newValue);
 				return;
-			case SchedulePackage.TRAIN_SCHEDULE__ROUTE:
-				setRoute((Route)newValue);
+			case SchedulePackage.TRAIN_SCHEDULE__STOPS:
+				getStops().clear();
+				getStops().addAll((Collection<? extends Stop>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -254,8 +229,8 @@ public class TrainScheduleImpl extends MinimalEObjectImpl.Container implements T
 			case SchedulePackage.TRAIN_SCHEDULE__STARTTIMES:
 				getStarttimes().clear();
 				return;
-			case SchedulePackage.TRAIN_SCHEDULE__ROUTE:
-				setRoute((Route)null);
+			case SchedulePackage.TRAIN_SCHEDULE__STOPS:
+				getStops().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -273,8 +248,8 @@ public class TrainScheduleImpl extends MinimalEObjectImpl.Container implements T
 				return train != null;
 			case SchedulePackage.TRAIN_SCHEDULE__STARTTIMES:
 				return starttimes != null && !starttimes.isEmpty();
-			case SchedulePackage.TRAIN_SCHEDULE__ROUTE:
-				return route != null;
+			case SchedulePackage.TRAIN_SCHEDULE__STOPS:
+				return stops != null && !stops.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

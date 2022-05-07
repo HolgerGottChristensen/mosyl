@@ -78,7 +78,6 @@ public class ScheduleItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(SchedulePackage.Literals.SCHEDULE__TRAINS);
-			childrenFeatures.add(SchedulePackage.Literals.SCHEDULE__ROUTES);
 		}
 		return childrenFeatures;
 	}
@@ -132,7 +131,6 @@ public class ScheduleItemProvider
 
 		switch (notification.getFeatureID(Schedule.class)) {
 			case SchedulePackage.SCHEDULE__TRAINS:
-			case SchedulePackage.SCHEDULE__ROUTES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -154,11 +152,6 @@ public class ScheduleItemProvider
 			(createChildParameter
 				(SchedulePackage.Literals.SCHEDULE__TRAINS,
 				 ScheduleFactory.eINSTANCE.createTrainSchedule()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(SchedulePackage.Literals.SCHEDULE__ROUTES,
-				 ScheduleFactory.eINSTANCE.createRoute()));
 	}
 
 	/**
