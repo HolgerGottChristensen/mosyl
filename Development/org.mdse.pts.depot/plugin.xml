@@ -13,5 +13,10 @@
             class="org.mdse.pts.depot.DepotPackage"
             genModel="model/Depot.genmodel"/>
    </extension>
+   
+   <!-- extend to include validator on startup: -->
+   <extension point="org.eclipse.ui.startup">
+      <startup class="org.mdse.pts.depot.DepotValidator"/>
+   </extension>
 
 </plugin>

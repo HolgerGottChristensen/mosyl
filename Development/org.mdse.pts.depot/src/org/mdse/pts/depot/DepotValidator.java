@@ -3,6 +3,7 @@ package org.mdse.pts.depot;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 import org.eclipse.emf.common.util.BasicDiagnostic;
@@ -13,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.ui.IStartup;
+import org.w3c.dom.html.HTMLOptGroupElement;
 
 public class DepotValidator extends EObjectValidator implements IStartup {
 	private DiagnosticChain diagnostics;
@@ -154,20 +156,21 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 			constraintViolated(train, train.getName() + " must not contain more than two locomotives");
 		}
 		return false;
+	}public DepotValidator() {
+		// TODO Auto-generated constructor stub
 	}
-
 	private boolean validateLocomotiveAsFirstOrLastCoach(Train train) {
-		boolean constraintViolated = train.getCoach().stream()
+		Optional<Coach> firstCoach = train.getCoach().stream()
 				.findFirst()
-				.filter(Locomotive.class::isInstance)
-				.isEmpty();
+				.filter(Locomotive.class::isInstance);
 		
-		constraintViolated &= !train.getCoach()
-				.get(train.getCoach().size()-1)
-				.getClass().equals(Locomotive.class);
-				
+		boolean firstIsNotLocomotive = firstCoach.isEmpty();
 		
-		if (constraintViolated) {
+		Coach lastCoach = train.getCoach()
+				.get(train.getCoach().size()-1);
+		
+		boolean lastIsNotLocomotive = !(lastCoach instanceof Locomotive);
+		if (firstIsNotLocomotive && lastIsNotLocomotive) {
 			constraintViolated(train, train.getName() + " must have at least one locomotve in either end of the train");
 		}
 		return false;
