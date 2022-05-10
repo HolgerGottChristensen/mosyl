@@ -8,6 +8,7 @@
   <foreignModel>Timetable.ecore</foreignModel>
   <genPackages prefix="Timetable" basePackage="org.mdse.pts" disposableProviderFactory="true"
       ecorePackage="Timetable.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Timetable.ecore#//Weekday"/>
     <genClasses ecoreClass="Timetable.ecore#//Timetable">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Timetable.ecore#//Timetable/table"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Timetable.ecore#//Timetable/station"/>
@@ -24,11 +25,16 @@
     </genClasses>
     <genClasses ecoreClass="Timetable.ecore#//Juncture">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Timetable.ecore#//Juncture/platform"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Timetable.ecore#//Juncture/time"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Timetable.ecore#//Juncture/train"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Timetable.ecore#//Juncture/time"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Timetable.ecore#//Juncture/weekday"/>
     </genClasses>
     <genClasses ecoreClass="Timetable.ecore#//Station"/>
     <genClasses ecoreClass="Timetable.ecore#//Train"/>
+    <genClasses ecoreClass="Timetable.ecore#//Time">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Timetable.ecore#//Time/Hour"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Timetable.ecore#//Time/Minute"/>
+    </genClasses>
   </genPackages>
   <genPackages prefix="Network" ecorePackage="../../org.mdse.pts.network/model/Network.ecore#/">
     <genClasses ecoreClass="../../org.mdse.pts.network/model/Network.ecore#//Network">

@@ -1,0 +1,9 @@
+<%@ jet 
+  package="org.mdse.pts.timetable.jet" 
+  imports="org.mdse.pts.timetable.* java.util.*" 
+  class="TT2HTMLTemplate" %>
+<%Timetable t = (Timetable) argument; %>
+
+<!-- TODO: Generate HTML Code -->
+<h1><%= t.getStations().get(0).getName() %></h1>
+<h1><%= t.getStations().get(0).getName() %></h1>
