@@ -58,8 +58,8 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 		modelIsValid &= validateLocomotiveAsFirstOrLastCoach(train);
 		modelIsValid &= validateLocomotiveNotBeetweenOtherCoaches(train);
 		modelIsValid &= validateAtMostOneDiningCoach(train);
-		modelIsValid &= validateCoacheClassesInSequence(train);
-
+		modelIsValid &= validateCoachClassesInSequence(train);
+		modelIsValid &= validateDiningCoachBetweenPassengerCoaches(train);
 		
 		if(train.getType().equals(TrainType.INTERCITY)) {
 			modelIsValid &= validateIntercityHasAtLeastOneFirstclass(train);
@@ -71,7 +71,48 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 	}
 
 
-	private boolean validateCoacheClassesInSequence(Train train) {
+	private boolean validateDiningCoachBetweenPassengerCoaches(Train train) {
+		List<Coach> coaches = train.getCoach().stream()
+				.filter(c -> !(c instanceof Locomotive))
+				.collect(Collectors.toList());
+		
+		boolean hasFirstClassCoach = coaches.stream()
+				.filter(c -> c instanceof PassengerCoach)
+				.map(PassengerCoach.class::cast)
+				.filter(pc -> pc.getClass_().equals(CoachClass.FIRST_CLASS))
+				.count() > 0;
+				
+		boolean hasEconomyCoach = coaches.stream()
+				.filter(c -> c instanceof PassengerCoach)
+				.map(PassengerCoach.class::cast)
+				.filter(pc -> pc.getClass_().equals(CoachClass.ECONOMY))
+				.count() > 0;
+
+		
+		for (int i = 0; i < coaches.size(); i++) {
+			if(coaches.get(i) instanceof DiningCoach) {
+
+				//Check if the dining coach has a coach on both sides
+				if(i > 0 && i < coaches.size()-1) {
+					CoachClass left = ((PassengerCoach) coaches.get(i-1)).getClass_();
+					CoachClass right = ((PassengerCoach) coaches.get(i+1)).getClass_();
+					
+					if (left.equals(right)) {
+						constraintViolated(train, train.getName() + ", dining coach may not be between two coaches of the same class");
+						break;
+					}
+				} else if(hasEconomyCoach && hasFirstClassCoach) {
+					constraintViolated(train, train.getName() + ", dining coach must be between the two passenger classes");
+					break;
+				} 
+			}
+		}
+		
+		
+		return false;
+	}
+
+	private boolean validateCoachClassesInSequence(Train train) {
 		System.out.println("Train: " + train.getName());
 		List<Coach> coaches = train.getCoach().stream()
 				.filter(c -> !(c instanceof Locomotive))

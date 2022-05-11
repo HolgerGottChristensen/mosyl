@@ -11,8 +11,8 @@
       <coach xsi:type="depot:PassengerCoach" wagonNumber="1"/>
       <coach xsi:type="depot:PassengerCoach" wagonNumber="2" class="FirstClass"/>
       <coach xsi:type="depot:PassengerCoach" wagonNumber="3" class="FirstClass"/>
-      <coach xsi:type="depot:PassengerCoach" wagonNumber="4" class="FirstClass"/>
       <coach xsi:type="depot:DiningCoach" wagonNumber="5"/>
+      <coach xsi:type="depot:Locomotive"/>
     </train>
   </depot>
 </depot:Root>
