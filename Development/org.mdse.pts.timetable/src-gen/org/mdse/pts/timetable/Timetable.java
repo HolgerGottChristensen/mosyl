@@ -38,13 +38,13 @@ public interface Timetable extends EObject {
 	EList<Table> getTable();
 
 	/**
-	 * Returns the value of the '<em><b>Station</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Station</b></em>' reference list.
 	 * The list contents are of type {@link network.Station}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Station</em>' containment reference list.
+	 * @return the value of the '<em>Station</em>' reference list.
 	 * @see org.mdse.pts.timetable.TimetablePackage#getTimetable_Station()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
 	EList<Station> getStation();

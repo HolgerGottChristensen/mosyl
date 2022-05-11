@@ -3,9 +3,6 @@
 package org.mdse.pts.timetable;
 
 import depot.Train;
-
-import java.util.Date;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -18,8 +15,9 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.mdse.pts.timetable.Juncture#getPlatform <em>Platform</em>}</li>
- *   <li>{@link org.mdse.pts.timetable.Juncture#getTime <em>Time</em>}</li>
  *   <li>{@link org.mdse.pts.timetable.Juncture#getTrain <em>Train</em>}</li>
+ *   <li>{@link org.mdse.pts.timetable.Juncture#getTime <em>Time</em>}</li>
+ *   <li>{@link org.mdse.pts.timetable.Juncture#getWeekday <em>Weekday</em>}</li>
  * </ul>
  *
  * @see org.mdse.pts.timetable.TimetablePackage#getJuncture()
@@ -50,26 +48,51 @@ public interface Juncture extends EObject {
 	void setPlatform(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Time</b></em>' attribute.
+	 * Returns the value of the '<em><b>Time</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Time</em>' attribute.
-	 * @see #setTime(Date)
+	 * @return the value of the '<em>Time</em>' reference.
+	 * @see #setTime(Time)
 	 * @see org.mdse.pts.timetable.TimetablePackage#getJuncture_Time()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
-	Date getTime();
+	Time getTime();
 
 	/**
-	 * Sets the value of the '{@link org.mdse.pts.timetable.Juncture#getTime <em>Time</em>}' attribute.
+	 * Sets the value of the '{@link org.mdse.pts.timetable.Juncture#getTime <em>Time</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Time</em>' attribute.
+	 * @param value the new value of the '<em>Time</em>' reference.
 	 * @see #getTime()
 	 * @generated
 	 */
-	void setTime(Date value);
+	void setTime(Time value);
+
+	/**
+	 * Returns the value of the '<em><b>Weekday</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.mdse.pts.timetable.Weekday}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Weekday</em>' attribute.
+	 * @see org.mdse.pts.timetable.Weekday
+	 * @see #setWeekday(Weekday)
+	 * @see org.mdse.pts.timetable.TimetablePackage#getJuncture_Weekday()
+	 * @model required="true"
+	 * @generated
+	 */
+	Weekday getWeekday();
+
+	/**
+	 * Sets the value of the '{@link org.mdse.pts.timetable.Juncture#getWeekday <em>Weekday</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Weekday</em>' attribute.
+	 * @see org.mdse.pts.timetable.Weekday
+	 * @see #getWeekday()
+	 * @generated
+	 */
+	void setWeekday(Weekday value);
 
 	/**
 	 * Returns the value of the '<em><b>Train</b></em>' reference.

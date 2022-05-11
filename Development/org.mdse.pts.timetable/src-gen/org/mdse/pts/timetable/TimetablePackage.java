@@ -4,6 +4,7 @@ package org.mdse.pts.timetable;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -76,7 +77,7 @@ public interface TimetablePackage extends EPackage {
 	int TIMETABLE__TABLE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Station</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Station</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -169,22 +170,31 @@ public interface TimetablePackage extends EPackage {
 	int JUNCTURE__PLATFORM = 0;
 
 	/**
-	 * The feature id for the '<em><b>Time</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JUNCTURE__TIME = 1;
-
-	/**
 	 * The feature id for the '<em><b>Train</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JUNCTURE__TRAIN = 2;
+	int JUNCTURE__TRAIN = 1;
+
+	/**
+	 * The feature id for the '<em><b>Time</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JUNCTURE__TIME = 2;
+
+	/**
+	 * The feature id for the '<em><b>Weekday</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JUNCTURE__WEEKDAY = 3;
 
 	/**
 	 * The number of structural features of the '<em>Juncture</em>' class.
@@ -193,7 +203,7 @@ public interface TimetablePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int JUNCTURE_FEATURE_COUNT = 3;
+	int JUNCTURE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Juncture</em>' class.
@@ -224,7 +234,16 @@ public interface TimetablePackage extends EPackage {
 	int ARRIVAL__PLATFORM = JUNCTURE__PLATFORM;
 
 	/**
-	 * The feature id for the '<em><b>Time</b></em>' attribute.
+	 * The feature id for the '<em><b>Train</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRIVAL__TRAIN = JUNCTURE__TRAIN;
+
+	/**
+	 * The feature id for the '<em><b>Time</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -233,13 +252,13 @@ public interface TimetablePackage extends EPackage {
 	int ARRIVAL__TIME = JUNCTURE__TIME;
 
 	/**
-	 * The feature id for the '<em><b>Train</b></em>' reference.
+	 * The feature id for the '<em><b>Weekday</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ARRIVAL__TRAIN = JUNCTURE__TRAIN;
+	int ARRIVAL__WEEKDAY = JUNCTURE__WEEKDAY;
 
 	/**
 	 * The feature id for the '<em><b>Origin</b></em>' reference.
@@ -288,7 +307,16 @@ public interface TimetablePackage extends EPackage {
 	int DEPARTURE__PLATFORM = JUNCTURE__PLATFORM;
 
 	/**
-	 * The feature id for the '<em><b>Time</b></em>' attribute.
+	 * The feature id for the '<em><b>Train</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPARTURE__TRAIN = JUNCTURE__TRAIN;
+
+	/**
+	 * The feature id for the '<em><b>Time</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -297,13 +325,13 @@ public interface TimetablePackage extends EPackage {
 	int DEPARTURE__TIME = JUNCTURE__TIME;
 
 	/**
-	 * The feature id for the '<em><b>Train</b></em>' reference.
+	 * The feature id for the '<em><b>Weekday</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DEPARTURE__TRAIN = JUNCTURE__TRAIN;
+	int DEPARTURE__WEEKDAY = JUNCTURE__WEEKDAY;
 
 	/**
 	 * The feature id for the '<em><b>Destination</b></em>' reference.
@@ -390,6 +418,63 @@ public interface TimetablePackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link org.mdse.pts.timetable.impl.TimeImpl <em>Time</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.mdse.pts.timetable.impl.TimeImpl
+	 * @see org.mdse.pts.timetable.impl.TimetablePackageImpl#getTime()
+	 * @generated
+	 */
+	int TIME = 7;
+
+	/**
+	 * The feature id for the '<em><b>Hour</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME__HOUR = 0;
+
+	/**
+	 * The feature id for the '<em><b>Minute</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME__MINUTE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Time</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Time</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.mdse.pts.timetable.Weekday <em>Weekday</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.mdse.pts.timetable.Weekday
+	 * @see org.mdse.pts.timetable.impl.TimetablePackageImpl#getWeekday()
+	 * @generated
+	 */
+	int WEEKDAY = 8;
+
+
+	/**
 	 * Returns the meta object for class '{@link org.mdse.pts.timetable.Timetable <em>Timetable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -411,10 +496,10 @@ public interface TimetablePackage extends EPackage {
 	EReference getTimetable_Table();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.mdse.pts.timetable.Timetable#getStation <em>Station</em>}'.
+	 * Returns the meta object for the reference list '{@link org.mdse.pts.timetable.Timetable#getStation <em>Station</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Station</em>'.
+	 * @return the meta object for the reference list '<em>Station</em>'.
 	 * @see org.mdse.pts.timetable.Timetable#getStation()
 	 * @see #getTimetable()
 	 * @generated
@@ -517,15 +602,26 @@ public interface TimetablePackage extends EPackage {
 	EAttribute getJuncture_Platform();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.mdse.pts.timetable.Juncture#getTime <em>Time</em>}'.
+	 * Returns the meta object for the reference '{@link org.mdse.pts.timetable.Juncture#getTime <em>Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Time</em>'.
+	 * @return the meta object for the reference '<em>Time</em>'.
 	 * @see org.mdse.pts.timetable.Juncture#getTime()
 	 * @see #getJuncture()
 	 * @generated
 	 */
-	EAttribute getJuncture_Time();
+	EReference getJuncture_Time();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.mdse.pts.timetable.Juncture#getWeekday <em>Weekday</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Weekday</em>'.
+	 * @see org.mdse.pts.timetable.Juncture#getWeekday()
+	 * @see #getJuncture()
+	 * @generated
+	 */
+	EAttribute getJuncture_Weekday();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.mdse.pts.timetable.Juncture#getTrain <em>Train</em>}'.
@@ -557,6 +653,48 @@ public interface TimetablePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTrain();
+
+	/**
+	 * Returns the meta object for class '{@link org.mdse.pts.timetable.Time <em>Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Time</em>'.
+	 * @see org.mdse.pts.timetable.Time
+	 * @generated
+	 */
+	EClass getTime();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.mdse.pts.timetable.Time#getHour <em>Hour</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Hour</em>'.
+	 * @see org.mdse.pts.timetable.Time#getHour()
+	 * @see #getTime()
+	 * @generated
+	 */
+	EAttribute getTime_Hour();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.mdse.pts.timetable.Time#getMinute <em>Minute</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Minute</em>'.
+	 * @see org.mdse.pts.timetable.Time#getMinute()
+	 * @see #getTime()
+	 * @generated
+	 */
+	EAttribute getTime_Minute();
+
+	/**
+	 * Returns the meta object for enum '{@link org.mdse.pts.timetable.Weekday <em>Weekday</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Weekday</em>'.
+	 * @see org.mdse.pts.timetable.Weekday
+	 * @generated
+	 */
+	EEnum getWeekday();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -598,7 +736,7 @@ public interface TimetablePackage extends EPackage {
 		 */
 		EReference TIMETABLE__TABLE = eINSTANCE.getTimetable_Table();
 		/**
-		 * The meta object literal for the '<em><b>Station</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Station</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -676,12 +814,19 @@ public interface TimetablePackage extends EPackage {
 		 */
 		EAttribute JUNCTURE__PLATFORM = eINSTANCE.getJuncture_Platform();
 		/**
-		 * The meta object literal for the '<em><b>Time</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Time</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute JUNCTURE__TIME = eINSTANCE.getJuncture_Time();
+		EReference JUNCTURE__TIME = eINSTANCE.getJuncture_Time();
+		/**
+		 * The meta object literal for the '<em><b>Weekday</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute JUNCTURE__WEEKDAY = eINSTANCE.getJuncture_Weekday();
 		/**
 		 * The meta object literal for the '<em><b>Train</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
@@ -707,6 +852,38 @@ public interface TimetablePackage extends EPackage {
 		 * @generated
 		 */
 		EClass TRAIN = eINSTANCE.getTrain();
+		/**
+		 * The meta object literal for the '{@link org.mdse.pts.timetable.impl.TimeImpl <em>Time</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.mdse.pts.timetable.impl.TimeImpl
+		 * @see org.mdse.pts.timetable.impl.TimetablePackageImpl#getTime()
+		 * @generated
+		 */
+		EClass TIME = eINSTANCE.getTime();
+		/**
+		 * The meta object literal for the '<em><b>Hour</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TIME__HOUR = eINSTANCE.getTime_Hour();
+		/**
+		 * The meta object literal for the '<em><b>Minute</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TIME__MINUTE = eINSTANCE.getTime_Minute();
+		/**
+		 * The meta object literal for the '{@link org.mdse.pts.timetable.Weekday <em>Weekday</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.mdse.pts.timetable.Weekday
+		 * @see org.mdse.pts.timetable.impl.TimetablePackageImpl#getWeekday()
+		 * @generated
+		 */
+		EEnum WEEKDAY = eINSTANCE.getWeekday();
 
 	}
 

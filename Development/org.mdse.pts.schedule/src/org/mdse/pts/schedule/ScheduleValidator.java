@@ -55,10 +55,6 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 			TrainSchedule trainSchedule = (TrainSchedule) eObject;
 			modelIsValid &= validateTrainSchedule(trainSchedule);
 		}
-		if (SchedulePackage.eINSTANCE.getRoute().equals(eClass)) {
-			Route route = (Route) eObject;
-			modelIsValid &= validateRoute(route);
-		}
 		if (SchedulePackage.eINSTANCE.getTime().equals(eClass)) {
 			Time time = (Time) eObject;
 			modelIsValid &= validateTime(time);
@@ -90,15 +86,6 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 		return modelIsValid;
 	}
 	
-	private boolean validateRoute(Route route) {
-		boolean modelIsValid = false;
-		
-		modelIsValid &= validateRouteIsNavigateable(route);
-		modelIsValid &= validateStopExistsOnceInRoute(route);
-		
-		return modelIsValid;
-	}
-	
 	private boolean validateSchedule(Schedule schedule) {
 		boolean modelIsValid = false;
 		
@@ -114,23 +101,25 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 		boolean modelIsValid = false;
 		
 		modelIsValid &= validateTrainCoachesForReversableStop(trainSchedule);
+		modelIsValid &= validateRouteIsNavigateable(trainSchedule);
+		modelIsValid &= validateStopExistsOnceInRoute(trainSchedule);
 		
 		return modelIsValid;
 	}
 	
-	private boolean validateStopExistsOnceInRoute(Route route) {
+	private boolean validateStopExistsOnceInRoute(TrainSchedule trainSchedule) {
 		boolean stationExistsOnce = false;
 		boolean stopExistsOnce = false;
 		
-		List<network.Station> stations = route.getStops().stream()
+		List<network.Station> stations = trainSchedule.getStops().stream()
 				.map(s -> s.getStation())
 				.collect(Collectors.toList());
 		HashSet<network.Station> stationSet = new HashSet<>(stations);
 		stationExistsOnce = stationSet.size() == stations.size();
-		stopExistsOnce = route.getStops().size() == new HashSet<>(route.getStops()).size();
+		stopExistsOnce = trainSchedule.getStops().size() == new HashSet<>(trainSchedule.getStops()).size();
 		
 		if(!stationExistsOnce || !stopExistsOnce) {
-			constraintViolated(route, route.toString() + ": contains the same station/stop multiple times");
+			constraintViolated(trainSchedule, trainSchedule.toString() + ": contains the same station/stop multiple times");
 		}
 		return stationExistsOnce;
 	}
@@ -147,12 +136,11 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 	private boolean validateRouteExistsInNetwork(Schedule schedule) {
 		boolean existsInNetwork = true;
 		
-		for(Route r : schedule.getRoutes()) {
-			for(Stop s : r.getStops()) {
+		for(TrainSchedule ts : schedule.getTrains()) {
+			for(Stop s : ts.getStops()) {
 				existsInNetwork &= schedule.getNetwork().getStations().contains(s.getStation());
 			}
 		}
-		
 		if(!existsInNetwork) {
 			constraintViolated(schedule, schedule.toString() + ": some station does not exist in the network of the schedules");
 		}
@@ -178,7 +166,7 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 		for(TrainSchedule ts1 : schedule.getTrains()) {
 			for(TrainSchedule ts2 : schedule.getTrains()) {
 				if(!ts1.equals(ts2)) {
-					isUnique &= !ts1.getRoute().equals(ts2.getRoute()) && routeEqual(ts1.getRoute(), ts2.getRoute());
+					isUnique &= routeEqual(ts1, ts2);
 				}
 			}
 		}
@@ -189,7 +177,7 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 	}
 	
 	private boolean validateTrainCoachesForReversableStop(TrainSchedule trainSchedule) {
-		if(trainSchedule.getRoute().getStops().stream().anyMatch(stop -> stop.isRotate())) {
+		if(trainSchedule.getStops().stream().anyMatch(stop -> stop.isRotate())) {
 			List<depot.Coach> coaches = trainSchedule.getTrain().getCoach().stream()
 					.filter(coach -> Locomotive.class.isInstance(coach))
 					.collect(Collectors.toList());
@@ -200,35 +188,6 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 			return twiceLocomotive;
 		}
 		return true;
-	}
-	
-	private boolean validateRouteIsNavigateable(Route route) {
-		//solve connected components problem
-		boolean[] marked = new boolean[route.getStops().size()];
-		int count = 0;
-		Stop[] stopArray = (Stop[]) route.getStops().toArray();
-		
-		HashMap<network.Station, Stop> map = new HashMap<>();
-		HashMap<network.Station, Integer> id = new HashMap<>();
-		
-		for(int s = 0; s < stopArray.length; s++) {
-			map.put(stopArray[s].getStation(), stopArray[s]);
-			id.put(stopArray[s].getStation(), s);
-		}
-		
-		for(int s = 0; s < stopArray.length; s++) {
-			if(!marked[s]) {
-				dfs(map, id, stopArray, marked, s);
-				count++;
-			}
-		}
-		
-		boolean singleComponent = count == 1;
-
-		if(!singleComponent) {
-			constraintViolated(route, route.toString() + ": route is not navigateable");
-		}
-		return singleComponent;
 	}
 	
 	private boolean validateTimeIsConsistent(Time time) {
@@ -258,6 +217,35 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 		return specifiable;
 	}
 	
+	private boolean validateRouteIsNavigateable(TrainSchedule schedule) {
+		//solve connected components problem
+		boolean[] marked = new boolean[schedule.getStops().size()];
+		int count = 0;
+		Stop[] stopArray = (Stop[]) schedule.getStops().toArray();
+		
+		HashMap<network.Station, Stop> map = new HashMap<>();
+		HashMap<network.Station, Integer> id = new HashMap<>();
+		
+		for(int s = 0; s < stopArray.length; s++) {
+			map.put(stopArray[s].getStation(), stopArray[s]);
+			id.put(stopArray[s].getStation(), s);
+		}
+		
+		for(int s = 0; s < stopArray.length; s++) {
+			if(!marked[s]) {
+				dfs(map, id, stopArray, marked, s);
+				count++;
+			}
+		}
+		
+		boolean singleComponent = count == 1;
+
+		if(!singleComponent) {
+			constraintViolated(schedule, schedule.toString() + ": route is not navigateable");
+		}
+		return singleComponent;
+	}
+	
 	//helper functions
 	private void dfs(HashMap<network.Station, Stop> map, HashMap<network.Station, Integer> id, Stop[] stopArray, boolean[] marked, int v) {
 		marked[v] = true;
@@ -270,11 +258,11 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 		}
 	}
 	
-	private boolean routeEqual(Route r1, Route r2) {
-		if(r1.getStops().size() != r2.getStops().size()) return false;
+	private boolean routeEqual(TrainSchedule t1, TrainSchedule t2) {
+		if(t1.getStops().size() != t2.getStops().size()) return false;
 		
-		for(Stop s : r2.getStops()) {
-			if (!r2.getStops().contains(s)) return false;
+		for(Stop s : t1.getStops()) {
+			if (!t2.getStops().contains(s)) return false;
 		}
 		return true;
 	}
