@@ -1,0 +1,69 @@
+/**
+ */
+package time;
+
+import org.eclipse.emf.ecore.EObject;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Time</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link time.Time#getHour <em>Hour</em>}</li>
+ *   <li>{@link time.Time#getMinute <em>Minute</em>}</li>
+ * </ul>
+ *
+ * @see time.TimePackage#getTime()
+ * @model
+ * @generated
+ */
+public interface Time extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Hour</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Hour</em>' attribute.
+	 * @see #setHour(int)
+	 * @see time.TimePackage#getTime_Hour()
+	 * @model required="true"
+	 * @generated
+	 */
+	int getHour();
+
+	/**
+	 * Sets the value of the '{@link time.Time#getHour <em>Hour</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Hour</em>' attribute.
+	 * @see #getHour()
+	 * @generated
+	 */
+	void setHour(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Minute</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Minute</em>' attribute.
+	 * @see #setMinute(int)
+	 * @see time.TimePackage#getTime_Minute()
+	 * @model required="true"
+	 * @generated
+	 */
+	int getMinute();
+
+	/**
+	 * Sets the value of the '{@link time.Time#getMinute <em>Minute</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Minute</em>' attribute.
+	 * @see #getMinute()
+	 * @generated
+	 */
+	void setMinute(int value);
+
+} // Time

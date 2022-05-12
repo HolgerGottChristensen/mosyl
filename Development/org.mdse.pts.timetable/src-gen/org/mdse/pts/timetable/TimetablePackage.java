@@ -179,22 +179,22 @@ public interface TimetablePackage extends EPackage {
 	int JUNCTURE__TRAIN = 1;
 
 	/**
-	 * The feature id for the '<em><b>Time</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int JUNCTURE__TIME = 2;
-
-	/**
 	 * The feature id for the '<em><b>Weekday</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int JUNCTURE__WEEKDAY = 3;
+	int JUNCTURE__WEEKDAY = 2;
+
+	/**
+	 * The feature id for the '<em><b>Time</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int JUNCTURE__TIME = 3;
 
 	/**
 	 * The number of structural features of the '<em>Juncture</em>' class.
@@ -243,15 +243,6 @@ public interface TimetablePackage extends EPackage {
 	int ARRIVAL__TRAIN = JUNCTURE__TRAIN;
 
 	/**
-	 * The feature id for the '<em><b>Time</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ARRIVAL__TIME = JUNCTURE__TIME;
-
-	/**
 	 * The feature id for the '<em><b>Weekday</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -259,6 +250,15 @@ public interface TimetablePackage extends EPackage {
 	 * @ordered
 	 */
 	int ARRIVAL__WEEKDAY = JUNCTURE__WEEKDAY;
+
+	/**
+	 * The feature id for the '<em><b>Time</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ARRIVAL__TIME = JUNCTURE__TIME;
 
 	/**
 	 * The feature id for the '<em><b>Origin</b></em>' reference.
@@ -316,15 +316,6 @@ public interface TimetablePackage extends EPackage {
 	int DEPARTURE__TRAIN = JUNCTURE__TRAIN;
 
 	/**
-	 * The feature id for the '<em><b>Time</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DEPARTURE__TIME = JUNCTURE__TIME;
-
-	/**
 	 * The feature id for the '<em><b>Weekday</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -332,6 +323,15 @@ public interface TimetablePackage extends EPackage {
 	 * @ordered
 	 */
 	int DEPARTURE__WEEKDAY = JUNCTURE__WEEKDAY;
+
+	/**
+	 * The feature id for the '<em><b>Time</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DEPARTURE__TIME = JUNCTURE__TIME;
 
 	/**
 	 * The feature id for the '<em><b>Destination</b></em>' reference.

@@ -23,7 +23,7 @@
 				<% for(Weekday w: arrivalsByDay.keySet()) { %>
 					<h3><%= w.toString()%></h3>
 					<% for(Arrival a : arrivalsByDay.get(w)) { %>
-						<p><%= a.getTime().getHours() + ":" + a.getTime().getMinutes()%>
+						<p><%= a.getTime().getHour() + ":" + a.getTime().getMinute()%>
 						<%= a.getTrain().getName()%>
 						from <%= a.getOrigin().getName()%> on platform <%= a.getPlatform()%></p>
 					<% } %>
@@ -34,7 +34,7 @@
 				<% for(Weekday w: departuresByDay.keySet()) { %>
 					<h3><%= w.toString()%></h3>
 					<% for(Departure d : departuresByDay.get(w)) { %>
-						<p><%= d.getTime().getHours() + ":" + d.getTime().getMinutes()%>
+						<p><%= d.getTime().getHour() + ":" + d.getTime().getMinute()%>
 						<%= d.getTrain().getName()%>
 						to <%= d.getDestination().getName()%> on platform <%= d.getPlatform()%></p>
 					<% } %>

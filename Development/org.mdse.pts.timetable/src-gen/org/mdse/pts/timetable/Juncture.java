@@ -4,6 +4,7 @@ package org.mdse.pts.timetable;
 
 import depot.Train;
 import org.eclipse.emf.ecore.EObject;
+import time.Time;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,8 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.mdse.pts.timetable.Juncture#getPlatform <em>Platform</em>}</li>
  *   <li>{@link org.mdse.pts.timetable.Juncture#getTrain <em>Train</em>}</li>
- *   <li>{@link org.mdse.pts.timetable.Juncture#getTime <em>Time</em>}</li>
  *   <li>{@link org.mdse.pts.timetable.Juncture#getWeekday <em>Weekday</em>}</li>
+ *   <li>{@link org.mdse.pts.timetable.Juncture#getTime <em>Time</em>}</li>
  * </ul>
  *
  * @see org.mdse.pts.timetable.TimetablePackage#getJuncture()

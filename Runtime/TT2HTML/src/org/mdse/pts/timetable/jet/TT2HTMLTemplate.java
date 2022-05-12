@@ -52,7 +52,7 @@ public class TT2HTMLTemplate
     stringBuffer.append(TEXT_5);
      for(Arrival a : arrivalsByDay.get(w)) { 
     stringBuffer.append(TEXT_6);
-    stringBuffer.append( a.getTime().getHours() + ":" + a.getTime().getMinutes());
+    stringBuffer.append( a.getTime().getHour() + ":" + a.getTime().getMinute());
     stringBuffer.append(TEXT_7);
     stringBuffer.append( a.getTrain().getName());
     stringBuffer.append(TEXT_8);
@@ -70,7 +70,7 @@ public class TT2HTMLTemplate
     stringBuffer.append(TEXT_5);
      for(Departure d : departuresByDay.get(w)) { 
     stringBuffer.append(TEXT_6);
-    stringBuffer.append( d.getTime().getHours() + ":" + d.getTime().getMinutes());
+    stringBuffer.append( d.getTime().getHour() + ":" + d.getTime().getMinute());
     stringBuffer.append(TEXT_7);
     stringBuffer.append( d.getTrain().getName());
     stringBuffer.append(TEXT_13);

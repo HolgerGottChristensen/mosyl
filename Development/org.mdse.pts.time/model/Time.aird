@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis uid="_WNp9gNHmEeytSqnXtl9TnQ" selectedViews="_WPa4ENHmEeytSqnXtl9TnQ _WPl3MNHmEeytSqnXtl9TnQ _WPmeQNHmEeytSqnXtl9TnQ _WPqvsNHmEeytSqnXtl9TnQ" version="15.0.0.202201261500">
+    <semanticResources>Time.ecore</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_WPa4ENHmEeytSqnXtl9TnQ">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_X7iboNHmEeytSqnXtl9TnQ" name="time class diagram" repPath="#_X60C4NHmEeytSqnXtl9TnQ" changeId="50c2420e-d85e-44d4-b78f-6e1d3a1a5bd6">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+        <target xmi:type="ecore:EPackage" href="Time.ecore#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" uid="_WPl3MNHmEeytSqnXtl9TnQ">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Review']"/>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" uid="_WPmeQNHmEeytSqnXtl9TnQ">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Archetype']"/>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" uid="_WPqvsNHmEeytSqnXtl9TnQ">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Generation']"/>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_X60C4NHmEeytSqnXtl9TnQ">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_X8LU0NHmEeytSqnXtl9TnQ" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_X8LU0dHmEeytSqnXtl9TnQ" type="Sirius" element="_X60C4NHmEeytSqnXtl9TnQ" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_fv9aMNHmEeytSqnXtl9TnQ" type="2003" element="_fvvXwNHmEeytSqnXtl9TnQ">
+          <children xmi:type="notation:Node" xmi:id="_fv_2cNHmEeytSqnXtl9TnQ" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_fwAdgNHmEeytSqnXtl9TnQ" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_jrYG4NHmEeytSqnXtl9TnQ" type="3010" element="_jrQLENHmEeytSqnXtl9TnQ">
+              <styles xmi:type="notation:FontStyle" xmi:id="_jrYG4dHmEeytSqnXtl9TnQ" fontColor="2697711" fontName=".AppleSystemUIFont" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_jrYG4tHmEeytSqnXtl9TnQ"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_kKKUoNHmEeytSqnXtl9TnQ" type="3010" element="_kKE1ENHmEeytSqnXtl9TnQ">
+              <styles xmi:type="notation:FontStyle" xmi:id="_kKKUodHmEeytSqnXtl9TnQ" fontColor="2697711" fontName=".AppleSystemUIFont" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_kKKUotHmEeytSqnXtl9TnQ"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_fwAdgdHmEeytSqnXtl9TnQ"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_fwAdgtHmEeytSqnXtl9TnQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_fv9aMdHmEeytSqnXtl9TnQ" fontName=".AppleSystemUIFont" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fv9aMtHmEeytSqnXtl9TnQ" x="280" y="160" width="120" height="100"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_gWyJoNHmEeytSqnXtl9TnQ" type="2003" element="_gWt4MNHmEeytSqnXtl9TnQ">
+          <children xmi:type="notation:Node" xmi:id="_gWyJo9HmEeytSqnXtl9TnQ" type="5007"/>
+          <children xmi:type="notation:Node" xmi:id="_gWywsNHmEeytSqnXtl9TnQ" type="7004">
+            <children xmi:type="notation:Node" xmi:id="_4mlVgNHmEeytSqnXtl9TnQ" type="3010" element="_4mgdANHmEeytSqnXtl9TnQ">
+              <styles xmi:type="notation:FontStyle" xmi:id="_4mlVgdHmEeytSqnXtl9TnQ" fontName=".AppleSystemUIFont" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_4mlVgtHmEeytSqnXtl9TnQ"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_81b7kNHmEeytSqnXtl9TnQ" type="3010" element="_81YRMNHmEeytSqnXtl9TnQ">
+              <styles xmi:type="notation:FontStyle" xmi:id="_81b7kdHmEeytSqnXtl9TnQ" fontName=".AppleSystemUIFont" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_81b7ktHmEeytSqnXtl9TnQ"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_-1DC4NHmEeytSqnXtl9TnQ" type="3010" element="_-0_YgNHmEeytSqnXtl9TnQ">
+              <styles xmi:type="notation:FontStyle" xmi:id="_-1DC4dHmEeytSqnXtl9TnQ" fontName=".AppleSystemUIFont" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_-1DC4tHmEeytSqnXtl9TnQ"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="__J0ZANHmEeytSqnXtl9TnQ" type="3010" element="__JwHkNHmEeytSqnXtl9TnQ">
+              <styles xmi:type="notation:FontStyle" xmi:id="__J0ZAdHmEeytSqnXtl9TnQ" fontName=".AppleSystemUIFont" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="__J0ZAtHmEeytSqnXtl9TnQ"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_CHGpgNHnEeytSqnXtl9TnQ" type="3010" element="_CHBxANHnEeytSqnXtl9TnQ">
+              <styles xmi:type="notation:FontStyle" xmi:id="_CHGpgdHnEeytSqnXtl9TnQ" fontName=".AppleSystemUIFont" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_CHGpgtHnEeytSqnXtl9TnQ"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_Chk_ANHnEeytSqnXtl9TnQ" type="3010" element="_ChgtkNHnEeytSqnXtl9TnQ">
+              <styles xmi:type="notation:FontStyle" xmi:id="_Chk_AdHnEeytSqnXtl9TnQ" fontName=".AppleSystemUIFont" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_Chk_AtHnEeytSqnXtl9TnQ"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_C4ZjkNHnEeytSqnXtl9TnQ" type="3010" element="_C4VSINHnEeytSqnXtl9TnQ">
+              <styles xmi:type="notation:FontStyle" xmi:id="_C4ZjkdHnEeytSqnXtl9TnQ" fontName=".AppleSystemUIFont" fontHeight="8"/>
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_C4ZjktHnEeytSqnXtl9TnQ"/>
+            </children>
+            <styles xmi:type="notation:SortingStyle" xmi:id="_gWywsdHmEeytSqnXtl9TnQ"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_gWywstHmEeytSqnXtl9TnQ"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_gWyJodHmEeytSqnXtl9TnQ" fontName=".AppleSystemUIFont" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_gWyJotHmEeytSqnXtl9TnQ" x="532" y="160" width="120" height="143"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_X8LU0tHmEeytSqnXtl9TnQ"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_X8mLkNHmEeytSqnXtl9TnQ" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_X8mLkdHmEeytSqnXtl9TnQ">
+        <computedStyleDescriptions xmi:type="style:BundledImageDescription" xmi:id="_qtNVcNHnEeytSqnXtl9TnQ" labelExpression="service:render" labelAlignment="LEFT" tooltipExpression="service:renderTooltip" sizeComputationExpression="1">
+          <borderColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <labelFormat>bold</labelFormat>
+          <labelColor xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+          <color xmi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+        </computedStyleDescriptions>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_fvvXwNHmEeytSqnXtl9TnQ" name="Time" tooltipText="" width="12" height="10">
+      <target xmi:type="ecore:EClass" href="Time.ecore#//Time"/>
+      <semanticElements xmi:type="ecore:EClass" href="Time.ecore#//Time"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_yy_mQNHmEeytSqnXtl9TnQ" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_jrQLENHmEeytSqnXtl9TnQ" name="hour : EInt" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="Time.ecore#//Time/hour"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="Time.ecore#//Time/hour"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_qtPKoNHnEeytSqnXtl9TnQ" labelAlignment="LEFT" description="_qtNVcNHnEeytSqnXtl9TnQ">
+          <labelFormat>bold</labelFormat>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_kKE1ENHmEeytSqnXtl9TnQ" name="minute : EInt" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="Time.ecore#//Time/minute"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="Time.ecore#//Time/minute"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_rsu4wdHnEeytSqnXtl9TnQ" labelAlignment="LEFT" description="_qtNVcNHnEeytSqnXtl9TnQ">
+          <labelFormat>bold</labelFormat>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_gWt4MNHmEeytSqnXtl9TnQ" name="Weekday" tooltipText="" width="12" height="10">
+      <target xmi:type="ecore:EEnum" href="Time.ecore#//Weekday"/>
+      <semanticElements xmi:type="ecore:EEnum" href="Time.ecore#//Weekday"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_gWufQNHmEeytSqnXtl9TnQ" borderSize="1" borderSizeComputationExpression="1" borderColor="125,125,125" backgroundStyle="Liquid" foregroundColor="221,236,202">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_4mgdANHmEeytSqnXtl9TnQ" name="MONDAY" tooltipText="">
+        <target xmi:type="ecore:EEnumLiteral" href="Time.ecore#//Weekday/MONDAY"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="Time.ecore#//Weekday/MONDAY"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_4mgdAdHmEeytSqnXtl9TnQ" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_81YRMNHmEeytSqnXtl9TnQ" name="TUESDAY" tooltipText="">
+        <target xmi:type="ecore:EEnumLiteral" href="Time.ecore#//Weekday/TUESDAY"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="Time.ecore#//Weekday/TUESDAY"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_81YRMdHmEeytSqnXtl9TnQ" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_-0_YgNHmEeytSqnXtl9TnQ" name="WEDNESDAY" tooltipText="">
+        <target xmi:type="ecore:EEnumLiteral" href="Time.ecore#//Weekday/WEDNESDAY"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="Time.ecore#//Weekday/WEDNESDAY"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_-0_YgdHmEeytSqnXtl9TnQ" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="__JwHkNHmEeytSqnXtl9TnQ" name="THURSDAY" tooltipText="">
+        <target xmi:type="ecore:EEnumLiteral" href="Time.ecore#//Weekday/THURSDAY"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="Time.ecore#//Weekday/THURSDAY"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="__JwHkdHmEeytSqnXtl9TnQ" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_CHBxANHnEeytSqnXtl9TnQ" name="FRIDAY" tooltipText="">
+        <target xmi:type="ecore:EEnumLiteral" href="Time.ecore#//Weekday/FRIDAY"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="Time.ecore#//Weekday/FRIDAY"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_CHCYENHnEeytSqnXtl9TnQ" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_ChgtkNHnEeytSqnXtl9TnQ" name="SATURDAY" tooltipText="">
+        <target xmi:type="ecore:EEnumLiteral" href="Time.ecore#//Weekday/SATURDAY"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="Time.ecore#//Weekday/SATURDAY"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_ChhUoNHnEeytSqnXtl9TnQ" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_C4VSINHnEeytSqnXtl9TnQ" name="SUNDAY" tooltipText="">
+        <target xmi:type="ecore:EEnumLiteral" href="Time.ecore#//Weekday/SUNDAY"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="Time.ecore#//Weekday/SUNDAY"/>
+        <ownedStyle xmi:type="diagram:BundledImage" uid="_C4V5MNHnEeytSqnXtl9TnQ" labelAlignment="LEFT">
+          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
+      </ownedElements>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_X7VnUNHmEeytSqnXtl9TnQ"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Package']"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@additionalLayers[name='Validation']"/>
+    <activatedLayers xmi:type="description_1:AdditionalLayer" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Archetype']/@ownedRepresentationExtensions[name='Entities%20With%20Archetypes']/@layers[name='Archetypes']"/>
+    <target xmi:type="ecore:EPackage" href="Time.ecore#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

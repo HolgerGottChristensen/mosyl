@@ -29,6 +29,8 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.mdse.pts.timetable.TimetablePackage;
 
 import org.mdse.pts.timetable.impl.TimetablePackageImpl;
+import time.TimePackage;
+import time.impl.TimePackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -152,16 +154,20 @@ public class DepotPackageImpl extends EPackageImpl implements DepotPackage {
 		TimetablePackageImpl theTimetablePackage = (TimetablePackageImpl)(registeredPackage instanceof TimetablePackageImpl ? registeredPackage : TimetablePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI);
 		NetworkPackageImpl theNetworkPackage = (NetworkPackageImpl)(registeredPackage instanceof NetworkPackageImpl ? registeredPackage : NetworkPackage.eINSTANCE);
+		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TimePackage.eNS_URI);
+		TimePackageImpl theTimePackage = (TimePackageImpl)(registeredPackage instanceof TimePackageImpl ? registeredPackage : TimePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theDepotPackage.createPackageContents();
 		theTimetablePackage.createPackageContents();
 		theNetworkPackage.createPackageContents();
+		theTimePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theDepotPackage.initializePackageContents();
 		theTimetablePackage.initializePackageContents();
 		theNetworkPackage.initializePackageContents();
+		theTimePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theDepotPackage.freeze();

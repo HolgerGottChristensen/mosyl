@@ -19,6 +19,26 @@ import network.Leg;
 import network.Station;
 
 public class Scheduler2TimetableConverter {
+	public static Weekday convertDay(org.mdse.pts.schedule.Weekday day) {
+		switch(day) {
+		case MONDAY:
+			return org.mdse.pts.timetable.Weekday.get(0);
+		case TUESDAY:
+			return org.mdse.pts.timetable.Weekday.get(1);
+		case WEDNESDAY:
+			return org.mdse.pts.timetable.Weekday.get(2);
+		case THURSDAY:
+			return org.mdse.pts.timetable.Weekday.get(3);
+		case FRIDAY:
+			return org.mdse.pts.timetable.Weekday.get(4);
+		case SATURDAY:
+			return org.mdse.pts.timetable.Weekday.get(5);
+		case SUNDAY:
+			return org.mdse.pts.timetable.Weekday.get(6);
+		default:
+			return org.mdse.pts.timetable.Weekday.get(0);
+		}
+	}
 
 	public static Timetable convert(Schedule schedule) {
 		
@@ -36,12 +56,12 @@ public class Scheduler2TimetableConverter {
 		
 		for(TrainSchedule ts : trainSchedules) {
 			for(StartTime startTime : ts.getStarttimes()) {
-				for(Weekday weekday : startTime.getWeekdays()) {
-					for(Time time : startTime.getTimestamps()) {
+				for(org.mdse.pts.schedule.Weekday weekday : startTime.getWeekdays()) {
+					for(org.mdse.pts.schedule.Time time : startTime.getTimestamps()) {
 						
 						//TODO: set time
 						int minutes = time.getHour() * 60 + time.getMinute(); // convert start time to minutes
-						Weekday currentDay = weekday;
+						Weekday currentDay = convertDay(weekday);
 						
 						for(int i = 1; i < ts.getStops().size(); i++) {
 							
@@ -74,12 +94,12 @@ public class Scheduler2TimetableConverter {
 							
 							int arrivalTimeMinutes = arrivalInMinutes % 60;
 							int arrivalTimeHours = (arrivalInMinutes / 60) % 24;
-							currentDay = (arrivalInMinutes / 60) < 24 ? weekday : Weekday.values()[(currentDay.ordinal() + 1) % 7];
+							currentDay = (arrivalInMinutes / 60) < 24 ? currentDay : Weekday.values()[(currentDay.ordinal() + 1) % 7];
 							arrivalWeekday = currentDay;
 							
 							int departureTimeMinutes = departureInMinutes % 60;
 							int departureTimeHours = (departureInMinutes / 60) % 24;
-							currentDay = (arrivalInMinutes / 60) < 24 ? weekday : Weekday.values()[(currentDay.ordinal() + 1) % 7];
+							currentDay = (arrivalInMinutes / 60) < 24 ? currentDay : Weekday.values()[(currentDay.ordinal() + 1) % 7];
 							departureWeekday = currentDay;
 							//TODO: add this time to arrival for stop2 and departure for stop1
 							//TODO  add calculated weekday
