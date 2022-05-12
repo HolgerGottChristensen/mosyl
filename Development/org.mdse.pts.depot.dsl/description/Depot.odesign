@@ -7,7 +7,7 @@
           <subContainerMappings name="Train container" labelDirectEdit="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@subSections[name='Edit']/@ownedTools[name='Train%20name']" semanticCandidatesExpression="feature:eAllContents" domainClass="depot.Train" childrenPresentation="HorizontalStack">
             <subContainerMappings name="coach" labelDirectEdit="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@subSections[name='Edit']/@ownedTools[name='Wagon%20number']" semanticCandidatesExpression="feature:eAllContents" domainClass="depot.Coach">
               <conditionnalStyles predicateExpression="aql: self.oclIsTypeOf(depot::Locomotive) and self.eContainer().coach->at(1) = self">
-                <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql: 'Locomotive: ' + self.wagonNumber" hideLabelByDefault="true" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.mdse.pts.depot.dsl/symbols/LocomotiveLeading.png">
+                <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="" hideLabelByDefault="true" sizeComputationExpression="-1" resizeKind="NSEW" workspacePath="/org.mdse.pts.depot.dsl/symbols/LocomotiveLeading.png">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 </style>
@@ -19,7 +19,7 @@
                 </style>
               </conditionnalStyles>
               <conditionnalStyles predicateExpression="aql: self.oclIsTypeOf(depot::Locomotive) and self.eContainer().coach->at(1) &lt;> self">
-                <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql: 'Locomotive: ' + self.wagonNumber" hideLabelByDefault="true" sizeComputationExpression="-1" workspacePath="/org.mdse.pts.depot.dsl/symbols/LocomotiveTrailing.png">
+                <style xsi:type="style:WorkspaceImageDescription" labelSize="12" showIcon="false" labelExpression="aql: 'Locomotive: ' + self.wagonNumber" sizeComputationExpression="-1" workspacePath="/org.mdse.pts.depot.dsl/symbols/LocomotiveTrailing.png">
                   <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                   <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 </style>
