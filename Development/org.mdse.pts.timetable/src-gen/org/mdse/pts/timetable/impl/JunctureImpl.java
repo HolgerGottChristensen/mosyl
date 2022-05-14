@@ -3,9 +3,6 @@
 package org.mdse.pts.timetable.impl;
 
 import depot.Train;
-
-import java.util.Date;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -16,6 +13,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.mdse.pts.timetable.Juncture;
 import org.mdse.pts.timetable.TimetablePackage;
+import org.mdse.pts.timetable.Weekday;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,8 +24,9 @@ import org.mdse.pts.timetable.TimetablePackage;
  * </p>
  * <ul>
  *   <li>{@link org.mdse.pts.timetable.impl.JunctureImpl#getPlatform <em>Platform</em>}</li>
- *   <li>{@link org.mdse.pts.timetable.impl.JunctureImpl#getTime <em>Time</em>}</li>
  *   <li>{@link org.mdse.pts.timetable.impl.JunctureImpl#getTrain <em>Train</em>}</li>
+ *   <li>{@link org.mdse.pts.timetable.impl.JunctureImpl#getWeekday <em>Weekday</em>}</li>
+ *   <li>{@link org.mdse.pts.timetable.impl.JunctureImpl#getTime <em>Time</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,26 +53,6 @@ public class JunctureImpl extends MinimalEObjectImpl.Container implements Junctu
 	protected String platform = PLATFORM_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTime() <em>Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final Date TIME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTime() <em>Time</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTime()
-	 * @generated
-	 * @ordered
-	 */
-	protected Date time = TIME_EDEFAULT;
-
-	/**
 	 * The cached value of the '{@link #getTrain() <em>Train</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -82,6 +61,36 @@ public class JunctureImpl extends MinimalEObjectImpl.Container implements Junctu
 	 * @ordered
 	 */
 	protected Train train;
+
+	/**
+	 * The default value of the '{@link #getWeekday() <em>Weekday</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWeekday()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Weekday WEEKDAY_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getWeekday() <em>Weekday</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getWeekday()
+	 * @generated
+	 * @ordered
+	 */
+	protected Weekday weekday = WEEKDAY_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getTime() <em>Time</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTime()
+	 * @generated
+	 * @ordered
+	 */
+	protected time.Time time;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -131,7 +140,24 @@ public class JunctureImpl extends MinimalEObjectImpl.Container implements Junctu
 	 * @generated
 	 */
 	@Override
-	public Date getTime() {
+	public time.Time getTime() {
+		if (time != null && time.eIsProxy()) {
+			InternalEObject oldTime = (InternalEObject)time;
+			time = (time.Time)eResolveProxy(oldTime);
+			if (time != oldTime) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimetablePackage.JUNCTURE__TIME, oldTime, time));
+			}
+		}
+		return time;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public time.Time basicGetTime() {
 		return time;
 	}
 
@@ -141,11 +167,34 @@ public class JunctureImpl extends MinimalEObjectImpl.Container implements Junctu
 	 * @generated
 	 */
 	@Override
-	public void setTime(Date newTime) {
-		Date oldTime = time;
+	public void setTime(time.Time newTime) {
+		time.Time oldTime = time;
 		time = newTime;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimetablePackage.JUNCTURE__TIME, oldTime, time));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Weekday getWeekday() {
+		return weekday;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setWeekday(Weekday newWeekday) {
+		Weekday oldWeekday = weekday;
+		weekday = newWeekday == null ? WEEKDAY_EDEFAULT : newWeekday;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimetablePackage.JUNCTURE__WEEKDAY, oldWeekday, weekday));
 	}
 
 	/**
@@ -198,11 +247,14 @@ public class JunctureImpl extends MinimalEObjectImpl.Container implements Junctu
 		switch (featureID) {
 			case TimetablePackage.JUNCTURE__PLATFORM:
 				return getPlatform();
-			case TimetablePackage.JUNCTURE__TIME:
-				return getTime();
 			case TimetablePackage.JUNCTURE__TRAIN:
 				if (resolve) return getTrain();
 				return basicGetTrain();
+			case TimetablePackage.JUNCTURE__WEEKDAY:
+				return getWeekday();
+			case TimetablePackage.JUNCTURE__TIME:
+				if (resolve) return getTime();
+				return basicGetTime();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -218,11 +270,14 @@ public class JunctureImpl extends MinimalEObjectImpl.Container implements Junctu
 			case TimetablePackage.JUNCTURE__PLATFORM:
 				setPlatform((String)newValue);
 				return;
-			case TimetablePackage.JUNCTURE__TIME:
-				setTime((Date)newValue);
-				return;
 			case TimetablePackage.JUNCTURE__TRAIN:
 				setTrain((Train)newValue);
+				return;
+			case TimetablePackage.JUNCTURE__WEEKDAY:
+				setWeekday((Weekday)newValue);
+				return;
+			case TimetablePackage.JUNCTURE__TIME:
+				setTime((time.Time)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -239,11 +294,14 @@ public class JunctureImpl extends MinimalEObjectImpl.Container implements Junctu
 			case TimetablePackage.JUNCTURE__PLATFORM:
 				setPlatform(PLATFORM_EDEFAULT);
 				return;
-			case TimetablePackage.JUNCTURE__TIME:
-				setTime(TIME_EDEFAULT);
-				return;
 			case TimetablePackage.JUNCTURE__TRAIN:
 				setTrain((Train)null);
+				return;
+			case TimetablePackage.JUNCTURE__WEEKDAY:
+				setWeekday(WEEKDAY_EDEFAULT);
+				return;
+			case TimetablePackage.JUNCTURE__TIME:
+				setTime((time.Time)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -259,10 +317,12 @@ public class JunctureImpl extends MinimalEObjectImpl.Container implements Junctu
 		switch (featureID) {
 			case TimetablePackage.JUNCTURE__PLATFORM:
 				return PLATFORM_EDEFAULT == null ? platform != null : !PLATFORM_EDEFAULT.equals(platform);
-			case TimetablePackage.JUNCTURE__TIME:
-				return TIME_EDEFAULT == null ? time != null : !TIME_EDEFAULT.equals(time);
 			case TimetablePackage.JUNCTURE__TRAIN:
 				return train != null;
+			case TimetablePackage.JUNCTURE__WEEKDAY:
+				return weekday != WEEKDAY_EDEFAULT;
+			case TimetablePackage.JUNCTURE__TIME:
+				return time != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -279,8 +339,8 @@ public class JunctureImpl extends MinimalEObjectImpl.Container implements Junctu
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (platform: ");
 		result.append(platform);
-		result.append(", time: ");
-		result.append(time);
+		result.append(", weekday: ");
+		result.append(weekday);
 		result.append(')');
 		return result.toString();
 	}

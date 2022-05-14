@@ -23,9 +23,16 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Juncture">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="platform" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="time" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="train" lowerBound="1" eType="ecore:EClass ../../org.mdse.pts.depot/model/Depot.ecore#//Train"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="weekday" lowerBound="1"
+        eType="#//Weekday"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="time" lowerBound="1" eType="ecore:EClass ../../org.mdse.pts.time/model/Time.ecore#//Time"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Station"/>
   <eClassifiers xsi:type="ecore:EClass" name="Train"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="Weekday"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Time">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Hour" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="Minute" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
 </ecore:EPackage>

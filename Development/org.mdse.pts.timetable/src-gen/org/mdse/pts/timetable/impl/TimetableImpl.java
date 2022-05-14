@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.mdse.pts.timetable.Table;
 import org.mdse.pts.timetable.Timetable;
@@ -42,7 +43,7 @@ public class TimetableImpl extends MinimalEObjectImpl.Container implements Timet
 	 */
 	protected EList<Table> table;
 	/**
-	 * The cached value of the '{@link #getStation() <em>Station</em>}' containment reference list.
+	 * The cached value of the '{@link #getStation() <em>Station</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStation()
@@ -91,7 +92,7 @@ public class TimetableImpl extends MinimalEObjectImpl.Container implements Timet
 	@Override
 	public EList<Station> getStation() {
 		if (station == null) {
-			station = new EObjectContainmentEList<Station>(Station.class, this, TimetablePackage.TIMETABLE__STATION);
+			station = new EObjectResolvingEList<Station>(Station.class, this, TimetablePackage.TIMETABLE__STATION);
 		}
 		return station;
 	}
@@ -106,8 +107,6 @@ public class TimetableImpl extends MinimalEObjectImpl.Container implements Timet
 		switch (featureID) {
 			case TimetablePackage.TIMETABLE__TABLE:
 				return ((InternalEList<?>)getTable()).basicRemove(otherEnd, msgs);
-			case TimetablePackage.TIMETABLE__STATION:
-				return ((InternalEList<?>)getStation()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}

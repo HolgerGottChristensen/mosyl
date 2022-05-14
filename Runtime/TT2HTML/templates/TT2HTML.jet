@@ -1,0 +1,45 @@
+<%@ jet 
+  package="org.mdse.pts.timetable.jet" 
+  imports="org.mdse.pts.timetable.* java.util.* java.util.stream.Collectors" 
+  class="TT2HTMLTemplate" %>
+<%Table t = (Table) argument; %>
+<%HashMap<Weekday, List<Arrival>> arrivalsByDay = (HashMap<Weekday, List<Arrival>>) t.getJunctures().stream()
+	.filter(j -> Arrival.class.isInstance(j))
+	.collect(Collectors.toMap(Juncture::getWeekday, Function::identity));%>
+
+<%HashMap<Weekday, List<Departure>> departuresByDay = (HashMap<Weekday, List<Departure>>) t.getJunctures().stream()
+	.filter(j -> Departure.class.isInstance(j))
+	.collect(Collectors.toMap(Juncture::getWeekday, Function::identity));%>	
+
+<!-- TODO: Generate HTML Code -->'
+
+<html>
+	<head></head>
+	<body>
+		<h1><%= t.getStation().getName()%></h1>
+		<div>
+			<div>
+				<h2>Arrivals</h2>
+				<% for(Weekday w: arrivalsByDay.keySet()) { %>
+					<h3><%= w.toString()%></h3>
+					<% for(Arrival a : arrivalsByDay.get(w)) { %>
+						<p><%= a.getTime().getHour() + ":" + a.getTime().getMinute()%>
+						<%= a.getTrain().getName()%>
+						from <%= a.getOrigin().getName()%> on platform <%= a.getPlatform()%></p>
+					<% } %>
+				<% } %>
+			</div>
+			<div>
+				<h2>Departures</h2>
+				<% for(Weekday w: departuresByDay.keySet()) { %>
+					<h3><%= w.toString()%></h3>
+					<% for(Departure d : departuresByDay.get(w)) { %>
+						<p><%= d.getTime().getHour() + ":" + d.getTime().getMinute()%>
+						<%= d.getTrain().getName()%>
+						to <%= d.getDestination().getName()%> on platform <%= d.getPlatform()%></p>
+					<% } %>
+				<% } %>
+			</div>
+		</div>
+	<body>
+</html>

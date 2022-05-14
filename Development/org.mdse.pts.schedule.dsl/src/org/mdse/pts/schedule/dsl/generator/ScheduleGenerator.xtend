@@ -7,6 +7,11 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import org.mdse.pts.schedule.Schedule
+import org.mdse.pts.timetable.Timetable
+import java.util.List
+import org.mdse.pts.network.Station
+import java.util.HashSet
 
 /**
  * Generates code from your model files on save.
@@ -17,5 +22,8 @@ class ScheduleGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		//TODO: Generate
+		val schedule = resource.getContents().get(0) as Schedule;
+		val timetable = Scheduler2TimetableConverter.convert(schedule);
+		
 	}
 }

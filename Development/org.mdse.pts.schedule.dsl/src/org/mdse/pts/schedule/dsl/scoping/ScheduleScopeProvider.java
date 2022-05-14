@@ -6,6 +6,7 @@ package org.mdse.pts.schedule.dsl.scoping;
 import java.io.Console;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.eclipse.core.resources.IContainer;
 import org.eclipse.core.resources.IFile;
@@ -47,7 +48,7 @@ public class ScheduleScopeProvider extends AbstractScheduleScopeProvider {
 			IWorkspace workspace = file.getWorkspace();
 			try {
 				List<IFile> networkFile = processContainer(workspace.getRoot(), "network");
-				List<Network> networks = networkFile.stream().map(x -> EcoreIOUtil.<Network>loadModel(x)).toList();
+				List<Network> networks = networkFile.stream().map(x -> EcoreIOUtil.<Network>loadModel(x)).collect(Collectors.toList());
 				return Scopes.scopeFor(networks, x -> {
 					String name = EcoreUtil.getURI(x).lastSegment();
 					return QualifiedName.create(name.split("\\.")[0]);
@@ -63,7 +64,7 @@ public class ScheduleScopeProvider extends AbstractScheduleScopeProvider {
 			IWorkspace workspace = file.getWorkspace();
 			try {
 				List<IFile> networkFile = processContainer(workspace.getRoot(), "depot");
-				List<depot.Root> networks = networkFile.stream().map(x -> EcoreIOUtil.<depot.Root>loadModel(x)).toList();
+				List<depot.Root> networks = networkFile.stream().map(x -> EcoreIOUtil.<depot.Root>loadModel(x)).collect(Collectors.toList());
 				
 				return Scopes.scopeFor(networks, x -> {
 					String name = EcoreUtil.getURI(x).lastSegment();

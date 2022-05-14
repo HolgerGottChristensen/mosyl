@@ -17,6 +17,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.mdse.pts.timetable;visibility:=reexport,
  org.mdse.pts.common;visibility:=reexport,
  org.mdse.pts.depot;visibility:=reexport,
- org.mdse.pts.network;visibility:=reexport
+ org.mdse.pts.network;visibility:=reexport,
+ org.mdse.pts.timetable;bundle-version="1.0.0"
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.ui

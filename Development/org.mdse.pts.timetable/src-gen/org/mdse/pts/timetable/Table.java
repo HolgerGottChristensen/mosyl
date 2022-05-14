@@ -45,7 +45,7 @@ public interface Table extends EObject {
 	 * @return the value of the '<em>Station</em>' reference.
 	 * @see #setStation(Station)
 	 * @see org.mdse.pts.timetable.TimetablePackage#getTable_Station()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	Station getStation();
