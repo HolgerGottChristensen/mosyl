@@ -19,42 +19,42 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum TrainType implements Enumerator {
 	/**
-	 * The '<em><b>REGIONAL</b></em>' literal object.
+	 * The '<em><b>Regional</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #REGIONAL_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	REGIONAL(0, "REGIONAL", "REGIONAL"),
+	REGIONAL(0, "Regional", "Regional"),
 
 	/**
-	 * The '<em><b>INTERCITY</b></em>' literal object.
+	 * The '<em><b>Intercity</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #INTERCITY_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	INTERCITY(1, "INTERCITY", "INTERCITY");
+	INTERCITY(1, "Intercity", "Intercity");
 
 	/**
-	 * The '<em><b>REGIONAL</b></em>' literal value.
+	 * The '<em><b>Regional</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #REGIONAL
-	 * @model
+	 * @model name="Regional"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int REGIONAL_VALUE = 0;
 
 	/**
-	 * The '<em><b>INTERCITY</b></em>' literal value.
+	 * The '<em><b>Intercity</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #INTERCITY
-	 * @model
+	 * @model name="Intercity"
 	 * @generated
 	 * @ordered
 	 */

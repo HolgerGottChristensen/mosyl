@@ -5,6 +5,8 @@
     <semanticResources>Schedule.genmodel</semanticResources>
     <semanticResources>platform:/resource/org.mdse.pts.network/model/Network.ecore</semanticResources>
     <semanticResources>platform:/resource/org.mdse.pts.depot/model/Depot.ecore</semanticResources>
+    <semanticResources>platform:/resource/org.mdse.pts.timetable/model/Timetable.genmodel</semanticResources>
+    <semanticResources>platform:/resource/org.mdse.pts.timetable/model/Timetable.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_RF_aMMoREeyMY_rTuYfigw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_VA4icMoREeyMY_rTuYfigw" name="schedule class diagram" repPath="#_VAh9IMoREeyMY_rTuYfigw" changeId="2672cb47-e972-41ba-9f2f-f4441a34482a">

@@ -52,12 +52,12 @@ public interface Leg extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Distance</em>' attribute.
-	 * @see #setDistance(Integer)
+	 * @see #setDistance(int)
 	 * @see org.mdse.pts.network.NetworkPackage#getLeg_Distance()
 	 * @model required="true"
 	 * @generated
 	 */
-	Integer getDistance();
+	int getDistance();
 
 	/**
 	 * Sets the value of the '{@link org.mdse.pts.network.Leg#getDistance <em>Distance</em>}' attribute.
@@ -67,7 +67,7 @@ public interface Leg extends EObject {
 	 * @see #getDistance()
 	 * @generated
 	 */
-	void setDistance(Integer value);
+	void setDistance(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Stations</b></em>' reference list.

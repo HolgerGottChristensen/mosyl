@@ -22,9 +22,9 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalScheduleParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_LETTER", "RULE_DIGIT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'schedule'", "'for'", "'with'", "','", "';'", "'train'", "'on'", "'and'", "':'", "'start'", "'at'", "'platform'", "'drive'", "'via'", "'stop'", "'min'", "'reverse'", "'terminate'", "'Monday'", "'Tuesday'", "'Wednesday'", "'Thursday'", "'Friday'", "'Saturday'", "'Sunday'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_LETTER", "RULE_DIGIT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'schedule'", "'for'", "'with'", "','", "';'", "'train'", "'on'", "'and'", "':'", "'start'", "'at'", "'platform'", "'drive'", "'via'", "'stop'", "'min'", "'reverse'", "'terminate'", "'Monday'", "'Tuesday'", "'Wednesday'", "'Thursday'", "'Friday'", "'Saturday'", "'Sunday'"
     };
-    public static final int RULE_STRING=8;
+    public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=10;
     public static final int T__19=19;
     public static final int T__15=15;
@@ -44,12 +44,12 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
     public static final int T__32=32;
     public static final int RULE_ID=4;
     public static final int RULE_WS=11;
-    public static final int RULE_DIGIT=7;
-    public static final int RULE_LETTER=6;
+    public static final int RULE_DIGIT=8;
+    public static final int RULE_LETTER=7;
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
-    public static final int RULE_INT=5;
+    public static final int RULE_INT=6;
     public static final int T__29=29;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=9;
@@ -767,7 +767,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStartAtStop"
-    // InternalSchedule.g:344:1: ruleStartAtStop returns [EObject current=null] : (otherlv_0= 'start' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) ) ;
+    // InternalSchedule.g:344:1: ruleStartAtStop returns [EObject current=null] : (otherlv_0= 'start' otherlv_1= 'at' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) ) ;
     public final EObject ruleStartAtStop() throws RecognitionException {
         EObject current = null;
 
@@ -782,32 +782,32 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSchedule.g:350:2: ( (otherlv_0= 'start' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) ) )
-            // InternalSchedule.g:351:2: (otherlv_0= 'start' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) )
+            // InternalSchedule.g:350:2: ( (otherlv_0= 'start' otherlv_1= 'at' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) ) )
+            // InternalSchedule.g:351:2: (otherlv_0= 'start' otherlv_1= 'at' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) )
             {
-            // InternalSchedule.g:351:2: (otherlv_0= 'start' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) )
-            // InternalSchedule.g:352:3: otherlv_0= 'start' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) )
+            // InternalSchedule.g:351:2: (otherlv_0= 'start' otherlv_1= 'at' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) )
+            // InternalSchedule.g:352:3: otherlv_0= 'start' otherlv_1= 'at' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) )
             {
             otherlv_0=(Token)match(input,21,FOLLOW_15); 
 
             			newLeafNode(otherlv_0, grammarAccess.getStartAtStopAccess().getStartKeyword_0());
             		
-            otherlv_1=(Token)match(input,22,FOLLOW_4); 
+            otherlv_1=(Token)match(input,22,FOLLOW_16); 
 
             			newLeafNode(otherlv_1, grammarAccess.getStartAtStopAccess().getAtKeyword_1());
             		
-            // InternalSchedule.g:360:3: ( (otherlv_2= RULE_ID ) )
-            // InternalSchedule.g:361:4: (otherlv_2= RULE_ID )
+            // InternalSchedule.g:360:3: ( (otherlv_2= RULE_STRING ) )
+            // InternalSchedule.g:361:4: (otherlv_2= RULE_STRING )
             {
-            // InternalSchedule.g:361:4: (otherlv_2= RULE_ID )
-            // InternalSchedule.g:362:5: otherlv_2= RULE_ID
+            // InternalSchedule.g:361:4: (otherlv_2= RULE_STRING )
+            // InternalSchedule.g:362:5: otherlv_2= RULE_STRING
             {
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getStartAtStopRule());
             					}
             				
-            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_10); 
+            otherlv_2=(Token)match(input,RULE_STRING,FOLLOW_10); 
 
             					newLeafNode(otherlv_2, grammarAccess.getStartAtStopAccess().getStationStationCrossReference_2_0());
             				
@@ -817,7 +817,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,18,FOLLOW_16); 
+            otherlv_3=(Token)match(input,18,FOLLOW_17); 
 
             			newLeafNode(otherlv_3, grammarAccess.getStartAtStopAccess().getOnKeyword_3());
             		
@@ -910,7 +910,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleViaStop"
-    // InternalSchedule.g:410:1: ruleViaStop returns [EObject current=null] : (otherlv_0= 'drive' otherlv_1= 'via' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'and' otherlv_4= 'stop' otherlv_5= 'at' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'on' otherlv_8= 'platform' ( (lv_platform_9_0= RULE_ID ) ) otherlv_10= 'for' ( (lv_stoppedTime_11_0= RULE_INT ) ) otherlv_12= 'min' (otherlv_13= 'and' ( (lv_rotate_14_0= 'reverse' ) ) )? ) ;
+    // InternalSchedule.g:410:1: ruleViaStop returns [EObject current=null] : (otherlv_0= 'drive' otherlv_1= 'via' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'and' otherlv_4= 'stop' otherlv_5= 'at' ( (otherlv_6= RULE_STRING ) ) otherlv_7= 'on' otherlv_8= 'platform' ( (lv_platform_9_0= RULE_ID ) ) otherlv_10= 'for' ( (lv_stoppedTime_11_0= RULE_INT ) ) otherlv_12= 'min' (otherlv_13= 'and' ( (lv_rotate_14_0= 'reverse' ) ) )? ) ;
     public final EObject ruleViaStop() throws RecognitionException {
         EObject current = null;
 
@@ -934,32 +934,32 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSchedule.g:416:2: ( (otherlv_0= 'drive' otherlv_1= 'via' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'and' otherlv_4= 'stop' otherlv_5= 'at' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'on' otherlv_8= 'platform' ( (lv_platform_9_0= RULE_ID ) ) otherlv_10= 'for' ( (lv_stoppedTime_11_0= RULE_INT ) ) otherlv_12= 'min' (otherlv_13= 'and' ( (lv_rotate_14_0= 'reverse' ) ) )? ) )
-            // InternalSchedule.g:417:2: (otherlv_0= 'drive' otherlv_1= 'via' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'and' otherlv_4= 'stop' otherlv_5= 'at' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'on' otherlv_8= 'platform' ( (lv_platform_9_0= RULE_ID ) ) otherlv_10= 'for' ( (lv_stoppedTime_11_0= RULE_INT ) ) otherlv_12= 'min' (otherlv_13= 'and' ( (lv_rotate_14_0= 'reverse' ) ) )? )
+            // InternalSchedule.g:416:2: ( (otherlv_0= 'drive' otherlv_1= 'via' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'and' otherlv_4= 'stop' otherlv_5= 'at' ( (otherlv_6= RULE_STRING ) ) otherlv_7= 'on' otherlv_8= 'platform' ( (lv_platform_9_0= RULE_ID ) ) otherlv_10= 'for' ( (lv_stoppedTime_11_0= RULE_INT ) ) otherlv_12= 'min' (otherlv_13= 'and' ( (lv_rotate_14_0= 'reverse' ) ) )? ) )
+            // InternalSchedule.g:417:2: (otherlv_0= 'drive' otherlv_1= 'via' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'and' otherlv_4= 'stop' otherlv_5= 'at' ( (otherlv_6= RULE_STRING ) ) otherlv_7= 'on' otherlv_8= 'platform' ( (lv_platform_9_0= RULE_ID ) ) otherlv_10= 'for' ( (lv_stoppedTime_11_0= RULE_INT ) ) otherlv_12= 'min' (otherlv_13= 'and' ( (lv_rotate_14_0= 'reverse' ) ) )? )
             {
-            // InternalSchedule.g:417:2: (otherlv_0= 'drive' otherlv_1= 'via' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'and' otherlv_4= 'stop' otherlv_5= 'at' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'on' otherlv_8= 'platform' ( (lv_platform_9_0= RULE_ID ) ) otherlv_10= 'for' ( (lv_stoppedTime_11_0= RULE_INT ) ) otherlv_12= 'min' (otherlv_13= 'and' ( (lv_rotate_14_0= 'reverse' ) ) )? )
-            // InternalSchedule.g:418:3: otherlv_0= 'drive' otherlv_1= 'via' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'and' otherlv_4= 'stop' otherlv_5= 'at' ( (otherlv_6= RULE_ID ) ) otherlv_7= 'on' otherlv_8= 'platform' ( (lv_platform_9_0= RULE_ID ) ) otherlv_10= 'for' ( (lv_stoppedTime_11_0= RULE_INT ) ) otherlv_12= 'min' (otherlv_13= 'and' ( (lv_rotate_14_0= 'reverse' ) ) )?
+            // InternalSchedule.g:417:2: (otherlv_0= 'drive' otherlv_1= 'via' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'and' otherlv_4= 'stop' otherlv_5= 'at' ( (otherlv_6= RULE_STRING ) ) otherlv_7= 'on' otherlv_8= 'platform' ( (lv_platform_9_0= RULE_ID ) ) otherlv_10= 'for' ( (lv_stoppedTime_11_0= RULE_INT ) ) otherlv_12= 'min' (otherlv_13= 'and' ( (lv_rotate_14_0= 'reverse' ) ) )? )
+            // InternalSchedule.g:418:3: otherlv_0= 'drive' otherlv_1= 'via' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'and' otherlv_4= 'stop' otherlv_5= 'at' ( (otherlv_6= RULE_STRING ) ) otherlv_7= 'on' otherlv_8= 'platform' ( (lv_platform_9_0= RULE_ID ) ) otherlv_10= 'for' ( (lv_stoppedTime_11_0= RULE_INT ) ) otherlv_12= 'min' (otherlv_13= 'and' ( (lv_rotate_14_0= 'reverse' ) ) )?
             {
-            otherlv_0=(Token)match(input,24,FOLLOW_17); 
+            otherlv_0=(Token)match(input,24,FOLLOW_18); 
 
             			newLeafNode(otherlv_0, grammarAccess.getViaStopAccess().getDriveKeyword_0());
             		
-            otherlv_1=(Token)match(input,25,FOLLOW_4); 
+            otherlv_1=(Token)match(input,25,FOLLOW_16); 
 
             			newLeafNode(otherlv_1, grammarAccess.getViaStopAccess().getViaKeyword_1());
             		
-            // InternalSchedule.g:426:3: ( (otherlv_2= RULE_ID ) )
-            // InternalSchedule.g:427:4: (otherlv_2= RULE_ID )
+            // InternalSchedule.g:426:3: ( (otherlv_2= RULE_STRING ) )
+            // InternalSchedule.g:427:4: (otherlv_2= RULE_STRING )
             {
-            // InternalSchedule.g:427:4: (otherlv_2= RULE_ID )
-            // InternalSchedule.g:428:5: otherlv_2= RULE_ID
+            // InternalSchedule.g:427:4: (otherlv_2= RULE_STRING )
+            // InternalSchedule.g:428:5: otherlv_2= RULE_STRING
             {
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getViaStopRule());
             					}
             				
-            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_18); 
+            otherlv_2=(Token)match(input,RULE_STRING,FOLLOW_19); 
 
             					newLeafNode(otherlv_2, grammarAccess.getViaStopAccess().getViaLegCrossReference_2_0());
             				
@@ -969,7 +969,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,19,FOLLOW_19); 
+            otherlv_3=(Token)match(input,19,FOLLOW_20); 
 
             			newLeafNode(otherlv_3, grammarAccess.getViaStopAccess().getAndKeyword_3());
             		
@@ -977,22 +977,22 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_4, grammarAccess.getViaStopAccess().getStopKeyword_4());
             		
-            otherlv_5=(Token)match(input,22,FOLLOW_4); 
+            otherlv_5=(Token)match(input,22,FOLLOW_16); 
 
             			newLeafNode(otherlv_5, grammarAccess.getViaStopAccess().getAtKeyword_5());
             		
-            // InternalSchedule.g:451:3: ( (otherlv_6= RULE_ID ) )
-            // InternalSchedule.g:452:4: (otherlv_6= RULE_ID )
+            // InternalSchedule.g:451:3: ( (otherlv_6= RULE_STRING ) )
+            // InternalSchedule.g:452:4: (otherlv_6= RULE_STRING )
             {
-            // InternalSchedule.g:452:4: (otherlv_6= RULE_ID )
-            // InternalSchedule.g:453:5: otherlv_6= RULE_ID
+            // InternalSchedule.g:452:4: (otherlv_6= RULE_STRING )
+            // InternalSchedule.g:453:5: otherlv_6= RULE_STRING
             {
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getViaStopRule());
             					}
             				
-            otherlv_6=(Token)match(input,RULE_ID,FOLLOW_10); 
+            otherlv_6=(Token)match(input,RULE_STRING,FOLLOW_10); 
 
             					newLeafNode(otherlv_6, grammarAccess.getViaStopAccess().getStationStationCrossReference_6_0());
             				
@@ -1002,7 +1002,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_7=(Token)match(input,18,FOLLOW_16); 
+            otherlv_7=(Token)match(input,18,FOLLOW_17); 
 
             			newLeafNode(otherlv_7, grammarAccess.getViaStopAccess().getOnKeyword_7());
             		
@@ -1036,7 +1036,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_10=(Token)match(input,13,FOLLOW_20); 
+            otherlv_10=(Token)match(input,13,FOLLOW_21); 
 
             			newLeafNode(otherlv_10, grammarAccess.getViaStopAccess().getForKeyword_10());
             		
@@ -1046,7 +1046,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
             // InternalSchedule.g:495:4: (lv_stoppedTime_11_0= RULE_INT )
             // InternalSchedule.g:496:5: lv_stoppedTime_11_0= RULE_INT
             {
-            lv_stoppedTime_11_0=(Token)match(input,RULE_INT,FOLLOW_21); 
+            lv_stoppedTime_11_0=(Token)match(input,RULE_INT,FOLLOW_22); 
 
             					newLeafNode(lv_stoppedTime_11_0, grammarAccess.getViaStopAccess().getStoppedTimeINTTerminalRuleCall_11_0());
             				
@@ -1066,7 +1066,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_12=(Token)match(input,27,FOLLOW_22); 
+            otherlv_12=(Token)match(input,27,FOLLOW_23); 
 
             			newLeafNode(otherlv_12, grammarAccess.getViaStopAccess().getMinKeyword_12());
             		
@@ -1081,7 +1081,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // InternalSchedule.g:517:4: otherlv_13= 'and' ( (lv_rotate_14_0= 'reverse' ) )
                     {
-                    otherlv_13=(Token)match(input,19,FOLLOW_23); 
+                    otherlv_13=(Token)match(input,19,FOLLOW_24); 
 
                     				newLeafNode(otherlv_13, grammarAccess.getViaStopAccess().getAndKeyword_13_0());
                     			
@@ -1172,7 +1172,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNormalStop"
-    // InternalSchedule.g:547:1: ruleNormalStop returns [EObject current=null] : (otherlv_0= 'stop' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) otherlv_6= 'for' ( (lv_stoppedTime_7_0= RULE_INT ) ) otherlv_8= 'min' (otherlv_9= 'and' ( (lv_rotate_10_0= 'reverse' ) ) )? ) ;
+    // InternalSchedule.g:547:1: ruleNormalStop returns [EObject current=null] : (otherlv_0= 'stop' otherlv_1= 'at' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) otherlv_6= 'for' ( (lv_stoppedTime_7_0= RULE_INT ) ) otherlv_8= 'min' (otherlv_9= 'and' ( (lv_rotate_10_0= 'reverse' ) ) )? ) ;
     public final EObject ruleNormalStop() throws RecognitionException {
         EObject current = null;
 
@@ -1192,32 +1192,32 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSchedule.g:553:2: ( (otherlv_0= 'stop' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) otherlv_6= 'for' ( (lv_stoppedTime_7_0= RULE_INT ) ) otherlv_8= 'min' (otherlv_9= 'and' ( (lv_rotate_10_0= 'reverse' ) ) )? ) )
-            // InternalSchedule.g:554:2: (otherlv_0= 'stop' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) otherlv_6= 'for' ( (lv_stoppedTime_7_0= RULE_INT ) ) otherlv_8= 'min' (otherlv_9= 'and' ( (lv_rotate_10_0= 'reverse' ) ) )? )
+            // InternalSchedule.g:553:2: ( (otherlv_0= 'stop' otherlv_1= 'at' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) otherlv_6= 'for' ( (lv_stoppedTime_7_0= RULE_INT ) ) otherlv_8= 'min' (otherlv_9= 'and' ( (lv_rotate_10_0= 'reverse' ) ) )? ) )
+            // InternalSchedule.g:554:2: (otherlv_0= 'stop' otherlv_1= 'at' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) otherlv_6= 'for' ( (lv_stoppedTime_7_0= RULE_INT ) ) otherlv_8= 'min' (otherlv_9= 'and' ( (lv_rotate_10_0= 'reverse' ) ) )? )
             {
-            // InternalSchedule.g:554:2: (otherlv_0= 'stop' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) otherlv_6= 'for' ( (lv_stoppedTime_7_0= RULE_INT ) ) otherlv_8= 'min' (otherlv_9= 'and' ( (lv_rotate_10_0= 'reverse' ) ) )? )
-            // InternalSchedule.g:555:3: otherlv_0= 'stop' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) otherlv_6= 'for' ( (lv_stoppedTime_7_0= RULE_INT ) ) otherlv_8= 'min' (otherlv_9= 'and' ( (lv_rotate_10_0= 'reverse' ) ) )?
+            // InternalSchedule.g:554:2: (otherlv_0= 'stop' otherlv_1= 'at' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) otherlv_6= 'for' ( (lv_stoppedTime_7_0= RULE_INT ) ) otherlv_8= 'min' (otherlv_9= 'and' ( (lv_rotate_10_0= 'reverse' ) ) )? )
+            // InternalSchedule.g:555:3: otherlv_0= 'stop' otherlv_1= 'at' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) otherlv_6= 'for' ( (lv_stoppedTime_7_0= RULE_INT ) ) otherlv_8= 'min' (otherlv_9= 'and' ( (lv_rotate_10_0= 'reverse' ) ) )?
             {
             otherlv_0=(Token)match(input,26,FOLLOW_15); 
 
             			newLeafNode(otherlv_0, grammarAccess.getNormalStopAccess().getStopKeyword_0());
             		
-            otherlv_1=(Token)match(input,22,FOLLOW_4); 
+            otherlv_1=(Token)match(input,22,FOLLOW_16); 
 
             			newLeafNode(otherlv_1, grammarAccess.getNormalStopAccess().getAtKeyword_1());
             		
-            // InternalSchedule.g:563:3: ( (otherlv_2= RULE_ID ) )
-            // InternalSchedule.g:564:4: (otherlv_2= RULE_ID )
+            // InternalSchedule.g:563:3: ( (otherlv_2= RULE_STRING ) )
+            // InternalSchedule.g:564:4: (otherlv_2= RULE_STRING )
             {
-            // InternalSchedule.g:564:4: (otherlv_2= RULE_ID )
-            // InternalSchedule.g:565:5: otherlv_2= RULE_ID
+            // InternalSchedule.g:564:4: (otherlv_2= RULE_STRING )
+            // InternalSchedule.g:565:5: otherlv_2= RULE_STRING
             {
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getNormalStopRule());
             					}
             				
-            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_10); 
+            otherlv_2=(Token)match(input,RULE_STRING,FOLLOW_10); 
 
             					newLeafNode(otherlv_2, grammarAccess.getNormalStopAccess().getStationStationCrossReference_2_0());
             				
@@ -1227,7 +1227,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,18,FOLLOW_16); 
+            otherlv_3=(Token)match(input,18,FOLLOW_17); 
 
             			newLeafNode(otherlv_3, grammarAccess.getNormalStopAccess().getOnKeyword_3());
             		
@@ -1261,7 +1261,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,13,FOLLOW_20); 
+            otherlv_6=(Token)match(input,13,FOLLOW_21); 
 
             			newLeafNode(otherlv_6, grammarAccess.getNormalStopAccess().getForKeyword_6());
             		
@@ -1271,7 +1271,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
             // InternalSchedule.g:607:4: (lv_stoppedTime_7_0= RULE_INT )
             // InternalSchedule.g:608:5: lv_stoppedTime_7_0= RULE_INT
             {
-            lv_stoppedTime_7_0=(Token)match(input,RULE_INT,FOLLOW_21); 
+            lv_stoppedTime_7_0=(Token)match(input,RULE_INT,FOLLOW_22); 
 
             					newLeafNode(lv_stoppedTime_7_0, grammarAccess.getNormalStopAccess().getStoppedTimeINTTerminalRuleCall_7_0());
             				
@@ -1291,7 +1291,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_8=(Token)match(input,27,FOLLOW_22); 
+            otherlv_8=(Token)match(input,27,FOLLOW_23); 
 
             			newLeafNode(otherlv_8, grammarAccess.getNormalStopAccess().getMinKeyword_8());
             		
@@ -1306,7 +1306,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
                 case 1 :
                     // InternalSchedule.g:629:4: otherlv_9= 'and' ( (lv_rotate_10_0= 'reverse' ) )
                     {
-                    otherlv_9=(Token)match(input,19,FOLLOW_23); 
+                    otherlv_9=(Token)match(input,19,FOLLOW_24); 
 
                     				newLeafNode(otherlv_9, grammarAccess.getNormalStopAccess().getAndKeyword_9_0());
                     			
@@ -1397,7 +1397,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTerminalStop"
-    // InternalSchedule.g:659:1: ruleTerminalStop returns [EObject current=null] : (otherlv_0= 'terminate' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) ) ;
+    // InternalSchedule.g:659:1: ruleTerminalStop returns [EObject current=null] : (otherlv_0= 'terminate' otherlv_1= 'at' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) ) ;
     public final EObject ruleTerminalStop() throws RecognitionException {
         EObject current = null;
 
@@ -1412,32 +1412,32 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSchedule.g:665:2: ( (otherlv_0= 'terminate' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) ) )
-            // InternalSchedule.g:666:2: (otherlv_0= 'terminate' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) )
+            // InternalSchedule.g:665:2: ( (otherlv_0= 'terminate' otherlv_1= 'at' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) ) )
+            // InternalSchedule.g:666:2: (otherlv_0= 'terminate' otherlv_1= 'at' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) )
             {
-            // InternalSchedule.g:666:2: (otherlv_0= 'terminate' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) )
-            // InternalSchedule.g:667:3: otherlv_0= 'terminate' otherlv_1= 'at' ( (otherlv_2= RULE_ID ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) )
+            // InternalSchedule.g:666:2: (otherlv_0= 'terminate' otherlv_1= 'at' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) ) )
+            // InternalSchedule.g:667:3: otherlv_0= 'terminate' otherlv_1= 'at' ( (otherlv_2= RULE_STRING ) ) otherlv_3= 'on' otherlv_4= 'platform' ( (lv_platform_5_0= RULE_ID ) )
             {
             otherlv_0=(Token)match(input,29,FOLLOW_15); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTerminalStopAccess().getTerminateKeyword_0());
             		
-            otherlv_1=(Token)match(input,22,FOLLOW_4); 
+            otherlv_1=(Token)match(input,22,FOLLOW_16); 
 
             			newLeafNode(otherlv_1, grammarAccess.getTerminalStopAccess().getAtKeyword_1());
             		
-            // InternalSchedule.g:675:3: ( (otherlv_2= RULE_ID ) )
-            // InternalSchedule.g:676:4: (otherlv_2= RULE_ID )
+            // InternalSchedule.g:675:3: ( (otherlv_2= RULE_STRING ) )
+            // InternalSchedule.g:676:4: (otherlv_2= RULE_STRING )
             {
-            // InternalSchedule.g:676:4: (otherlv_2= RULE_ID )
-            // InternalSchedule.g:677:5: otherlv_2= RULE_ID
+            // InternalSchedule.g:676:4: (otherlv_2= RULE_STRING )
+            // InternalSchedule.g:677:5: otherlv_2= RULE_STRING
             {
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getTerminalStopRule());
             					}
             				
-            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_10); 
+            otherlv_2=(Token)match(input,RULE_STRING,FOLLOW_10); 
 
             					newLeafNode(otherlv_2, grammarAccess.getTerminalStopAccess().getStationStationCrossReference_2_0());
             				
@@ -1447,7 +1447,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,18,FOLLOW_16); 
+            otherlv_3=(Token)match(input,18,FOLLOW_17); 
 
             			newLeafNode(otherlv_3, grammarAccess.getTerminalStopAccess().getOnKeyword_3());
             		
@@ -1575,7 +1575,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getStartTimeAccess().getWeekdaysWeekdayEnumRuleCall_0_0());
             				
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_25);
             lv_weekdays_0_0=ruleWeekday();
 
             state._fsp--;
@@ -1625,7 +1625,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
             	    						newCompositeNode(grammarAccess.getStartTimeAccess().getWeekdaysWeekdayEnumRuleCall_1_1_0());
             	    					
-            	    pushFollow(FOLLOW_24);
+            	    pushFollow(FOLLOW_25);
             	    lv_weekdays_2_0=ruleWeekday();
 
             	    state._fsp--;
@@ -1656,7 +1656,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_3=(Token)match(input,22,FOLLOW_20); 
+            otherlv_3=(Token)match(input,22,FOLLOW_21); 
 
             			newLeafNode(otherlv_3, grammarAccess.getStartTimeAccess().getAtKeyword_2());
             		
@@ -1669,7 +1669,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getStartTimeAccess().getTimestampsTimeParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_26);
             lv_timestamps_4_0=ruleTime();
 
             state._fsp--;
@@ -1706,7 +1706,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // InternalSchedule.g:801:4: otherlv_5= ',' ( (lv_timestamps_6_0= ruleTime ) )
             	    {
-            	    otherlv_5=(Token)match(input,15,FOLLOW_20); 
+            	    otherlv_5=(Token)match(input,15,FOLLOW_21); 
 
             	    				newLeafNode(otherlv_5, grammarAccess.getStartTimeAccess().getCommaKeyword_4_0());
             	    			
@@ -1719,7 +1719,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
             	    						newCompositeNode(grammarAccess.getStartTimeAccess().getTimestampsTimeParserRuleCall_4_1_0());
             	    					
-            	    pushFollow(FOLLOW_25);
+            	    pushFollow(FOLLOW_26);
             	    lv_timestamps_6_0=ruleTime();
 
             	    state._fsp--;
@@ -1833,7 +1833,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
             // InternalSchedule.g:845:4: (lv_hour_0_0= RULE_INT )
             // InternalSchedule.g:846:5: lv_hour_0_0= RULE_INT
             {
-            lv_hour_0_0=(Token)match(input,RULE_INT,FOLLOW_26); 
+            lv_hour_0_0=(Token)match(input,RULE_INT,FOLLOW_27); 
 
             					newLeafNode(lv_hour_0_0, grammarAccess.getTimeAccess().getHourINTTerminalRuleCall_0_0());
             				
@@ -1853,7 +1853,7 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,20,FOLLOW_20); 
+            otherlv_1=(Token)match(input,20,FOLLOW_21); 
 
             			newLeafNode(otherlv_1, grammarAccess.getTimeAccess().getColonKeyword_1());
             		
@@ -2131,16 +2131,17 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000025000000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000080002L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000408000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000080002L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000408000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000008002L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000100000L});
 
 }

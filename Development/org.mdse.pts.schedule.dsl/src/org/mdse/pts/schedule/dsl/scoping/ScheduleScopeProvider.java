@@ -3,6 +3,7 @@
  */
 package org.mdse.pts.schedule.dsl.scoping;
 
+import java.io.Console;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -97,8 +98,9 @@ public class ScheduleScopeProvider extends AbstractScheduleScopeProvider {
 		if (context instanceof Stop && reference.getName().equals("via")) {
 			Schedule schedule = (Schedule) EcoreUtil.getRootContainer(context);
 			List<network.Leg> legs = schedule.getNetwork().getLegs();
-			
-			return Scopes.scopeFor(legs);
+			return Scopes.scopeFor(legs, x -> {
+				return QualifiedName.create(x.getName());
+				}, IScope.NULLSCOPE);
 		}
 		
 		return super.getScope(context, reference);

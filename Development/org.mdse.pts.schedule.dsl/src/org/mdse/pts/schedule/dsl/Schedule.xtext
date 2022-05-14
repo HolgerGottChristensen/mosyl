@@ -21,19 +21,19 @@ TrainSchedule:
 ;
 
 StartAtStop returns Stop:
-	"start" "at" station=[network::Station] "on" "platform" platform=ID 
+	"start" "at" station=[network::Station|STRING] "on" "platform" platform=ID 
 ;
 
 ViaStop returns Stop:
-	"drive" "via" via=[network::Leg] "and" "stop" "at" station=[network::Station] "on" "platform" platform=ID "for" stoppedTime=INT "min" ("and" rotate?=("reverse"))?
+	"drive" "via" via=[network::Leg|STRING] "and" "stop" "at" station=[network::Station|STRING] "on" "platform" platform=ID "for" stoppedTime=INT "min" ("and" rotate?=("reverse"))?
 ;
 
 NormalStop returns Stop:
-	"stop" "at" station=[network::Station] "on" "platform" platform=ID "for" stoppedTime=INT "min" ("and" rotate?=("reverse"))?
+	"stop" "at" station=[network::Station|STRING] "on" "platform" platform=ID "for" stoppedTime=INT "min" ("and" rotate?=("reverse"))?
 ;
 
 TerminalStop returns Stop:
-	"terminate" "at" station=[network::Station] "on" "platform" platform=ID
+	"terminate" "at" station=[network::Station|STRING] "on" "platform" platform=ID
 ;
 
 StartTime:
@@ -44,7 +44,6 @@ StartTime:
 Time:
 	hour=INT ":" minute=INT
 ;
-
 
 enum Weekday:
 	MONDAY="Monday" |

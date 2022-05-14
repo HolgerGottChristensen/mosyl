@@ -13,8 +13,8 @@
       <genEnumLiterals ecoreEnumLiteral="Depot.ecore#//CoachClass/Economy"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Depot.ecore#//TrainType">
-      <genEnumLiterals ecoreEnumLiteral="Depot.ecore#//TrainType/REGIONAL"/>
-      <genEnumLiterals ecoreEnumLiteral="Depot.ecore#//TrainType/INTERCITY"/>
+      <genEnumLiterals ecoreEnumLiteral="Depot.ecore#//TrainType/Regional"/>
+      <genEnumLiterals ecoreEnumLiteral="Depot.ecore#//TrainType/Intercity"/>
     </genEnums>
     <genClasses ecoreClass="Depot.ecore#//Depot">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Depot.ecore#//Depot/train"/>

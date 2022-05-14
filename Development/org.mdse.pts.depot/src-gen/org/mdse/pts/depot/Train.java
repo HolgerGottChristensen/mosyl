@@ -70,7 +70,7 @@ public interface Train extends EObject {
 	 * @see org.mdse.pts.depot.TrainType
 	 * @see #setType(TrainType)
 	 * @see org.mdse.pts.depot.DepotPackage#getTrain_Type()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	TrainType getType();

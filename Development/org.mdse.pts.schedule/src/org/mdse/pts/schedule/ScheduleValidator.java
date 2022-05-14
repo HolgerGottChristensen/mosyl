@@ -28,7 +28,7 @@ import org.mdse.pts.depot.TrainType;
 
 public class ScheduleValidator extends EObjectValidator implements IStartup {
 	private DiagnosticChain diagnostics;
-	
+	/*
 	@Override
 	public void earlyStartup() {
 		// TODO Auto-generated method stub
@@ -284,6 +284,12 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 		Diagnostic diagnostic = new BasicDiagnostic(Diagnostic.ERROR, object.toString(), 0, message, new Object[] { object });
 		diagnostics.add(diagnostic);
 		return false;
+	}*/
+
+	@Override
+	public void earlyStartup() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

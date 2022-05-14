@@ -66,7 +66,7 @@ public class LegImpl extends MinimalEObjectImpl.Container implements Leg {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Integer DISTANCE_EDEFAULT = null;
+	protected static final int DISTANCE_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getDistance() <em>Distance</em>}' attribute.
@@ -76,7 +76,7 @@ public class LegImpl extends MinimalEObjectImpl.Container implements Leg {
 	 * @generated
 	 * @ordered
 	 */
-	protected Integer distance = DISTANCE_EDEFAULT;
+	protected int distance = DISTANCE_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getStations() <em>Stations</em>}' reference list.
@@ -136,7 +136,7 @@ public class LegImpl extends MinimalEObjectImpl.Container implements Leg {
 	 * @generated
 	 */
 	@Override
-	public Integer getDistance() {
+	public int getDistance() {
 		return distance;
 	}
 
@@ -146,8 +146,8 @@ public class LegImpl extends MinimalEObjectImpl.Container implements Leg {
 	 * @generated
 	 */
 	@Override
-	public void setDistance(Integer newDistance) {
-		Integer oldDistance = distance;
+	public void setDistance(int newDistance) {
+		int oldDistance = distance;
 		distance = newDistance;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, NetworkPackage.LEG__DISTANCE, oldDistance, distance));
@@ -268,7 +268,7 @@ public class LegImpl extends MinimalEObjectImpl.Container implements Leg {
 			case NetworkPackage.LEG__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case NetworkPackage.LEG__DISTANCE:
-				return DISTANCE_EDEFAULT == null ? distance != null : !DISTANCE_EDEFAULT.equals(distance);
+				return distance != DISTANCE_EDEFAULT;
 			case NetworkPackage.LEG__STATIONS:
 				return stations != null && !stations.isEmpty();
 		}

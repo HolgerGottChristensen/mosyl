@@ -5,11 +5,6 @@ org.eclipse.emf.examples.generator.validator plug-in to illustrate how EMF's
 code generator can be extended.
 This can be disabled with -vmargs -Dorg.eclipse.emf.examples.generator.validator=false.
 
-Contains packages:
-  schedule <http://mdse.org/pts/schedule>
-  network <http://mdse.org/pts/network>
-  depot <http://mdse.org/pts/depot>
-
 Package schedule <http://mdse.org/pts/schedule>
 
   Class Schedule
@@ -45,51 +40,3 @@ Package schedule <http://mdse.org/pts/schedule>
     Literal FRIDAY = 4
     Literal SATURDAY = 5
     Literal SUNDAY = 6
-
-Package network <http://mdse.org/pts/network>
-
-  Class Network
-    Attribute name : EString<<1..1>>
-    Reference stations : Station<<0..*>>
-    Reference legs : Leg<<0..*>>
-
-  Class Station
-    Attribute name : EString<<1..1>>
-    Reference legs : Leg<<0..*>>
-
-  Class Leg
-    Attribute name : EString
-    Attribute distance : EInt<<1..1>>
-    Reference stations : Station<<2..2>>
-
-Package depot <http://mdse.org/pts/depot>
-
-  Class Depot
-    Reference train : Train<<0..*>>
-
-  Class Train
-    Reference coach : Coach<<0..*>>
-    Attribute name : EString
-    Attribute type : TrainType<<1..1>>
-
-  Class Locomotive -> Coach
-
-  Class DiningCoach -> Coach
-
-  Class PassengerCoach -> Coach
-    Attribute class : CoachClass
-
-  Class Coach
-    Attribute wagonNumber : EInt
-    Reference train : Train<<1..1>>
-
-  Class Root
-    Reference depot : Depot<<1..1>>
-
-  Enum CoachClass
-    Literal FirstClass = 0
-    Literal Economy = 1
-
-  Enum TrainType
-    Literal Regional = 0
-    Literal Intercity = 1

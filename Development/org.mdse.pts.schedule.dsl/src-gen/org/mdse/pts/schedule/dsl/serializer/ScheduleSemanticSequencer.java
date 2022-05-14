@@ -77,7 +77,7 @@ public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     NormalStop returns Stop
 	 *
 	 * Constraint:
-	 *     (station=[Station|ID] platform=ID stoppedTime=INT rotate?='reverse'?)
+	 *     (station=[Station|STRING] platform=ID stoppedTime=INT rotate?='reverse'?)
 	 * </pre>
 	 */
 	protected void sequence_NormalStop(ISerializationContext context, Stop semanticObject) {
@@ -105,7 +105,7 @@ public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     StartAtStop returns Stop
 	 *
 	 * Constraint:
-	 *     (station=[Station|ID] platform=ID)
+	 *     (station=[Station|STRING] platform=ID)
 	 * </pre>
 	 */
 	protected void sequence_StartAtStop(ISerializationContext context, Stop semanticObject) {
@@ -116,7 +116,7 @@ public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SchedulePackage.Literals.STOP__PLATFORM));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getStartAtStopAccess().getStationStationIDTerminalRuleCall_2_0_1(), semanticObject.eGet(SchedulePackage.Literals.STOP__STATION, false));
+		feeder.accept(grammarAccess.getStartAtStopAccess().getStationStationSTRINGTerminalRuleCall_2_0_1(), semanticObject.eGet(SchedulePackage.Literals.STOP__STATION, false));
 		feeder.accept(grammarAccess.getStartAtStopAccess().getPlatformIDTerminalRuleCall_5_0(), semanticObject.getPlatform());
 		feeder.finish();
 	}
@@ -142,7 +142,7 @@ public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     TerminalStop returns Stop
 	 *
 	 * Constraint:
-	 *     (station=[Station|ID] platform=ID)
+	 *     (station=[Station|STRING] platform=ID)
 	 * </pre>
 	 */
 	protected void sequence_TerminalStop(ISerializationContext context, Stop semanticObject) {
@@ -153,7 +153,7 @@ public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequenc
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SchedulePackage.Literals.STOP__PLATFORM));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTerminalStopAccess().getStationStationIDTerminalRuleCall_2_0_1(), semanticObject.eGet(SchedulePackage.Literals.STOP__STATION, false));
+		feeder.accept(grammarAccess.getTerminalStopAccess().getStationStationSTRINGTerminalRuleCall_2_0_1(), semanticObject.eGet(SchedulePackage.Literals.STOP__STATION, false));
 		feeder.accept(grammarAccess.getTerminalStopAccess().getPlatformIDTerminalRuleCall_5_0(), semanticObject.getPlatform());
 		feeder.finish();
 	}
@@ -209,7 +209,7 @@ public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     ViaStop returns Stop
 	 *
 	 * Constraint:
-	 *     (via=[Leg|ID] station=[Station|ID] platform=ID stoppedTime=INT rotate?='reverse'?)
+	 *     (via=[Leg|STRING] station=[Station|STRING] platform=ID stoppedTime=INT rotate?='reverse'?)
 	 * </pre>
 	 */
 	protected void sequence_ViaStop(ISerializationContext context, Stop semanticObject) {

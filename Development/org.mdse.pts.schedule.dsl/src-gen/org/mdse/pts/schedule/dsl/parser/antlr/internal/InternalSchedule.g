@@ -364,7 +364,7 @@ ruleStartAtStop returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getStartAtStopRule());
 					}
 				}
-				otherlv_2=RULE_ID
+				otherlv_2=RULE_STRING
 				{
 					newLeafNode(otherlv_2, grammarAccess.getStartAtStopAccess().getStationStationCrossReference_2_0());
 				}
@@ -430,7 +430,7 @@ ruleViaStop returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getViaStopRule());
 					}
 				}
-				otherlv_2=RULE_ID
+				otherlv_2=RULE_STRING
 				{
 					newLeafNode(otherlv_2, grammarAccess.getViaStopAccess().getViaLegCrossReference_2_0());
 				}
@@ -455,7 +455,7 @@ ruleViaStop returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getViaStopRule());
 					}
 				}
-				otherlv_6=RULE_ID
+				otherlv_6=RULE_STRING
 				{
 					newLeafNode(otherlv_6, grammarAccess.getViaStopAccess().getStationStationCrossReference_6_0());
 				}
@@ -567,7 +567,7 @@ ruleNormalStop returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getNormalStopRule());
 					}
 				}
-				otherlv_2=RULE_ID
+				otherlv_2=RULE_STRING
 				{
 					newLeafNode(otherlv_2, grammarAccess.getNormalStopAccess().getStationStationCrossReference_2_0());
 				}
@@ -679,7 +679,7 @@ ruleTerminalStop returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getTerminalStopRule());
 					}
 				}
-				otherlv_2=RULE_ID
+				otherlv_2=RULE_STRING
 				{
 					newLeafNode(otherlv_2, grammarAccess.getTerminalStopAccess().getStationStationCrossReference_2_0());
 				}

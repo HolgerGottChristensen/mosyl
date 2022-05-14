@@ -53,7 +53,7 @@ public interface Coach extends EObject {
 	 * @see #setTrain(Train)
 	 * @see org.mdse.pts.depot.DepotPackage#getCoach_Train()
 	 * @see org.mdse.pts.depot.Train#getCoach
-	 * @model opposite="coach" transient="false"
+	 * @model opposite="coach" required="true" transient="false"
 	 * @generated
 	 */
 	Train getTrain();
