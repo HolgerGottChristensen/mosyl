@@ -4,20 +4,11 @@
     editorDirectory="/org.mdse.pts.schedule.editor/src-gen" modelPluginID="org.mdse.pts.schedule"
     modelName="Schedule" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     testsDirectory="/org.mdse.pts.schedule.tests/src-gen" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="8.0" copyrightFields="false" usedGenPackages="../../org.mdse.pts.timetable/model/Timetable.genmodel#//network ../../org.mdse.pts.timetable/model/Timetable.genmodel#//depot"
+    complianceLevel="8.0" copyrightFields="false" usedGenPackages="../../org.mdse.pts.depot/model/Depot.genmodel#//depot ../../org.mdse.pts.network/model/Network.genmodel#//network ../../org.mdse.pts.time/model/Time.genmodel#//time ../../org.mdse.pts.timetable/model/Timetable.genmodel#//timetable"
     operationReflection="true" importOrganizing="true">
   <foreignModel>Schedule.ecore</foreignModel>
   <genPackages prefix="Schedule" basePackage="org.mdse.pts" disposableProviderFactory="true"
       ecorePackage="Schedule.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Schedule.ecore#//Weekday">
-      <genEnumLiterals ecoreEnumLiteral="Schedule.ecore#//Weekday/MONDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="Schedule.ecore#//Weekday/TUESDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="Schedule.ecore#//Weekday/WEDNESDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="Schedule.ecore#//Weekday/THURSDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="Schedule.ecore#//Weekday/FRIDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="Schedule.ecore#//Weekday/SATURDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="Schedule.ecore#//Weekday/SUNDAY"/>
-    </genEnums>
     <genClasses ecoreClass="Schedule.ecore#//Schedule">
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Schedule.ecore#//Schedule/network"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Schedule.ecore#//Schedule/depot"/>

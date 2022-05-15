@@ -2,10 +2,10 @@
  */
 package org.mdse.pts.schedule;
 
-import network.Leg;
-import network.Station;
-
 import org.eclipse.emf.ecore.EObject;
+
+import org.mdse.pts.network.Leg;
+import org.mdse.pts.network.Station;
 
 /**
  * <!-- begin-user-doc -->

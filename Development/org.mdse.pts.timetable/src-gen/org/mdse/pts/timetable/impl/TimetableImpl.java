@@ -3,17 +3,22 @@
 package org.mdse.pts.timetable.impl;
 
 import java.util.Collection;
-import network.Station;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.mdse.pts.network.Station;
+
 import org.mdse.pts.timetable.Table;
 import org.mdse.pts.timetable.Timetable;
 import org.mdse.pts.timetable.TimetablePackage;
@@ -42,6 +47,7 @@ public class TimetableImpl extends MinimalEObjectImpl.Container implements Timet
 	 * @ordered
 	 */
 	protected EList<Table> table;
+
 	/**
 	 * The cached value of the '{@link #getStation() <em>Station</em>}' reference list.
 	 * <!-- begin-user-doc -->

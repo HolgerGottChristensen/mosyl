@@ -7,11 +7,10 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import org.mdse.pts.schedule.Schedule
 import org.mdse.pts.timetable.Timetable
-import java.util.List
-import org.mdse.pts.network.Station
-import java.util.HashSet
+import org.mdse.pts.timetable.Arrival
+import org.mdse.pts.schedule.Schedule
+import org.mdse.pts.timetable.Departure
 
 /**
  * Generates code from your model files on save.
@@ -21,9 +20,55 @@ import java.util.HashSet
 class ScheduleGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		//TODO: Generate
+		println("Generating for file: "+resource.URI);
+		var name = resource.URI.lastSegment
+		var strippedName = name.substring(0, name.indexOf('.')).toFirstUpper
+		
 		val schedule = resource.getContents().get(0) as Schedule;
 		val timetable = Scheduler2TimetableConverter.convert(schedule);
 		
+		fsa.generateFile(strippedName+".html", toHTML(timetable))
+		
+// «  »		
 	}
+	
+	protected def toHTML(Timetable tt) '''
+		<html>
+			<head>Timetable</head>
+			<body>
+			«FOR station : tt.station»
+				<h1>« station.name »</h1>
+				<div>
+					<div>
+						«FOR t : tt.table»
+							<h2>Arrivals</h2>
+							«FOR w : t.junctures.filter(x | Arrival.isInstance(x)).groupBy[x | x.weekday].keySet.toArray»
+								<h3>« w.toString »</h3>
+								«FOR a : t.junctures.filter(x | Arrival.isInstance(x)).map(x | x as Arrival).groupBy[x | x.weekday].get(w)»
+									<p> 
+										« a.time.hour » : « a.time.minute »
+										« a.train.name »
+										from « a.origin.name » on platform « a.platform »
+									</p>
+								«ENDFOR»
+							«ENDFOR»
+							<h2>Departures</h2>
+							«FOR w : t.junctures.filter(x | Departure.isInstance(x)).groupBy[x | x.weekday].keySet.toArray»
+								<h3>« w.toString »</h3>
+								«FOR a : t.junctures.filter(x | Departure.isInstance(x)).map(x | x as Departure).groupBy[x | x.weekday].get(w)»
+									<p> 
+										« a.time.hour » : « a.time.minute »
+										« a.train.name »
+										from « a.destination.name » on platform « a.platform »
+									</p>
+								«ENDFOR»
+							«ENDFOR»
+						«ENDFOR»
+					</div>
+				</div>
+			«ENDFOR»
+			</body>
+		</html>
+	'''
+	
 }

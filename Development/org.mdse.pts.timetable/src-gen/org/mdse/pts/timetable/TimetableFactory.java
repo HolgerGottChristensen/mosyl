@@ -67,33 +67,6 @@ public interface TimetableFactory extends EFactory {
 	Juncture createJuncture();
 
 	/**
-	 * Returns a new object of class '<em>Station</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Station</em>'.
-	 * @generated
-	 */
-	Station createStation();
-
-	/**
-	 * Returns a new object of class '<em>Train</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Train</em>'.
-	 * @generated
-	 */
-	Train createTrain();
-
-	/**
-	 * Returns a new object of class '<em>Time</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Time</em>'.
-	 * @generated
-	 */
-	Time createTime();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

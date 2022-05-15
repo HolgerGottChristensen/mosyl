@@ -2,7 +2,6 @@
  */
 package org.mdse.pts.timetable.impl;
 
-import depot.Train;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
@@ -11,9 +10,13 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.mdse.pts.depot.Train;
+
+import org.mdse.pts.time.Time;
+import org.mdse.pts.time.Weekday;
+
 import org.mdse.pts.timetable.Juncture;
 import org.mdse.pts.timetable.TimetablePackage;
-import org.mdse.pts.timetable.Weekday;
 
 /**
  * <!-- begin-user-doc -->
@@ -70,7 +73,7 @@ public class JunctureImpl extends MinimalEObjectImpl.Container implements Junctu
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Weekday WEEKDAY_EDEFAULT = null;
+	protected static final Weekday WEEKDAY_EDEFAULT = Weekday.MONDAY;
 
 	/**
 	 * The cached value of the '{@link #getWeekday() <em>Weekday</em>}' attribute.
@@ -90,7 +93,7 @@ public class JunctureImpl extends MinimalEObjectImpl.Container implements Junctu
 	 * @generated
 	 * @ordered
 	 */
-	protected time.Time time;
+	protected Time time;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -140,69 +143,6 @@ public class JunctureImpl extends MinimalEObjectImpl.Container implements Junctu
 	 * @generated
 	 */
 	@Override
-	public time.Time getTime() {
-		if (time != null && time.eIsProxy()) {
-			InternalEObject oldTime = (InternalEObject)time;
-			time = (time.Time)eResolveProxy(oldTime);
-			if (time != oldTime) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimetablePackage.JUNCTURE__TIME, oldTime, time));
-			}
-		}
-		return time;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public time.Time basicGetTime() {
-		return time;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setTime(time.Time newTime) {
-		time.Time oldTime = time;
-		time = newTime;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TimetablePackage.JUNCTURE__TIME, oldTime, time));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Weekday getWeekday() {
-		return weekday;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setWeekday(Weekday newWeekday) {
-		Weekday oldWeekday = weekday;
-		weekday = newWeekday == null ? WEEKDAY_EDEFAULT : newWeekday;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, TimetablePackage.JUNCTURE__WEEKDAY, oldWeekday, weekday));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Train getTrain() {
 		if (train != null && train.eIsProxy()) {
 			InternalEObject oldTrain = (InternalEObject)train;
@@ -235,6 +175,69 @@ public class JunctureImpl extends MinimalEObjectImpl.Container implements Junctu
 		train = newTrain;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, TimetablePackage.JUNCTURE__TRAIN, oldTrain, train));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Weekday getWeekday() {
+		return weekday;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setWeekday(Weekday newWeekday) {
+		Weekday oldWeekday = weekday;
+		weekday = newWeekday == null ? WEEKDAY_EDEFAULT : newWeekday;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimetablePackage.JUNCTURE__WEEKDAY, oldWeekday, weekday));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Time getTime() {
+		if (time != null && time.eIsProxy()) {
+			InternalEObject oldTime = (InternalEObject)time;
+			time = (Time)eResolveProxy(oldTime);
+			if (time != oldTime) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, TimetablePackage.JUNCTURE__TIME, oldTime, time));
+			}
+		}
+		return time;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Time basicGetTime() {
+		return time;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTime(Time newTime) {
+		Time oldTime = time;
+		time = newTime;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, TimetablePackage.JUNCTURE__TIME, oldTime, time));
 	}
 
 	/**
@@ -277,7 +280,7 @@ public class JunctureImpl extends MinimalEObjectImpl.Container implements Junctu
 				setWeekday((Weekday)newValue);
 				return;
 			case TimetablePackage.JUNCTURE__TIME:
-				setTime((time.Time)newValue);
+				setTime((Time)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -301,7 +304,7 @@ public class JunctureImpl extends MinimalEObjectImpl.Container implements Junctu
 				setWeekday(WEEKDAY_EDEFAULT);
 				return;
 			case TimetablePackage.JUNCTURE__TIME:
-				setTime((time.Time)null);
+				setTime((Time)null);
 				return;
 		}
 		super.eUnset(featureID);

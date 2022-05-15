@@ -4,11 +4,11 @@
     editorDirectory="/org.mdse.pts.timetable.editor/src-gen" modelPluginID="org.mdse.pts.timetable"
     modelName="Timetable" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     testsDirectory="/org.mdse.pts.timetable.tests/src-gen" importerID="org.eclipse.emf.importer.ecore"
-    complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+    complianceLevel="8.0" copyrightFields="false" usedGenPackages="../../org.mdse.pts.depot/model/Depot.genmodel#//depot ../../org.mdse.pts.network/model/Network.genmodel#//network ../../org.mdse.pts.time/model/Time.genmodel#//time"
+    operationReflection="true" importOrganizing="true">
   <foreignModel>Timetable.ecore</foreignModel>
   <genPackages prefix="Timetable" basePackage="org.mdse.pts" disposableProviderFactory="true"
       ecorePackage="Timetable.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Timetable.ecore#//Weekday"/>
     <genClasses ecoreClass="Timetable.ecore#//Timetable">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Timetable.ecore#//Timetable/table"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Timetable.ecore#//Timetable/station"/>
@@ -28,73 +28,6 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Timetable.ecore#//Juncture/train"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Timetable.ecore#//Juncture/weekday"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Timetable.ecore#//Juncture/time"/>
-    </genClasses>
-    <genClasses ecoreClass="Timetable.ecore#//Station"/>
-    <genClasses ecoreClass="Timetable.ecore#//Train"/>
-    <genClasses ecoreClass="Timetable.ecore#//Time">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Timetable.ecore#//Time/Hour"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Timetable.ecore#//Time/Minute"/>
-    </genClasses>
-  </genPackages>
-  <genPackages prefix="Network" ecorePackage="../../org.mdse.pts.network/model/Network.ecore#/">
-    <genClasses ecoreClass="../../org.mdse.pts.network/model/Network.ecore#//Network">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pts.network/model/Network.ecore#//Network/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.mdse.pts.network/model/Network.ecore#//Network/stations"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.mdse.pts.network/model/Network.ecore#//Network/legs"/>
-    </genClasses>
-    <genClasses ecoreClass="../../org.mdse.pts.network/model/Network.ecore#//Station">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pts.network/model/Network.ecore#//Station/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../org.mdse.pts.network/model/Network.ecore#//Station/legs"/>
-    </genClasses>
-    <genClasses ecoreClass="../../org.mdse.pts.network/model/Network.ecore#//Leg">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pts.network/model/Network.ecore#//Leg/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pts.network/model/Network.ecore#//Leg/distance"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ../../org.mdse.pts.network/model/Network.ecore#//Leg/stations"/>
-    </genClasses>
-  </genPackages>
-  <genPackages prefix="Depot" ecorePackage="../../org.mdse.pts.depot/model/Depot.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../org.mdse.pts.depot/model/Depot.ecore#//CoachClass">
-      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.depot/model/Depot.ecore#//CoachClass/FirstClass"/>
-      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.depot/model/Depot.ecore#//CoachClass/Economy"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../org.mdse.pts.depot/model/Depot.ecore#//TrainType">
-      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.depot/model/Depot.ecore#//TrainType/Regional"/>
-      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.depot/model/Depot.ecore#//TrainType/Intercity"/>
-    </genEnums>
-    <genClasses ecoreClass="../../org.mdse.pts.depot/model/Depot.ecore#//Depot">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.mdse.pts.depot/model/Depot.ecore#//Depot/train"/>
-    </genClasses>
-    <genClasses ecoreClass="../../org.mdse.pts.depot/model/Depot.ecore#//Train">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.mdse.pts.depot/model/Depot.ecore#//Train/coach"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pts.depot/model/Depot.ecore#//Train/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pts.depot/model/Depot.ecore#//Train/type"/>
-    </genClasses>
-    <genClasses ecoreClass="../../org.mdse.pts.depot/model/Depot.ecore#//Locomotive"/>
-    <genClasses ecoreClass="../../org.mdse.pts.depot/model/Depot.ecore#//DiningCoach"/>
-    <genClasses ecoreClass="../../org.mdse.pts.depot/model/Depot.ecore#//PassengerCoach">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pts.depot/model/Depot.ecore#//PassengerCoach/class"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="../../org.mdse.pts.depot/model/Depot.ecore#//Coach">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pts.depot/model/Depot.ecore#//Coach/wagonNumber"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference ../../org.mdse.pts.depot/model/Depot.ecore#//Coach/train"/>
-    </genClasses>
-    <genClasses ecoreClass="../../org.mdse.pts.depot/model/Depot.ecore#//Root">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ../../org.mdse.pts.depot/model/Depot.ecore#//Root/depot"/>
-    </genClasses>
-  </genPackages>
-  <genPackages prefix="Time" ecorePackage="../../org.mdse.pts.time/model/Time.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="../../org.mdse.pts.time/model/Time.ecore#//Weekday">
-      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.time/model/Time.ecore#//Weekday/MONDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.time/model/Time.ecore#//Weekday/TUESDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.time/model/Time.ecore#//Weekday/WEDNESDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.time/model/Time.ecore#//Weekday/THURSDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.time/model/Time.ecore#//Weekday/FRIDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.time/model/Time.ecore#//Weekday/SATURDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="../../org.mdse.pts.time/model/Time.ecore#//Weekday/SUNDAY"/>
-    </genEnums>
-    <genClasses ecoreClass="../../org.mdse.pts.time/model/Time.ecore#//Time">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pts.time/model/Time.ecore#//Time/hour"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ../../org.mdse.pts.time/model/Time.ecore#//Time/minute"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

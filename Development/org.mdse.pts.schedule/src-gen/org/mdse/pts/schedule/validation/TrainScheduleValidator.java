@@ -4,9 +4,9 @@
  */
 package org.mdse.pts.schedule.validation;
 
-import depot.Train;
-
 import org.eclipse.emf.common.util.EList;
+
+import org.mdse.pts.depot.Train;
 
 import org.mdse.pts.schedule.StartTime;
 import org.mdse.pts.schedule.Stop;

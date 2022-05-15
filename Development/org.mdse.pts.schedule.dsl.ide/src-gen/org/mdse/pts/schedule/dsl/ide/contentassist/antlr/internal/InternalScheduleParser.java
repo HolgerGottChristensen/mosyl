@@ -895,7 +895,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
                     // InternalSchedule.g:294:2: ( ( 'Monday' ) )
                     // InternalSchedule.g:295:3: ( 'Monday' )
                     {
-                     before(grammarAccess.getWeekdayAccess().getMONDAYEnumLiteralDeclaration_0()); 
+                     before(grammarAccess.getWeekdayAccess().getMondayEnumLiteralDeclaration_0()); 
                     // InternalSchedule.g:296:3: ( 'Monday' )
                     // InternalSchedule.g:296:4: 'Monday'
                     {
@@ -903,7 +903,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
                     }
 
-                     after(grammarAccess.getWeekdayAccess().getMONDAYEnumLiteralDeclaration_0()); 
+                     after(grammarAccess.getWeekdayAccess().getMondayEnumLiteralDeclaration_0()); 
 
                     }
 
@@ -916,7 +916,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
                     // InternalSchedule.g:300:2: ( ( 'Tuesday' ) )
                     // InternalSchedule.g:301:3: ( 'Tuesday' )
                     {
-                     before(grammarAccess.getWeekdayAccess().getTUESDAYEnumLiteralDeclaration_1()); 
+                     before(grammarAccess.getWeekdayAccess().getTuesdayEnumLiteralDeclaration_1()); 
                     // InternalSchedule.g:302:3: ( 'Tuesday' )
                     // InternalSchedule.g:302:4: 'Tuesday'
                     {
@@ -924,7 +924,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
                     }
 
-                     after(grammarAccess.getWeekdayAccess().getTUESDAYEnumLiteralDeclaration_1()); 
+                     after(grammarAccess.getWeekdayAccess().getTuesdayEnumLiteralDeclaration_1()); 
 
                     }
 
@@ -937,7 +937,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
                     // InternalSchedule.g:306:2: ( ( 'Wednesday' ) )
                     // InternalSchedule.g:307:3: ( 'Wednesday' )
                     {
-                     before(grammarAccess.getWeekdayAccess().getWEDNESDAYEnumLiteralDeclaration_2()); 
+                     before(grammarAccess.getWeekdayAccess().getWednesdayEnumLiteralDeclaration_2()); 
                     // InternalSchedule.g:308:3: ( 'Wednesday' )
                     // InternalSchedule.g:308:4: 'Wednesday'
                     {
@@ -945,7 +945,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
                     }
 
-                     after(grammarAccess.getWeekdayAccess().getWEDNESDAYEnumLiteralDeclaration_2()); 
+                     after(grammarAccess.getWeekdayAccess().getWednesdayEnumLiteralDeclaration_2()); 
 
                     }
 
@@ -958,7 +958,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
                     // InternalSchedule.g:312:2: ( ( 'Thursday' ) )
                     // InternalSchedule.g:313:3: ( 'Thursday' )
                     {
-                     before(grammarAccess.getWeekdayAccess().getTHURSDAYEnumLiteralDeclaration_3()); 
+                     before(grammarAccess.getWeekdayAccess().getThursdayEnumLiteralDeclaration_3()); 
                     // InternalSchedule.g:314:3: ( 'Thursday' )
                     // InternalSchedule.g:314:4: 'Thursday'
                     {
@@ -966,7 +966,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
                     }
 
-                     after(grammarAccess.getWeekdayAccess().getTHURSDAYEnumLiteralDeclaration_3()); 
+                     after(grammarAccess.getWeekdayAccess().getThursdayEnumLiteralDeclaration_3()); 
 
                     }
 
@@ -979,7 +979,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
                     // InternalSchedule.g:318:2: ( ( 'Friday' ) )
                     // InternalSchedule.g:319:3: ( 'Friday' )
                     {
-                     before(grammarAccess.getWeekdayAccess().getFRIDAYEnumLiteralDeclaration_4()); 
+                     before(grammarAccess.getWeekdayAccess().getFridayEnumLiteralDeclaration_4()); 
                     // InternalSchedule.g:320:3: ( 'Friday' )
                     // InternalSchedule.g:320:4: 'Friday'
                     {
@@ -987,7 +987,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
                     }
 
-                     after(grammarAccess.getWeekdayAccess().getFRIDAYEnumLiteralDeclaration_4()); 
+                     after(grammarAccess.getWeekdayAccess().getFridayEnumLiteralDeclaration_4()); 
 
                     }
 
@@ -1000,7 +1000,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
                     // InternalSchedule.g:324:2: ( ( 'Saturday' ) )
                     // InternalSchedule.g:325:3: ( 'Saturday' )
                     {
-                     before(grammarAccess.getWeekdayAccess().getSATURDAYEnumLiteralDeclaration_5()); 
+                     before(grammarAccess.getWeekdayAccess().getSaturdayEnumLiteralDeclaration_5()); 
                     // InternalSchedule.g:326:3: ( 'Saturday' )
                     // InternalSchedule.g:326:4: 'Saturday'
                     {
@@ -1008,7 +1008,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
                     }
 
-                     after(grammarAccess.getWeekdayAccess().getSATURDAYEnumLiteralDeclaration_5()); 
+                     after(grammarAccess.getWeekdayAccess().getSaturdayEnumLiteralDeclaration_5()); 
 
                     }
 
@@ -1021,7 +1021,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
                     // InternalSchedule.g:330:2: ( ( 'Sunday' ) )
                     // InternalSchedule.g:331:3: ( 'Sunday' )
                     {
-                     before(grammarAccess.getWeekdayAccess().getSUNDAYEnumLiteralDeclaration_6()); 
+                     before(grammarAccess.getWeekdayAccess().getSundayEnumLiteralDeclaration_6()); 
                     // InternalSchedule.g:332:3: ( 'Sunday' )
                     // InternalSchedule.g:332:4: 'Sunday'
                     {
@@ -1029,7 +1029,7 @@ public class InternalScheduleParser extends AbstractInternalContentAssistParser 
 
                     }
 
-                     after(grammarAccess.getWeekdayAccess().getSUNDAYEnumLiteralDeclaration_6()); 
+                     after(grammarAccess.getWeekdayAccess().getSundayEnumLiteralDeclaration_6()); 
 
                     }
 

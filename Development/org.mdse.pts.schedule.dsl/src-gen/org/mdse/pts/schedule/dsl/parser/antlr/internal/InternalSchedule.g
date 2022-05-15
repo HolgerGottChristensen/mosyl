@@ -896,56 +896,56 @@ ruleWeekday returns [Enumerator current=null]
 		(
 			enumLiteral_0='Monday'
 			{
-				$current = grammarAccess.getWeekdayAccess().getMONDAYEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_0, grammarAccess.getWeekdayAccess().getMONDAYEnumLiteralDeclaration_0());
+				$current = grammarAccess.getWeekdayAccess().getMondayEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getWeekdayAccess().getMondayEnumLiteralDeclaration_0());
 			}
 		)
 		    |
 		(
 			enumLiteral_1='Tuesday'
 			{
-				$current = grammarAccess.getWeekdayAccess().getTUESDAYEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getWeekdayAccess().getTUESDAYEnumLiteralDeclaration_1());
+				$current = grammarAccess.getWeekdayAccess().getTuesdayEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getWeekdayAccess().getTuesdayEnumLiteralDeclaration_1());
 			}
 		)
 		    |
 		(
 			enumLiteral_2='Wednesday'
 			{
-				$current = grammarAccess.getWeekdayAccess().getWEDNESDAYEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_2, grammarAccess.getWeekdayAccess().getWEDNESDAYEnumLiteralDeclaration_2());
+				$current = grammarAccess.getWeekdayAccess().getWednesdayEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getWeekdayAccess().getWednesdayEnumLiteralDeclaration_2());
 			}
 		)
 		    |
 		(
 			enumLiteral_3='Thursday'
 			{
-				$current = grammarAccess.getWeekdayAccess().getTHURSDAYEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_3, grammarAccess.getWeekdayAccess().getTHURSDAYEnumLiteralDeclaration_3());
+				$current = grammarAccess.getWeekdayAccess().getThursdayEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_3, grammarAccess.getWeekdayAccess().getThursdayEnumLiteralDeclaration_3());
 			}
 		)
 		    |
 		(
 			enumLiteral_4='Friday'
 			{
-				$current = grammarAccess.getWeekdayAccess().getFRIDAYEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_4, grammarAccess.getWeekdayAccess().getFRIDAYEnumLiteralDeclaration_4());
+				$current = grammarAccess.getWeekdayAccess().getFridayEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_4, grammarAccess.getWeekdayAccess().getFridayEnumLiteralDeclaration_4());
 			}
 		)
 		    |
 		(
 			enumLiteral_5='Saturday'
 			{
-				$current = grammarAccess.getWeekdayAccess().getSATURDAYEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_5, grammarAccess.getWeekdayAccess().getSATURDAYEnumLiteralDeclaration_5());
+				$current = grammarAccess.getWeekdayAccess().getSaturdayEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_5, grammarAccess.getWeekdayAccess().getSaturdayEnumLiteralDeclaration_5());
 			}
 		)
 		    |
 		(
 			enumLiteral_6='Sunday'
 			{
-				$current = grammarAccess.getWeekdayAccess().getSUNDAYEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_6, grammarAccess.getWeekdayAccess().getSUNDAYEnumLiteralDeclaration_6());
+				$current = grammarAccess.getWeekdayAccess().getSundayEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_6, grammarAccess.getWeekdayAccess().getSundayEnumLiteralDeclaration_6());
 			}
 		)
 	)

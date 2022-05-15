@@ -157,11 +157,11 @@ import org.eclipse.emf.edit.ui.view.ExtendedPropertySheetPage;
 
 import org.mdse.pts.timetable.provider.TimetableItemProviderAdapterFactory;
 
-import depot.provider.DepotItemProviderAdapterFactory;
-
-import network.provider.NetworkItemProviderAdapterFactory;
-
 import org.eclipse.ui.actions.WorkspaceModifyOperation;
+
+import org.mdse.pts.depot.provider.DepotItemProviderAdapterFactory;
+
+import org.mdse.pts.network.provider.NetworkItemProviderAdapterFactory;
 
 
 /**
@@ -715,8 +715,9 @@ public class TimetableEditor
 
 		adapterFactory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new TimetableItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new NetworkItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new DepotItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new NetworkItemProviderAdapterFactory());
+		adapterFactory.addAdapterFactory(new org.mdse.pts.time.provider.TimeItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
 
 		// Create the command stack that will notify this editor as commands are executed.

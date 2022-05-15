@@ -2,11 +2,11 @@
  */
 package org.mdse.pts.timetable;
 
-import network.Station;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+
+import org.mdse.pts.network.Station;
 
 /**
  * <!-- begin-user-doc -->

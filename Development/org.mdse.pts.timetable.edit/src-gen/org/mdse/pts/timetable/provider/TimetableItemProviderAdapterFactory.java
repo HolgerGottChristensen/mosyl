@@ -187,52 +187,6 @@ public class TimetableItemProviderAdapterFactory extends TimetableAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.mdse.pts.timetable.Station} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected StationItemProvider stationItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mdse.pts.timetable.Station}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createStationAdapter() {
-		if (stationItemProvider == null) {
-			stationItemProvider = new StationItemProvider(this);
-		}
-
-		return stationItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link org.mdse.pts.timetable.Train} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected TrainItemProvider trainItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mdse.pts.timetable.Train}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createTrainAdapter() {
-		if (trainItemProvider == null) {
-			trainItemProvider = new TrainItemProvider(this);
-		}
-
-		return trainItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -342,8 +296,6 @@ public class TimetableItemProviderAdapterFactory extends TimetableAdapterFactory
 		if (arrivalItemProvider != null) arrivalItemProvider.dispose();
 		if (departureItemProvider != null) departureItemProvider.dispose();
 		if (junctureItemProvider != null) junctureItemProvider.dispose();
-		if (stationItemProvider != null) stationItemProvider.dispose();
-		if (trainItemProvider != null) trainItemProvider.dispose();
 	}
 
 }

@@ -2,14 +2,14 @@
  */
 package org.mdse.pts.timetable.impl;
 
-import network.Station;
-
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.mdse.pts.network.Station;
 
 import org.mdse.pts.timetable.Arrival;
 import org.mdse.pts.timetable.TimetablePackage;

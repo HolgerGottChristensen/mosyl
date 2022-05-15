@@ -88,18 +88,6 @@ public class TimetableAdapterFactory extends AdapterFactoryImpl {
 				return createJunctureAdapter();
 			}
 			@Override
-			public Adapter caseStation(Station object) {
-				return createStationAdapter();
-			}
-			@Override
-			public Adapter caseTrain(Train object) {
-				return createTrainAdapter();
-			}
-			@Override
-			public Adapter caseTime(Time object) {
-				return createTimeAdapter();
-			}
-			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -186,48 +174,6 @@ public class TimetableAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createJunctureAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.mdse.pts.timetable.Station <em>Station</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.mdse.pts.timetable.Station
-	 * @generated
-	 */
-	public Adapter createStationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.mdse.pts.timetable.Train <em>Train</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.mdse.pts.timetable.Train
-	 * @generated
-	 */
-	public Adapter createTrainAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.mdse.pts.timetable.Time <em>Time</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.mdse.pts.timetable.Time
-	 * @generated
-	 */
-	public Adapter createTimeAdapter() {
 		return null;
 	}
 

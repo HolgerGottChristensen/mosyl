@@ -4,8 +4,8 @@
  */
 package org.mdse.pts.schedule.validation;
 
-import network.Leg;
-import network.Station;
+import org.mdse.pts.network.Leg;
+import org.mdse.pts.network.Station;
 
 /**
  * A sample validator interface for {@link org.mdse.pts.schedule.Stop}.

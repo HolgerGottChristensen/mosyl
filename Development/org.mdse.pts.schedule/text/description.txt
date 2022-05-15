@@ -31,12 +31,3 @@ Package schedule <http://mdse.org/pts/schedule>
     Reference via : Leg
     Reference station : Station<<1..1>>
     Attribute rotate : EBoolean<<1..1>>
-
-  Enum Weekday
-    Literal MONDAY = 0
-    Literal TUESDAY = 1
-    Literal WEDNESDAY = 2
-    Literal THURSDAY = 3
-    Literal FRIDAY = 4
-    Literal SATURDAY = 5
-    Literal SUNDAY = 6

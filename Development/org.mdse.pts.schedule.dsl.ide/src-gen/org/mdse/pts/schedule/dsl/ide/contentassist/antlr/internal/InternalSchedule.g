@@ -292,45 +292,45 @@ rule__Weekday__Alternatives
 	}
 :
 	(
-		{ before(grammarAccess.getWeekdayAccess().getMONDAYEnumLiteralDeclaration_0()); }
+		{ before(grammarAccess.getWeekdayAccess().getMondayEnumLiteralDeclaration_0()); }
 		('Monday')
-		{ after(grammarAccess.getWeekdayAccess().getMONDAYEnumLiteralDeclaration_0()); }
+		{ after(grammarAccess.getWeekdayAccess().getMondayEnumLiteralDeclaration_0()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getWeekdayAccess().getTUESDAYEnumLiteralDeclaration_1()); }
+		{ before(grammarAccess.getWeekdayAccess().getTuesdayEnumLiteralDeclaration_1()); }
 		('Tuesday')
-		{ after(grammarAccess.getWeekdayAccess().getTUESDAYEnumLiteralDeclaration_1()); }
+		{ after(grammarAccess.getWeekdayAccess().getTuesdayEnumLiteralDeclaration_1()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getWeekdayAccess().getWEDNESDAYEnumLiteralDeclaration_2()); }
+		{ before(grammarAccess.getWeekdayAccess().getWednesdayEnumLiteralDeclaration_2()); }
 		('Wednesday')
-		{ after(grammarAccess.getWeekdayAccess().getWEDNESDAYEnumLiteralDeclaration_2()); }
+		{ after(grammarAccess.getWeekdayAccess().getWednesdayEnumLiteralDeclaration_2()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getWeekdayAccess().getTHURSDAYEnumLiteralDeclaration_3()); }
+		{ before(grammarAccess.getWeekdayAccess().getThursdayEnumLiteralDeclaration_3()); }
 		('Thursday')
-		{ after(grammarAccess.getWeekdayAccess().getTHURSDAYEnumLiteralDeclaration_3()); }
+		{ after(grammarAccess.getWeekdayAccess().getThursdayEnumLiteralDeclaration_3()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getWeekdayAccess().getFRIDAYEnumLiteralDeclaration_4()); }
+		{ before(grammarAccess.getWeekdayAccess().getFridayEnumLiteralDeclaration_4()); }
 		('Friday')
-		{ after(grammarAccess.getWeekdayAccess().getFRIDAYEnumLiteralDeclaration_4()); }
+		{ after(grammarAccess.getWeekdayAccess().getFridayEnumLiteralDeclaration_4()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getWeekdayAccess().getSATURDAYEnumLiteralDeclaration_5()); }
+		{ before(grammarAccess.getWeekdayAccess().getSaturdayEnumLiteralDeclaration_5()); }
 		('Saturday')
-		{ after(grammarAccess.getWeekdayAccess().getSATURDAYEnumLiteralDeclaration_5()); }
+		{ after(grammarAccess.getWeekdayAccess().getSaturdayEnumLiteralDeclaration_5()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getWeekdayAccess().getSUNDAYEnumLiteralDeclaration_6()); }
+		{ before(grammarAccess.getWeekdayAccess().getSundayEnumLiteralDeclaration_6()); }
 		('Sunday')
-		{ after(grammarAccess.getWeekdayAccess().getSUNDAYEnumLiteralDeclaration_6()); }
+		{ after(grammarAccess.getWeekdayAccess().getSundayEnumLiteralDeclaration_6()); }
 	)
 ;
 finally {

@@ -4,8 +4,6 @@ package org.mdse.pts.timetable.impl;
 
 import java.util.Collection;
 
-import network.Station;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -19,6 +17,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.mdse.pts.network.Station;
 
 import org.mdse.pts.timetable.Juncture;
 import org.mdse.pts.timetable.Table;

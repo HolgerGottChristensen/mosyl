@@ -5,6 +5,7 @@ package org.mdse.pts.schedule;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+import org.mdse.pts.time.Weekday;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,12 +27,12 @@ import org.eclipse.emf.ecore.EObject;
 public interface StartTime extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Weekdays</b></em>' attribute list.
-	 * The list contents are of type {@link org.mdse.pts.schedule.Weekday}.
-	 * The literals are from the enumeration {@link org.mdse.pts.schedule.Weekday}.
+	 * The list contents are of type {@link org.mdse.pts.time.Weekday}.
+	 * The literals are from the enumeration {@link org.mdse.pts.time.Weekday}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Weekdays</em>' attribute list.
-	 * @see org.mdse.pts.schedule.Weekday
+	 * @see org.mdse.pts.time.Weekday
 	 * @see org.mdse.pts.schedule.SchedulePackage#getStartTime_Weekdays()
 	 * @model required="true"
 	 * @generated

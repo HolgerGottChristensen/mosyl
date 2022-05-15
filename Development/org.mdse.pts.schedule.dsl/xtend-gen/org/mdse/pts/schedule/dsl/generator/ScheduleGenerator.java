@@ -3,12 +3,26 @@
  */
 package org.mdse.pts.schedule.dsl.generator;
 
+import java.util.List;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.InputOutput;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.StringExtensions;
+import org.mdse.pts.network.Station;
 import org.mdse.pts.schedule.Schedule;
+import org.mdse.pts.time.Weekday;
+import org.mdse.pts.timetable.Arrival;
+import org.mdse.pts.timetable.Departure;
+import org.mdse.pts.timetable.Juncture;
+import org.mdse.pts.timetable.Table;
 import org.mdse.pts.timetable.Timetable;
 
 /**
@@ -20,8 +34,200 @@ import org.mdse.pts.timetable.Timetable;
 public class ScheduleGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    URI _uRI = resource.getURI();
+    String _plus = ("Generating for file: " + _uRI);
+    InputOutput.<String>println(_plus);
+    String name = resource.getURI().lastSegment();
+    String strippedName = StringExtensions.toFirstUpper(name.substring(0, name.indexOf(".")));
     EObject _get = resource.getContents().get(0);
     final Schedule schedule = ((Schedule) _get);
     final Timetable timetable = Scheduler2TimetableConverter.convert(schedule);
+    fsa.generateFile((strippedName + ".html"), this.toHTML(timetable));
+  }
+
+  protected CharSequence toHTML(final Timetable tt) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<html>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<head>Timetable</head>");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<body>");
+    _builder.newLine();
+    {
+      EList<Station> _station = tt.getStation();
+      for(final Station station : _station) {
+        _builder.append("\t");
+        _builder.append("<h1>");
+        String _name = station.getName();
+        _builder.append(_name, "\t");
+        _builder.append("</h1>");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        _builder.append("<div>");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("\t");
+        _builder.append("<div>");
+        _builder.newLine();
+        {
+          EList<Table> _table = tt.getTable();
+          for(final Table t : _table) {
+            _builder.append("\t");
+            _builder.append("\t\t");
+            _builder.append("<h2>Arrivals</h2>");
+            _builder.newLine();
+            {
+              final Function1<Juncture, Boolean> _function = (Juncture x) -> {
+                return Boolean.valueOf(Arrival.class.isInstance(x));
+              };
+              final Function1<Juncture, Weekday> _function_1 = (Juncture x) -> {
+                return x.getWeekday();
+              };
+              Object[] _array = IterableExtensions.<Weekday, Juncture>groupBy(IterableExtensions.<Juncture>filter(t.getJunctures(), _function), _function_1).keySet().toArray();
+              for(final Object w : _array) {
+                _builder.append("\t");
+                _builder.append("\t\t");
+                _builder.append("<h3>");
+                String _string = w.toString();
+                _builder.append(_string, "\t\t\t");
+                _builder.append("</h3>");
+                _builder.newLineIfNotEmpty();
+                {
+                  final Function1<Juncture, Boolean> _function_2 = (Juncture x) -> {
+                    return Boolean.valueOf(Arrival.class.isInstance(x));
+                  };
+                  final Function1<Juncture, Arrival> _function_3 = (Juncture x) -> {
+                    return ((Arrival) x);
+                  };
+                  final Function1<Arrival, Weekday> _function_4 = (Arrival x) -> {
+                    return x.getWeekday();
+                  };
+                  List<Arrival> _get = IterableExtensions.<Weekday, Arrival>groupBy(IterableExtensions.<Juncture, Arrival>map(IterableExtensions.<Juncture>filter(t.getJunctures(), _function_2), _function_3), _function_4).get(w);
+                  for(final Arrival a : _get) {
+                    _builder.append("\t");
+                    _builder.append("\t\t");
+                    _builder.append("<p> ");
+                    _builder.newLine();
+                    _builder.append("\t");
+                    _builder.append("\t\t");
+                    _builder.append("\t");
+                    int _hour = a.getTime().getHour();
+                    _builder.append(_hour, "\t\t\t\t");
+                    _builder.append(" : ");
+                    int _minute = a.getTime().getMinute();
+                    _builder.append(_minute, "\t\t\t\t");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("\t");
+                    _builder.append("\t\t");
+                    _builder.append("\t");
+                    String _name_1 = a.getTrain().getName();
+                    _builder.append(_name_1, "\t\t\t\t");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("\t");
+                    _builder.append("\t\t");
+                    _builder.append("\t");
+                    _builder.append("from ");
+                    String _name_2 = a.getOrigin().getName();
+                    _builder.append(_name_2, "\t\t\t\t");
+                    _builder.append(" on platform ");
+                    String _platform = a.getPlatform();
+                    _builder.append(_platform, "\t\t\t\t");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("\t");
+                    _builder.append("\t\t");
+                    _builder.append("</p>");
+                    _builder.newLine();
+                  }
+                }
+              }
+            }
+            _builder.append("\t");
+            _builder.append("\t\t");
+            _builder.append("<h2>Departures</h2>");
+            _builder.newLine();
+            {
+              final Function1<Juncture, Boolean> _function_5 = (Juncture x) -> {
+                return Boolean.valueOf(Departure.class.isInstance(x));
+              };
+              final Function1<Juncture, Weekday> _function_6 = (Juncture x) -> {
+                return x.getWeekday();
+              };
+              Object[] _array_1 = IterableExtensions.<Weekday, Juncture>groupBy(IterableExtensions.<Juncture>filter(t.getJunctures(), _function_5), _function_6).keySet().toArray();
+              for(final Object w_1 : _array_1) {
+                _builder.append("\t");
+                _builder.append("\t\t");
+                _builder.append("<h3>");
+                String _string_1 = w_1.toString();
+                _builder.append(_string_1, "\t\t\t");
+                _builder.append("</h3>");
+                _builder.newLineIfNotEmpty();
+                {
+                  final Function1<Juncture, Boolean> _function_7 = (Juncture x) -> {
+                    return Boolean.valueOf(Departure.class.isInstance(x));
+                  };
+                  final Function1<Juncture, Departure> _function_8 = (Juncture x) -> {
+                    return ((Departure) x);
+                  };
+                  final Function1<Departure, Weekday> _function_9 = (Departure x) -> {
+                    return x.getWeekday();
+                  };
+                  List<Departure> _get_1 = IterableExtensions.<Weekday, Departure>groupBy(IterableExtensions.<Juncture, Departure>map(IterableExtensions.<Juncture>filter(t.getJunctures(), _function_7), _function_8), _function_9).get(w_1);
+                  for(final Departure a_1 : _get_1) {
+                    _builder.append("\t");
+                    _builder.append("\t\t");
+                    _builder.append("<p> ");
+                    _builder.newLine();
+                    _builder.append("\t");
+                    _builder.append("\t\t");
+                    _builder.append("\t");
+                    int _hour_1 = a_1.getTime().getHour();
+                    _builder.append(_hour_1, "\t\t\t\t");
+                    _builder.append(" : ");
+                    int _minute_1 = a_1.getTime().getMinute();
+                    _builder.append(_minute_1, "\t\t\t\t");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("\t");
+                    _builder.append("\t\t");
+                    _builder.append("\t");
+                    String _name_3 = a_1.getTrain().getName();
+                    _builder.append(_name_3, "\t\t\t\t");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("\t");
+                    _builder.append("\t\t");
+                    _builder.append("\t");
+                    _builder.append("from ");
+                    String _name_4 = a_1.getDestination().getName();
+                    _builder.append(_name_4, "\t\t\t\t");
+                    _builder.append(" on platform ");
+                    String _platform_1 = a_1.getPlatform();
+                    _builder.append(_platform_1, "\t\t\t\t");
+                    _builder.newLineIfNotEmpty();
+                    _builder.append("\t");
+                    _builder.append("\t\t");
+                    _builder.append("</p>");
+                    _builder.newLine();
+                  }
+                }
+              }
+            }
+          }
+        }
+        _builder.append("\t");
+        _builder.append("\t");
+        _builder.append("</div>");
+        _builder.newLine();
+        _builder.append("\t");
+        _builder.append("</div>");
+        _builder.newLine();
+      }
+    }
+    _builder.append("\t");
+    _builder.append("</body>");
+    _builder.newLine();
+    _builder.append("</html>");
+    _builder.newLine();
+    return _builder;
   }
 }

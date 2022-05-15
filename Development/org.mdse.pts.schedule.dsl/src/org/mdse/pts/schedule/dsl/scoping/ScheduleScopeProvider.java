@@ -3,7 +3,6 @@
  */
 package org.mdse.pts.schedule.dsl.scoping;
 
-import java.io.Console;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,7 +16,6 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.naming.QualifiedName;
 import org.eclipse.xtext.scoping.IScope;
 import org.eclipse.xtext.scoping.Scopes;
@@ -25,10 +23,13 @@ import org.mdse.pts.schedule.Schedule;
 import org.mdse.pts.schedule.Stop;
 import org.mdse.pts.schedule.TrainSchedule;
 
-import network.Network;
 
 import org.mdse.pts.common.util.*;
+import org.mdse.pts.depot.Root;
 import org.mdse.pts.depot.Train;
+import org.mdse.pts.network.Leg;
+import org.mdse.pts.network.Network;
+import org.mdse.pts.network.Station;
 
 /**
  * This class contains custom scoping description.
@@ -64,7 +65,7 @@ public class ScheduleScopeProvider extends AbstractScheduleScopeProvider {
 			IWorkspace workspace = file.getWorkspace();
 			try {
 				List<IFile> networkFile = processContainer(workspace.getRoot(), "depot");
-				List<depot.Root> networks = networkFile.stream().map(x -> EcoreIOUtil.<depot.Root>loadModel(x)).collect(Collectors.toList());
+				List<Root> networks = networkFile.stream().map(x -> EcoreIOUtil.<Root>loadModel(x)).collect(Collectors.toList());
 				
 				return Scopes.scopeFor(networks, x -> {
 					String name = EcoreUtil.getURI(x).lastSegment();
@@ -77,28 +78,28 @@ public class ScheduleScopeProvider extends AbstractScheduleScopeProvider {
 		
 		if (context instanceof TrainSchedule && reference.getName().equals("train")) {
 			Schedule schedule = (Schedule) EcoreUtil.getRootContainer(context);
-			List<depot.Train> trains = schedule.getDepot().get(0).getDepot().getTrain();
+			List<Train> trains = schedule.getDepot().get(0).getDepot().getTrain();
 			
 			return Scopes.scopeFor(trains);
 		}
 		
 		if (context instanceof TrainSchedule && reference.getName().equals("train")) {
 			Schedule schedule = (Schedule) EcoreUtil.getRootContainer(context);
-			List<depot.Train> trains = schedule.getDepot().get(0).getDepot().getTrain();
+			List<Train> trains = schedule.getDepot().get(0).getDepot().getTrain();
 			
 			return Scopes.scopeFor(trains);
 		}
 		
 		if (context instanceof Stop && reference.getName().equals("station")) {
 			Schedule schedule = (Schedule) EcoreUtil.getRootContainer(context);
-			List<network.Station> stations = schedule.getNetwork().getStations();
+			List<Station> stations = schedule.getNetwork().getStations();
 			
 			return Scopes.scopeFor(stations);
 		}
 		
 		if (context instanceof Stop && reference.getName().equals("via")) {
 			Schedule schedule = (Schedule) EcoreUtil.getRootContainer(context);
-			List<network.Leg> legs = schedule.getNetwork().getLegs();
+			List<Leg> legs = schedule.getNetwork().getLegs();
 			return Scopes.scopeFor(legs, x -> {
 				return QualifiedName.create(x.getName());
 				}, IScope.NULLSCOPE);

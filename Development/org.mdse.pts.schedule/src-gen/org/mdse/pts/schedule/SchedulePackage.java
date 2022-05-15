@@ -4,7 +4,6 @@ package org.mdse.pts.schedule;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -332,16 +331,6 @@ public interface SchedulePackage extends EPackage {
 	 */
 	int STOP_OPERATION_COUNT = 0;
 
-	/**
-	 * The meta object id for the '{@link org.mdse.pts.schedule.Weekday <em>Weekday</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.mdse.pts.schedule.Weekday
-	 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getWeekday()
-	 * @generated
-	 */
-	int WEEKDAY = 5;
-
 
 	/**
 	 * Returns the meta object for class '{@link org.mdse.pts.schedule.Schedule <em>Schedule</em>}'.
@@ -559,16 +548,6 @@ public interface SchedulePackage extends EPackage {
 	EAttribute getStop_Rotate();
 
 	/**
-	 * Returns the meta object for enum '{@link org.mdse.pts.schedule.Weekday <em>Weekday</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Weekday</em>'.
-	 * @see org.mdse.pts.schedule.Weekday
-	 * @generated
-	 */
-	EEnum getWeekday();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -760,16 +739,6 @@ public interface SchedulePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STOP__ROTATE = eINSTANCE.getStop_Rotate();
-
-		/**
-		 * The meta object literal for the '{@link org.mdse.pts.schedule.Weekday <em>Weekday</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.mdse.pts.schedule.Weekday
-		 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getWeekday()
-		 * @generated
-		 */
-		EEnum WEEKDAY = eINSTANCE.getWeekday();
 
 	}
 

@@ -7,12 +7,12 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Weekday">
-    <eLiterals name="MONDAY"/>
-    <eLiterals name="TUESDAY" value="1"/>
-    <eLiterals name="WEDNESDAY" value="2"/>
-    <eLiterals name="THURSDAY" value="3"/>
-    <eLiterals name="FRIDAY" value="4"/>
-    <eLiterals name="SATURDAY" value="5"/>
-    <eLiterals name="SUNDAY" value="6" literal="SUNDAY"/>
+    <eLiterals name="Monday"/>
+    <eLiterals name="Tuesday" value="1"/>
+    <eLiterals name="Wednesday" value="2"/>
+    <eLiterals name="Thursday" value="3"/>
+    <eLiterals name="Friday" value="4"/>
+    <eLiterals name="Saturday" value="5" literal="Saturday"/>
+    <eLiterals name="Sunday" value="6"/>
   </eClassifiers>
 </ecore:EPackage>

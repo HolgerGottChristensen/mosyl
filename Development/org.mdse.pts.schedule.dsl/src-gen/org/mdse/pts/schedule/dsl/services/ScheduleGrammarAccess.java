@@ -603,82 +603,82 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	public class WeekdayElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
 		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "org.mdse.pts.schedule.dsl.Schedule.Weekday");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final EnumLiteralDeclaration cMONDAYEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
-		private final Keyword cMONDAYMondayKeyword_0_0 = (Keyword)cMONDAYEnumLiteralDeclaration_0.eContents().get(0);
-		private final EnumLiteralDeclaration cTUESDAYEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
-		private final Keyword cTUESDAYTuesdayKeyword_1_0 = (Keyword)cTUESDAYEnumLiteralDeclaration_1.eContents().get(0);
-		private final EnumLiteralDeclaration cWEDNESDAYEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
-		private final Keyword cWEDNESDAYWednesdayKeyword_2_0 = (Keyword)cWEDNESDAYEnumLiteralDeclaration_2.eContents().get(0);
-		private final EnumLiteralDeclaration cTHURSDAYEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
-		private final Keyword cTHURSDAYThursdayKeyword_3_0 = (Keyword)cTHURSDAYEnumLiteralDeclaration_3.eContents().get(0);
-		private final EnumLiteralDeclaration cFRIDAYEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
-		private final Keyword cFRIDAYFridayKeyword_4_0 = (Keyword)cFRIDAYEnumLiteralDeclaration_4.eContents().get(0);
-		private final EnumLiteralDeclaration cSATURDAYEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
-		private final Keyword cSATURDAYSaturdayKeyword_5_0 = (Keyword)cSATURDAYEnumLiteralDeclaration_5.eContents().get(0);
-		private final EnumLiteralDeclaration cSUNDAYEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
-		private final Keyword cSUNDAYSundayKeyword_6_0 = (Keyword)cSUNDAYEnumLiteralDeclaration_6.eContents().get(0);
+		private final EnumLiteralDeclaration cMondayEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cMondayMondayKeyword_0_0 = (Keyword)cMondayEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cTuesdayEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cTuesdayTuesdayKeyword_1_0 = (Keyword)cTuesdayEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cWednesdayEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cWednesdayWednesdayKeyword_2_0 = (Keyword)cWednesdayEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cThursdayEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cThursdayThursdayKeyword_3_0 = (Keyword)cThursdayEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cFridayEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cFridayFridayKeyword_4_0 = (Keyword)cFridayEnumLiteralDeclaration_4.eContents().get(0);
+		private final EnumLiteralDeclaration cSaturdayEnumLiteralDeclaration_5 = (EnumLiteralDeclaration)cAlternatives.eContents().get(5);
+		private final Keyword cSaturdaySaturdayKeyword_5_0 = (Keyword)cSaturdayEnumLiteralDeclaration_5.eContents().get(0);
+		private final EnumLiteralDeclaration cSundayEnumLiteralDeclaration_6 = (EnumLiteralDeclaration)cAlternatives.eContents().get(6);
+		private final Keyword cSundaySundayKeyword_6_0 = (Keyword)cSundayEnumLiteralDeclaration_6.eContents().get(0);
 		
-		//enum Weekday:
-		//    MONDAY="Monday" |
-		//    TUESDAY="Tuesday" |
-		//    WEDNESDAY="Wednesday" |
-		//    THURSDAY="Thursday" |
-		//    FRIDAY="Friday" |
-		//    SATURDAY="Saturday" |
-		//    SUNDAY="Sunday"
+		//enum Weekday returns time::Weekday:
+		//    Monday="Monday" |
+		//    Tuesday="Tuesday" |
+		//    Wednesday="Wednesday" |
+		//    Thursday="Thursday" |
+		//    Friday="Friday" |
+		//    Saturday="Saturday" |
+		//    Sunday="Sunday"
 		//;
 		public EnumRule getRule() { return rule; }
 		
-		//MONDAY="Monday" |
-		//TUESDAY="Tuesday" |
-		//WEDNESDAY="Wednesday" |
-		//THURSDAY="Thursday" |
-		//FRIDAY="Friday" |
-		//SATURDAY="Saturday" |
-		//SUNDAY="Sunday"
+		//Monday="Monday" |
+		//Tuesday="Tuesday" |
+		//Wednesday="Wednesday" |
+		//Thursday="Thursday" |
+		//Friday="Friday" |
+		//Saturday="Saturday" |
+		//Sunday="Sunday"
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//MONDAY="Monday"
-		public EnumLiteralDeclaration getMONDAYEnumLiteralDeclaration_0() { return cMONDAYEnumLiteralDeclaration_0; }
+		//Monday="Monday"
+		public EnumLiteralDeclaration getMondayEnumLiteralDeclaration_0() { return cMondayEnumLiteralDeclaration_0; }
 		
 		//"Monday"
-		public Keyword getMONDAYMondayKeyword_0_0() { return cMONDAYMondayKeyword_0_0; }
+		public Keyword getMondayMondayKeyword_0_0() { return cMondayMondayKeyword_0_0; }
 		
-		//TUESDAY="Tuesday"
-		public EnumLiteralDeclaration getTUESDAYEnumLiteralDeclaration_1() { return cTUESDAYEnumLiteralDeclaration_1; }
+		//Tuesday="Tuesday"
+		public EnumLiteralDeclaration getTuesdayEnumLiteralDeclaration_1() { return cTuesdayEnumLiteralDeclaration_1; }
 		
 		//"Tuesday"
-		public Keyword getTUESDAYTuesdayKeyword_1_0() { return cTUESDAYTuesdayKeyword_1_0; }
+		public Keyword getTuesdayTuesdayKeyword_1_0() { return cTuesdayTuesdayKeyword_1_0; }
 		
-		//WEDNESDAY="Wednesday"
-		public EnumLiteralDeclaration getWEDNESDAYEnumLiteralDeclaration_2() { return cWEDNESDAYEnumLiteralDeclaration_2; }
+		//Wednesday="Wednesday"
+		public EnumLiteralDeclaration getWednesdayEnumLiteralDeclaration_2() { return cWednesdayEnumLiteralDeclaration_2; }
 		
 		//"Wednesday"
-		public Keyword getWEDNESDAYWednesdayKeyword_2_0() { return cWEDNESDAYWednesdayKeyword_2_0; }
+		public Keyword getWednesdayWednesdayKeyword_2_0() { return cWednesdayWednesdayKeyword_2_0; }
 		
-		//THURSDAY="Thursday"
-		public EnumLiteralDeclaration getTHURSDAYEnumLiteralDeclaration_3() { return cTHURSDAYEnumLiteralDeclaration_3; }
+		//Thursday="Thursday"
+		public EnumLiteralDeclaration getThursdayEnumLiteralDeclaration_3() { return cThursdayEnumLiteralDeclaration_3; }
 		
 		//"Thursday"
-		public Keyword getTHURSDAYThursdayKeyword_3_0() { return cTHURSDAYThursdayKeyword_3_0; }
+		public Keyword getThursdayThursdayKeyword_3_0() { return cThursdayThursdayKeyword_3_0; }
 		
-		//FRIDAY="Friday"
-		public EnumLiteralDeclaration getFRIDAYEnumLiteralDeclaration_4() { return cFRIDAYEnumLiteralDeclaration_4; }
+		//Friday="Friday"
+		public EnumLiteralDeclaration getFridayEnumLiteralDeclaration_4() { return cFridayEnumLiteralDeclaration_4; }
 		
 		//"Friday"
-		public Keyword getFRIDAYFridayKeyword_4_0() { return cFRIDAYFridayKeyword_4_0; }
+		public Keyword getFridayFridayKeyword_4_0() { return cFridayFridayKeyword_4_0; }
 		
-		//SATURDAY="Saturday"
-		public EnumLiteralDeclaration getSATURDAYEnumLiteralDeclaration_5() { return cSATURDAYEnumLiteralDeclaration_5; }
+		//Saturday="Saturday"
+		public EnumLiteralDeclaration getSaturdayEnumLiteralDeclaration_5() { return cSaturdayEnumLiteralDeclaration_5; }
 		
 		//"Saturday"
-		public Keyword getSATURDAYSaturdayKeyword_5_0() { return cSATURDAYSaturdayKeyword_5_0; }
+		public Keyword getSaturdaySaturdayKeyword_5_0() { return cSaturdaySaturdayKeyword_5_0; }
 		
-		//SUNDAY="Sunday"
-		public EnumLiteralDeclaration getSUNDAYEnumLiteralDeclaration_6() { return cSUNDAYEnumLiteralDeclaration_6; }
+		//Sunday="Sunday"
+		public EnumLiteralDeclaration getSundayEnumLiteralDeclaration_6() { return cSundayEnumLiteralDeclaration_6; }
 		
 		//"Sunday"
-		public Keyword getSUNDAYSundayKeyword_6_0() { return cSUNDAYSundayKeyword_6_0; }
+		public Keyword getSundaySundayKeyword_6_0() { return cSundaySundayKeyword_6_0; }
 	}
 	
 	private final ScheduleElements pSchedule;
@@ -842,14 +842,14 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		return getTimeAccess().getRule();
 	}
 	
-	//enum Weekday:
-	//    MONDAY="Monday" |
-	//    TUESDAY="Tuesday" |
-	//    WEDNESDAY="Wednesday" |
-	//    THURSDAY="Thursday" |
-	//    FRIDAY="Friday" |
-	//    SATURDAY="Saturday" |
-	//    SUNDAY="Sunday"
+	//enum Weekday returns time::Weekday:
+	//    Monday="Monday" |
+	//    Tuesday="Tuesday" |
+	//    Wednesday="Wednesday" |
+	//    Thursday="Thursday" |
+	//    Friday="Friday" |
+	//    Saturday="Saturday" |
+	//    Sunday="Sunday"
 	//;
 	public WeekdayElements getWeekdayAccess() {
 		return eWeekday;

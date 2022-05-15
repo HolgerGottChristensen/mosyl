@@ -19,147 +19,147 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum Weekday implements Enumerator {
 	/**
-	 * The '<em><b>MONDAY</b></em>' literal object.
+	 * The '<em><b>Monday</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #MONDAY_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	MONDAY(0, "MONDAY", "MONDAY"),
+	MONDAY(0, "Monday", "Monday"),
 
 	/**
-	 * The '<em><b>TUESDAY</b></em>' literal object.
+	 * The '<em><b>Tuesday</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #TUESDAY_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	TUESDAY(1, "TUESDAY", "TUESDAY"),
+	TUESDAY(1, "Tuesday", "Tuesday"),
 
 	/**
-	 * The '<em><b>WEDNESDAY</b></em>' literal object.
+	 * The '<em><b>Wednesday</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #WEDNESDAY_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	WEDNESDAY(2, "WEDNESDAY", "WEDNESDAY"),
+	WEDNESDAY(2, "Wednesday", "Wednesday"),
 
 	/**
-	 * The '<em><b>THURSDAY</b></em>' literal object.
+	 * The '<em><b>Thursday</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #THURSDAY_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	THURSDAY(3, "THURSDAY", "THURSDAY"),
+	THURSDAY(3, "Thursday", "Thursday"),
 
 	/**
-	 * The '<em><b>FRIDAY</b></em>' literal object.
+	 * The '<em><b>Friday</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #FRIDAY_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	FRIDAY(4, "FRIDAY", "FRIDAY"),
+	FRIDAY(4, "Friday", "Friday"),
 
 	/**
-	 * The '<em><b>SATURDAY</b></em>' literal object.
+	 * The '<em><b>Saturday</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #SATURDAY_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SATURDAY(5, "SATURDAY", "SATURDAY"),
+	SATURDAY(5, "Saturday", "Saturday"),
 
 	/**
-	 * The '<em><b>SUNDAY</b></em>' literal object.
+	 * The '<em><b>Sunday</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #SUNDAY_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	SUNDAY(6, "SUNDAY", "SUNDAY");
+	SUNDAY(6, "Sunday", "Sunday");
 
 	/**
-	 * The '<em><b>MONDAY</b></em>' literal value.
+	 * The '<em><b>Monday</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #MONDAY
-	 * @model
+	 * @model name="Monday"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int MONDAY_VALUE = 0;
 
 	/**
-	 * The '<em><b>TUESDAY</b></em>' literal value.
+	 * The '<em><b>Tuesday</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #TUESDAY
-	 * @model
+	 * @model name="Tuesday"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int TUESDAY_VALUE = 1;
 
 	/**
-	 * The '<em><b>WEDNESDAY</b></em>' literal value.
+	 * The '<em><b>Wednesday</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #WEDNESDAY
-	 * @model
+	 * @model name="Wednesday"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int WEDNESDAY_VALUE = 2;
 
 	/**
-	 * The '<em><b>THURSDAY</b></em>' literal value.
+	 * The '<em><b>Thursday</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #THURSDAY
-	 * @model
+	 * @model name="Thursday"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int THURSDAY_VALUE = 3;
 
 	/**
-	 * The '<em><b>FRIDAY</b></em>' literal value.
+	 * The '<em><b>Friday</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #FRIDAY
-	 * @model
+	 * @model name="Friday"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int FRIDAY_VALUE = 4;
 
 	/**
-	 * The '<em><b>SATURDAY</b></em>' literal value.
+	 * The '<em><b>Saturday</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #SATURDAY
-	 * @model
+	 * @model name="Saturday"
 	 * @generated
 	 * @ordered
 	 */
 	public static final int SATURDAY_VALUE = 5;
 
 	/**
-	 * The '<em><b>SUNDAY</b></em>' literal value.
+	 * The '<em><b>Sunday</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #SUNDAY
-	 * @model
+	 * @model name="Sunday"
 	 * @generated
 	 * @ordered
 	 */

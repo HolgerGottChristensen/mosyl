@@ -2,31 +2,26 @@
  */
 package org.mdse.pts.timetable.impl;
 
-import depot.DepotPackage;
-import depot.impl.DepotPackageImpl;
-import network.NetworkPackage;
-import network.impl.NetworkPackageImpl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.mdse.pts.depot.DepotPackage;
+
+import org.mdse.pts.network.NetworkPackage;
+
+import org.mdse.pts.time.TimePackage;
 
 import org.mdse.pts.timetable.Arrival;
 import org.mdse.pts.timetable.Departure;
 import org.mdse.pts.timetable.Juncture;
-import org.mdse.pts.timetable.Station;
 import org.mdse.pts.timetable.Table;
-import org.mdse.pts.timetable.Time;
 import org.mdse.pts.timetable.Timetable;
 import org.mdse.pts.timetable.TimetableFactory;
 import org.mdse.pts.timetable.TimetablePackage;
-import org.mdse.pts.timetable.Train;
-import org.mdse.pts.timetable.Weekday;
-import time.TimePackage;
-import time.impl.TimePackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,50 +43,27 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 	 * @generated
 	 */
 	private EClass tableEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass arrivalEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass departureEClass = null;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	private EClass junctureEClass = null;
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass stationEClass = null;
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass trainEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass timeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum weekdayEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -140,25 +112,16 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 
 		isInited = true;
 
-		// Obtain or create and register interdependencies
-		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI);
-		NetworkPackageImpl theNetworkPackage = (NetworkPackageImpl)(registeredPackage instanceof NetworkPackageImpl ? registeredPackage : NetworkPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(DepotPackage.eNS_URI);
-		DepotPackageImpl theDepotPackage = (DepotPackageImpl)(registeredPackage instanceof DepotPackageImpl ? registeredPackage : DepotPackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(TimePackage.eNS_URI);
-		TimePackageImpl theTimePackage = (TimePackageImpl)(registeredPackage instanceof TimePackageImpl ? registeredPackage : TimePackage.eINSTANCE);
+		// Initialize simple dependencies
+		DepotPackage.eINSTANCE.eClass();
+		NetworkPackage.eINSTANCE.eClass();
+		TimePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theTimetablePackage.createPackageContents();
-		theNetworkPackage.createPackageContents();
-		theDepotPackage.createPackageContents();
-		theTimePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theTimetablePackage.initializePackageContents();
-		theNetworkPackage.initializePackageContents();
-		theDepotPackage.initializePackageContents();
-		theTimePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theTimetablePackage.freeze();
@@ -294,8 +257,8 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 	 * @generated
 	 */
 	@Override
-	public EReference getJuncture_Time() {
-		return (EReference)junctureEClass.getEStructuralFeatures().get(3);
+	public EReference getJuncture_Train() {
+		return (EReference)junctureEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -314,68 +277,8 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 	 * @generated
 	 */
 	@Override
-	public EReference getJuncture_Train() {
-		return (EReference)junctureEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getStation() {
-		return stationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getTrain() {
-		return trainEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getTime() {
-		return timeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getTime_Hour() {
-		return (EAttribute)timeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getTime_Minute() {
-		return (EAttribute)timeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EEnum getWeekday() {
-		return weekdayEEnum;
+	public EReference getJuncture_Time() {
+		return (EReference)junctureEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -426,17 +329,6 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 		createEReference(junctureEClass, JUNCTURE__TRAIN);
 		createEAttribute(junctureEClass, JUNCTURE__WEEKDAY);
 		createEReference(junctureEClass, JUNCTURE__TIME);
-
-		stationEClass = createEClass(STATION);
-
-		trainEClass = createEClass(TRAIN);
-
-		timeEClass = createEClass(TIME);
-		createEAttribute(timeEClass, TIME__HOUR);
-		createEAttribute(timeEClass, TIME__MINUTE);
-
-		// Create enums
-		weekdayEEnum = createEEnum(WEEKDAY);
 	}
 
 	/**
@@ -493,19 +385,8 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 		initEClass(junctureEClass, Juncture.class, "Juncture", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getJuncture_Platform(), ecorePackage.getEString(), "platform", null, 0, 1, Juncture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJuncture_Train(), theDepotPackage.getTrain(), null, "train", null, 1, 1, Juncture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getJuncture_Weekday(), this.getWeekday(), "weekday", null, 1, 1, Juncture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getJuncture_Weekday(), theTimePackage.getWeekday(), "weekday", null, 1, 1, Juncture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJuncture_Time(), theTimePackage.getTime(), null, "time", null, 1, 1, Juncture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(stationEClass, Station.class, "Station", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(trainEClass, Train.class, "Train", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(timeEClass, Time.class, "Time", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTime_Hour(), ecorePackage.getEInt(), "Hour", null, 0, 1, Time.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTime_Minute(), ecorePackage.getEInt(), "Minute", null, 0, 1, Time.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		// Initialize enums and add enum literals
-		initEEnum(weekdayEEnum, Weekday.class, "Weekday");
 
 		// Create resource
 		createResource(eNS_URI);

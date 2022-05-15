@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.mdse.pts.schedule.SchedulePackage;
 import org.mdse.pts.schedule.StartTime;
 import org.mdse.pts.schedule.Time;
-import org.mdse.pts.schedule.Weekday;
+import org.mdse.pts.time.Weekday;
 
 /**
  * <!-- begin-user-doc -->

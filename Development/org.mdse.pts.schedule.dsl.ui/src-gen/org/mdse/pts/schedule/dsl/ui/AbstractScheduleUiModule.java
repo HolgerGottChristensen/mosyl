@@ -69,6 +69,8 @@ import org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferences;
 import org.eclipse.xtext.ui.resource.ResourceServiceDescriptionLabelProvider;
 import org.eclipse.xtext.ui.shared.Access;
 import org.eclipse.xtext.ui.validation.AbstractValidatorConfigurationBlock;
+import org.eclipse.xtext.ui.wizard.IProjectCreator;
+import org.eclipse.xtext.ui.wizard.template.DefaultTemplateProjectCreator;
 import org.mdse.pts.schedule.dsl.ide.contentassist.antlr.PartialScheduleContentAssistParser;
 import org.mdse.pts.schedule.dsl.ide.contentassist.antlr.ScheduleParser;
 import org.mdse.pts.schedule.dsl.ide.contentassist.antlr.internal.InternalScheduleLexer;
@@ -288,6 +290,11 @@ public abstract class AbstractScheduleUiModule extends DefaultUiModule {
 	// contributed by org.eclipse.xtext.xtext.generator.ui.compare.CompareFragment2
 	public void configureCompareViewerTitle(Binder binder) {
 		binder.bind(String.class).annotatedWith(Names.named(UIBindings.COMPARE_VIEWER_TITLE)).toInstance("Schedule Compare");
+	}
+	
+	// contributed by org.eclipse.xtext.xtext.generator.ui.projectWizard.TemplateProjectWizardFragment
+	public Class<? extends IProjectCreator> bindIProjectCreator() {
+		return DefaultTemplateProjectCreator.class;
 	}
 	
 }

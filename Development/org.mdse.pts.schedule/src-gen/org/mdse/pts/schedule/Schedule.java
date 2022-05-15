@@ -2,13 +2,13 @@
  */
 package org.mdse.pts.schedule;
 
-import depot.Root;
-
-import network.Network;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+
+import org.mdse.pts.depot.Root;
+
+import org.mdse.pts.network.Network;
 
 /**
  * <!-- begin-user-doc -->
@@ -53,7 +53,7 @@ public interface Schedule extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Depot</b></em>' reference list.
-	 * The list contents are of type {@link depot.Root}.
+	 * The list contents are of type {@link org.mdse.pts.depot.Root}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Depot</em>' reference list.

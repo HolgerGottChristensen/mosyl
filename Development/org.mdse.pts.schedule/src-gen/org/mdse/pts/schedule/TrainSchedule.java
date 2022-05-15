@@ -2,11 +2,11 @@
  */
 package org.mdse.pts.schedule;
 
-import depot.Train;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+
+import org.mdse.pts.depot.Train;
 
 /**
  * <!-- begin-user-doc -->

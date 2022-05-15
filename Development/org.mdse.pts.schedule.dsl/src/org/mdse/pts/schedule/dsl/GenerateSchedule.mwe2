@@ -26,7 +26,7 @@ Workflow {
 		}
 		language = StandardLanguage {
 			name = "org.mdse.pts.schedule.dsl.Schedule"
-			fileExtensions = "trainschedule"
+			fileExtensions = "schedule"
 			referencedResource = "platform:/resource/org.mdse.pts.schedule/model/Schedule.genmodel"
 			
 			fragment = ecore2xtext.Ecore2XtextValueConverterServiceFragment2 auto-inject {}
@@ -42,6 +42,14 @@ Workflow {
 				// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
 				// Generates checks for @Deprecated grammar annotations, an IssueProvider and a corresponding PropertyPage
 				generateDeprecationValidation = true
+			}
+			projectWizard = {
+				generate = true
+				generateToolbarButton = true
+			}
+			fileWizard = {
+				generate = true
+				generateToolbarButton = true
 			}
 			generator = {
 				generateXtendStub = true

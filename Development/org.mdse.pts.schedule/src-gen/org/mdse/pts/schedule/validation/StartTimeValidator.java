@@ -7,7 +7,8 @@ package org.mdse.pts.schedule.validation;
 import org.eclipse.emf.common.util.EList;
 
 import org.mdse.pts.schedule.Time;
-import org.mdse.pts.schedule.Weekday;
+
+import org.mdse.pts.time.Weekday;
 
 /**
  * A sample validator interface for {@link org.mdse.pts.schedule.StartTime}.

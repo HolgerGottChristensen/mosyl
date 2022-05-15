@@ -4,11 +4,11 @@
  */
 package org.mdse.pts.schedule.validation;
 
-import depot.Root;
-
-import network.Network;
-
 import org.eclipse.emf.common.util.EList;
+
+import org.mdse.pts.depot.Root;
+
+import org.mdse.pts.network.Network;
 
 import org.mdse.pts.schedule.TrainSchedule;
 

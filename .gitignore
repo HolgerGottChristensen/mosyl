@@ -1,3 +1,9 @@
 .metadata/
 .DS_Store
 bin/*
+/.idea/
+/Development/org.eclipse.xtext.example.fowlerdsl/
+/Development/org.eclipse.xtext.example.fowlerdsl.ide/
+/Development/org.eclipse.xtext.example.fowlerdsl.tests/
+/Development/org.eclipse.xtext.example.fowlerdsl.ui/
+/Development/org.eclipse.xtext.example.fowlerdsl.ui.tests/

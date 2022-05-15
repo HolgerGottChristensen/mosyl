@@ -6,8 +6,6 @@ package org.mdse.pts.timetable.provider;
 import java.util.Collection;
 import java.util.List;
 
-import network.NetworkFactory;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -80,7 +78,6 @@ public class TimetableItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(TimetablePackage.Literals.TIMETABLE__TABLE);
-			childrenFeatures.add(TimetablePackage.Literals.TIMETABLE__STATION);
 		}
 		return childrenFeatures;
 	}
@@ -134,7 +131,6 @@ public class TimetableItemProvider
 
 		switch (notification.getFeatureID(Timetable.class)) {
 			case TimetablePackage.TIMETABLE__TABLE:
-			case TimetablePackage.TIMETABLE__STATION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -156,11 +152,6 @@ public class TimetableItemProvider
 			(createChildParameter
 				(TimetablePackage.Literals.TIMETABLE__TABLE,
 				 TimetableFactory.eINSTANCE.createTable()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TimetablePackage.Literals.TIMETABLE__STATION,
-				 NetworkFactory.eINSTANCE.createStation()));
 	}
 
 	/**

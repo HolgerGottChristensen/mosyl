@@ -6,42 +6,26 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.mdse.pts.depot.TrainType;
+import org.mdse.pts.network.Leg;
+import org.mdse.pts.network.Station;
 import org.mdse.pts.schedule.Schedule;
 import org.mdse.pts.schedule.StartTime;
 import org.mdse.pts.schedule.Stop;
 import org.mdse.pts.schedule.TrainSchedule;
+import org.mdse.pts.time.Time;
+import org.mdse.pts.time.TimeFactory;
+import org.mdse.pts.time.Weekday;
+import org.mdse.pts.timetable.Arrival;
 import org.mdse.pts.timetable.Departure;
+import org.mdse.pts.timetable.Table;
 import org.mdse.pts.timetable.Timetable;
-import org.mdse.pts.timetable.*;
+import org.mdse.pts.timetable.TimetableFactory;
 
-import depot.TrainType;
-import network.Leg;
-import network.Station;
 
 public class Scheduler2TimetableConverter {
-	public static Weekday convertDay(org.mdse.pts.schedule.Weekday day) {
-		switch(day) {
-		case MONDAY:
-			return org.mdse.pts.timetable.Weekday.get(0);
-		case TUESDAY:
-			return org.mdse.pts.timetable.Weekday.get(1);
-		case WEDNESDAY:
-			return org.mdse.pts.timetable.Weekday.get(2);
-		case THURSDAY:
-			return org.mdse.pts.timetable.Weekday.get(3);
-		case FRIDAY:
-			return org.mdse.pts.timetable.Weekday.get(4);
-		case SATURDAY:
-			return org.mdse.pts.timetable.Weekday.get(5);
-		case SUNDAY:
-			return org.mdse.pts.timetable.Weekday.get(6);
-		default:
-			return org.mdse.pts.timetable.Weekday.get(0);
-		}
-	}
-
+	
 	public static Timetable convert(Schedule schedule) {
-		
 		
 		List<TrainSchedule> trainSchedules = schedule.getTrains();
 		Set<Station> stationSet = new HashSet<>();
@@ -56,12 +40,12 @@ public class Scheduler2TimetableConverter {
 		
 		for(TrainSchedule ts : trainSchedules) {
 			for(StartTime startTime : ts.getStarttimes()) {
-				for(org.mdse.pts.schedule.Weekday weekday : startTime.getWeekdays()) {
+				for(Weekday weekday : startTime.getWeekdays()) {
 					for(org.mdse.pts.schedule.Time time : startTime.getTimestamps()) {
 						
 						//TODO: set time
 						int minutes = time.getHour() * 60 + time.getMinute(); // convert start time to minutes
-						Weekday currentDay = convertDay(weekday);
+						Weekday currentDay = weekday;
 						
 						for(int i = 1; i < ts.getStops().size(); i++) {
 							
@@ -74,7 +58,7 @@ public class Scheduler2TimetableConverter {
 							Stop s1 = ts.getStops().get(i - 1);
 							Stop s2 = ts.getStops().get(i);
 							Leg leg = s1.getStation().getLegs().stream()
-									.filter(l -> l.getStations().contains(s1) && l.getStations().contains(s2))
+									.filter(l -> l.getStations().contains(s2.getStation()))
 									.findFirst()
 									.get();
 							int distance = leg.getDistance();
@@ -107,7 +91,7 @@ public class Scheduler2TimetableConverter {
 							ar.setPlatform(s2.getPlatform());
 							ar.setOrigin(s1.getStation());
 							ar.setTrain(ts.getTrain());
-							Time arTime = TimetableFactory.eINSTANCE.createTime();
+							Time arTime = TimeFactory.eINSTANCE.createTime();
 							arTime.setHour(arrivalTimeHours);
 							arTime.setMinute(arrivalTimeMinutes);
 							ar.setTime(arTime);
@@ -116,7 +100,7 @@ public class Scheduler2TimetableConverter {
 							dp.setPlatform(s1.getPlatform());
 							dp.setDestination(s2.getStation());
 							dp.setTrain(ts.getTrain());
-							Time dpTime = TimetableFactory.eINSTANCE.createTime();
+							Time dpTime = TimeFactory.eINSTANCE.createTime();
 							dpTime.setHour(departureTimeHours);
 							dpTime.setMinute(departureTimeMinutes);
 							dp.setTime(dpTime);

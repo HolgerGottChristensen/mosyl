@@ -2,7 +2,7 @@
  */
 package org.mdse.pts.timetable;
 
-import network.Station;
+import org.mdse.pts.network.Station;
 
 /**
  * <!-- begin-user-doc -->

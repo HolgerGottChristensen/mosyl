@@ -61,8 +61,9 @@ public class JunctureItemProvider
 			super.getPropertyDescriptors(object);
 
 			addPlatformPropertyDescriptor(object);
-			addTimePropertyDescriptor(object);
 			addTrainPropertyDescriptor(object);
+			addWeekdayPropertyDescriptor(object);
+			addTimePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -90,28 +91,6 @@ public class JunctureItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Time feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTimePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Juncture_time_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Juncture_time_feature", "_UI_Juncture_type"),
-				 TimetablePackage.Literals.JUNCTURE__TIME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Train feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -125,6 +104,50 @@ public class JunctureItemProvider
 				 getString("_UI_Juncture_train_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Juncture_train_feature", "_UI_Juncture_type"),
 				 TimetablePackage.Literals.JUNCTURE__TRAIN,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Weekday feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addWeekdayPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Juncture_weekday_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Juncture_weekday_feature", "_UI_Juncture_type"),
+				 TimetablePackage.Literals.JUNCTURE__WEEKDAY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Time feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTimePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Juncture_time_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Juncture_time_feature", "_UI_Juncture_type"),
+				 TimetablePackage.Literals.JUNCTURE__TIME,
 				 true,
 				 false,
 				 true,
@@ -172,7 +195,7 @@ public class JunctureItemProvider
 
 		switch (notification.getFeatureID(Juncture.class)) {
 			case TimetablePackage.JUNCTURE__PLATFORM:
-			case TimetablePackage.JUNCTURE__TIME:
+			case TimetablePackage.JUNCTURE__WEEKDAY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

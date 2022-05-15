@@ -3,7 +3,6 @@
 package org.mdse.pts.timetable.impl;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -62,41 +61,8 @@ public class TimetableFactoryImpl extends EFactoryImpl implements TimetableFacto
 			case TimetablePackage.ARRIVAL: return createArrival();
 			case TimetablePackage.DEPARTURE: return createDeparture();
 			case TimetablePackage.JUNCTURE: return createJuncture();
-			case TimetablePackage.STATION: return createStation();
-			case TimetablePackage.TRAIN: return createTrain();
-			case TimetablePackage.TIME: return createTime();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
-			case TimetablePackage.WEEKDAY:
-				return createWeekdayFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
-			case TimetablePackage.WEEKDAY:
-				return convertWeekdayToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -153,59 +119,6 @@ public class TimetableFactoryImpl extends EFactoryImpl implements TimetableFacto
 	public Juncture createJuncture() {
 		JunctureImpl juncture = new JunctureImpl();
 		return juncture;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Station createStation() {
-		StationImpl station = new StationImpl();
-		return station;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Train createTrain() {
-		TrainImpl train = new TrainImpl();
-		return train;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Time createTime() {
-		TimeImpl time = new TimeImpl();
-		return time;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Weekday createWeekdayFromString(EDataType eDataType, String initialValue) {
-		Weekday result = Weekday.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertWeekdayToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

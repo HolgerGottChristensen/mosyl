@@ -2,17 +2,16 @@
  */
 package org.mdse.pts.schedule.impl;
 
-import depot.DepotPackage;
-
-import network.NetworkPackage;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+
+import org.mdse.pts.depot.DepotPackage;
+
+import org.mdse.pts.network.NetworkPackage;
 
 import org.mdse.pts.schedule.Schedule;
 import org.mdse.pts.schedule.ScheduleFactory;
@@ -21,7 +20,8 @@ import org.mdse.pts.schedule.StartTime;
 import org.mdse.pts.schedule.Stop;
 import org.mdse.pts.schedule.Time;
 import org.mdse.pts.schedule.TrainSchedule;
-import org.mdse.pts.schedule.Weekday;
+import org.mdse.pts.time.TimePackage;
+import org.mdse.pts.timetable.TimetablePackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -64,13 +64,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	private EClass stopEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum weekdayEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -120,8 +113,10 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		isInited = true;
 
 		// Initialize simple dependencies
-		NetworkPackage.eINSTANCE.eClass();
 		DepotPackage.eINSTANCE.eClass();
+		NetworkPackage.eINSTANCE.eClass();
+		TimePackage.eINSTANCE.eClass();
+		TimetablePackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
 		theSchedulePackage.createPackageContents();
@@ -343,16 +338,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	@Override
-	public EEnum getWeekday() {
-		return weekdayEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public ScheduleFactory getScheduleFactory() {
 		return (ScheduleFactory)getEFactoryInstance();
 	}
@@ -400,9 +385,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		createEReference(stopEClass, STOP__VIA);
 		createEReference(stopEClass, STOP__STATION);
 		createEAttribute(stopEClass, STOP__ROTATE);
-
-		// Create enums
-		weekdayEEnum = createEEnum(WEEKDAY);
 	}
 
 	/**
@@ -431,6 +413,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		// Obtain other dependent packages
 		NetworkPackage theNetworkPackage = (NetworkPackage)EPackage.Registry.INSTANCE.getEPackage(NetworkPackage.eNS_URI);
 		DepotPackage theDepotPackage = (DepotPackage)EPackage.Registry.INSTANCE.getEPackage(DepotPackage.eNS_URI);
+		TimePackage theTimePackage = (TimePackage)EPackage.Registry.INSTANCE.getEPackage(TimePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -450,7 +433,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		initEReference(getTrainSchedule_Stops(), this.getStop(), null, "stops", null, 2, -1, TrainSchedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(startTimeEClass, StartTime.class, "StartTime", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStartTime_Weekdays(), this.getWeekday(), "weekdays", null, 1, -1, StartTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStartTime_Weekdays(), theTimePackage.getWeekday(), "weekdays", null, 1, -1, StartTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStartTime_Timestamps(), this.getTime(), null, "timestamps", null, 1, -1, StartTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(timeEClass, Time.class, "Time", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -463,16 +446,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		initEReference(getStop_Via(), theNetworkPackage.getLeg(), null, "via", null, 0, 1, Stop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getStop_Station(), theNetworkPackage.getStation(), null, "station", null, 1, 1, Stop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStop_Rotate(), ecorePackage.getEBoolean(), "rotate", null, 1, 1, Stop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		// Initialize enums and add enum literals
-		initEEnum(weekdayEEnum, Weekday.class, "Weekday");
-		addEEnumLiteral(weekdayEEnum, Weekday.MONDAY);
-		addEEnumLiteral(weekdayEEnum, Weekday.TUESDAY);
-		addEEnumLiteral(weekdayEEnum, Weekday.WEDNESDAY);
-		addEEnumLiteral(weekdayEEnum, Weekday.THURSDAY);
-		addEEnumLiteral(weekdayEEnum, Weekday.FRIDAY);
-		addEEnumLiteral(weekdayEEnum, Weekday.SATURDAY);
-		addEEnumLiteral(weekdayEEnum, Weekday.SUNDAY);
 
 		// Create resource
 		createResource(eNS_URI);

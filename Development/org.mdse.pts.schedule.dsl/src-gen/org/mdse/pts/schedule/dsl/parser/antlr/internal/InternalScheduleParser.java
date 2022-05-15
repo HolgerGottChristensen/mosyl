@@ -1979,8 +1979,8 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_0=(Token)match(input,30,FOLLOW_2); 
 
-                    				current = grammarAccess.getWeekdayAccess().getMONDAYEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_0, grammarAccess.getWeekdayAccess().getMONDAYEnumLiteralDeclaration_0());
+                    				current = grammarAccess.getWeekdayAccess().getMondayEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_0, grammarAccess.getWeekdayAccess().getMondayEnumLiteralDeclaration_0());
                     			
 
                     }
@@ -1996,8 +1996,8 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_1=(Token)match(input,31,FOLLOW_2); 
 
-                    				current = grammarAccess.getWeekdayAccess().getTUESDAYEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_1, grammarAccess.getWeekdayAccess().getTUESDAYEnumLiteralDeclaration_1());
+                    				current = grammarAccess.getWeekdayAccess().getTuesdayEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_1, grammarAccess.getWeekdayAccess().getTuesdayEnumLiteralDeclaration_1());
                     			
 
                     }
@@ -2013,8 +2013,8 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_2=(Token)match(input,32,FOLLOW_2); 
 
-                    				current = grammarAccess.getWeekdayAccess().getWEDNESDAYEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_2, grammarAccess.getWeekdayAccess().getWEDNESDAYEnumLiteralDeclaration_2());
+                    				current = grammarAccess.getWeekdayAccess().getWednesdayEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_2, grammarAccess.getWeekdayAccess().getWednesdayEnumLiteralDeclaration_2());
                     			
 
                     }
@@ -2030,8 +2030,8 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_3=(Token)match(input,33,FOLLOW_2); 
 
-                    				current = grammarAccess.getWeekdayAccess().getTHURSDAYEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_3, grammarAccess.getWeekdayAccess().getTHURSDAYEnumLiteralDeclaration_3());
+                    				current = grammarAccess.getWeekdayAccess().getThursdayEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_3, grammarAccess.getWeekdayAccess().getThursdayEnumLiteralDeclaration_3());
                     			
 
                     }
@@ -2047,8 +2047,8 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_4=(Token)match(input,34,FOLLOW_2); 
 
-                    				current = grammarAccess.getWeekdayAccess().getFRIDAYEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_4, grammarAccess.getWeekdayAccess().getFRIDAYEnumLiteralDeclaration_4());
+                    				current = grammarAccess.getWeekdayAccess().getFridayEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_4, grammarAccess.getWeekdayAccess().getFridayEnumLiteralDeclaration_4());
                     			
 
                     }
@@ -2064,8 +2064,8 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_5=(Token)match(input,35,FOLLOW_2); 
 
-                    				current = grammarAccess.getWeekdayAccess().getSATURDAYEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_5, grammarAccess.getWeekdayAccess().getSATURDAYEnumLiteralDeclaration_5());
+                    				current = grammarAccess.getWeekdayAccess().getSaturdayEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_5, grammarAccess.getWeekdayAccess().getSaturdayEnumLiteralDeclaration_5());
                     			
 
                     }
@@ -2081,8 +2081,8 @@ public class InternalScheduleParser extends AbstractInternalAntlrParser {
                     {
                     enumLiteral_6=(Token)match(input,36,FOLLOW_2); 
 
-                    				current = grammarAccess.getWeekdayAccess().getSUNDAYEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_6, grammarAccess.getWeekdayAccess().getSUNDAYEnumLiteralDeclaration_6());
+                    				current = grammarAccess.getWeekdayAccess().getSundayEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_6, grammarAccess.getWeekdayAccess().getSundayEnumLiteralDeclaration_6());
                     			
 
                     }

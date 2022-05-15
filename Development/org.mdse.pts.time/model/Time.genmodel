@@ -9,13 +9,13 @@
   <genPackages prefix="Time" basePackage="org.mdse.pts" disposableProviderFactory="true"
       ecorePackage="Time.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Time.ecore#//Weekday">
-      <genEnumLiterals ecoreEnumLiteral="Time.ecore#//Weekday/MONDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="Time.ecore#//Weekday/TUESDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="Time.ecore#//Weekday/WEDNESDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="Time.ecore#//Weekday/THURSDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="Time.ecore#//Weekday/FRIDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="Time.ecore#//Weekday/SATURDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="Time.ecore#//Weekday/SUNDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="Time.ecore#//Weekday/Monday"/>
+      <genEnumLiterals ecoreEnumLiteral="Time.ecore#//Weekday/Tuesday"/>
+      <genEnumLiterals ecoreEnumLiteral="Time.ecore#//Weekday/Wednesday"/>
+      <genEnumLiterals ecoreEnumLiteral="Time.ecore#//Weekday/Thursday"/>
+      <genEnumLiterals ecoreEnumLiteral="Time.ecore#//Weekday/Friday"/>
+      <genEnumLiterals ecoreEnumLiteral="Time.ecore#//Weekday/Saturday"/>
+      <genEnumLiterals ecoreEnumLiteral="Time.ecore#//Weekday/Sunday"/>
     </genEnums>
     <genClasses ecoreClass="Time.ecore#//Time">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Time.ecore#//Time/hour"/>

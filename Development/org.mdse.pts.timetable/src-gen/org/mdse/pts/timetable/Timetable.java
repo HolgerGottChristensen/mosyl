@@ -2,9 +2,11 @@
  */
 package org.mdse.pts.timetable;
 
-import network.Station;
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
+
+import org.mdse.pts.network.Station;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,7 +26,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Timetable extends EObject {
-
 	/**
 	 * Returns the value of the '<em><b>Table</b></em>' containment reference list.
 	 * The list contents are of type {@link org.mdse.pts.timetable.Table}.
@@ -39,7 +40,7 @@ public interface Timetable extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Station</b></em>' reference list.
-	 * The list contents are of type {@link network.Station}.
+	 * The list contents are of type {@link org.mdse.pts.network.Station}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Station</em>' reference list.
@@ -48,4 +49,5 @@ public interface Timetable extends EObject {
 	 * @generated
 	 */
 	EList<Station> getStation();
+
 } // Timetable

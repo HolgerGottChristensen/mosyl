@@ -15,7 +15,7 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Description']"/>
         <target xmi:type="network:Network" href="MyNetwork.network#/"/>
       </ownedRepresentationDescriptors>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_KAcYQMSJEey5w_mn-q_0BA" name="new Network Diagram Representation" repPath="#_KATOUMSJEey5w_mn-q_0BA" changeId="a1b9fd72-d7e7-49dd-8059-70e76438b655">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_KAcYQMSJEey5w_mn-q_0BA" name="new Network Diagram Representation" repPath="#_KATOUMSJEey5w_mn-q_0BA" changeId="44b1f8e1-e1d0-44a0-8d48-10bc61e376a3">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']"/>
         <target xmi:type="network:Network" href="MyNetwork.network#/"/>
       </ownedRepresentationDescriptors>
@@ -270,18 +270,18 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Dot" uid="_KAmwUMSJEey5w_mn-q_0BA" labelSize="12" showIcon="false" iconPath="/org.mdse.pts.network.dsl/icons/transparent.gif" labelColor="255,255,255" borderSize="2" borderSizeComputationExpression="2" borderColor="136,136,136" backgroundColor="194,239,255">
+      <ownedStyle xmi:type="diagram:Dot" uid="_KAmwUMSJEey5w_mn-q_0BA" labelSize="12" showIcon="false" iconPath="/org.mdse.pts.network.dsl/icons/transparent.gif" borderSize="2" borderSizeComputationExpression="2" borderColor="136,136,136" backgroundColor="194,239,255">
         <description xmi:type="style:DotDescription" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@nodeMappings[name='Station%20Node']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@nodeMappings[name='Station%20Node']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNode" uid="_KAolgMSJEey5w_mn-q_0BA" name="Name" outgoingEdges="_JFAiYsSXEey7TeGJDmTspw _QwsYuMS4Eeyx2eMUusyNIA" incomingEdges="_ro3XBMSiEeyJjI-r-egQXw" width="3" height="3">
+    <ownedDiagramElements xmi:type="diagram:DNode" uid="_KAolgMSJEey5w_mn-q_0BA" name="Name2" outgoingEdges="_JFAiYsSXEey7TeGJDmTspw _QwsYuMS4Eeyx2eMUusyNIA" incomingEdges="_ro3XBMSiEeyJjI-r-egQXw" width="3" height="3">
       <target xmi:type="network:Station" href="MyNetwork.network#//@stations.1"/>
       <semanticElements xmi:type="network:Station" href="MyNetwork.network#//@stations.1"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Dot" uid="_KAolgcSJEey5w_mn-q_0BA" labelSize="12" showIcon="false" iconPath="/org.mdse.pts.network.dsl/icons/transparent.gif" labelColor="255,255,255" borderSize="2" borderSizeComputationExpression="2" borderColor="136,136,136" backgroundColor="194,239,255">
+      <ownedStyle xmi:type="diagram:Dot" uid="_KAolgcSJEey5w_mn-q_0BA" labelSize="12" showIcon="false" iconPath="/org.mdse.pts.network.dsl/icons/transparent.gif" borderSize="2" borderSizeComputationExpression="2" borderColor="136,136,136" backgroundColor="194,239,255">
         <description xmi:type="style:DotDescription" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@nodeMappings[name='Station%20Node']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@nodeMappings[name='Station%20Node']"/>
@@ -292,7 +292,7 @@
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-      <ownedStyle xmi:type="diagram:Dot" uid="_l25tgMSkEeydPZ8PLELQ2A" labelSize="12" showIcon="false" iconPath="/org.mdse.pts.network.dsl/icons/transparent.gif" labelColor="255,255,255" borderSize="2" borderSizeComputationExpression="2" borderColor="136,136,136" backgroundColor="194,239,255">
+      <ownedStyle xmi:type="diagram:Dot" uid="_l25tgMSkEeydPZ8PLELQ2A" labelSize="12" showIcon="false" iconPath="/org.mdse.pts.network.dsl/icons/transparent.gif" borderSize="2" borderSizeComputationExpression="2" borderColor="136,136,136" backgroundColor="194,239,255">
         <description xmi:type="style:DotDescription" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@nodeMappings[name='Station%20Node']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@nodeMappings[name='Station%20Node']"/>
@@ -302,7 +302,7 @@
       <semanticElements xmi:type="network:Leg" href="MyNetwork.network#//@legs.0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_JFAiY8SXEey7TeGJDmTspw" targetArrow="NoDecoration" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@edgeMappings[name='Leg%20Edge']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_JFAiZMSXEey7TeGJDmTspw" labelSize="12" showIcon="false" labelColor="255,255,255"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_JFAiZMSXEey7TeGJDmTspw" labelSize="12" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@edgeMappings[name='Leg%20Edge']"/>
     </ownedDiagramElements>
@@ -311,7 +311,7 @@
       <semanticElements xmi:type="network:Leg" href="MyNetwork.network#//@legs.1"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_ro3XBcSiEeyJjI-r-egQXw" targetArrow="NoDecoration" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@edgeMappings[name='Leg%20Edge']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_ro3XBsSiEeyJjI-r-egQXw" labelSize="12" showIcon="false" labelColor="255,255,255"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_ro3XBsSiEeyJjI-r-egQXw" labelSize="12" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@edgeMappings[name='Leg%20Edge']"/>
     </ownedDiagramElements>
@@ -320,7 +320,7 @@
       <semanticElements xmi:type="network:Leg" href="MyNetwork.network#//@legs.2"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_l3duNcSkEeydPZ8PLELQ2A" targetArrow="NoDecoration" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@edgeMappings[name='Leg%20Edge']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_l3duNsSkEeydPZ8PLELQ2A" labelSize="12" showIcon="false" labelColor="255,255,255"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_l3duNsSkEeydPZ8PLELQ2A" labelSize="12" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@edgeMappings[name='Leg%20Edge']"/>
     </ownedDiagramElements>
@@ -329,7 +329,7 @@
       <semanticElements xmi:type="network:Leg" href="MyNetwork.network#//@legs.3"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" uid="_QwsYucS4Eeyx2eMUusyNIA" targetArrow="NoDecoration" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@edgeMappings[name='Leg%20Edge']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_QwsYusS4Eeyx2eMUusyNIA" labelSize="12" showIcon="false" labelColor="255,255,255"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" uid="_QwsYusS4Eeyx2eMUusyNIA" labelSize="12" showIcon="false"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.mdse.pts.network.dsl/description/Network.odesign#//@ownedViewpoints[name='Network%20Viewpoint']/@ownedRepresentations[name='Network%20Diagram%20Representation']/@defaultLayer/@edgeMappings[name='Leg%20Edge']"/>
     </ownedDiagramElements>

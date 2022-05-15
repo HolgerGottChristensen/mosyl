@@ -18,18 +18,9 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StartTime">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="weekdays" lowerBound="1"
-        upperBound="-1" eType="#//Weekday"/>
+        upperBound="-1" eType="ecore:EEnum ../../org.mdse.pts.time/model/Time.ecore#//Weekday"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timestamps" lowerBound="1"
         upperBound="-1" eType="#//Time" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Weekday">
-    <eLiterals name="MONDAY"/>
-    <eLiterals name="TUESDAY" value="1"/>
-    <eLiterals name="WEDNESDAY" value="2"/>
-    <eLiterals name="THURSDAY" value="3"/>
-    <eLiterals name="FRIDAY" value="4"/>
-    <eLiterals name="SATURDAY" value="5"/>
-    <eLiterals name="SUNDAY" value="6"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Time">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="hour" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>

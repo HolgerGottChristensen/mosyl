@@ -8,8 +8,7 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Automatic-Module-Name: org.mdse.pts.schedule
 Bundle-RequiredExecutionEnvironment: JavaSE-17
-Export-Package: 
- org.mdse.pts.schedule,
+Export-Package: org.mdse.pts.schedule,
  org.mdse.pts.schedule.impl,
  org.mdse.pts.schedule.util
 Require-Bundle: org.eclipse.core.runtime,
@@ -18,6 +17,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.mdse.pts.common;visibility:=reexport,
  org.mdse.pts.depot;visibility:=reexport,
  org.mdse.pts.network;visibility:=reexport,
- org.mdse.pts.timetable;bundle-version="1.0.0"
+ org.mdse.pts.time;visibility:=reexport,
+ org.mdse.pts.timetable;visibility:=reexport
 Bundle-ActivationPolicy: lazy
 Import-Package: org.eclipse.ui

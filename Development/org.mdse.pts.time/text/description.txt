@@ -12,10 +12,10 @@ Package time <http://mdse.org/pts/time>
     Attribute minute : EInt<<1..1>>
 
   Enum Weekday
-    Literal MONDAY = 0
-    Literal TUESDAY = 1
-    Literal WEDNESDAY = 2
-    Literal THURSDAY = 3
-    Literal FRIDAY = 4
-    Literal SATURDAY = 5
-    Literal SUNDAY = 6
+    Literal Monday = 0
+    Literal Tuesday = 1
+    Literal Wednesday = 2
+    Literal Thursday = 3
+    Literal Friday = 4
+    Literal Saturday = 5
+    Literal Sunday = 6
