@@ -3,7 +3,7 @@
   <ownedViewpoints name="Depot Viewpoint" modelFileExtension="depot">
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Depot Diagram Representation" domainClass="depot.Depot">
       <defaultLayer name="Default">
-        <containerMappings name="depot" labelDirectEdit="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@subSections[name='Edit']/@ownedTools[name='Depot%20name']" domainClass="depot.Depot" childrenPresentation="VerticalStack">
+        <containerMappings name="depot" domainClass="depot.Depot" childrenPresentation="VerticalStack">
           <subContainerMappings name="Train container" labelDirectEdit="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@subSections[name='Edit']/@ownedTools[name='Train%20name']" semanticCandidatesExpression="feature:eAllContents" domainClass="depot.Train" childrenPresentation="HorizontalStack">
             <subContainerMappings name="coach" labelDirectEdit="//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']/@defaultLayer/@toolSections.0/@subSections[name='Edit']/@ownedTools[name='Wagon%20number']" semanticCandidatesExpression="feature:eAllContents" domainClass="depot.Coach">
               <conditionnalStyles predicateExpression="aql: self.oclIsTypeOf(depot::Locomotive) and self.eContainer().coach->at(1) = self">
@@ -103,12 +103,6 @@
               </initialOperation>
             </ownedTools>
             <ownedTools xsi:type="tool:DirectEditLabel" name="Train name">
-              <mask mask="{0}"/>
-              <initialOperation>
-                <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
-              </initialOperation>
-            </ownedTools>
-            <ownedTools xsi:type="tool:DirectEditLabel" name="Depot name">
               <mask mask="{0}"/>
               <initialOperation>
                 <firstModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="var:0"/>
