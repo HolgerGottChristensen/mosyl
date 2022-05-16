@@ -130,7 +130,10 @@ public class Scheduler2TimetableConverter {
 		}
 		
 		Timetable tt = TimetableFactory.eINSTANCE.createTimetable();
-		for(Station s : stationSet) {
+		List<Station> stations = new ArrayList<>(stationSet);
+		stations.sort((x, y) -> x.getName().compareTo(y.getName()));
+		
+		for(Station s : stations) {
 			tt.getTable().add(tableMap.get(s));
 			tt.getTable().get(tt.getTable().size() - 1).setStation(s);
 		}
@@ -140,12 +143,12 @@ public class Scheduler2TimetableConverter {
 			
 		    ArrayList<Arrival> arrivals = new ArrayList<Arrival>(t.getArrivals());
 		    arrivals.sort((x, y) -> (y.getTime().getHour()*60 + y.getTime().getMinute()) - (x.getTime().getHour()*60 + x.getTime().getMinute()));
-		    arrivals.sort((x, y) -> y.getWeekday().getValue() - x.getWeekday().getValue());
+		    arrivals.sort((x, y) -> x.getWeekday().getValue() - y.getWeekday().getValue());
 		    
 		    
 		    ArrayList<Departure> departures = new ArrayList<Departure>(t.getDepartures());
 		    departures.sort((x, y) -> (y.getTime().getHour()*60 + y.getTime().getMinute()) - (x.getTime().getHour()*60 + x.getTime().getMinute()));
-			departures.sort((x, y) -> y.getWeekday().getValue() - x.getWeekday().getValue());
+			departures.sort((x, y) -> x.getWeekday().getValue() - y.getWeekday().getValue());
 			
 			t.getArrivals().clear();
 			t.getArrivals().addAll(arrivals);

@@ -42,11 +42,24 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 		
 		this.diagnostics = diagnostics;
 		
+		if (DepotPackage.eINSTANCE.getDepot().equals(eClass)) {
+			Depot depot = (Depot) eObject;
+			
+			modelIsValid &= validateDepot(depot);
+		}
+		
 		if (DepotPackage.eINSTANCE.getTrain().equals(eClass)) {
 			Train train = (Train) eObject;
 			
 			modelIsValid &= validateTrain(train);
 		}
+		
+		return modelIsValid;
+	}
+	
+	private boolean validateDepot(Depot depot) {
+		boolean modelIsValid = true;
+		modelIsValid &= validateNoDuplicateTrainNames(depot);
 		
 		return modelIsValid;
 	}
@@ -60,6 +73,8 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 		modelIsValid &= validateAtMostOneDiningCoach(train);
 		modelIsValid &= validateCoachClassesInSequence(train);
 		modelIsValid &= validateDiningCoachBetweenPassengerCoaches(train);
+		modelIsValid &= validateNoSpaceInTrainName(train);
+		modelIsValid &= validateNoduplicateWagonNumber(train);
 		
 		if(train.getType().equals(TrainType.INTERCITY)) {
 			modelIsValid &= validateIntercityHasAtLeastOneFirstclass(train);
@@ -69,9 +84,55 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 		
 		return modelIsValid;
 	}
+	
+	private boolean validateNoduplicateWagonNumber(Train train) {
+		//Check if all wagon numbers in a train are unique		
+		
+		Set<Integer> wagonNumbers = new HashSet<>();
+		// If there are duplicates allMatch returns early with false
+		boolean hasDuplicateName = !train.getCoach().stream()
+				.filter(c -> !(c instanceof Locomotive))
+				.allMatch(c -> wagonNumbers.add(c.getWagonNumber()));
+		
+		if (hasDuplicateName) {
+			constraintViolated(train, "Wagon numbers for " + train.getName() + " must be unique");
+		}
+		return false;
+	}
 
+
+	private boolean validateNoDuplicateTrainNames(Depot depot) {
+		// Check that all train names are unique
+		
+		Set<String> trainNames = new HashSet<>();
+		// If there are duplicates allMatch returns early with false
+		boolean hasDuplicateName = !depot.getTrain().stream().allMatch(t -> trainNames.add(t.getName()));
+		
+		if (hasDuplicateName) {
+			constraintViolated(depot, "Depot may not contain trains with the same name");
+		}
+		return false;
+	}
+
+	private boolean validateNoSpaceInTrainName(Train train) {
+		// Check if there is a space in the name and that the name does not begin with a number
+		
+		if (train.getName().contains(" ")) {
+			constraintViolated(train, train.getName() + ", name may not contain whitespace");
+		} else if (Character.isDigit(train.getName().charAt(0))) {
+			constraintViolated(train, train.getName() + ", name may not begin with a number");
+		}
+		return false;
+	}
 
 	private boolean validateDiningCoachBetweenPassengerCoaches(Train train) {
+		/*
+		 * Check that if there is a dining coach 
+		 * then it will be between coaches of different classes.
+		 * If there only is one passenger coach present, then it will not matter
+		 * as long as the dining coach is not between the passenger coaches
+		 * */
+		
 		List<Coach> coaches = train.getCoach().stream()
 				.filter(c -> !(c instanceof Locomotive))
 				.collect(Collectors.toList());
@@ -113,6 +174,9 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 	}
 
 	private boolean validateCoachClassesInSequence(Train train) {
+		// Validate that all coach classes are in sequence. 
+		// E.g. all first class coaches are one after the other, followed by the economy coaches
+		
 		System.out.println("Train: " + train.getName());
 		List<Coach> coaches = train.getCoach().stream()
 				.filter(c -> !(c instanceof Locomotive))
@@ -142,6 +206,8 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 	}
 
 	private boolean validateAtMostOneDiningCoach(Train train) {
+		// Check if there is at most one dining coach in any train
+		
 		boolean constraintViolated = train.getCoach().stream()
 				.filter(DiningCoach.class::isInstance)
 				.count() > 1;
@@ -153,6 +219,8 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 	}
 	
 	private boolean validateIntercityHasAtLeastOneDiningCoach(Train train) {
+		// Check that intercity coach has at least one diner
+		
 		boolean constraintViolated = train.getCoach().stream()
 				.filter(DiningCoach.class::isInstance)
 				.count() < 1;
@@ -164,6 +232,8 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 	}
 
 	private boolean validateIntercityHasAtLeastOneFirstclass(Train train) {
+		// Check that intercity coach has at least one first class coach
+		
 		boolean constraintViolated = train.getCoach().stream()
 				.filter(PassengerCoach.class::isInstance)
 				.map(PassengerCoach.class::cast)
@@ -177,6 +247,8 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 	}
 
 	private boolean validateLocomotiveNotBeetweenOtherCoaches(Train train) {
+		// Check that locomotives are not located between coaches
+		
 		List<Coach> coaches = new ArrayList<>(train.getCoach());
 		coaches.remove(coaches.size()-1);
 		coaches.remove(0);
@@ -191,11 +263,9 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 		return false;
 	}
 	
-	public DepotValidator() {
-		// TODO Auto-generated constructor stub
-	}
-	
 	private boolean validateLocomotiveAsFirstOrLastCoach(Train train) {
+		// Check that locomotives are only located at either end of the train
+		
 		Optional<Coach> firstCoach = train.getCoach().stream()
 				.findFirst()
 				.filter(Locomotive.class::isInstance);
@@ -213,6 +283,8 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 	}
 
 	private boolean validateNoMoreThanTwoLocomotives(Train train) {
+		// Check that the number of locomotives does not exceed 2
+		
 		boolean constraintViolated = train.getCoach().stream()
 				.filter(Locomotive.class::isInstance)
 				.count() > 2;
@@ -224,6 +296,8 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 	}
 
 	private boolean validateContainsAtLeastOneLocomotive(Train train) {
+		// Check that a train has at least one locomotive
+		
 		boolean constraintViolated = train.getCoach().stream()
 				.filter(Locomotive.class::isInstance)
 				.count() < 1;

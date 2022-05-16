@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="ASCII"?>
 <depot:Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:depot="http://mdse.org/pts/depot">
   <depot>
-    <train name="My first train">
-      <coach xsi:type="depot:PassengerCoach" class="FirstClass"/>
-      <coach xsi:type="depot:DiningCoach" wagonNumber="9"/>
+    <train name="RE47">
+      <coach xsi:type="depot:PassengerCoach" wagonNumber="61"/>
+      <coach xsi:type="depot:PassengerCoach" wagonNumber="62"/>
+      <coach xsi:type="depot:PassengerCoach" wagonNumber="63" class="FirstClass"/>
       <coach xsi:type="depot:Locomotive"/>
     </train>
-    <train name="ICE443">
-      <coach xsi:type="depot:PassengerCoach" wagonNumber="3"/>
-      <coach xsi:type="depot:PassengerCoach" wagonNumber="3" class="FirstClass"/>
-      <coach xsi:type="depot:PassengerCoach" wagonNumber="3" class="FirstClass"/>
+    <train name="ICE120" type="Intercity">
       <coach xsi:type="depot:Locomotive"/>
+      <coach xsi:type="depot:PassengerCoach" wagonNumber="101" class="FirstClass"/>
+      <coach xsi:type="depot:DiningCoach" wagonNumber="102"/>
+      <coach xsi:type="depot:PassengerCoach" wagonNumber="103"/>
     </train>
-    <train name="New Train">
+    <train name="RE90">
       <coach xsi:type="depot:Locomotive"/>
-      <coach xsi:type="depot:PassengerCoach" class="FirstClass"/>
-      <coach xsi:type="depot:PassengerCoach"/>
-      <coach xsi:type="depot:PassengerCoach" class="FirstClass"/>
+      <coach xsi:type="depot:PassengerCoach" wagonNumber="22" class="FirstClass"/>
+      <coach xsi:type="depot:PassengerCoach" wagonNumber="23"/>
+      <coach xsi:type="depot:PassengerCoach" wagonNumber="24"/>
     </train>
     <train name="ICE111">
       <coach xsi:type="depot:Locomotive"/>

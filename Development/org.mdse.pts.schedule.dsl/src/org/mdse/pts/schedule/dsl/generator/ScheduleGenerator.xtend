@@ -140,38 +140,4 @@ class ScheduleGenerator extends AbstractGenerator {
 			</body>
 		</html>
 	'''
-	/*
-	 * «FOR station : tt.station»
-				<h1>« station.name »</h1>
-				<div>
-					<div>
-						«FOR t : tt.table»
-							<h2>Arrivals</h2>
-							«FOR w : t.junctures.filter(x | Arrival.isInstance(x)).groupBy[x | x.weekday].keySet.toArray»
-								<h3>« w.toString »</h3>
-								«FOR a : t.junctures.filter(x | Arrival.isInstance(x)).map(x | x as Arrival).groupBy[x | x.weekday].get(w)»
-									<p> 
-										« a.time.hour » : « a.time.minute »
-										« a.train.name »
-										from « a.origin.name » on platform « a.platform »
-									</p>
-								«ENDFOR»
-							«ENDFOR»
-							<h2>Departures</h2>
-							«FOR w : t.junctures.filter(x | Departure.isInstance(x)).groupBy[x | x.weekday].keySet.toArray»
-								<h3>« w.toString »</h3>
-								«FOR a : t.junctures.filter(x | Departure.isInstance(x)).map(x | x as Departure).groupBy[x | x.weekday].get(w)»
-									<p> 
-										« a.time.hour » : « a.time.minute »
-										« a.train.name »
-										from « a.destination.name » on platform « a.platform »
-									</p>
-								«ENDFOR»
-							«ENDFOR»
-						«ENDFOR»
-					</div>
-				</div>
-			«ENDFOR»
-	 * 
-	 */
 }
