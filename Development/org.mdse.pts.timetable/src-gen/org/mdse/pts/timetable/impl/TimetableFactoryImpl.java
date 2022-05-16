@@ -60,7 +60,6 @@ public class TimetableFactoryImpl extends EFactoryImpl implements TimetableFacto
 			case TimetablePackage.TABLE: return createTable();
 			case TimetablePackage.ARRIVAL: return createArrival();
 			case TimetablePackage.DEPARTURE: return createDeparture();
-			case TimetablePackage.JUNCTURE: return createJuncture();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -108,17 +107,6 @@ public class TimetableFactoryImpl extends EFactoryImpl implements TimetableFacto
 	public Departure createDeparture() {
 		DepartureImpl departure = new DepartureImpl();
 		return departure;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Juncture createJuncture() {
-		JunctureImpl juncture = new JunctureImpl();
-		return juncture;
 	}
 
 	/**

@@ -20,7 +20,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.mdse.pts.network.Station;
 
-import org.mdse.pts.timetable.Juncture;
+import org.mdse.pts.timetable.Arrival;
+import org.mdse.pts.timetable.Departure;
 import org.mdse.pts.timetable.Table;
 import org.mdse.pts.timetable.TimetablePackage;
 
@@ -32,22 +33,23 @@ import org.mdse.pts.timetable.TimetablePackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.mdse.pts.timetable.impl.TableImpl#getJunctures <em>Junctures</em>}</li>
+ *   <li>{@link org.mdse.pts.timetable.impl.TableImpl#getArrivals <em>Arrivals</em>}</li>
  *   <li>{@link org.mdse.pts.timetable.impl.TableImpl#getStation <em>Station</em>}</li>
+ *   <li>{@link org.mdse.pts.timetable.impl.TableImpl#getDepartures <em>Departures</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class TableImpl extends MinimalEObjectImpl.Container implements Table {
 	/**
-	 * The cached value of the '{@link #getJunctures() <em>Junctures</em>}' containment reference list.
+	 * The cached value of the '{@link #getArrivals() <em>Arrivals</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getJunctures()
+	 * @see #getArrivals()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Juncture> junctures;
+	protected EList<Arrival> arrivals;
 
 	/**
 	 * The cached value of the '{@link #getStation() <em>Station</em>}' reference.
@@ -58,6 +60,16 @@ public class TableImpl extends MinimalEObjectImpl.Container implements Table {
 	 * @ordered
 	 */
 	protected Station station;
+
+	/**
+	 * The cached value of the '{@link #getDepartures() <em>Departures</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDepartures()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Departure> departures;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -84,11 +96,11 @@ public class TableImpl extends MinimalEObjectImpl.Container implements Table {
 	 * @generated
 	 */
 	@Override
-	public EList<Juncture> getJunctures() {
-		if (junctures == null) {
-			junctures = new EObjectContainmentEList<Juncture>(Juncture.class, this, TimetablePackage.TABLE__JUNCTURES);
+	public EList<Arrival> getArrivals() {
+		if (arrivals == null) {
+			arrivals = new EObjectContainmentEList<Arrival>(Arrival.class, this, TimetablePackage.TABLE__ARRIVALS);
 		}
-		return junctures;
+		return arrivals;
 	}
 
 	/**
@@ -137,10 +149,25 @@ public class TableImpl extends MinimalEObjectImpl.Container implements Table {
 	 * @generated
 	 */
 	@Override
+	public EList<Departure> getDepartures() {
+		if (departures == null) {
+			departures = new EObjectContainmentEList<Departure>(Departure.class, this, TimetablePackage.TABLE__DEPARTURES);
+		}
+		return departures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case TimetablePackage.TABLE__JUNCTURES:
-				return ((InternalEList<?>)getJunctures()).basicRemove(otherEnd, msgs);
+			case TimetablePackage.TABLE__ARRIVALS:
+				return ((InternalEList<?>)getArrivals()).basicRemove(otherEnd, msgs);
+			case TimetablePackage.TABLE__DEPARTURES:
+				return ((InternalEList<?>)getDepartures()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -153,11 +180,13 @@ public class TableImpl extends MinimalEObjectImpl.Container implements Table {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case TimetablePackage.TABLE__JUNCTURES:
-				return getJunctures();
+			case TimetablePackage.TABLE__ARRIVALS:
+				return getArrivals();
 			case TimetablePackage.TABLE__STATION:
 				if (resolve) return getStation();
 				return basicGetStation();
+			case TimetablePackage.TABLE__DEPARTURES:
+				return getDepartures();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -171,12 +200,16 @@ public class TableImpl extends MinimalEObjectImpl.Container implements Table {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case TimetablePackage.TABLE__JUNCTURES:
-				getJunctures().clear();
-				getJunctures().addAll((Collection<? extends Juncture>)newValue);
+			case TimetablePackage.TABLE__ARRIVALS:
+				getArrivals().clear();
+				getArrivals().addAll((Collection<? extends Arrival>)newValue);
 				return;
 			case TimetablePackage.TABLE__STATION:
 				setStation((Station)newValue);
+				return;
+			case TimetablePackage.TABLE__DEPARTURES:
+				getDepartures().clear();
+				getDepartures().addAll((Collection<? extends Departure>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -190,11 +223,14 @@ public class TableImpl extends MinimalEObjectImpl.Container implements Table {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case TimetablePackage.TABLE__JUNCTURES:
-				getJunctures().clear();
+			case TimetablePackage.TABLE__ARRIVALS:
+				getArrivals().clear();
 				return;
 			case TimetablePackage.TABLE__STATION:
 				setStation((Station)null);
+				return;
+			case TimetablePackage.TABLE__DEPARTURES:
+				getDepartures().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -208,10 +244,12 @@ public class TableImpl extends MinimalEObjectImpl.Container implements Table {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case TimetablePackage.TABLE__JUNCTURES:
-				return junctures != null && !junctures.isEmpty();
+			case TimetablePackage.TABLE__ARRIVALS:
+				return arrivals != null && !arrivals.isEmpty();
 			case TimetablePackage.TABLE__STATION:
 				return station != null;
+			case TimetablePackage.TABLE__DEPARTURES:
+				return departures != null && !departures.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

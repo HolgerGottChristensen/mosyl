@@ -164,29 +164,6 @@ public class TimetableItemProviderAdapterFactory extends TimetableAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.mdse.pts.timetable.Juncture} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected JunctureItemProvider junctureItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.mdse.pts.timetable.Juncture}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createJunctureAdapter() {
-		if (junctureItemProvider == null) {
-			junctureItemProvider = new JunctureItemProvider(this);
-		}
-
-		return junctureItemProvider;
-	}
-
-	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -295,7 +272,6 @@ public class TimetableItemProviderAdapterFactory extends TimetableAdapterFactory
 		if (tableItemProvider != null) tableItemProvider.dispose();
 		if (arrivalItemProvider != null) arrivalItemProvider.dispose();
 		if (departureItemProvider != null) departureItemProvider.dispose();
-		if (junctureItemProvider != null) junctureItemProvider.dispose();
 	}
 
 }

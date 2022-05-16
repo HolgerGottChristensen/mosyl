@@ -25,7 +25,7 @@ import org.mdse.pts.time.Weekday;
  * </ul>
  *
  * @see org.mdse.pts.timetable.TimetablePackage#getJuncture()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Juncture extends EObject {

@@ -1,6 +1,6 @@
 schedule for MyNetwork with MyDepot;
 
-schedule train terain3 on Monday at 12:32:
+schedule train terain3 on Monday at 12:32 and Tuesday at 23:53:
 	start at "Hejsa" on platform he
 	terminate at "Name" on platform heeq
 ;

@@ -1,11 +1,15 @@
 package org.mdse.pts.schedule.dsl.generator;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.eclipse.internal.xtend.expression.ast.LetExpression;
+import org.mdse.pts.depot.Train;
 import org.mdse.pts.depot.TrainType;
 import org.mdse.pts.network.Leg;
 import org.mdse.pts.network.Station;
@@ -25,6 +29,41 @@ import org.mdse.pts.timetable.TimetableFactory;
 
 public class Scheduler2TimetableConverter {
 	
+	public static int speed(Train train) {
+		if(train.getType() == TrainType.INTERCITY) {
+			return train.getCoach().size() < 8 ? 150 : 130;
+		} else {
+			return 80;
+		}
+	}
+	
+	public static Time timeFromMinutes(int minutes) {
+		Time time = TimeFactory.eINSTANCE.createTime();
+		time.setHour(minutes / 60 % 24);
+		time.setMinute(minutes % 60);
+		
+		return time;
+	}
+	
+	public static Weekday weekdayFromMinutes(Weekday wd, int minutes) {
+		int offsetInDays = minutes / 60 / 24;
+		
+		return (Weekday.get((wd.getValue() + offsetInDays) % 7));
+	}
+	
+	public static Leg getLegBetween(Stop s1, Stop s2) {
+		if (s2.getVia() == null) {
+			Optional<Leg> legOptional = s1.getStation().getLegs().stream().filter(x -> x.getStations().contains(s2.getStation())).findFirst();
+			if (legOptional.isEmpty()) {
+				throw new RuntimeException("No connection between the given stops");
+			} else {
+				return legOptional.get();
+			}
+		} else {
+			return s2.getVia();
+		}
+	}
+	
 	public static Timetable convert(Schedule schedule) {
 		
 		List<TrainSchedule> trainSchedules = schedule.getTrains();
@@ -39,87 +78,82 @@ public class Scheduler2TimetableConverter {
 		}
 		
 		for(TrainSchedule ts : trainSchedules) {
+			int trainSpeed = speed(ts.getTrain());
+			
 			for(StartTime startTime : ts.getStarttimes()) {
 				for(Weekday weekday : startTime.getWeekdays()) {
 					for(org.mdse.pts.schedule.Time time : startTime.getTimestamps()) {
 						
 						//TODO: set time
-						int minutes = time.getHour() * 60 + time.getMinute(); // convert start time to minutes
-						Weekday currentDay = weekday;
+						int currentTime = time.getHour() * 60 + time.getMinute(); // convert start time to minutes
+						Weekday startDay = weekday;
 						
 						for(int i = 1; i < ts.getStops().size(); i++) {
-							
-							Departure dp = TimetableFactory.eINSTANCE.createDeparture();
-							Arrival ar = TimetableFactory.eINSTANCE.createArrival();
-							
-							Weekday arrivalWeekday;
-							Weekday departureWeekday;
-							
 							Stop s1 = ts.getStops().get(i - 1);
 							Stop s2 = ts.getStops().get(i);
-							Leg leg = s1.getStation().getLegs().stream()
-									.filter(l -> l.getStations().contains(s2.getStation()))
-									.findFirst()
-									.get();
-							int distance = leg.getDistance();
-							TrainType trainType = ts.getTrain().getType();
-							int trainSpeed = 0;
-							if(trainType == TrainType.INTERCITY) {
-								trainSpeed = ts.getTrain().getCoach().size() < 8 ? 150 : 130;
-							} else {
-								trainSpeed = 80;
-							}
-							int timeInMinutes = (int) Math.ceil((distance * 1.0 / trainSpeed) * 60);
 							
-							minutes += timeInMinutes;
+							// Add stop time before next iteration
+							currentTime += s1.getStoppedTime();
 							
-							int arrivalInMinutes = minutes;
-							int departureInMinutes = arrivalInMinutes + s2.getStoppedTime();
-							
-							int arrivalTimeMinutes = arrivalInMinutes % 60;
-							int arrivalTimeHours = (arrivalInMinutes / 60) % 24;
-							currentDay = (arrivalInMinutes / 60) < 24 ? currentDay : Weekday.values()[(currentDay.ordinal() + 1) % 7];
-							arrivalWeekday = currentDay;
-							
-							int departureTimeMinutes = departureInMinutes % 60;
-							int departureTimeHours = (departureInMinutes / 60) % 24;
-							currentDay = (arrivalInMinutes / 60) < 24 ? currentDay : Weekday.values()[(currentDay.ordinal() + 1) % 7];
-							departureWeekday = currentDay;
-							//TODO: add this time to arrival for stop2 and departure for stop1
-							//TODO  add calculated weekday
-							
-							ar.setPlatform(s2.getPlatform());
-							ar.setOrigin(s1.getStation());
-							ar.setTrain(ts.getTrain());
-							Time arTime = TimeFactory.eINSTANCE.createTime();
-							arTime.setHour(arrivalTimeHours);
-							arTime.setMinute(arrivalTimeMinutes);
-							ar.setTime(arTime);
-							ar.setWeekday(arrivalWeekday);
-							
+							Departure dp = TimetableFactory.eINSTANCE.createDeparture();
+							dp.setTime(timeFromMinutes(currentTime));
 							dp.setPlatform(s1.getPlatform());
 							dp.setDestination(s2.getStation());
 							dp.setTrain(ts.getTrain());
-							Time dpTime = TimeFactory.eINSTANCE.createTime();
-							dpTime.setHour(departureTimeHours);
-							dpTime.setMinute(departureTimeMinutes);
-							dp.setTime(dpTime);
-							dp.setWeekday(departureWeekday);
+							dp.setWeekday(weekdayFromMinutes(startDay, currentTime));
 							
-							tableMap.get(s2.getStation()).getJunctures().add(ar);
-							tableMap.get(s1.getStation()).getJunctures().add(dp);
+							
+							// Calculate time to arrive at next station
+							Leg leg = getLegBetween(s1, s2);
+							int legDistance = leg.getDistance();
+							int travelTime = (int) Math.ceil((1.0 * legDistance / trainSpeed) * 60);
+							currentTime += travelTime;
+							
+							
+							Arrival ar = TimetableFactory.eINSTANCE.createArrival();
+							ar.setTime(timeFromMinutes(currentTime));
+							ar.setPlatform(s1.getPlatform());
+							ar.setOrigin(s1.getStation());
+							ar.setTrain(ts.getTrain());
+							ar.setWeekday(weekdayFromMinutes(startDay, currentTime));
+							
+							
+							
+							
+							// Add the arrivals and departures
+							tableMap.get(s2.getStation()).getArrivals().add(ar);
+							tableMap.get(s1.getStation()).getDepartures().add(dp);
 						}
-						
 					}
 				}
 			}
 		}
 		
 		Timetable tt = TimetableFactory.eINSTANCE.createTimetable();
-		tt.getStation().addAll(stationSet);
 		for(Station s : stationSet) {
 			tt.getTable().add(tableMap.get(s));
+			tt.getTable().get(tt.getTable().size() - 1).setStation(s);
 		}
+		
+		// Sort all the arrivals and departures by weekday
+		for(Table t : tt.getTable()) {
+			
+		    ArrayList<Arrival> arrivals = new ArrayList<Arrival>(t.getArrivals());
+		    arrivals.sort((x, y) -> (y.getTime().getHour()*60 + y.getTime().getMinute()) - (x.getTime().getHour()*60 + x.getTime().getMinute()));
+		    arrivals.sort((x, y) -> y.getWeekday().getValue() - x.getWeekday().getValue());
+		    
+		    
+		    ArrayList<Departure> departures = new ArrayList<Departure>(t.getDepartures());
+		    departures.sort((x, y) -> (y.getTime().getHour()*60 + y.getTime().getMinute()) - (x.getTime().getHour()*60 + x.getTime().getMinute()));
+			departures.sort((x, y) -> y.getWeekday().getValue() - x.getWeekday().getValue());
+			
+			t.getArrivals().clear();
+			t.getArrivals().addAll(arrivals);
+			
+			t.getDepartures().clear();
+			t.getDepartures().addAll(departures);
+		}
+		
 		return tt;
 	}
 }

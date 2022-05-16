@@ -9,6 +9,7 @@ import org.eclipse.emf.common.util.ResourceLocator;
 import org.mdse.pts.depot.provider.DepotEditPlugin;
 
 import org.mdse.pts.network.provider.NetworkEditPlugin;
+import org.mdse.pts.time.provider.TimeEditPlugin;
 
 /**
  * This is the central singleton for the Timetable edit plugin.
@@ -44,7 +45,7 @@ public final class TimetableEditPlugin extends EMFPlugin {
 		  (new ResourceLocator [] {
 		     DepotEditPlugin.INSTANCE,
 		     NetworkEditPlugin.INSTANCE,
-		     org.mdse.pts.time.provider.TimeEditPlugin.INSTANCE,
+		     TimeEditPlugin.INSTANCE,
 		   });
 	}
 

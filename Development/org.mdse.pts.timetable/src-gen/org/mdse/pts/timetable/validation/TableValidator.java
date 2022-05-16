@@ -8,6 +8,8 @@ import org.eclipse.emf.common.util.EList;
 
 import org.mdse.pts.network.Station;
 
+import org.mdse.pts.timetable.Arrival;
+import org.mdse.pts.timetable.Departure;
 import org.mdse.pts.timetable.Juncture;
 
 /**
@@ -19,6 +21,10 @@ import org.mdse.pts.timetable.Juncture;
 public interface TableValidator {
 	boolean validate();
 
+	boolean validateArrivals(EList<Arrival> value);
+
 	boolean validateJunctures(EList<Juncture> value);
 	boolean validateStation(Station value);
+
+	boolean validateDepartures(EList<Departure> value);
 }

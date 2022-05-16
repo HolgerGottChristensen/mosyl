@@ -157,16 +157,6 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 	 * @generated
 	 */
 	@Override
-	public EReference getTimetable_Station() {
-		return (EReference)timetableEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getTable() {
 		return tableEClass;
 	}
@@ -177,7 +167,7 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 	 * @generated
 	 */
 	@Override
-	public EReference getTable_Junctures() {
+	public EReference getTable_Arrivals() {
 		return (EReference)tableEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -189,6 +179,16 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 	@Override
 	public EReference getTable_Station() {
 		return (EReference)tableEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getTable_Departures() {
+		return (EReference)tableEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -312,11 +312,11 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 		// Create classes and their features
 		timetableEClass = createEClass(TIMETABLE);
 		createEReference(timetableEClass, TIMETABLE__TABLE);
-		createEReference(timetableEClass, TIMETABLE__STATION);
 
 		tableEClass = createEClass(TABLE);
-		createEReference(tableEClass, TABLE__JUNCTURES);
+		createEReference(tableEClass, TABLE__ARRIVALS);
 		createEReference(tableEClass, TABLE__STATION);
+		createEReference(tableEClass, TABLE__DEPARTURES);
 
 		arrivalEClass = createEClass(ARRIVAL);
 		createEReference(arrivalEClass, ARRIVAL__ORIGIN);
@@ -370,11 +370,11 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 		// Initialize classes, features, and operations; add parameters
 		initEClass(timetableEClass, Timetable.class, "Timetable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTimetable_Table(), this.getTable(), null, "table", null, 0, -1, Timetable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTimetable_Station(), theNetworkPackage.getStation(), null, "station", null, 0, -1, Timetable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tableEClass, Table.class, "Table", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTable_Junctures(), this.getJuncture(), null, "junctures", null, 0, -1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTable_Arrivals(), this.getArrival(), null, "arrivals", null, 0, -1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTable_Station(), theNetworkPackage.getStation(), null, "station", null, 1, 1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTable_Departures(), this.getDeparture(), null, "departures", null, 0, -1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(arrivalEClass, Arrival.class, "Arrival", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getArrival_Origin(), theNetworkPackage.getStation(), null, "origin", null, 1, 1, Arrival.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -382,7 +382,7 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 		initEClass(departureEClass, Departure.class, "Departure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDeparture_Destination(), theNetworkPackage.getStation(), null, "destination", null, 1, 1, Departure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(junctureEClass, Juncture.class, "Juncture", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(junctureEClass, Juncture.class, "Juncture", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getJuncture_Platform(), ecorePackage.getEString(), "platform", null, 0, 1, Juncture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getJuncture_Train(), theDepotPackage.getTrain(), null, "train", null, 1, 1, Juncture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getJuncture_Weekday(), theTimePackage.getWeekday(), "weekday", null, 1, 1, Juncture.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

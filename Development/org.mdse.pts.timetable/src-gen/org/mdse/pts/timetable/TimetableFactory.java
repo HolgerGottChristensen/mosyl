@@ -58,15 +58,6 @@ public interface TimetableFactory extends EFactory {
 	Departure createDeparture();
 
 	/**
-	 * Returns a new object of class '<em>Juncture</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Juncture</em>'.
-	 * @generated
-	 */
-	Juncture createJuncture();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

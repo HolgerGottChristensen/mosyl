@@ -6,8 +6,6 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.mdse.pts.network.Station;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Timetable</b></em>'.
@@ -18,7 +16,6 @@ import org.mdse.pts.network.Station;
  * </p>
  * <ul>
  *   <li>{@link org.mdse.pts.timetable.Timetable#getTable <em>Table</em>}</li>
- *   <li>{@link org.mdse.pts.timetable.Timetable#getStation <em>Station</em>}</li>
  * </ul>
  *
  * @see org.mdse.pts.timetable.TimetablePackage#getTimetable()
@@ -37,17 +34,5 @@ public interface Timetable extends EObject {
 	 * @generated
 	 */
 	EList<Table> getTable();
-
-	/**
-	 * Returns the value of the '<em><b>Station</b></em>' reference list.
-	 * The list contents are of type {@link org.mdse.pts.network.Station}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Station</em>' reference list.
-	 * @see org.mdse.pts.timetable.TimetablePackage#getTimetable_Station()
-	 * @model
-	 * @generated
-	 */
-	EList<Station> getStation();
 
 } // Timetable

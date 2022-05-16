@@ -14,11 +14,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
-import org.mdse.pts.network.Station;
-
 import org.mdse.pts.timetable.Table;
 import org.mdse.pts.timetable.Timetable;
 import org.mdse.pts.timetable.TimetablePackage;
@@ -32,7 +28,6 @@ import org.mdse.pts.timetable.TimetablePackage;
  * </p>
  * <ul>
  *   <li>{@link org.mdse.pts.timetable.impl.TimetableImpl#getTable <em>Table</em>}</li>
- *   <li>{@link org.mdse.pts.timetable.impl.TimetableImpl#getStation <em>Station</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,16 +42,6 @@ public class TimetableImpl extends MinimalEObjectImpl.Container implements Timet
 	 * @ordered
 	 */
 	protected EList<Table> table;
-
-	/**
-	 * The cached value of the '{@link #getStation() <em>Station</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStation()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Station> station;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,19 +81,6 @@ public class TimetableImpl extends MinimalEObjectImpl.Container implements Timet
 	 * @generated
 	 */
 	@Override
-	public EList<Station> getStation() {
-		if (station == null) {
-			station = new EObjectResolvingEList<Station>(Station.class, this, TimetablePackage.TIMETABLE__STATION);
-		}
-		return station;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case TimetablePackage.TIMETABLE__TABLE:
@@ -127,8 +99,6 @@ public class TimetableImpl extends MinimalEObjectImpl.Container implements Timet
 		switch (featureID) {
 			case TimetablePackage.TIMETABLE__TABLE:
 				return getTable();
-			case TimetablePackage.TIMETABLE__STATION:
-				return getStation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -146,10 +116,6 @@ public class TimetableImpl extends MinimalEObjectImpl.Container implements Timet
 				getTable().clear();
 				getTable().addAll((Collection<? extends Table>)newValue);
 				return;
-			case TimetablePackage.TIMETABLE__STATION:
-				getStation().clear();
-				getStation().addAll((Collection<? extends Station>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -165,9 +131,6 @@ public class TimetableImpl extends MinimalEObjectImpl.Container implements Timet
 			case TimetablePackage.TIMETABLE__TABLE:
 				getTable().clear();
 				return;
-			case TimetablePackage.TIMETABLE__STATION:
-				getStation().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -182,8 +145,6 @@ public class TimetableImpl extends MinimalEObjectImpl.Container implements Timet
 		switch (featureID) {
 			case TimetablePackage.TIMETABLE__TABLE:
 				return table != null && !table.isEmpty();
-			case TimetablePackage.TIMETABLE__STATION:
-				return station != null && !station.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

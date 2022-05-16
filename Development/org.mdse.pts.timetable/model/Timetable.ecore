@@ -4,14 +4,14 @@
   <eClassifiers xsi:type="ecore:EClass" name="Timetable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="table" upperBound="-1"
         eType="#//Table" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="station" upperBound="-1"
-        eType="ecore:EClass ../../org.mdse.pts.network/model/Network.ecore#//Station"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Table">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="junctures" upperBound="-1"
-        eType="#//Juncture" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="arrivals" upperBound="-1"
+        eType="#//Arrival" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="station" lowerBound="1"
         eType="ecore:EClass ../../org.mdse.pts.network/model/Network.ecore#//Station"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="departures" upperBound="-1"
+        eType="#//Departure" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Arrival" eSuperTypes="#//Juncture">
     <eStructuralFeatures xsi:type="ecore:EReference" name="origin" lowerBound="1"
@@ -21,7 +21,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="destination" lowerBound="1"
         eType="ecore:EClass ../../org.mdse.pts.network/model/Network.ecore#//Station"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Juncture">
+  <eClassifiers xsi:type="ecore:EClass" name="Juncture" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="platform" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="train" lowerBound="1" eType="ecore:EClass ../../org.mdse.pts.depot/model/Depot.ecore#//Train"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="weekday" lowerBound="1"
