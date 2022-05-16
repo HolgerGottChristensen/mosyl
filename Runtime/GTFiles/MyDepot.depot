@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="ASCII"?>
 <depot:Root xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:depot="http://mdse.org/pts/depot">
   <depot>
-    <train name="terain3">
-      <coach xsi:type="depot:Locomotive"/>
+
+    <train name="My first train">
       <coach xsi:type="depot:PassengerCoach" class="FirstClass"/>
-      <coach xsi:type="depot:DiningCoach"/>
+      <coach xsi:type="depot:DiningCoach" wagonNumber="9"/>
       <coach xsi:type="depot:Locomotive"/>
     </train>
-    <train name="My second train">
-      <coach xsi:type="depot:PassengerCoach"/>
+    <train name="ICE443">
+      <coach xsi:type="depot:PassengerCoach" wagonNumber="3"/>
+      <coach xsi:type="depot:PassengerCoach" wagonNumber="3" class="FirstClass"/>
+      <coach xsi:type="depot:PassengerCoach" wagonNumber="3" class="FirstClass"/>
       <coach xsi:type="depot:Locomotive"/>
     </train>
   </depot>
