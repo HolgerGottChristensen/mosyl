@@ -34,7 +34,7 @@ import org.mdse.pts.timetable.TimetablePackage;
  *
  * @generated
  */
-public class JunctureImpl extends MinimalEObjectImpl.Container implements Juncture {
+public abstract class JunctureImpl extends MinimalEObjectImpl.Container implements Juncture {
 	/**
 	 * The default value of the '{@link #getPlatform() <em>Platform</em>}' attribute.
 	 * <!-- begin-user-doc -->

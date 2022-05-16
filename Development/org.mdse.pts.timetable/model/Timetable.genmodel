@@ -11,11 +11,11 @@
       ecorePackage="Timetable.ecore#/">
     <genClasses ecoreClass="Timetable.ecore#//Timetable">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Timetable.ecore#//Timetable/table"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Timetable.ecore#//Timetable/station"/>
     </genClasses>
     <genClasses ecoreClass="Timetable.ecore#//Table">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Timetable.ecore#//Table/junctures"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Timetable.ecore#//Table/arrivals"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Timetable.ecore#//Table/station"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference Timetable.ecore#//Table/departures"/>
     </genClasses>
     <genClasses ecoreClass="Timetable.ecore#//Arrival">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Timetable.ecore#//Arrival/origin"/>

@@ -9,11 +9,11 @@ Package timetable <http://mdse.org/pts/timetable>
 
   Class Timetable
     Reference table : Table<<0..*>>
-    Reference station : Station<<0..*>>
 
   Class Table
-    Reference junctures : Juncture<<0..*>>
+    Reference arrivals : Arrival<<0..*>>
     Reference station : Station<<1..1>>
+    Reference departures : Departure<<0..*>>
 
   Class Arrival -> Juncture
     Reference origin : Station<<1..1>>

@@ -63,6 +63,7 @@ public class TableItemProvider
 			super.getPropertyDescriptors(object);
 
 			addStationPropertyDescriptor(object);
+			addDeparturesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -90,6 +91,28 @@ public class TableItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Departures feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDeparturesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Table_departures_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Table_departures_feature", "_UI_Table_type"),
+				 TimetablePackage.Literals.TABLE__DEPARTURES,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -101,7 +124,8 @@ public class TableItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(TimetablePackage.Literals.TABLE__JUNCTURES);
+			childrenFeatures.add(TimetablePackage.Literals.TABLE__ARRIVALS);
+			childrenFeatures.add(TimetablePackage.Literals.TABLE__DEPARTURES);
 		}
 		return childrenFeatures;
 	}
@@ -154,7 +178,8 @@ public class TableItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Table.class)) {
-			case TimetablePackage.TABLE__JUNCTURES:
+			case TimetablePackage.TABLE__ARRIVALS:
+			case TimetablePackage.TABLE__DEPARTURES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -174,17 +199,12 @@ public class TableItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(TimetablePackage.Literals.TABLE__JUNCTURES,
-				 TimetableFactory.eINSTANCE.createJuncture()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(TimetablePackage.Literals.TABLE__JUNCTURES,
+				(TimetablePackage.Literals.TABLE__ARRIVALS,
 				 TimetableFactory.eINSTANCE.createArrival()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(TimetablePackage.Literals.TABLE__JUNCTURES,
+				(TimetablePackage.Literals.TABLE__DEPARTURES,
 				 TimetableFactory.eINSTANCE.createDeparture()));
 	}
 

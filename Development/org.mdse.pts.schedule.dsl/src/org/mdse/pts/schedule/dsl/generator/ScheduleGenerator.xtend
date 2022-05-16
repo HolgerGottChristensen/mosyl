@@ -34,9 +34,114 @@ class ScheduleGenerator extends AbstractGenerator {
 	
 	protected def toHTML(Timetable tt) '''
 		<html>
-			<head>Timetable</head>
+			<head>
+				<style>
+					.styled-table {
+					    border-collapse: collapse;
+					    margin: 25px 0;
+					    font-size: 0.9em;
+					    font-family: sans-serif;
+					    min-width: 400px;
+					    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+					}
+					.styled-table thead tr {
+					    background-color: #009879;
+					    color: #ffffff;
+					    text-align: left;
+					}
+					.styled-table th {
+						padding: 12px 15px;
+					}
+					.styled-table td {
+					    padding: 12px 15px;
+					    border-left: thin solid #dddddd;
+					}
+					.styled-table tbody tr {
+					    border-bottom: thin solid #dddddd;
+					    
+					}
+					.styled-table tbody tr:nth-of-type(even) {
+					    background-color: #f3f3f3;
+					}
+					
+					.styled-table tbody tr:last-of-type {
+					    border-bottom: 2px solid #009879;
+					}
+					.styled-table tbody tr.active-row {
+					    font-weight: bold;
+					    color: #009879;
+					}
+				</style>
+			</head>
 			<body>
-			«FOR station : tt.station»
+			«FOR t : tt.table»
+				<h1>« t.station.name »</h1>
+				<h2>Arrivals</h2>
+				«IF t.arrivals.length > 0 »
+				<table class="styled-table">
+					<thead>
+					  <tr>
+					    <th>Weekday</th>
+					    <th>Time</th>
+					    <th>Train</th>
+					    <th>Origin</th>
+					    <th>Information</th>
+					    <th>Platform</th>
+					  </tr>
+					</thead>
+					<tbody>
+					«FOR w : t.arrivals»
+					  <tr>
+					  	<td>« w.weekday »</td>
+					    <td>« String::format("%02d", w.time.hour) »:« String::format("%02d", w.time.minute) »</td>
+					    <td>« w.train.name »</td>
+					    <td>« w.origin.name »</td>
+					    <td></td>
+					    <td>« w.platform »</td>
+					  </tr>
+					«ENDFOR»
+					</tbody>
+				</table>
+				«ELSE»
+				<p>No arrivals for station</p>
+				«ENDIF»
+				
+				<h2>Departures</h2>
+				«IF t.departures.length > 0 »
+				<table class="styled-table">
+					<thead>
+					  <tr>
+					    <th>Weekday</th>
+					    <th>Time</th>
+					    <th>Train</th>
+					    <th>Destination</th>
+					    <th>Information</th>
+					    <th>Platform</th>
+					  </tr>
+					</thead>
+					<tbody>
+					«FOR w : t.departures»
+					  <tr>
+					  	<td>« w.weekday »</td>
+					    <td>« String::format("%02d", w.time.hour) »:« String::format("%02d", w.time.minute) »</td>
+					    <td>« w.train.name »</td>
+					    <td>« w.destination.name »</td>
+					    <td></td>
+					    <td>« w.platform »</td>
+					  </tr>
+					«ENDFOR»
+					</tbody>
+				</table>
+				«ELSE»
+				<p>No departures for station</p>
+				«ENDIF»
+				<hr>
+			«ENDFOR»
+			</body>
+		</html>
+	'''
+	/*
+	 * «FOR station : tt.station»
 				<h1>« station.name »</h1>
 				<div>
 					<div>
@@ -67,8 +172,6 @@ class ScheduleGenerator extends AbstractGenerator {
 					</div>
 				</div>
 			«ENDFOR»
-			</body>
-		</html>
-	'''
-	
+	 * 
+	 */
 }

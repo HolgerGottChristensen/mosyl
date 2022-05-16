@@ -76,22 +76,13 @@ public interface TimetablePackage extends EPackage {
 	int TIMETABLE__TABLE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Station</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIMETABLE__STATION = 1;
-
-	/**
 	 * The number of structural features of the '<em>Timetable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMETABLE_FEATURE_COUNT = 2;
+	int TIMETABLE_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Timetable</em>' class.
@@ -113,13 +104,13 @@ public interface TimetablePackage extends EPackage {
 	int TABLE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Junctures</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Arrivals</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__JUNCTURES = 0;
+	int TABLE__ARRIVALS = 0;
 
 	/**
 	 * The feature id for the '<em><b>Station</b></em>' reference.
@@ -131,13 +122,22 @@ public interface TimetablePackage extends EPackage {
 	int TABLE__STATION = 1;
 
 	/**
+	 * The feature id for the '<em><b>Departures</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE__DEPARTURES = 2;
+
+	/**
 	 * The number of structural features of the '<em>Table</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE_FEATURE_COUNT = 2;
+	int TABLE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Table</em>' class.
@@ -381,17 +381,6 @@ public interface TimetablePackage extends EPackage {
 	EReference getTimetable_Table();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.mdse.pts.timetable.Timetable#getStation <em>Station</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Station</em>'.
-	 * @see org.mdse.pts.timetable.Timetable#getStation()
-	 * @see #getTimetable()
-	 * @generated
-	 */
-	EReference getTimetable_Station();
-
-	/**
 	 * Returns the meta object for class '{@link org.mdse.pts.timetable.Table <em>Table</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -402,15 +391,15 @@ public interface TimetablePackage extends EPackage {
 	EClass getTable();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.mdse.pts.timetable.Table#getJunctures <em>Junctures</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.mdse.pts.timetable.Table#getArrivals <em>Arrivals</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Junctures</em>'.
-	 * @see org.mdse.pts.timetable.Table#getJunctures()
+	 * @return the meta object for the containment reference list '<em>Arrivals</em>'.
+	 * @see org.mdse.pts.timetable.Table#getArrivals()
 	 * @see #getTable()
 	 * @generated
 	 */
-	EReference getTable_Junctures();
+	EReference getTable_Arrivals();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.mdse.pts.timetable.Table#getStation <em>Station</em>}'.
@@ -422,6 +411,17 @@ public interface TimetablePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTable_Station();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link org.mdse.pts.timetable.Table#getDepartures <em>Departures</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Departures</em>'.
+	 * @see org.mdse.pts.timetable.Table#getDepartures()
+	 * @see #getTable()
+	 * @generated
+	 */
+	EReference getTable_Departures();
 
 	/**
 	 * Returns the meta object for class '{@link org.mdse.pts.timetable.Arrival <em>Arrival</em>}'.
@@ -561,14 +561,6 @@ public interface TimetablePackage extends EPackage {
 		EReference TIMETABLE__TABLE = eINSTANCE.getTimetable_Table();
 
 		/**
-		 * The meta object literal for the '<em><b>Station</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TIMETABLE__STATION = eINSTANCE.getTimetable_Station();
-
-		/**
 		 * The meta object literal for the '{@link org.mdse.pts.timetable.impl.TableImpl <em>Table</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -579,12 +571,12 @@ public interface TimetablePackage extends EPackage {
 		EClass TABLE = eINSTANCE.getTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Junctures</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Arrivals</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TABLE__JUNCTURES = eINSTANCE.getTable_Junctures();
+		EReference TABLE__ARRIVALS = eINSTANCE.getTable_Arrivals();
 
 		/**
 		 * The meta object literal for the '<em><b>Station</b></em>' reference feature.
@@ -593,6 +585,14 @@ public interface TimetablePackage extends EPackage {
 		 * @generated
 		 */
 		EReference TABLE__STATION = eINSTANCE.getTable_Station();
+
+		/**
+		 * The meta object literal for the '<em><b>Departures</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TABLE__DEPARTURES = eINSTANCE.getTable_Departures();
 
 		/**
 		 * The meta object literal for the '{@link org.mdse.pts.timetable.impl.ArrivalImpl <em>Arrival</em>}' class.

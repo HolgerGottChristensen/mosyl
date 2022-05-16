@@ -17,8 +17,9 @@ import org.mdse.pts.network.Station;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.mdse.pts.timetable.Table#getJunctures <em>Junctures</em>}</li>
+ *   <li>{@link org.mdse.pts.timetable.Table#getArrivals <em>Arrivals</em>}</li>
  *   <li>{@link org.mdse.pts.timetable.Table#getStation <em>Station</em>}</li>
+ *   <li>{@link org.mdse.pts.timetable.Table#getDepartures <em>Departures</em>}</li>
  * </ul>
  *
  * @see org.mdse.pts.timetable.TimetablePackage#getTable()
@@ -27,16 +28,16 @@ import org.mdse.pts.network.Station;
  */
 public interface Table extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Junctures</b></em>' containment reference list.
-	 * The list contents are of type {@link org.mdse.pts.timetable.Juncture}.
+	 * Returns the value of the '<em><b>Arrivals</b></em>' containment reference list.
+	 * The list contents are of type {@link org.mdse.pts.timetable.Arrival}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Junctures</em>' containment reference list.
-	 * @see org.mdse.pts.timetable.TimetablePackage#getTable_Junctures()
+	 * @return the value of the '<em>Arrivals</em>' containment reference list.
+	 * @see org.mdse.pts.timetable.TimetablePackage#getTable_Arrivals()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Juncture> getJunctures();
+	EList<Arrival> getArrivals();
 
 	/**
 	 * Returns the value of the '<em><b>Station</b></em>' reference.
@@ -59,5 +60,17 @@ public interface Table extends EObject {
 	 * @generated
 	 */
 	void setStation(Station value);
+
+	/**
+	 * Returns the value of the '<em><b>Departures</b></em>' containment reference list.
+	 * The list contents are of type {@link org.mdse.pts.timetable.Departure}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Departures</em>' containment reference list.
+	 * @see org.mdse.pts.timetable.TimetablePackage#getTable_Departures()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Departure> getDepartures();
 
 } // Table
