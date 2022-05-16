@@ -11,7 +11,7 @@ Schedule:
 	(trains+=TrainSchedule ";")*
 ;
 
-//TODO: Define syntax rules
+
 TrainSchedule:
 	"schedule" "train" train=[depot::Train] "on"
 		starttimes+=StartTime ("and" starttimes+=StartTime)*
@@ -26,7 +26,8 @@ StartAtStop returns Stop:
 ;
 
 ViaStop returns Stop:
-	"drive" "via" via=[network::Leg|STRING] "and" "stop" "at" station=[network::Station|STRING] "on" "platform" platform=STRING "for" stoppedTime=INT "min" ("and" rotate?=("reverse"))?
+	"drive" "via" via=[network::Leg|STRING] "and" "stop" "at" station=[network::Station|STRING] 
+	"on" "platform" platform=STRING "for" stoppedTime=INT "min" ("and" rotate?=("reverse"))?
 ;
 
 NormalStop returns Stop:

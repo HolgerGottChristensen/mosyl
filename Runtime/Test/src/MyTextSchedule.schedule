@@ -1,14 +1,14 @@
 schedule for MyNetwork with MyDepot;
 
 schedule train ICE443 on Monday at 12:32 and Tuesday at 23:53:
-	start at "Hejsa" on platform "he"
-	terminate at "Name" on platform "heeq"
+	start at "Copenhagen Central" on platform "he"
+	terminate at "Vejle Station" on platform "heeq"
 ;
 
 schedule train ICE443 on Saturday at 22:02, 23:02:
-	start at "Name2" on platform "22"
-	drive via "Legawd awdawd" and stop at "Hejsa" on platform "23" for 23 min
-	terminate at "Name" on platform "42"
+	start at "Roskilde Station" on platform "22"
+	drive via "R22" and stop at "Copenhagen Central" on platform "23" for 23 min
+	terminate at "Vejle Station" on platform "42"
 ;
 /*schedule train terain3 on Friday , Saturday at 12:32:
 	start at "Hejsa" on platform fefa
