@@ -4,6 +4,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EValidator;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -18,6 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.ui.IStartup;
 import org.mdse.pts.depot.Coach;
 import org.mdse.pts.depot.Locomotive;
+import org.mdse.pts.depot.Root;
 import org.mdse.pts.network.Leg;
 import org.mdse.pts.network.Station;
 
@@ -105,6 +107,7 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 			//retrieve the list of legs between fromStop and toStop
 			List<Leg> legList = fromStation.getLegs().stream()
 					.filter(l -> l.getStations().contains(toStation))
+					.filter(l -> l.getName() == null)
 					.collect(Collectors.toList());
 			//make sure that either there is one leg between them or the leg to choose is specified by "via"
 			specifiable &= (legList.size() < 2 || toStop.getVia() != null);
@@ -127,6 +130,8 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 		stationExistsOnce = stationSet.size() == stations.size();
 		//if set has different size than list, then stops exists several times in route
 		stopExistsOnce = trainSchedule.getStops().size() == new HashSet<>(trainSchedule.getStops()).size();
+		System.out.println("station: " + stationExistsOnce);
+		System.out.println("stop: " + stopExistsOnce);
 		
 		if(!stationExistsOnce || !stopExistsOnce) {
 			constraintViolated(trainSchedule, trainSchedule.toString() + ": contains the same station/stop multiple times");
@@ -136,8 +141,11 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 	
 	private boolean validateDepotExistsOnce(Schedule schedule) {
 		//if set has different size than list, then depot exists several times in system
-		boolean depotExistsOnce = schedule.getDepot().size() == new HashSet<>(schedule.getDepot()).size();
-		
+		HashSet<Root> depots = new HashSet<>();
+		for(Root r : schedule.getDepot()) {
+			depots.add(r);
+		}
+		boolean depotExistsOnce = depots.size() == schedule.getDepot().size();
 		if(!depotExistsOnce) {
 			constraintViolated(schedule, schedule.toString() + ": contains the same depot multiple times");
 		}
@@ -234,8 +242,14 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 	//helper functions
 	private boolean routeEqual(TrainSchedule t1, TrainSchedule t2) {
 		if(t1.getStops().size() != t2.getStops().size()) return false;
-		
-		return t1.getStops() == t2.getStops();
+		boolean sameRoute = true;
+		for(int i = 0; i < t1.getStops().size(); i++) {
+			Stop s1 = t1.getStops().get(i);
+			Stop s2 = t2.getStops().get(i);
+			sameRoute &= s1.getStation().getName() == s2.getStation().getName() && s1.getVia() == s2.getVia();
+		}
+		return sameRoute;
+		//return t1.getStops() == t2.getStops();
 	}
 	
 	//Utility method
