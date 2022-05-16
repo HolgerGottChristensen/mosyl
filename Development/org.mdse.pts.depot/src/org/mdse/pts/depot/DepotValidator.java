@@ -42,11 +42,24 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 		
 		this.diagnostics = diagnostics;
 		
+		if (DepotPackage.eINSTANCE.getDepot().equals(eClass)) {
+			Depot depot = (Depot) eObject;
+			
+			modelIsValid &= validateDepot(depot);
+		}
+		
 		if (DepotPackage.eINSTANCE.getTrain().equals(eClass)) {
 			Train train = (Train) eObject;
 			
 			modelIsValid &= validateTrain(train);
 		}
+		
+		return modelIsValid;
+	}
+	
+	private boolean validateDepot(Depot depot) {
+		boolean modelIsValid = true;
+		modelIsValid &= validateNoDuplicateTrainNames(depot);
 		
 		return modelIsValid;
 	}
@@ -60,6 +73,8 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 		modelIsValid &= validateAtMostOneDiningCoach(train);
 		modelIsValid &= validateCoachClassesInSequence(train);
 		modelIsValid &= validateDiningCoachBetweenPassengerCoaches(train);
+		modelIsValid &= validateNoSpaceInTrainName(train);
+		modelIsValid &= validateNoduplicateWagonNumber(train);
 		
 		if(train.getType().equals(TrainType.INTERCITY)) {
 			modelIsValid &= validateIntercityHasAtLeastOneFirstclass(train);
@@ -69,7 +84,38 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 		
 		return modelIsValid;
 	}
+	
+	private boolean validateNoduplicateWagonNumber(Train train) {
+		Set<Integer> wagonNumbers = new HashSet<>();
+		// If there are duplicates allMatch returns early with false
+		boolean hasDuplicateName = !train.getCoach().stream()
+				.filter(c -> !(c instanceof Locomotive))
+				.allMatch(c -> wagonNumbers.add(c.getWagonNumber()));
+		
+		if (hasDuplicateName) {
+			constraintViolated(train, "Wagon numbers for " + train.getName() + " must be unique");
+		}
+		return false;
+	}
 
+
+	private boolean validateNoDuplicateTrainNames(Depot depot) {
+		Set<String> trainNames = new HashSet<>();
+		// If there are duplicates allMatch returns early with false
+		boolean hasDuplicateName = !depot.getTrain().stream().allMatch(t -> trainNames.add(t.getName()));
+		
+		if (hasDuplicateName) {
+			constraintViolated(depot, "Depot may not contain trains with the same name");
+		}
+		return false;
+	}
+
+	private boolean validateNoSpaceInTrainName(Train train) {
+		if (train.getName().contains(" ")) {
+			constraintViolated(train, train.getName() + ", name may not contain whitespace");
+		}
+		return false;
+	}
 
 	private boolean validateDiningCoachBetweenPassengerCoaches(Train train) {
 		List<Coach> coaches = train.getCoach().stream()
