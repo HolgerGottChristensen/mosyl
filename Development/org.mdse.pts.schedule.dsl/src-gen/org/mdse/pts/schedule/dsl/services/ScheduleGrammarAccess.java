@@ -137,7 +137,9 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final RuleCall cStopsViaStopParserRuleCall_8_0_0 = (RuleCall)cStopsAlternatives_8_0.eContents().get(0);
 		private final RuleCall cStopsNormalStopParserRuleCall_8_0_1 = (RuleCall)cStopsAlternatives_8_0.eContents().get(1);
 		private final Assignment cStopsAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cStopsTerminalStopParserRuleCall_9_0 = (RuleCall)cStopsAssignment_9.eContents().get(0);
+		private final Alternatives cStopsAlternatives_9_0 = (Alternatives)cStopsAssignment_9.eContents().get(0);
+		private final RuleCall cStopsTerminalStopParserRuleCall_9_0_0 = (RuleCall)cStopsAlternatives_9_0.eContents().get(0);
+		private final RuleCall cStopsViaTerminalStopParserRuleCall_9_0_1 = (RuleCall)cStopsAlternatives_9_0.eContents().get(1);
 		
 		////TODO: Define syntax rules
 		//TrainSchedule:
@@ -146,7 +148,7 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//        ":"
 		//        stops+=StartAtStop
 		//        (stops+=(ViaStop|NormalStop))*
-		//        stops+=TerminalStop
+		//        stops+=(TerminalStop|ViaTerminalStop)
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -155,7 +157,7 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//    ":"
 		//    stops+=StartAtStop
 		//    (stops+=(ViaStop|NormalStop))*
-		//    stops+=TerminalStop
+		//    stops+=(TerminalStop|ViaTerminalStop)
 		public Group getGroup() { return cGroup; }
 		
 		//"schedule"
@@ -215,11 +217,17 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//NormalStop
 		public RuleCall getStopsNormalStopParserRuleCall_8_0_1() { return cStopsNormalStopParserRuleCall_8_0_1; }
 		
-		//stops+=TerminalStop
+		//stops+=(TerminalStop|ViaTerminalStop)
 		public Assignment getStopsAssignment_9() { return cStopsAssignment_9; }
 		
+		//(TerminalStop|ViaTerminalStop)
+		public Alternatives getStopsAlternatives_9_0() { return cStopsAlternatives_9_0; }
+		
 		//TerminalStop
-		public RuleCall getStopsTerminalStopParserRuleCall_9_0() { return cStopsTerminalStopParserRuleCall_9_0; }
+		public RuleCall getStopsTerminalStopParserRuleCall_9_0_0() { return cStopsTerminalStopParserRuleCall_9_0_0; }
+		
+		//ViaTerminalStop
+		public RuleCall getStopsViaTerminalStopParserRuleCall_9_0_1() { return cStopsViaTerminalStopParserRuleCall_9_0_1; }
 	}
 	public class StartAtStopElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.mdse.pts.schedule.dsl.Schedule.StartAtStop");
@@ -232,14 +240,14 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Keyword cOnKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cPlatformKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cPlatformAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cPlatformIDTerminalRuleCall_5_0 = (RuleCall)cPlatformAssignment_5.eContents().get(0);
+		private final RuleCall cPlatformSTRINGTerminalRuleCall_5_0 = (RuleCall)cPlatformAssignment_5.eContents().get(0);
 		
 		//StartAtStop returns Stop:
-		//    "start" "at" station=[network::Station|STRING] "on" "platform" platform=ID
+		//    "start" "at" station=[network::Station|STRING] "on" "platform" platform=STRING
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"start" "at" station=[network::Station|STRING] "on" "platform" platform=ID
+		//"start" "at" station=[network::Station|STRING] "on" "platform" platform=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//"start"
@@ -263,11 +271,11 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//"platform"
 		public Keyword getPlatformKeyword_4() { return cPlatformKeyword_4; }
 		
-		//platform=ID
+		//platform=STRING
 		public Assignment getPlatformAssignment_5() { return cPlatformAssignment_5; }
 		
-		//ID
-		public RuleCall getPlatformIDTerminalRuleCall_5_0() { return cPlatformIDTerminalRuleCall_5_0; }
+		//STRING
+		public RuleCall getPlatformSTRINGTerminalRuleCall_5_0() { return cPlatformSTRINGTerminalRuleCall_5_0; }
 	}
 	public class ViaStopElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.mdse.pts.schedule.dsl.Schedule.ViaStop");
@@ -286,7 +294,7 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Keyword cOnKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Keyword cPlatformKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		private final Assignment cPlatformAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cPlatformIDTerminalRuleCall_9_0 = (RuleCall)cPlatformAssignment_9.eContents().get(0);
+		private final RuleCall cPlatformSTRINGTerminalRuleCall_9_0 = (RuleCall)cPlatformAssignment_9.eContents().get(0);
 		private final Keyword cForKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		private final Assignment cStoppedTimeAssignment_11 = (Assignment)cGroup.eContents().get(11);
 		private final RuleCall cStoppedTimeINTTerminalRuleCall_11_0 = (RuleCall)cStoppedTimeAssignment_11.eContents().get(0);
@@ -297,11 +305,11 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Keyword cRotateReverseKeyword_13_1_0 = (Keyword)cRotateAssignment_13_1.eContents().get(0);
 		
 		//ViaStop returns Stop:
-		//    "drive" "via" via=[network::Leg|STRING] "and" "stop" "at" station=[network::Station|STRING] "on" "platform" platform=ID "for" stoppedTime=INT "min" ("and" rotate?=("reverse"))?
+		//    "drive" "via" via=[network::Leg|STRING] "and" "stop" "at" station=[network::Station|STRING] "on" "platform" platform=STRING "for" stoppedTime=INT "min" ("and" rotate?=("reverse"))?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"drive" "via" via=[network::Leg|STRING] "and" "stop" "at" station=[network::Station|STRING] "on" "platform" platform=ID "for" stoppedTime=INT "min" ("and" rotate?=("reverse"))?
+		//"drive" "via" via=[network::Leg|STRING] "and" "stop" "at" station=[network::Station|STRING] "on" "platform" platform=STRING "for" stoppedTime=INT "min" ("and" rotate?=("reverse"))?
 		public Group getGroup() { return cGroup; }
 		
 		//"drive"
@@ -343,11 +351,11 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//"platform"
 		public Keyword getPlatformKeyword_8() { return cPlatformKeyword_8; }
 		
-		//platform=ID
+		//platform=STRING
 		public Assignment getPlatformAssignment_9() { return cPlatformAssignment_9; }
 		
-		//ID
-		public RuleCall getPlatformIDTerminalRuleCall_9_0() { return cPlatformIDTerminalRuleCall_9_0; }
+		//STRING
+		public RuleCall getPlatformSTRINGTerminalRuleCall_9_0() { return cPlatformSTRINGTerminalRuleCall_9_0; }
 		
 		//"for"
 		public Keyword getForKeyword_10() { return cForKeyword_10; }
@@ -384,7 +392,7 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Keyword cOnKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cPlatformKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cPlatformAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cPlatformIDTerminalRuleCall_5_0 = (RuleCall)cPlatformAssignment_5.eContents().get(0);
+		private final RuleCall cPlatformSTRINGTerminalRuleCall_5_0 = (RuleCall)cPlatformAssignment_5.eContents().get(0);
 		private final Keyword cForKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Assignment cStoppedTimeAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cStoppedTimeINTTerminalRuleCall_7_0 = (RuleCall)cStoppedTimeAssignment_7.eContents().get(0);
@@ -395,11 +403,11 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Keyword cRotateReverseKeyword_9_1_0 = (Keyword)cRotateAssignment_9_1.eContents().get(0);
 		
 		//NormalStop returns Stop:
-		//    "stop" "at" station=[network::Station|STRING] "on" "platform" platform=ID "for" stoppedTime=INT "min" ("and" rotate?=("reverse"))?
+		//    "stop" "at" station=[network::Station|STRING] "on" "platform" platform=STRING "for" stoppedTime=INT "min" ("and" rotate?=("reverse"))?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"stop" "at" station=[network::Station|STRING] "on" "platform" platform=ID "for" stoppedTime=INT "min" ("and" rotate?=("reverse"))?
+		//"stop" "at" station=[network::Station|STRING] "on" "platform" platform=STRING "for" stoppedTime=INT "min" ("and" rotate?=("reverse"))?
 		public Group getGroup() { return cGroup; }
 		
 		//"stop"
@@ -423,11 +431,11 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//"platform"
 		public Keyword getPlatformKeyword_4() { return cPlatformKeyword_4; }
 		
-		//platform=ID
+		//platform=STRING
 		public Assignment getPlatformAssignment_5() { return cPlatformAssignment_5; }
 		
-		//ID
-		public RuleCall getPlatformIDTerminalRuleCall_5_0() { return cPlatformIDTerminalRuleCall_5_0; }
+		//STRING
+		public RuleCall getPlatformSTRINGTerminalRuleCall_5_0() { return cPlatformSTRINGTerminalRuleCall_5_0; }
 		
 		//"for"
 		public Keyword getForKeyword_6() { return cForKeyword_6; }
@@ -464,14 +472,14 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Keyword cOnKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cPlatformKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cPlatformAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cPlatformIDTerminalRuleCall_5_0 = (RuleCall)cPlatformAssignment_5.eContents().get(0);
+		private final RuleCall cPlatformSTRINGTerminalRuleCall_5_0 = (RuleCall)cPlatformAssignment_5.eContents().get(0);
 		
 		//TerminalStop returns Stop:
-		//    "terminate" "at" station=[network::Station|STRING] "on" "platform" platform=ID
+		//    "terminate" "at" station=[network::Station|STRING] "on" "platform" platform=STRING
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"terminate" "at" station=[network::Station|STRING] "on" "platform" platform=ID
+		//"terminate" "at" station=[network::Station|STRING] "on" "platform" platform=STRING
 		public Group getGroup() { return cGroup; }
 		
 		//"terminate"
@@ -495,11 +503,83 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		//"platform"
 		public Keyword getPlatformKeyword_4() { return cPlatformKeyword_4; }
 		
-		//platform=ID
+		//platform=STRING
 		public Assignment getPlatformAssignment_5() { return cPlatformAssignment_5; }
 		
-		//ID
-		public RuleCall getPlatformIDTerminalRuleCall_5_0() { return cPlatformIDTerminalRuleCall_5_0; }
+		//STRING
+		public RuleCall getPlatformSTRINGTerminalRuleCall_5_0() { return cPlatformSTRINGTerminalRuleCall_5_0; }
+	}
+	public class ViaTerminalStopElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.mdse.pts.schedule.dsl.Schedule.ViaTerminalStop");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cDriveKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cViaKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cViaAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cViaLegCrossReference_2_0 = (CrossReference)cViaAssignment_2.eContents().get(0);
+		private final RuleCall cViaLegSTRINGTerminalRuleCall_2_0_1 = (RuleCall)cViaLegCrossReference_2_0.eContents().get(1);
+		private final Keyword cAndKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cTerminateKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cAtKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cStationAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final CrossReference cStationStationCrossReference_6_0 = (CrossReference)cStationAssignment_6.eContents().get(0);
+		private final RuleCall cStationStationSTRINGTerminalRuleCall_6_0_1 = (RuleCall)cStationStationCrossReference_6_0.eContents().get(1);
+		private final Keyword cOnKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cPlatformKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cPlatformAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cPlatformSTRINGTerminalRuleCall_9_0 = (RuleCall)cPlatformAssignment_9.eContents().get(0);
+		
+		//ViaTerminalStop returns Stop:
+		//    "drive" "via" via=[network::Leg|STRING] "and" "terminate" "at" station=[network::Station|STRING] "on" "platform" platform=STRING
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"drive" "via" via=[network::Leg|STRING] "and" "terminate" "at" station=[network::Station|STRING] "on" "platform" platform=STRING
+		public Group getGroup() { return cGroup; }
+		
+		//"drive"
+		public Keyword getDriveKeyword_0() { return cDriveKeyword_0; }
+		
+		//"via"
+		public Keyword getViaKeyword_1() { return cViaKeyword_1; }
+		
+		//via=[network::Leg|STRING]
+		public Assignment getViaAssignment_2() { return cViaAssignment_2; }
+		
+		//[network::Leg|STRING]
+		public CrossReference getViaLegCrossReference_2_0() { return cViaLegCrossReference_2_0; }
+		
+		//STRING
+		public RuleCall getViaLegSTRINGTerminalRuleCall_2_0_1() { return cViaLegSTRINGTerminalRuleCall_2_0_1; }
+		
+		//"and"
+		public Keyword getAndKeyword_3() { return cAndKeyword_3; }
+		
+		//"terminate"
+		public Keyword getTerminateKeyword_4() { return cTerminateKeyword_4; }
+		
+		//"at"
+		public Keyword getAtKeyword_5() { return cAtKeyword_5; }
+		
+		//station=[network::Station|STRING]
+		public Assignment getStationAssignment_6() { return cStationAssignment_6; }
+		
+		//[network::Station|STRING]
+		public CrossReference getStationStationCrossReference_6_0() { return cStationStationCrossReference_6_0; }
+		
+		//STRING
+		public RuleCall getStationStationSTRINGTerminalRuleCall_6_0_1() { return cStationStationSTRINGTerminalRuleCall_6_0_1; }
+		
+		//"on"
+		public Keyword getOnKeyword_7() { return cOnKeyword_7; }
+		
+		//"platform"
+		public Keyword getPlatformKeyword_8() { return cPlatformKeyword_8; }
+		
+		//platform=STRING
+		public Assignment getPlatformAssignment_9() { return cPlatformAssignment_9; }
+		
+		//STRING
+		public RuleCall getPlatformSTRINGTerminalRuleCall_9_0() { return cPlatformSTRINGTerminalRuleCall_9_0; }
 	}
 	public class StartTimeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.mdse.pts.schedule.dsl.Schedule.StartTime");
@@ -687,6 +767,7 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	private final ViaStopElements pViaStop;
 	private final NormalStopElements pNormalStop;
 	private final TerminalStopElements pTerminalStop;
+	private final ViaTerminalStopElements pViaTerminalStop;
 	private final StartTimeElements pStartTime;
 	private final TimeElements pTime;
 	private final WeekdayElements eWeekday;
@@ -710,6 +791,7 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		this.pViaStop = new ViaStopElements();
 		this.pNormalStop = new NormalStopElements();
 		this.pTerminalStop = new TerminalStopElements();
+		this.pViaTerminalStop = new ViaTerminalStopElements();
 		this.pStartTime = new StartTimeElements();
 		this.pTime = new TimeElements();
 		this.eWeekday = new WeekdayElements();
@@ -765,7 +847,7 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	//        ":"
 	//        stops+=StartAtStop
 	//        (stops+=(ViaStop|NormalStop))*
-	//        stops+=TerminalStop
+	//        stops+=(TerminalStop|ViaTerminalStop)
 	//;
 	public TrainScheduleElements getTrainScheduleAccess() {
 		return pTrainSchedule;
@@ -776,7 +858,7 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//StartAtStop returns Stop:
-	//    "start" "at" station=[network::Station|STRING] "on" "platform" platform=ID
+	//    "start" "at" station=[network::Station|STRING] "on" "platform" platform=STRING
 	//;
 	public StartAtStopElements getStartAtStopAccess() {
 		return pStartAtStop;
@@ -787,7 +869,7 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//ViaStop returns Stop:
-	//    "drive" "via" via=[network::Leg|STRING] "and" "stop" "at" station=[network::Station|STRING] "on" "platform" platform=ID "for" stoppedTime=INT "min" ("and" rotate?=("reverse"))?
+	//    "drive" "via" via=[network::Leg|STRING] "and" "stop" "at" station=[network::Station|STRING] "on" "platform" platform=STRING "for" stoppedTime=INT "min" ("and" rotate?=("reverse"))?
 	//;
 	public ViaStopElements getViaStopAccess() {
 		return pViaStop;
@@ -798,7 +880,7 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//NormalStop returns Stop:
-	//    "stop" "at" station=[network::Station|STRING] "on" "platform" platform=ID "for" stoppedTime=INT "min" ("and" rotate?=("reverse"))?
+	//    "stop" "at" station=[network::Station|STRING] "on" "platform" platform=STRING "for" stoppedTime=INT "min" ("and" rotate?=("reverse"))?
 	//;
 	public NormalStopElements getNormalStopAccess() {
 		return pNormalStop;
@@ -809,7 +891,7 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//TerminalStop returns Stop:
-	//    "terminate" "at" station=[network::Station|STRING] "on" "platform" platform=ID
+	//    "terminate" "at" station=[network::Station|STRING] "on" "platform" platform=STRING
 	//;
 	public TerminalStopElements getTerminalStopAccess() {
 		return pTerminalStop;
@@ -817,6 +899,17 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	
 	public ParserRule getTerminalStopRule() {
 		return getTerminalStopAccess().getRule();
+	}
+	
+	//ViaTerminalStop returns Stop:
+	//    "drive" "via" via=[network::Leg|STRING] "and" "terminate" "at" station=[network::Station|STRING] "on" "platform" platform=STRING
+	//;
+	public ViaTerminalStopElements getViaTerminalStopAccess() {
+		return pViaTerminalStop;
+	}
+	
+	public ParserRule getViaTerminalStopRule() {
+		return getViaTerminalStopAccess().getRule();
 	}
 	
 	//StartTime:

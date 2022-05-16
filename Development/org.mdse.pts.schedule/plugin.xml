@@ -13,6 +13,11 @@
             class="org.mdse.pts.schedule.SchedulePackage"
             genModel="model/Schedule.genmodel"/>
    </extension>
+   
+   <!-- extend to include validator on startup: -->
+   <extension point="org.eclipse.ui.startup">
+      <startup class="org.mdse.pts.schedule.ScheduleValidator"/>
+   </extension>
 
 <!--
 

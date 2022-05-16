@@ -135,6 +135,7 @@ class ScheduleGenerator extends AbstractGenerator {
 				«ELSE»
 				<p>No departures for station</p>
 				«ENDIF»
+				<hr>
 			«ENDFOR»
 			</body>
 		</html>

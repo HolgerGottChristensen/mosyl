@@ -313,21 +313,39 @@ ruleTrainSchedule returns [EObject current=null]
 		)*
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getTrainScheduleAccess().getStopsTerminalStopParserRuleCall_9_0());
-				}
-				lv_stops_10_0=ruleTerminalStop
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTrainScheduleRule());
+				(
+					{
+						newCompositeNode(grammarAccess.getTrainScheduleAccess().getStopsTerminalStopParserRuleCall_9_0_0());
 					}
-					add(
-						$current,
-						"stops",
-						lv_stops_10_0,
-						"org.mdse.pts.schedule.dsl.Schedule.TerminalStop");
-					afterParserOrEnumRuleCall();
-				}
+					lv_stops_10_1=ruleTerminalStop
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getTrainScheduleRule());
+						}
+						add(
+							$current,
+							"stops",
+							lv_stops_10_1,
+							"org.mdse.pts.schedule.dsl.Schedule.TerminalStop");
+						afterParserOrEnumRuleCall();
+					}
+					    |
+					{
+						newCompositeNode(grammarAccess.getTrainScheduleAccess().getStopsViaTerminalStopParserRuleCall_9_0_1());
+					}
+					lv_stops_10_2=ruleViaTerminalStop
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getTrainScheduleRule());
+						}
+						add(
+							$current,
+							"stops",
+							lv_stops_10_2,
+							"org.mdse.pts.schedule.dsl.Schedule.ViaTerminalStop");
+						afterParserOrEnumRuleCall();
+					}
+				)
 			)
 		)
 	)
@@ -380,9 +398,9 @@ ruleStartAtStop returns [EObject current=null]
 		}
 		(
 			(
-				lv_platform_5_0=RULE_ID
+				lv_platform_5_0=RULE_STRING
 				{
-					newLeafNode(lv_platform_5_0, grammarAccess.getStartAtStopAccess().getPlatformIDTerminalRuleCall_5_0());
+					newLeafNode(lv_platform_5_0, grammarAccess.getStartAtStopAccess().getPlatformSTRINGTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
@@ -392,7 +410,7 @@ ruleStartAtStop returns [EObject current=null]
 						$current,
 						"platform",
 						lv_platform_5_0,
-						"org.mdse.pts.schedule.dsl.Schedule.ID");
+						"org.mdse.pts.schedule.dsl.Schedule.STRING");
 				}
 			)
 		)
@@ -471,9 +489,9 @@ ruleViaStop returns [EObject current=null]
 		}
 		(
 			(
-				lv_platform_9_0=RULE_ID
+				lv_platform_9_0=RULE_STRING
 				{
-					newLeafNode(lv_platform_9_0, grammarAccess.getViaStopAccess().getPlatformIDTerminalRuleCall_9_0());
+					newLeafNode(lv_platform_9_0, grammarAccess.getViaStopAccess().getPlatformSTRINGTerminalRuleCall_9_0());
 				}
 				{
 					if ($current==null) {
@@ -483,7 +501,7 @@ ruleViaStop returns [EObject current=null]
 						$current,
 						"platform",
 						lv_platform_9_0,
-						"org.mdse.pts.schedule.dsl.Schedule.ID");
+						"org.mdse.pts.schedule.dsl.Schedule.STRING");
 				}
 			)
 		)
@@ -583,9 +601,9 @@ ruleNormalStop returns [EObject current=null]
 		}
 		(
 			(
-				lv_platform_5_0=RULE_ID
+				lv_platform_5_0=RULE_STRING
 				{
-					newLeafNode(lv_platform_5_0, grammarAccess.getNormalStopAccess().getPlatformIDTerminalRuleCall_5_0());
+					newLeafNode(lv_platform_5_0, grammarAccess.getNormalStopAccess().getPlatformSTRINGTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
@@ -595,7 +613,7 @@ ruleNormalStop returns [EObject current=null]
 						$current,
 						"platform",
 						lv_platform_5_0,
-						"org.mdse.pts.schedule.dsl.Schedule.ID");
+						"org.mdse.pts.schedule.dsl.Schedule.STRING");
 				}
 			)
 		)
@@ -695,9 +713,9 @@ ruleTerminalStop returns [EObject current=null]
 		}
 		(
 			(
-				lv_platform_5_0=RULE_ID
+				lv_platform_5_0=RULE_STRING
 				{
-					newLeafNode(lv_platform_5_0, grammarAccess.getTerminalStopAccess().getPlatformIDTerminalRuleCall_5_0());
+					newLeafNode(lv_platform_5_0, grammarAccess.getTerminalStopAccess().getPlatformSTRINGTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
@@ -707,7 +725,98 @@ ruleTerminalStop returns [EObject current=null]
 						$current,
 						"platform",
 						lv_platform_5_0,
-						"org.mdse.pts.schedule.dsl.Schedule.ID");
+						"org.mdse.pts.schedule.dsl.Schedule.STRING");
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleViaTerminalStop
+entryRuleViaTerminalStop returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getViaTerminalStopRule()); }
+	iv_ruleViaTerminalStop=ruleViaTerminalStop
+	{ $current=$iv_ruleViaTerminalStop.current; }
+	EOF;
+
+// Rule ViaTerminalStop
+ruleViaTerminalStop returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='drive'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getViaTerminalStopAccess().getDriveKeyword_0());
+		}
+		otherlv_1='via'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getViaTerminalStopAccess().getViaKeyword_1());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getViaTerminalStopRule());
+					}
+				}
+				otherlv_2=RULE_STRING
+				{
+					newLeafNode(otherlv_2, grammarAccess.getViaTerminalStopAccess().getViaLegCrossReference_2_0());
+				}
+			)
+		)
+		otherlv_3='and'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getViaTerminalStopAccess().getAndKeyword_3());
+		}
+		otherlv_4='terminate'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getViaTerminalStopAccess().getTerminateKeyword_4());
+		}
+		otherlv_5='at'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getViaTerminalStopAccess().getAtKeyword_5());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getViaTerminalStopRule());
+					}
+				}
+				otherlv_6=RULE_STRING
+				{
+					newLeafNode(otherlv_6, grammarAccess.getViaTerminalStopAccess().getStationStationCrossReference_6_0());
+				}
+			)
+		)
+		otherlv_7='on'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getViaTerminalStopAccess().getOnKeyword_7());
+		}
+		otherlv_8='platform'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getViaTerminalStopAccess().getPlatformKeyword_8());
+		}
+		(
+			(
+				lv_platform_9_0=RULE_STRING
+				{
+					newLeafNode(lv_platform_9_0, grammarAccess.getViaTerminalStopAccess().getPlatformSTRINGTerminalRuleCall_9_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getViaTerminalStopRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"platform",
+						lv_platform_9_0,
+						"org.mdse.pts.schedule.dsl.Schedule.STRING");
 				}
 			)
 		)

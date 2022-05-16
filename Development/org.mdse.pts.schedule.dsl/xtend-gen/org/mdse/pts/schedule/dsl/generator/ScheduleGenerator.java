@@ -430,6 +430,9 @@ public class ScheduleGenerator extends AbstractGenerator {
             _builder.newLine();
           }
         }
+        _builder.append("\t");
+        _builder.append("<hr>");
+        _builder.newLine();
       }
     }
     _builder.append("\t");

@@ -101,6 +101,9 @@ public class ScheduleScopeProvider extends AbstractScheduleScopeProvider {
 			Schedule schedule = (Schedule) EcoreUtil.getRootContainer(context);
 			List<Leg> legs = schedule.getNetwork().getLegs();
 			return Scopes.scopeFor(legs, x -> {
+				if (x.getName().isEmpty()) {
+					return null;
+				}
 				return QualifiedName.create(x.getName());
 				}, IScope.NULLSCOPE);
 		}

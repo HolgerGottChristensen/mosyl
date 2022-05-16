@@ -1,14 +1,30 @@
 package org.mdse.pts.schedule;
 
-//import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.EValidator;
+
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import org.eclipse.emf.common.util.BasicDiagnostic;
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.DiagnosticChain;
 
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.ui.IStartup;
+import org.mdse.pts.depot.Coach;
+import org.mdse.pts.depot.Locomotive;
+import org.mdse.pts.network.Leg;
+import org.mdse.pts.network.Station;
 
 
 public class ScheduleValidator extends EObjectValidator implements IStartup {
-	//private DiagnosticChain diagnostics;
-	/*
+	private DiagnosticChain diagnostics;
+	
 	@Override
 	public void earlyStartup() {
 		// TODO Auto-generated method stub
@@ -44,14 +60,11 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 			modelIsValid &= validateStop(stop);
 		}
 		
-		if(!modelIsValid) {
-			constraintViolated(eObject, eObject.toString() + ": some problem occured");
-		}
 		return modelIsValid;
 	}
 	
 	private boolean validateStop(Stop stop) {
-		boolean modelIsValid = false;
+		boolean modelIsValid = true;
 				
 		modelIsValid &= validateLegsbetweenSameStopsHaveNames(stop);
 				
@@ -59,7 +72,7 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 	}
 	
 	private boolean validateTime(Time time) {
-		boolean modelIsValid = false;
+		boolean modelIsValid = true;
 		
 		modelIsValid &= validateTimeIsConsistent(time);
 		
@@ -67,7 +80,7 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 	}
 	
 	private boolean validateSchedule(Schedule schedule) {
-		boolean modelIsValid = false;
+		boolean modelIsValid = true;
 		
 		modelIsValid &= validateRouteIsUniqueToSchedule(schedule);
 		modelIsValid &= validateRouteExistsInNetwork(schedule);
@@ -78,10 +91,10 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 	}
 	
 	private boolean validateTrainSchedule(TrainSchedule trainSchedule) {
-		boolean modelIsValid = false;
+		boolean modelIsValid = true;
 		
 		modelIsValid &= validateTrainCoachesForReversableStop(trainSchedule);
-		modelIsValid &= validateRouteIsNavigateable(trainSchedule);
+		//modelIsValid &= validateRouteIsNavigateable(trainSchedule);
 		modelIsValid &= validateStopExistsOnceInRoute(trainSchedule);
 		
 		return modelIsValid;
@@ -91,10 +104,10 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 		boolean stationExistsOnce = false;
 		boolean stopExistsOnce = false;
 		
-		List<network.Station> stations = trainSchedule.getStops().stream()
+		List<Station> stations = trainSchedule.getStops().stream()
 				.map(s -> s.getStation())
 				.collect(Collectors.toList());
-		HashSet<network.Station> stationSet = new HashSet<>(stations);
+		HashSet<Station> stationSet = new HashSet<>(stations);
 		stationExistsOnce = stationSet.size() == stations.size();
 		stopExistsOnce = trainSchedule.getStops().size() == new HashSet<>(trainSchedule.getStops()).size();
 		
@@ -146,7 +159,7 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 		for(TrainSchedule ts1 : schedule.getTrains()) {
 			for(TrainSchedule ts2 : schedule.getTrains()) {
 				if(!ts1.equals(ts2)) {
-					isUnique &= routeEqual(ts1, ts2);
+					isUnique &= !routeEqual(ts1, ts2);
 				}
 			}
 		}
@@ -158,7 +171,7 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 	
 	private boolean validateTrainCoachesForReversableStop(TrainSchedule trainSchedule) {
 		if(trainSchedule.getStops().stream().anyMatch(stop -> stop.isRotate())) {
-			List<depot.Coach> coaches = trainSchedule.getTrain().getCoach().stream()
+			List<Coach> coaches = trainSchedule.getTrain().getCoach().stream()
 					.filter(coach -> Locomotive.class.isInstance(coach))
 					.collect(Collectors.toList());
 			boolean twiceLocomotive = 2 == coaches.size();
@@ -179,32 +192,38 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 		return isConsistent;
 	}
 	
-	private boolean validateLegsbetweenSameStopsHaveNames(Stop stop) {
+	// If there are two unnamed legs between the same two stations a via must be specified.
+	// If there is only one unnamed leg, this is chosen unless there is a via.
+	/*private boolean validateLegsbetweenSameStopsHaveNames(Stop stop) {
 		boolean specifiable = true;
 		
-		network.Station st = stop.getStation();
+		List<Leg> possibleLegs = stop.getStation().getLegs();
+		possibleLegs.stream().filter(x -> x.getStations().contains(possibleLegs))
 		
-		List<network.Station> stationList = st.getLegs().stream()
+		
+		Station st = stop.getStation();
+		
+		.stream()
 				.map(l -> l.getStations().get(0).equals(st) ? l.getStations().get(1) : l.getStations().get(0))
 				.collect(Collectors.toList());
 		
-		HashSet<network.Station> stationSet = new HashSet<>(stationList);
+		HashSet<Station> stationSet = new HashSet<>(stationList);
 		specifiable = stationList.size() == stationSet.size() || stop.getVia() != null;
 		
 		if(!specifiable) {
 			constraintViolated(stop, stop.getStation().getName() + ": is sourced for from a station with unspecifiable legs to this stop");
 		}
 		return specifiable;
-	}
+	}*/
 	
-	private boolean validateRouteIsNavigateable(TrainSchedule schedule) {
+	/*private boolean validateRouteIsNavigateable(TrainSchedule schedule) {
 		//solve connected components problem
 		boolean[] marked = new boolean[schedule.getStops().size()];
 		int count = 0;
 		Stop[] stopArray = (Stop[]) schedule.getStops().toArray();
 		
-		HashMap<network.Station, Stop> map = new HashMap<>();
-		HashMap<network.Station, Integer> id = new HashMap<>();
+		HashMap<Station, Stop> map = new HashMap<>();
+		HashMap<Station, Integer> id = new HashMap<>();
 		
 		for(int s = 0; s < stopArray.length; s++) {
 			map.put(stopArray[s].getStation(), stopArray[s]);
@@ -224,13 +243,13 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 			constraintViolated(schedule, schedule.toString() + ": route is not navigateable");
 		}
 		return singleComponent;
-	}
+	}*/
 	
 	//helper functions
-	private void dfs(HashMap<network.Station, Stop> map, HashMap<network.Station, Integer> id, Stop[] stopArray, boolean[] marked, int v) {
+	private void dfs(HashMap<Station, Stop> map, HashMap<Station, Integer> id, Stop[] stopArray, boolean[] marked, int v) {
 		marked[v] = true;
-		for(network.Leg l : stopArray[v].getStation().getLegs()) {
-			for(network.Station s: l.getStations()) {
+		for(Leg l : stopArray[v].getStation().getLegs()) {
+			for(Station s: l.getStations()) {
 				if(!marked[id.get(s)]) {
 					dfs(map, id, stopArray, marked, id.get(s));
 				}
@@ -241,10 +260,7 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 	private boolean routeEqual(TrainSchedule t1, TrainSchedule t2) {
 		if(t1.getStops().size() != t2.getStops().size()) return false;
 		
-		for(Stop s : t1.getStops()) {
-			if (!t2.getStops().contains(s)) return false;
-		}
-		return true;
+		return t1.getStops() == t2.getStops();
 	}
 	
 	//Utility method
@@ -252,12 +268,6 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 		Diagnostic diagnostic = new BasicDiagnostic(Diagnostic.ERROR, object.toString(), 0, message, new Object[] { object });
 		diagnostics.add(diagnostic);
 		return false;
-	}*/
-
-	@Override
-	public void earlyStartup() {
-		// TODO Auto-generated method stub
-		
 	}
 
 }

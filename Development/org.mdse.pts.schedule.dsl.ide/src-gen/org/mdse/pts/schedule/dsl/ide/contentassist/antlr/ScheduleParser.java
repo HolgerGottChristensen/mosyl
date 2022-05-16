@@ -32,6 +32,7 @@ public class ScheduleParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, ScheduleGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getTrainScheduleAccess().getStopsAlternatives_8_0(), "rule__TrainSchedule__StopsAlternatives_8_0");
+			builder.put(grammarAccess.getTrainScheduleAccess().getStopsAlternatives_9_0(), "rule__TrainSchedule__StopsAlternatives_9_0");
 			builder.put(grammarAccess.getWeekdayAccess().getAlternatives(), "rule__Weekday__Alternatives");
 			builder.put(grammarAccess.getScheduleAccess().getGroup(), "rule__Schedule__Group__0");
 			builder.put(grammarAccess.getScheduleAccess().getGroup_5(), "rule__Schedule__Group_5__0");
@@ -44,6 +45,7 @@ public class ScheduleParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getNormalStopAccess().getGroup(), "rule__NormalStop__Group__0");
 			builder.put(grammarAccess.getNormalStopAccess().getGroup_9(), "rule__NormalStop__Group_9__0");
 			builder.put(grammarAccess.getTerminalStopAccess().getGroup(), "rule__TerminalStop__Group__0");
+			builder.put(grammarAccess.getViaTerminalStopAccess().getGroup(), "rule__ViaTerminalStop__Group__0");
 			builder.put(grammarAccess.getStartTimeAccess().getGroup(), "rule__StartTime__Group__0");
 			builder.put(grammarAccess.getStartTimeAccess().getGroup_1(), "rule__StartTime__Group_1__0");
 			builder.put(grammarAccess.getStartTimeAccess().getGroup_4(), "rule__StartTime__Group_4__0");
@@ -71,6 +73,9 @@ public class ScheduleParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getNormalStopAccess().getRotateAssignment_9_1(), "rule__NormalStop__RotateAssignment_9_1");
 			builder.put(grammarAccess.getTerminalStopAccess().getStationAssignment_2(), "rule__TerminalStop__StationAssignment_2");
 			builder.put(grammarAccess.getTerminalStopAccess().getPlatformAssignment_5(), "rule__TerminalStop__PlatformAssignment_5");
+			builder.put(grammarAccess.getViaTerminalStopAccess().getViaAssignment_2(), "rule__ViaTerminalStop__ViaAssignment_2");
+			builder.put(grammarAccess.getViaTerminalStopAccess().getStationAssignment_6(), "rule__ViaTerminalStop__StationAssignment_6");
+			builder.put(grammarAccess.getViaTerminalStopAccess().getPlatformAssignment_9(), "rule__ViaTerminalStop__PlatformAssignment_9");
 			builder.put(grammarAccess.getStartTimeAccess().getWeekdaysAssignment_0(), "rule__StartTime__WeekdaysAssignment_0");
 			builder.put(grammarAccess.getStartTimeAccess().getWeekdaysAssignment_1_1(), "rule__StartTime__WeekdaysAssignment_1_1");
 			builder.put(grammarAccess.getStartTimeAccess().getTimestampsAssignment_3(), "rule__StartTime__TimestampsAssignment_3");

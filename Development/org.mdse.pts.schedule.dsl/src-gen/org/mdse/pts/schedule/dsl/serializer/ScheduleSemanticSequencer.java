@@ -59,6 +59,10 @@ public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequenc
 					sequence_ViaStop(context, (Stop) semanticObject); 
 					return; 
 				}
+				else if (rule == grammarAccess.getViaTerminalStopRule()) {
+					sequence_ViaTerminalStop(context, (Stop) semanticObject); 
+					return; 
+				}
 				else break;
 			case SchedulePackage.TIME:
 				sequence_Time(context, (Time) semanticObject); 
@@ -77,7 +81,7 @@ public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     NormalStop returns Stop
 	 *
 	 * Constraint:
-	 *     (station=[Station|STRING] platform=ID stoppedTime=INT rotate?='reverse'?)
+	 *     (station=[Station|STRING] platform=STRING stoppedTime=INT rotate?='reverse'?)
 	 * </pre>
 	 */
 	protected void sequence_NormalStop(ISerializationContext context, Stop semanticObject) {
@@ -105,7 +109,7 @@ public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     StartAtStop returns Stop
 	 *
 	 * Constraint:
-	 *     (station=[Station|STRING] platform=ID)
+	 *     (station=[Station|STRING] platform=STRING)
 	 * </pre>
 	 */
 	protected void sequence_StartAtStop(ISerializationContext context, Stop semanticObject) {
@@ -117,7 +121,7 @@ public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getStartAtStopAccess().getStationStationSTRINGTerminalRuleCall_2_0_1(), semanticObject.eGet(SchedulePackage.Literals.STOP__STATION, false));
-		feeder.accept(grammarAccess.getStartAtStopAccess().getPlatformIDTerminalRuleCall_5_0(), semanticObject.getPlatform());
+		feeder.accept(grammarAccess.getStartAtStopAccess().getPlatformSTRINGTerminalRuleCall_5_0(), semanticObject.getPlatform());
 		feeder.finish();
 	}
 	
@@ -142,7 +146,7 @@ public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     TerminalStop returns Stop
 	 *
 	 * Constraint:
-	 *     (station=[Station|STRING] platform=ID)
+	 *     (station=[Station|STRING] platform=STRING)
 	 * </pre>
 	 */
 	protected void sequence_TerminalStop(ISerializationContext context, Stop semanticObject) {
@@ -154,7 +158,7 @@ public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequenc
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getTerminalStopAccess().getStationStationSTRINGTerminalRuleCall_2_0_1(), semanticObject.eGet(SchedulePackage.Literals.STOP__STATION, false));
-		feeder.accept(grammarAccess.getTerminalStopAccess().getPlatformIDTerminalRuleCall_5_0(), semanticObject.getPlatform());
+		feeder.accept(grammarAccess.getTerminalStopAccess().getPlatformSTRINGTerminalRuleCall_5_0(), semanticObject.getPlatform());
 		feeder.finish();
 	}
 	
@@ -193,8 +197,9 @@ public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *         starttimes+=StartTime 
 	 *         starttimes+=StartTime* 
 	 *         stops+=StartAtStop 
-	 *         (stops+=ViaStop | stops+=NormalStop)* 
-	 *         stops+=TerminalStop
+	 *         stops+=ViaStop? 
+	 *         (stops+=NormalStop? stops+=ViaStop?)* 
+	 *         (stops+=TerminalStop | stops+=ViaTerminalStop)
 	 *     )
 	 * </pre>
 	 */
@@ -209,11 +214,37 @@ public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     ViaStop returns Stop
 	 *
 	 * Constraint:
-	 *     (via=[Leg|STRING] station=[Station|STRING] platform=ID stoppedTime=INT rotate?='reverse'?)
+	 *     (via=[Leg|STRING] station=[Station|STRING] platform=STRING stoppedTime=INT rotate?='reverse'?)
 	 * </pre>
 	 */
 	protected void sequence_ViaStop(ISerializationContext context, Stop semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ViaTerminalStop returns Stop
+	 *
+	 * Constraint:
+	 *     (via=[Leg|STRING] station=[Station|STRING] platform=STRING)
+	 * </pre>
+	 */
+	protected void sequence_ViaTerminalStop(ISerializationContext context, Stop semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SchedulePackage.Literals.STOP__VIA) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SchedulePackage.Literals.STOP__VIA));
+			if (transientValues.isValueTransient(semanticObject, SchedulePackage.Literals.STOP__STATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SchedulePackage.Literals.STOP__STATION));
+			if (transientValues.isValueTransient(semanticObject, SchedulePackage.Literals.STOP__PLATFORM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SchedulePackage.Literals.STOP__PLATFORM));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getViaTerminalStopAccess().getViaLegSTRINGTerminalRuleCall_2_0_1(), semanticObject.eGet(SchedulePackage.Literals.STOP__VIA, false));
+		feeder.accept(grammarAccess.getViaTerminalStopAccess().getStationStationSTRINGTerminalRuleCall_6_0_1(), semanticObject.eGet(SchedulePackage.Literals.STOP__STATION, false));
+		feeder.accept(grammarAccess.getViaTerminalStopAccess().getPlatformSTRINGTerminalRuleCall_9_0(), semanticObject.getPlatform());
+		feeder.finish();
 	}
 	
 	
