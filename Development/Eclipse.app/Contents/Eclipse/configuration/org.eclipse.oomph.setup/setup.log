@@ -1536,3 +1536,41 @@
 [2022-05-16 15:41:12] Performing Preference /instance/org.eclipse.pde.ui/editor.color.tag
 [2022-05-16 15:41:12] Performing Preference /instance/org.eclipse.pde.ui/editor.color.xml_comment
 [2022-05-16 15:41:12] 
+[2022-05-16 16:12:36] Executing startup tasks
+[2022-05-16 16:12:36] OpenJDK Runtime Environment 17.0.2+8
+[2022-05-16 16:12:36] Product self.product.version
+[2022-05-16 16:12:36] Workspace /Users/holgerchristensen/mosyl/Project_Task/Runtime
+[2022-05-16 16:12:36] Bundle org.eclipse.oomph.setup 1.23.0.v20220301-0958, build=5396, branch=0ca218831ae58471d57f6865eb1ac482255de190
+[2022-05-16 16:12:36] Bundle org.eclipse.oomph.setup.core 1.23.0.v20220301-0958, build=5396, branch=0ca218831ae58471d57f6865eb1ac482255de190
+[2022-05-16 16:12:36] Bundle org.eclipse.oomph.setup.p2 1.18.0.v20220301-0958, build=5396, branch=0ca218831ae58471d57f6865eb1ac482255de190
+[2022-05-16 16:12:36] Performing Preference /instance/org.eclipse.pde.ui/editor.color.default
+[2022-05-16 16:12:36] Performing Preference /instance/org.eclipse.pde.ui/editor.color.externalized_string
+[2022-05-16 16:12:36] Performing Preference /instance/org.eclipse.pde.ui/editor.color.header_assignment
+[2022-05-16 16:12:36] Performing Preference /instance/org.eclipse.pde.ui/editor.color.header_attributes
+[2022-05-16 16:12:36] Performing Preference /instance/org.eclipse.pde.ui/editor.color.header_key
+[2022-05-16 16:12:36] Performing Preference /instance/org.eclipse.pde.ui/editor.color.header_osgi
+[2022-05-16 16:12:36] Performing Preference /instance/org.eclipse.pde.ui/editor.color.header_value
+[2022-05-16 16:12:36] Performing Preference /instance/org.eclipse.pde.ui/editor.color.instr
+[2022-05-16 16:12:36] Performing Preference /instance/org.eclipse.pde.ui/editor.color.string
+[2022-05-16 16:12:36] Performing Preference /instance/org.eclipse.pde.ui/editor.color.tag
+[2022-05-16 16:12:36] Performing Preference /instance/org.eclipse.pde.ui/editor.color.xml_comment
+[2022-05-16 16:12:36] 
+[2022-05-16 16:16:29] Executing startup tasks
+[2022-05-16 16:16:29] OpenJDK Runtime Environment 17.0.2+8
+[2022-05-16 16:16:29] Product self.product.version
+[2022-05-16 16:16:29] Workspace /Users/holgerchristensen/mosyl/Project_Task/Runtime
+[2022-05-16 16:16:29] Bundle org.eclipse.oomph.setup 1.23.0.v20220301-0958, build=5396, branch=0ca218831ae58471d57f6865eb1ac482255de190
+[2022-05-16 16:16:29] Bundle org.eclipse.oomph.setup.core 1.23.0.v20220301-0958, build=5396, branch=0ca218831ae58471d57f6865eb1ac482255de190
+[2022-05-16 16:16:29] Bundle org.eclipse.oomph.setup.p2 1.18.0.v20220301-0958, build=5396, branch=0ca218831ae58471d57f6865eb1ac482255de190
+[2022-05-16 16:16:29] Performing Preference /instance/org.eclipse.pde.ui/editor.color.default
+[2022-05-16 16:16:29] Performing Preference /instance/org.eclipse.pde.ui/editor.color.externalized_string
+[2022-05-16 16:16:29] Performing Preference /instance/org.eclipse.pde.ui/editor.color.header_assignment
+[2022-05-16 16:16:29] Performing Preference /instance/org.eclipse.pde.ui/editor.color.header_attributes
+[2022-05-16 16:16:29] Performing Preference /instance/org.eclipse.pde.ui/editor.color.header_key
+[2022-05-16 16:16:29] Performing Preference /instance/org.eclipse.pde.ui/editor.color.header_osgi
+[2022-05-16 16:16:29] Performing Preference /instance/org.eclipse.pde.ui/editor.color.header_value
+[2022-05-16 16:16:29] Performing Preference /instance/org.eclipse.pde.ui/editor.color.instr
+[2022-05-16 16:16:29] Performing Preference /instance/org.eclipse.pde.ui/editor.color.string
+[2022-05-16 16:16:29] Performing Preference /instance/org.eclipse.pde.ui/editor.color.tag
+[2022-05-16 16:16:29] Performing Preference /instance/org.eclipse.pde.ui/editor.color.xml_comment
+[2022-05-16 16:16:29] 

@@ -66,7 +66,7 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 	private boolean validateStop(Stop stop) {
 		boolean modelIsValid = true;
 				
-		modelIsValid &= validateLegsbetweenSameStopsHaveNames(stop);
+		//modelIsValid &= validateLegsbetweenSameStopsHaveNames(stop);
 				
 		return modelIsValid;
 	}
