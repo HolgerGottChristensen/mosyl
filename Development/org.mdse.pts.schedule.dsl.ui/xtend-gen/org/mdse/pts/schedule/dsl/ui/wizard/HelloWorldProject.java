@@ -27,13 +27,13 @@ import org.eclipse.xtext.xbase.lib.Procedures.Procedure1;
 @SuppressWarnings("all")
 public final class HelloWorldProject extends AbstractProjectTemplate {
   private final BooleanTemplateVariable advanced = this.check("Advanced:", false);
-
+  
   private final GroupTemplateVariable advancedGroup = this.group("Properties");
-
+  
   private final StringSelectionTemplateVariable name = this.combo("Name:", new String[] { "Xtext", "World", "Foo", "Bar" }, "The name to say \'Hello\' to", this.advancedGroup);
-
+  
   private final StringTemplateVariable path = this.text("Package:", "mydsl", "The package path to place the files in", this.advancedGroup);
-
+  
   @Override
   protected void updateVariables() {
     this.name.setEnabled(this.advanced.getValue());
@@ -45,7 +45,7 @@ public final class HelloWorldProject extends AbstractProjectTemplate {
       this.path.setValue("schedule");
     }
   }
-
+  
   @Override
   protected IStatus validate() {
     Status _xifexpression = null;
@@ -57,7 +57,7 @@ public final class HelloWorldProject extends AbstractProjectTemplate {
     }
     return _xifexpression;
   }
-
+  
   @Override
   public void generateProjects(final IProjectGenerator generator) {
     PluginProjectFactory _pluginProjectFactory = new PluginProjectFactory();

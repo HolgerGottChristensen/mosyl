@@ -54,7 +54,7 @@ public class Scheduler2TimetableConverter {
 	public static Leg getLegBetween(Stop s1, Stop s2) {
 		if (s2.getVia() == null) {
 			Optional<Leg> legOptional = s1.getStation().getLegs().stream().filter(x -> x.getStations().contains(s2.getStation())).findFirst();
-			if (legOptional.isEmpty()) {
+			if (!legOptional.isPresent()) {
 				throw new RuntimeException("No connection between the given stops");
 			} else {
 				return legOptional.get();

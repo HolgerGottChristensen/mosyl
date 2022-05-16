@@ -13,7 +13,7 @@ import org.eclipse.xtext.ui.wizard.template.StringSelectionTemplateVariable;
 @SuppressWarnings("all")
 public final class HelloWorldFile extends AbstractFileTemplate {
   private final StringSelectionTemplateVariable helloName = this.combo("Hello Name:", new String[] { "Xtext", "World", "Foo", "Bar" }, "The name to say \'Hello\' to");
-
+  
   @Override
   public void generateFiles(final IFileGenerator generator) {
     StringConcatenation _builder = new StringConcatenation();

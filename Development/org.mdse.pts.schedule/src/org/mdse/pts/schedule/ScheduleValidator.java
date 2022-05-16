@@ -55,19 +55,7 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 			Time time = (Time) eObject;
 			modelIsValid &= validateTime(time);
 		}
-		if (SchedulePackage.eINSTANCE.getStop().equals(eClass)) {
-			Stop stop = (Stop) eObject;
-			modelIsValid &= validateStop(stop);
-		}
 		
-		return modelIsValid;
-	}
-	
-	private boolean validateStop(Stop stop) {
-		boolean modelIsValid = true;
-				
-		modelIsValid &= validateLegsbetweenSameStopsHaveNames(stop);
-				
 		return modelIsValid;
 	}
 	
@@ -94,21 +82,50 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 		boolean modelIsValid = true;
 		
 		modelIsValid &= validateTrainCoachesForReversableStop(trainSchedule);
-		//modelIsValid &= validateRouteIsNavigateable(trainSchedule);
+		modelIsValid &= validateRouteIsNavigateable(trainSchedule);
 		modelIsValid &= validateStopExistsOnceInRoute(trainSchedule);
+		modelIsValid &= validateLegsbetweenStopsAreSpecifiable(trainSchedule);
 		
 		return modelIsValid;
+	}
+	
+	// If there are two unnamed legs between the same two stations a via must be specified.
+	// If there is only one unnamed leg, this is chosen unless there is a via.
+	private boolean validateLegsbetweenStopsAreSpecifiable(TrainSchedule trainSchedule) {
+		boolean specifiable = true;
+		
+		//iterate over all pair of stops with legs between them
+		for(int i = 1; i < trainSchedule.getStops().size(); i++) {
+			
+			Stop fromStop = trainSchedule.getStops().get(i-1);
+			Stop toStop = trainSchedule.getStops().get(i);
+			Station fromStation = fromStop.getStation();
+			Station toStation = toStop.getStation();
+			
+			//retrieve the list of legs between fromStop and toStop
+			List<Leg> legList = fromStation.getLegs().stream()
+					.filter(l -> l.getStations().contains(toStation))
+					.collect(Collectors.toList());
+			//make sure that either there is one leg between them or the leg to choose is specified by "via"
+			specifiable &= (legList.size() < 2 || toStop.getVia() != null);
+		}
+		if(!specifiable) {
+			constraintViolated(trainSchedule, trainSchedule.toString() + ": has a stop sourced for from a station with unspecifiable legs to this stop");
+		}
+		return specifiable;
 	}
 	
 	private boolean validateStopExistsOnceInRoute(TrainSchedule trainSchedule) {
 		boolean stationExistsOnce = false;
 		boolean stopExistsOnce = false;
-		
+		//retrieve stations in route
 		List<Station> stations = trainSchedule.getStops().stream()
 				.map(s -> s.getStation())
 				.collect(Collectors.toList());
+		//if set has different size than list, then station exists several times in route
 		HashSet<Station> stationSet = new HashSet<>(stations);
 		stationExistsOnce = stationSet.size() == stations.size();
+		//if set has different size than list, then stops exists several times in route
 		stopExistsOnce = trainSchedule.getStops().size() == new HashSet<>(trainSchedule.getStops()).size();
 		
 		if(!stationExistsOnce || !stopExistsOnce) {
@@ -118,6 +135,7 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 	}
 	
 	private boolean validateDepotExistsOnce(Schedule schedule) {
+		//if set has different size than list, then depot exists several times in system
 		boolean depotExistsOnce = schedule.getDepot().size() == new HashSet<>(schedule.getDepot()).size();
 		
 		if(!depotExistsOnce) {
@@ -128,7 +146,7 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 	
 	private boolean validateRouteExistsInNetwork(Schedule schedule) {
 		boolean existsInNetwork = true;
-		
+		//for each schedule make sure that the station for each stop exists in the network
 		for(TrainSchedule ts : schedule.getTrains()) {
 			for(Stop s : ts.getStops()) {
 				existsInNetwork &= schedule.getNetwork().getStations().contains(s.getStation());
@@ -142,7 +160,7 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 	
 	private boolean validateTrainExistsInDepot(Schedule schedule) {
 		boolean existsInDepot = true;
-		
+		//for all trains check if train exists in any depot
 		existsInDepot &= schedule.getTrains().stream().allMatch(t -> {
 			return schedule.getDepot().stream().anyMatch(d -> d.getDepot().getTrain().contains(t.getTrain()));
 		});
@@ -155,7 +173,7 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 	
 	private boolean validateRouteIsUniqueToSchedule(Schedule schedule) {
 		boolean isUnique = true;
-		
+		//check if any pair of schedules have the same route
 		for(TrainSchedule ts1 : schedule.getTrains()) {
 			for(TrainSchedule ts2 : schedule.getTrains()) {
 				if(!ts1.equals(ts2)) {
@@ -170,10 +188,13 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 	}
 	
 	private boolean validateTrainCoachesForReversableStop(TrainSchedule trainSchedule) {
+		//check if schedule has a stop where it rotates
 		if(trainSchedule.getStops().stream().anyMatch(stop -> stop.isRotate())) {
+			//retrieve locomotives from train
 			List<Coach> coaches = trainSchedule.getTrain().getCoach().stream()
 					.filter(coach -> Locomotive.class.isInstance(coach))
 					.collect(Collectors.toList());
+			//check if there is two coaches (from & back)
 			boolean twiceLocomotive = 2 == coaches.size();
 			if(!twiceLocomotive) {
 				constraintViolated(trainSchedule, trainSchedule.toString() + ": train must have two locmotives for turning on route");
@@ -184,6 +205,7 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 	}
 	
 	private boolean validateTimeIsConsistent(Time time) {
+		//hour should be between 0 and 23, minute should be between 0 and 59 (both inclusive)
 		boolean isConsistent = ((0 <= time.getHour()) && (time.getHour() <= 23)) && ((0 <= time.getMinute()) && (time.getMinute() <= 59));
 		
 		if(!isConsistent) {
@@ -192,71 +214,24 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 		return isConsistent;
 	}
 	
-	// If there are two unnamed legs between the same two stations a via must be specified.
-	// If there is only one unnamed leg, this is chosen unless there is a via.
-	/*private boolean validateLegsbetweenSameStopsHaveNames(Stop stop) {
-		boolean specifiable = true;
-		
-		List<Leg> possibleLegs = stop.getStation().getLegs();
-		possibleLegs.stream().filter(x -> x.getStations().contains(possibleLegs))
-		
-		
-		Station st = stop.getStation();
-		
-		.stream()
-				.map(l -> l.getStations().get(0).equals(st) ? l.getStations().get(1) : l.getStations().get(0))
-				.collect(Collectors.toList());
-		
-		HashSet<Station> stationSet = new HashSet<>(stationList);
-		specifiable = stationList.size() == stationSet.size() || stop.getVia() != null;
-		
-		if(!specifiable) {
-			constraintViolated(stop, stop.getStation().getName() + ": is sourced for from a station with unspecifiable legs to this stop");
+	private boolean validateRouteIsNavigateable(TrainSchedule trainSchedule) {
+		boolean navigateable = true;
+		//iterate over pairs of stops that have legs between them
+		for(int i = 1; i < trainSchedule.getStops().size(); i++) {	
+			Stop fromStop = trainSchedule.getStops().get(i-1);
+			Stop toStop = trainSchedule.getStops().get(i);
+			Station fromStation = fromStop.getStation();
+			Station toStation = toStop.getStation();
+			//make sure that fromStop has a leg to toStop
+			navigateable &= fromStation.getLegs().stream().anyMatch(l -> l.getStations().contains(toStation));
 		}
-		return specifiable;
-	}*/
-	
-	/*private boolean validateRouteIsNavigateable(TrainSchedule schedule) {
-		//solve connected components problem
-		boolean[] marked = new boolean[schedule.getStops().size()];
-		int count = 0;
-		Stop[] stopArray = (Stop[]) schedule.getStops().toArray();
-		
-		HashMap<Station, Stop> map = new HashMap<>();
-		HashMap<Station, Integer> id = new HashMap<>();
-		
-		for(int s = 0; s < stopArray.length; s++) {
-			map.put(stopArray[s].getStation(), stopArray[s]);
-			id.put(stopArray[s].getStation(), s);
+		if(!navigateable) {
+			constraintViolated(trainSchedule, trainSchedule.toString() + ": route is not navigateable");
 		}
-		
-		for(int s = 0; s < stopArray.length; s++) {
-			if(!marked[s]) {
-				dfs(map, id, stopArray, marked, s);
-				count++;
-			}
-		}
-		
-		boolean singleComponent = count == 1;
-
-		if(!singleComponent) {
-			constraintViolated(schedule, schedule.toString() + ": route is not navigateable");
-		}
-		return singleComponent;
-	}*/
-	
-	//helper functions
-	private void dfs(HashMap<Station, Stop> map, HashMap<Station, Integer> id, Stop[] stopArray, boolean[] marked, int v) {
-		marked[v] = true;
-		for(Leg l : stopArray[v].getStation().getLegs()) {
-			for(Station s: l.getStations()) {
-				if(!marked[id.get(s)]) {
-					dfs(map, id, stopArray, marked, id.get(s));
-				}
-			}
-		}
+		return navigateable;
 	}
 	
+	//helper functions
 	private boolean routeEqual(TrainSchedule t1, TrainSchedule t2) {
 		if(t1.getStops().size() != t2.getStops().size()) return false;
 		

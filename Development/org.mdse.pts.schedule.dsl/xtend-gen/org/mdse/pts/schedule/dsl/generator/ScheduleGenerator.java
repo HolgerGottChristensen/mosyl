@@ -40,7 +40,7 @@ public class ScheduleGenerator extends AbstractGenerator {
     final Timetable timetable = Scheduler2TimetableConverter.convert(schedule);
     fsa.generateFile((strippedName + ".html"), this.toHTML(timetable));
   }
-
+  
   protected CharSequence toHTML(final Timetable tt) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<html>");
