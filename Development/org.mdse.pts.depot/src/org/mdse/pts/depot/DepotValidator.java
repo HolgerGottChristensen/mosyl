@@ -1,10 +1,16 @@
 package org.mdse.pts.depot;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
+
+import javax.imageio.spi.ImageInputStreamSpi;
+
 import org.eclipse.emf.common.util.BasicDiagnostic;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
@@ -13,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.ui.IStartup;
+import org.w3c.dom.html.HTMLOptGroupElement;
 
 public class DepotValidator extends EObjectValidator implements IStartup {
 	private DiagnosticChain diagnostics;
@@ -31,28 +38,15 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 	
 	@Override
 	public boolean validate(EClass eClass, EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		boolean modelIsValid = super.validate(eClass, eObject, diagnostics, context);
+		boolean modelIsValid = true; // super.validate(eClass, eObject, diagnostics, context);
 		
 		this.diagnostics = diagnostics;
-		
-		if (DepotPackage.eINSTANCE.getDepot().equals(eClass)) {
-			Depot depot = (Depot) eObject;
-			
-			modelIsValid &= validateDepot(depot);
-		}
 		
 		if (DepotPackage.eINSTANCE.getTrain().equals(eClass)) {
 			Train train = (Train) eObject;
 			
 			modelIsValid &= validateTrain(train);
 		}
-		
-		return modelIsValid;
-	}
-
-	private boolean validateDepot(Depot depot) {
-		boolean modelIsValid = true;
-		
 		
 		return modelIsValid;
 	}
@@ -64,8 +58,8 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 		modelIsValid &= validateLocomotiveAsFirstOrLastCoach(train);
 		modelIsValid &= validateLocomotiveNotBeetweenOtherCoaches(train);
 		modelIsValid &= validateAtMostOneDiningCoach(train);
-		modelIsValid &= validateCoacheClassesInSequenceWithOptionalDiningCoach(train);
-
+		modelIsValid &= validateCoachClassesInSequence(train);
+		modelIsValid &= validateDiningCoachBetweenPassengerCoaches(train);
 		
 		if(train.getType().equals(TrainType.INTERCITY)) {
 			modelIsValid &= validateIntercityHasAtLeastOneFirstclass(train);
@@ -77,34 +71,73 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 	}
 
 
-	private boolean validateCoacheClassesInSequenceWithOptionalDiningCoach(Train train) {
-		
+	private boolean validateDiningCoachBetweenPassengerCoaches(Train train) {
 		List<Coach> coaches = train.getCoach().stream()
-				.filter(c -> !c.getClass().equals(Locomotive.class))
+				.filter(c -> !(c instanceof Locomotive))
+				.collect(Collectors.toList());
+		
+		boolean hasFirstClassCoach = coaches.stream()
+				.filter(c -> c instanceof PassengerCoach)
+				.map(PassengerCoach.class::cast)
+				.filter(pc -> pc.getClass_().equals(CoachClass.FIRST_CLASS))
+				.count() > 0;
+				
+		boolean hasEconomyCoach = coaches.stream()
+				.filter(c -> c instanceof PassengerCoach)
+				.map(PassengerCoach.class::cast)
+				.filter(pc -> pc.getClass_().equals(CoachClass.ECONOMY))
+				.count() > 0;
+
+		
+		for (int i = 0; i < coaches.size(); i++) {
+			if(coaches.get(i) instanceof DiningCoach) {
+
+				//Check if the dining coach has a coach on both sides
+				if(i > 0 && i < coaches.size()-1) {
+					CoachClass left = ((PassengerCoach) coaches.get(i-1)).getClass_();
+					CoachClass right = ((PassengerCoach) coaches.get(i+1)).getClass_();
+					
+					if (left.equals(right)) {
+						constraintViolated(train, train.getName() + ", dining coach may not be between two coaches of the same class");
+						break;
+					}
+				} else if(hasEconomyCoach && hasFirstClassCoach) {
+					constraintViolated(train, train.getName() + ", dining coach must be between the two passenger classes");
+					break;
+				} 
+			}
+		}
+		
+		
+		return false;
+	}
+
+	private boolean validateCoachClassesInSequence(Train train) {
+		System.out.println("Train: " + train.getName());
+		List<Coach> coaches = train.getCoach().stream()
+				.filter(c -> !(c instanceof Locomotive))
+				.filter(c -> !(c instanceof DiningCoach))
 				.collect(Collectors.toList());
 		
 		Set<CoachClass> visited = new HashSet<>();
-		
-		Coach prev  = coaches.get(0);
-		if (prev.getClass().equals(PassengerCoach.class)) {
-			CoachClass prevClass = ((PassengerCoach) prev).getClass_();
-			for (int i = 1; i < coaches.size()-1; i++) {
+
+		Coach prevCoach  = coaches.get(0);
+		if (prevCoach instanceof PassengerCoach) {
+			for (int i = 1; i <= coaches.size()-1; i++) {				
+				CoachClass prevClass = ((PassengerCoach) prevCoach).getClass_();
 				visited.add(prevClass);
-				CoachClass currClass = ((PassengerCoach) coaches.get(i)).getClass_();
-				prev = coaches.get(i);
+				
+				Coach currCoach = coaches.get(i);
+				CoachClass currClass = ((PassengerCoach) currCoach).getClass_();
+				
+				prevCoach = currCoach;
 				if (currClass.equals(prevClass)) {
 					continue;
 				} else if (visited.contains(currClass)) {
-					constraintViolated(train, train.getName() + " coach classes mut be in sequence");
+					constraintViolated(train, train.getName() + ", coach classes mut be in sequence");
 				}
 			}
 		}
-		if (visited.size() > 2) {
-			if (coaches.get(0).getClass().equals(DiningCoach.class) || coaches.get(coaches.size()-1).getClass().equals(DiningCoach.class)) {
-				constraintViolated(train, train.getName() + " dining coach must be between coach classes");
-			}
-		}
-		
 		return false;
 	}
 
@@ -144,30 +177,36 @@ public class DepotValidator extends EObjectValidator implements IStartup {
 	}
 
 	private boolean validateLocomotiveNotBeetweenOtherCoaches(Train train) {
-		//TODO figure out how to skip the last element 
-		boolean constraintViolated = train.getCoach().stream()
-				.skip(1)
-				.filter(Locomotive.class::isInstance)
-				.count() > 2;
+		List<Coach> coaches = new ArrayList<>(train.getCoach());
+		coaches.remove(coaches.size()-1);
+		coaches.remove(0);
+		
+		boolean constraintViolated = coaches.stream()
+				.filter(x -> x instanceof Locomotive)
+				.count() > 0;
 		
 		if (constraintViolated) {
-			constraintViolated(train, train.getName() + " must not contain more than two locomotives");
+			constraintViolated(train, train.getName() + " locomotives may not be between coaches");
 		}
 		return false;
 	}
-
+	
+	public DepotValidator() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	private boolean validateLocomotiveAsFirstOrLastCoach(Train train) {
-		boolean constraintViolated = train.getCoach().stream()
+		Optional<Coach> firstCoach = train.getCoach().stream()
 				.findFirst()
-				.filter(Locomotive.class::isInstance)
-				.isEmpty();
+				.filter(Locomotive.class::isInstance);
 		
-		constraintViolated &= !train.getCoach()
-				.get(train.getCoach().size()-1)
-				.getClass().equals(Locomotive.class);
-				
+		boolean firstIsNotLocomotive = firstCoach.isEmpty();
 		
-		if (constraintViolated) {
+		Coach lastCoach = train.getCoach()
+				.get(train.getCoach().size()-1);
+		
+		boolean lastIsNotLocomotive = !(lastCoach instanceof Locomotive);
+		if (firstIsNotLocomotive && lastIsNotLocomotive) {
 			constraintViolated(train, train.getName() + " must have at least one locomotve in either end of the train");
 		}
 		return false;
