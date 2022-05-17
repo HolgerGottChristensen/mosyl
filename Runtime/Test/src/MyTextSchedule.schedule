@@ -1,49 +1,55 @@
 schedule for MyNetwork with MyDepot, MyDepot;
 
-schedule train ICE443 on Monday at 12:32 and Tuesday at 23:53:
+schedule train ICE111 on Monday at 12:32 and Tuesday at 23:53:
 	start at "Copenhagen Central" on platform "he"
 	terminate at "Vejle Station" on platform "heeq"
 ;
 
-schedule train ICE443 on Monday at 12:32 and Tuesday at 23:53:
-	start at "Hejsa" on platform "he"
-	terminate at "Name2" on platform "heeq"
+schedule train ICE111 on Monday at 12:32 and Tuesday at 23:53:
+	start at "Copenhagen Central" on platform "he"
+	terminate at "Roskilde Station" on platform "heeq"
 ;
 
-schedule train ICE443 on Saturday at 22:02, 23:02:
+schedule train ICE111 on Saturday at 22:02, 23:02:
 	start at "Roskilde Station" on platform "22"
-	drive via "R22" and stop at "Copenhagen Central" on platform "23" for 23 min
+	drive via "R22" and stop at "Vejle Station" on platform "23" for 23 min
+	terminate at "Copenhagen Central" on platform "42"
+;
+
+schedule train ICE111 on Saturday at 22:02, 23:02:
+	start at "Roskilde Station" on platform "22"
+	stop at "Vejle Station" on platform "23" for 23 min
+	terminate at "Copenhagen Central" on platform "42"
+;
+
+schedule train ICE111 on Saturday at 22:02, 23:02:
+	start at "Roskilde Station" on platform "22"
+	stop at "Copenhagen Central" on platform "23" for 23 min
 	terminate at "Vejle Station" on platform "42"
 ;
 
-schedule train ICE443 on Saturday at 22:02, 23:02:
-	start at "Name2" on platform "22"
-	stop at "Hejsa" on platform "23" for 23 min
-	terminate at "Name" on platform "42"
-;
-
-schedule train ICE443 on Saturday at 22:02, 23:02:
-	start at "Name2" on platform "22"
-	stop at "Hejsa" on platform "23" for 23 min
-	drive via "Legawd awdawd" and terminate at "Name" on platform "42"
+schedule train ICE111 on Saturday at 22:02, 23:02:
+	start at "Copenhagen Central" on platform "22"
+	stop at "Vejle Station" on platform "23" for 23 min
+	drive via "R22" and terminate at "Roskilde Station" on platform "42"
 ;
 
 schedule train ICE111 on Friday , Saturday at 12:32:
-	start at "Lund" on platform "fefa"
-	stop at "Name2" on platform "fref" for 32 min and reverse
-	terminate at "Name" on platform "fesaw"
+	start at "Vejle Station" on platform "fefa"
+	stop at "Roskilde Station" on platform "fref" for 32 min and reverse
+	terminate at "Copenhagen Central" on platform "fesaw"
 ;
 	
-schedule train ICE443 on Friday , Saturday at 23:32:
-	start at "Hejsa" on platform "fefa"
-	drive via "21" and stop at "Name" on platform "fref" for 32 min
-	terminate at "Name2" on platform "fesaw"
+schedule train ICE120 on Friday , Saturday at 23:32:
+	start at "Odense Station" on platform "fefa"
+	stop at "Roskilde Station" on platform "fref" for 32 min
+	terminate at "Vejle Station" on platform "fesaw"
 ;
 
-schedule train ICE443 on Friday , Saturday at 23:32:
-	start at "Hejsa" on platform "fefa"
-	stop at "Name2" on platform "3" for 10 min
-	terminate at "Lund" on platform "fesaw"
+schedule train ICE120 on Friday , Saturday at 23:32:
+	start at "Odense Station" on platform "fefa"
+	stop at "Roskilde Station" on platform "3" for 10 min
+	terminate at "Copenhagen Central" on platform "fesaw"
 ;
 
 /*schedule train ICE443 on Friday , Saturday at 12:32:

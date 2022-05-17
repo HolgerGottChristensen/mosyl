@@ -113,14 +113,15 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 			specifiable &= (legList.size() < 2 || toStop.getVia() != null);
 		}
 		if(!specifiable) {
-			constraintViolated(trainSchedule, trainSchedule.toString() + ": has a stop sourced for from a station with unspecifiable legs to this stop");
+			constraintViolated(trainSchedule, trainSchedule.toString() 
+					+ ": has a stop sourced for from a station with unspecifiable legs to this stop");
 		}
 		return specifiable;
 	}
 	
 	private boolean validateStopExistsOnceInRoute(TrainSchedule trainSchedule) {
 		boolean stationExistsOnce = false;
-		boolean stopExistsOnce = false;
+		
 		//retrieve stations in route
 		List<Station> stations = trainSchedule.getStops().stream()
 				.map(s -> s.getStation())
@@ -128,13 +129,9 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 		//if set has different size than list, then station exists several times in route
 		HashSet<Station> stationSet = new HashSet<>(stations);
 		stationExistsOnce = stationSet.size() == stations.size();
-		//if set has different size than list, then stops exists several times in route
-		stopExistsOnce = trainSchedule.getStops().size() == new HashSet<>(trainSchedule.getStops()).size();
-		System.out.println("station: " + stationExistsOnce);
-		System.out.println("stop: " + stopExistsOnce);
 		
-		if(!stationExistsOnce || !stopExistsOnce) {
-			constraintViolated(trainSchedule, trainSchedule.toString() + ": contains the same station/stop multiple times");
+		if(!stationExistsOnce) {
+			constraintViolated(trainSchedule, trainSchedule.toString() + ": contains the same station multiple times");
 		}
 		return stationExistsOnce;
 	}
@@ -146,6 +143,7 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 			depots.add(r);
 		}
 		boolean depotExistsOnce = depots.size() == schedule.getDepot().size();
+		
 		if(!depotExistsOnce) {
 			constraintViolated(schedule, schedule.toString() + ": contains the same depot multiple times");
 		}
@@ -160,6 +158,7 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 				existsInNetwork &= schedule.getNetwork().getStations().contains(s.getStation());
 			}
 		}
+		
 		if(!existsInNetwork) {
 			constraintViolated(schedule, schedule.toString() + ": some station does not exist in the network of the schedules");
 		}
@@ -205,7 +204,8 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 			//check if there is two coaches (from & back)
 			boolean twiceLocomotive = 2 == coaches.size();
 			if(!twiceLocomotive) {
-				constraintViolated(trainSchedule, trainSchedule.toString() + ": train must have two locmotives for turning on route");
+				constraintViolated(trainSchedule, trainSchedule.toString() 
+						+ ": train must have two locomotives for turning on route");
 			}
 			return twiceLocomotive;
 		}
@@ -214,7 +214,8 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 	
 	private boolean validateTimeIsConsistent(Time time) {
 		//hour should be between 0 and 23, minute should be between 0 and 59 (both inclusive)
-		boolean isConsistent = ((0 <= time.getHour()) && (time.getHour() <= 23)) && ((0 <= time.getMinute()) && (time.getMinute() <= 59));
+		boolean isConsistent = ((0 <= time.getHour()) && (time.getHour() <= 23)) 
+				&& ((0 <= time.getMinute()) && (time.getMinute() <= 59));
 		
 		if(!isConsistent) {
 			constraintViolated(time, time.getHour() + ":" + time.getMinute() + " is not a valid time");
@@ -249,7 +250,6 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 			sameRoute &= s1.getStation().getName() == s2.getStation().getName() && s1.getVia() == s2.getVia();
 		}
 		return sameRoute;
-		//return t1.getStops() == t2.getStops();
 	}
 	
 	//Utility method
