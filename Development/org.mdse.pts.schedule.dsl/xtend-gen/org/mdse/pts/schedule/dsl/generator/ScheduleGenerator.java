@@ -19,7 +19,7 @@ import org.mdse.pts.time.Weekday;
 import org.mdse.pts.timetable.Arrival;
 import org.mdse.pts.timetable.Departure;
 import org.mdse.pts.timetable.Table;
-import org.mdse.pts.timetable.Timetable;
+import org.mdse.pts.timetable.TimeTableSystem;
 
 /**
  * Generates code from your model files on save.
@@ -37,11 +37,11 @@ public class ScheduleGenerator extends AbstractGenerator {
     String strippedName = StringExtensions.toFirstUpper(name.substring(0, name.indexOf(".")));
     EObject _get = resource.getContents().get(0);
     final Schedule schedule = ((Schedule) _get);
-    final Timetable timetable = Scheduler2TimetableConverter.convert(schedule);
+    final TimeTableSystem timetable = Scheduler2TimetableConverter.convert(schedule);
     fsa.generateFile((strippedName + ".html"), this.toHTML(timetable));
   }
   
-  protected CharSequence toHTML(final Timetable tt) {
+  protected CharSequence toHTML(final TimeTableSystem tt) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("<html>");
     _builder.newLine();

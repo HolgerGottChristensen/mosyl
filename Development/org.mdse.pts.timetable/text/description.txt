@@ -7,7 +7,7 @@ This can be disabled with -vmargs -Dorg.eclipse.emf.examples.generator.validator
 
 Package timetable <http://mdse.org/pts/timetable>
 
-  Class Timetable
+  Class TimeTableSystem
     Reference table : Table<<0..*>>
 
   Class Table

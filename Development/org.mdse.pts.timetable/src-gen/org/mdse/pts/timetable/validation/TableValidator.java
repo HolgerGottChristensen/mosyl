@@ -10,7 +10,6 @@ import org.mdse.pts.network.Station;
 
 import org.mdse.pts.timetable.Arrival;
 import org.mdse.pts.timetable.Departure;
-import org.mdse.pts.timetable.Juncture;
 
 /**
  * A sample validator interface for {@link org.mdse.pts.timetable.Table}.
@@ -22,9 +21,6 @@ public interface TableValidator {
 	boolean validate();
 
 	boolean validateArrivals(EList<Arrival> value);
-
-	boolean validateJunctures(EList<Juncture> value);
 	boolean validateStation(Station value);
-
 	boolean validateDepartures(EList<Departure> value);
 }

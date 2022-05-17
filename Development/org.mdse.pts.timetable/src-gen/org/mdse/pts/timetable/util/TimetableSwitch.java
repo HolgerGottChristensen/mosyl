@@ -66,9 +66,9 @@ public class TimetableSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case TimetablePackage.TIMETABLE: {
-				Timetable timetable = (Timetable)theEObject;
-				T result = caseTimetable(timetable);
+			case TimetablePackage.TIME_TABLE_SYSTEM: {
+				TimeTableSystem timeTableSystem = (TimeTableSystem)theEObject;
+				T result = caseTimeTableSystem(timeTableSystem);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -103,17 +103,17 @@ public class TimetableSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Timetable</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Time Table System</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Timetable</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Time Table System</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTimetable(Timetable object) {
+	public T caseTimeTableSystem(TimeTableSystem object) {
 		return null;
 	}
 

@@ -22,13 +22,13 @@ public interface TimetableFactory extends EFactory {
 	TimetableFactory eINSTANCE = org.mdse.pts.timetable.impl.TimetableFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Timetable</em>'.
+	 * Returns a new object of class '<em>Time Table System</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Timetable</em>'.
+	 * @return a new object of class '<em>Time Table System</em>'.
 	 * @generated
 	 */
-	Timetable createTimetable();
+	TimeTableSystem createTimeTableSystem();
 
 	/**
 	 * Returns a new object of class '<em>Table</em>'.

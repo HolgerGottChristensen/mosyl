@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import org.mdse.pts.timetable.Timetable
+import org.mdse.pts.timetable.TimeTableSystem
 import org.mdse.pts.timetable.Arrival
 import org.mdse.pts.schedule.Schedule
 import org.mdse.pts.timetable.Departure
@@ -32,7 +32,7 @@ class ScheduleGenerator extends AbstractGenerator {
 // «  »		
 	}
 	
-	protected def toHTML(Timetable tt) '''
+	protected def toHTML(TimeTableSystem tt) '''
 		<html>
 			<head>
 				<style>

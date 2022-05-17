@@ -68,8 +68,8 @@ public class TimetableAdapterFactory extends AdapterFactoryImpl {
 	protected TimetableSwitch<Adapter> modelSwitch =
 		new TimetableSwitch<Adapter>() {
 			@Override
-			public Adapter caseTimetable(Timetable object) {
-				return createTimetableAdapter();
+			public Adapter caseTimeTableSystem(TimeTableSystem object) {
+				return createTimeTableSystemAdapter();
 			}
 			@Override
 			public Adapter caseTable(Table object) {
@@ -108,16 +108,16 @@ public class TimetableAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.mdse.pts.timetable.Timetable <em>Timetable</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.mdse.pts.timetable.TimeTableSystem <em>Time Table System</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.mdse.pts.timetable.Timetable
+	 * @see org.mdse.pts.timetable.TimeTableSystem
 	 * @generated
 	 */
-	public Adapter createTimetableAdapter() {
+	public Adapter createTimeTableSystemAdapter() {
 		return null;
 	}
 

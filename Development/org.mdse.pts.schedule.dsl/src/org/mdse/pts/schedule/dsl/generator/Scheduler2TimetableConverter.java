@@ -23,7 +23,7 @@ import org.mdse.pts.time.Weekday;
 import org.mdse.pts.timetable.Arrival;
 import org.mdse.pts.timetable.Departure;
 import org.mdse.pts.timetable.Table;
-import org.mdse.pts.timetable.Timetable;
+import org.mdse.pts.timetable.TimeTableSystem;
 import org.mdse.pts.timetable.TimetableFactory;
 
 
@@ -64,7 +64,7 @@ public class Scheduler2TimetableConverter {
 		}
 	}
 	
-	public static Timetable convert(Schedule schedule) {
+	public static TimeTableSystem convert(Schedule schedule) {
 		
 		List<TrainSchedule> trainSchedules = schedule.getTrains();
 		Set<Station> stationSet = new HashSet<>();
@@ -129,7 +129,7 @@ public class Scheduler2TimetableConverter {
 			}
 		}
 		
-		Timetable tt = TimetableFactory.eINSTANCE.createTimetable();
+		TimeTableSystem tt = TimetableFactory.eINSTANCE.createTimeTableSystem();
 		List<Station> stations = new ArrayList<>(stationSet);
 		stations.sort((x, y) -> x.getName().compareTo(y.getName()));
 		
@@ -142,12 +142,12 @@ public class Scheduler2TimetableConverter {
 		for(Table t : tt.getTable()) {
 			
 		    ArrayList<Arrival> arrivals = new ArrayList<Arrival>(t.getArrivals());
-		    arrivals.sort((x, y) -> (y.getTime().getHour()*60 + y.getTime().getMinute()) - (x.getTime().getHour()*60 + x.getTime().getMinute()));
+		    arrivals.sort((x, y) -> (x.getTime().getHour()*60 + x.getTime().getMinute()) - (y.getTime().getHour()*60 + y.getTime().getMinute()));
 		    arrivals.sort((x, y) -> x.getWeekday().getValue() - y.getWeekday().getValue());
 		    
 		    
 		    ArrayList<Departure> departures = new ArrayList<Departure>(t.getDepartures());
-		    departures.sort((x, y) -> (y.getTime().getHour()*60 + y.getTime().getMinute()) - (x.getTime().getHour()*60 + x.getTime().getMinute()));
+		    departures.sort((x, y) -> (x.getTime().getHour()*60 + x.getTime().getMinute()) - (y.getTime().getHour()*60 + y.getTime().getMinute()));
 			departures.sort((x, y) -> x.getWeekday().getValue() - y.getWeekday().getValue());
 			
 			t.getArrivals().clear();

@@ -56,7 +56,7 @@ public class TimetableFactoryImpl extends EFactoryImpl implements TimetableFacto
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case TimetablePackage.TIMETABLE: return createTimetable();
+			case TimetablePackage.TIME_TABLE_SYSTEM: return createTimeTableSystem();
 			case TimetablePackage.TABLE: return createTable();
 			case TimetablePackage.ARRIVAL: return createArrival();
 			case TimetablePackage.DEPARTURE: return createDeparture();
@@ -71,9 +71,9 @@ public class TimetableFactoryImpl extends EFactoryImpl implements TimetableFacto
 	 * @generated
 	 */
 	@Override
-	public Timetable createTimetable() {
-		TimetableImpl timetable = new TimetableImpl();
-		return timetable;
+	public TimeTableSystem createTimeTableSystem() {
+		TimeTableSystemImpl timeTableSystem = new TimeTableSystemImpl();
+		return timeTableSystem;
 	}
 
 	/**

@@ -19,7 +19,7 @@ import org.mdse.pts.timetable.Arrival;
 import org.mdse.pts.timetable.Departure;
 import org.mdse.pts.timetable.Juncture;
 import org.mdse.pts.timetable.Table;
-import org.mdse.pts.timetable.Timetable;
+import org.mdse.pts.timetable.TimeTableSystem;
 import org.mdse.pts.timetable.TimetableFactory;
 import org.mdse.pts.timetable.TimetablePackage;
 
@@ -35,7 +35,7 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass timetableEClass = null;
+	private EClass timeTableSystemEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -137,8 +137,8 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 	 * @generated
 	 */
 	@Override
-	public EClass getTimetable() {
-		return timetableEClass;
+	public EClass getTimeTableSystem() {
+		return timeTableSystemEClass;
 	}
 
 	/**
@@ -147,8 +147,8 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 	 * @generated
 	 */
 	@Override
-	public EReference getTimetable_Table() {
-		return (EReference)timetableEClass.getEStructuralFeatures().get(0);
+	public EReference getTimeTableSystem_Table() {
+		return (EReference)timeTableSystemEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -310,8 +310,8 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 		isCreated = true;
 
 		// Create classes and their features
-		timetableEClass = createEClass(TIMETABLE);
-		createEReference(timetableEClass, TIMETABLE__TABLE);
+		timeTableSystemEClass = createEClass(TIME_TABLE_SYSTEM);
+		createEReference(timeTableSystemEClass, TIME_TABLE_SYSTEM__TABLE);
 
 		tableEClass = createEClass(TABLE);
 		createEReference(tableEClass, TABLE__ARRIVALS);
@@ -368,8 +368,8 @@ public class TimetablePackageImpl extends EPackageImpl implements TimetablePacka
 		departureEClass.getESuperTypes().add(this.getJuncture());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(timetableEClass, Timetable.class, "Timetable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTimetable_Table(), this.getTable(), null, "table", null, 0, -1, Timetable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(timeTableSystemEClass, TimeTableSystem.class, "TimeTableSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getTimeTableSystem_Table(), this.getTable(), null, "table", null, 0, -1, TimeTableSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tableEClass, Table.class, "Table", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTable_Arrivals(), this.getArrival(), null, "arrivals", null, 0, -1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

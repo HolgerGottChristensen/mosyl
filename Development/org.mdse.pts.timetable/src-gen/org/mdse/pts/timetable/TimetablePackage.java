@@ -57,14 +57,14 @@ public interface TimetablePackage extends EPackage {
 	TimetablePackage eINSTANCE = org.mdse.pts.timetable.impl.TimetablePackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.mdse.pts.timetable.impl.TimetableImpl <em>Timetable</em>}' class.
+	 * The meta object id for the '{@link org.mdse.pts.timetable.impl.TimeTableSystemImpl <em>Time Table System</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.mdse.pts.timetable.impl.TimetableImpl
-	 * @see org.mdse.pts.timetable.impl.TimetablePackageImpl#getTimetable()
+	 * @see org.mdse.pts.timetable.impl.TimeTableSystemImpl
+	 * @see org.mdse.pts.timetable.impl.TimetablePackageImpl#getTimeTableSystem()
 	 * @generated
 	 */
-	int TIMETABLE = 0;
+	int TIME_TABLE_SYSTEM = 0;
 
 	/**
 	 * The feature id for the '<em><b>Table</b></em>' containment reference list.
@@ -73,25 +73,25 @@ public interface TimetablePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TIMETABLE__TABLE = 0;
+	int TIME_TABLE_SYSTEM__TABLE = 0;
 
 	/**
-	 * The number of structural features of the '<em>Timetable</em>' class.
+	 * The number of structural features of the '<em>Time Table System</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMETABLE_FEATURE_COUNT = 1;
+	int TIME_TABLE_SYSTEM_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>Timetable</em>' class.
+	 * The number of operations of the '<em>Time Table System</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMETABLE_OPERATION_COUNT = 0;
+	int TIME_TABLE_SYSTEM_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.mdse.pts.timetable.impl.TableImpl <em>Table</em>}' class.
@@ -360,25 +360,25 @@ public interface TimetablePackage extends EPackage {
 
 
 	/**
-	 * Returns the meta object for class '{@link org.mdse.pts.timetable.Timetable <em>Timetable</em>}'.
+	 * Returns the meta object for class '{@link org.mdse.pts.timetable.TimeTableSystem <em>Time Table System</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Timetable</em>'.
-	 * @see org.mdse.pts.timetable.Timetable
+	 * @return the meta object for class '<em>Time Table System</em>'.
+	 * @see org.mdse.pts.timetable.TimeTableSystem
 	 * @generated
 	 */
-	EClass getTimetable();
+	EClass getTimeTableSystem();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link org.mdse.pts.timetable.Timetable#getTable <em>Table</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.mdse.pts.timetable.TimeTableSystem#getTable <em>Table</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Table</em>'.
-	 * @see org.mdse.pts.timetable.Timetable#getTable()
-	 * @see #getTimetable()
+	 * @see org.mdse.pts.timetable.TimeTableSystem#getTable()
+	 * @see #getTimeTableSystem()
 	 * @generated
 	 */
-	EReference getTimetable_Table();
+	EReference getTimeTableSystem_Table();
 
 	/**
 	 * Returns the meta object for class '{@link org.mdse.pts.timetable.Table <em>Table</em>}'.
@@ -543,14 +543,14 @@ public interface TimetablePackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.mdse.pts.timetable.impl.TimetableImpl <em>Timetable</em>}' class.
+		 * The meta object literal for the '{@link org.mdse.pts.timetable.impl.TimeTableSystemImpl <em>Time Table System</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.mdse.pts.timetable.impl.TimetableImpl
-		 * @see org.mdse.pts.timetable.impl.TimetablePackageImpl#getTimetable()
+		 * @see org.mdse.pts.timetable.impl.TimeTableSystemImpl
+		 * @see org.mdse.pts.timetable.impl.TimetablePackageImpl#getTimeTableSystem()
 		 * @generated
 		 */
-		EClass TIMETABLE = eINSTANCE.getTimetable();
+		EClass TIME_TABLE_SYSTEM = eINSTANCE.getTimeTableSystem();
 
 		/**
 		 * The meta object literal for the '<em><b>Table</b></em>' containment reference list feature.
@@ -558,7 +558,7 @@ public interface TimetablePackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TIMETABLE__TABLE = eINSTANCE.getTimetable_Table();
+		EReference TIME_TABLE_SYSTEM__TABLE = eINSTANCE.getTimeTableSystem_Table();
 
 		/**
 		 * The meta object literal for the '{@link org.mdse.pts.timetable.impl.TableImpl <em>Table</em>}' class.

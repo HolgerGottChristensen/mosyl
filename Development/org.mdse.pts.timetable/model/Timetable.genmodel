@@ -9,8 +9,8 @@
   <foreignModel>Timetable.ecore</foreignModel>
   <genPackages prefix="Timetable" basePackage="org.mdse.pts" disposableProviderFactory="true"
       ecorePackage="Timetable.ecore#/">
-    <genClasses ecoreClass="Timetable.ecore#//Timetable">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Timetable.ecore#//Timetable/table"/>
+    <genClasses ecoreClass="Timetable.ecore#//TimeTableSystem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Timetable.ecore#//TimeTableSystem/table"/>
     </genClasses>
     <genClasses ecoreClass="Timetable.ecore#//Table">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Timetable.ecore#//Table/arrivals"/>
