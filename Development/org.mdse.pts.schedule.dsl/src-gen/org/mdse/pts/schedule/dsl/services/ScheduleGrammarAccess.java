@@ -141,7 +141,6 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final RuleCall cStopsTerminalStopParserRuleCall_9_0_0 = (RuleCall)cStopsAlternatives_9_0.eContents().get(0);
 		private final RuleCall cStopsViaTerminalStopParserRuleCall_9_0_1 = (RuleCall)cStopsAlternatives_9_0.eContents().get(1);
 		
-		////TODO: Define syntax rules
 		//TrainSchedule:
 		//    "schedule" "train" train=[depot::Train] "on"
 		//        starttimes+=StartTime ("and" starttimes+=StartTime)*
@@ -305,11 +304,13 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Keyword cRotateReverseKeyword_13_1_0 = (Keyword)cRotateAssignment_13_1.eContents().get(0);
 		
 		//ViaStop returns Stop:
-		//    "drive" "via" via=[network::Leg|STRING] "and" "stop" "at" station=[network::Station|STRING] "on" "platform" platform=STRING "for" stoppedTime=INT "min" ("and" rotate?=("reverse"))?
+		//    "drive" "via" via=[network::Leg|STRING] "and" "stop" "at" station=[network::Station|STRING]
+		//    "on" "platform" platform=STRING "for" stoppedTime=INT "min" ("and" rotate?=("reverse"))?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"drive" "via" via=[network::Leg|STRING] "and" "stop" "at" station=[network::Station|STRING] "on" "platform" platform=STRING "for" stoppedTime=INT "min" ("and" rotate?=("reverse"))?
+		//"drive" "via" via=[network::Leg|STRING] "and" "stop" "at" station=[network::Station|STRING]
+		//"on" "platform" platform=STRING "for" stoppedTime=INT "min" ("and" rotate?=("reverse"))?
 		public Group getGroup() { return cGroup; }
 		
 		//"drive"
@@ -840,7 +841,6 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		return getScheduleAccess().getRule();
 	}
 	
-	////TODO: Define syntax rules
 	//TrainSchedule:
 	//    "schedule" "train" train=[depot::Train] "on"
 	//        starttimes+=StartTime ("and" starttimes+=StartTime)*
@@ -869,7 +869,8 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//ViaStop returns Stop:
-	//    "drive" "via" via=[network::Leg|STRING] "and" "stop" "at" station=[network::Station|STRING] "on" "platform" platform=STRING "for" stoppedTime=INT "min" ("and" rotate?=("reverse"))?
+	//    "drive" "via" via=[network::Leg|STRING] "and" "stop" "at" station=[network::Station|STRING]
+	//    "on" "platform" platform=STRING "for" stoppedTime=INT "min" ("and" rotate?=("reverse"))?
 	//;
 	public ViaStopElements getViaStopAccess() {
 		return pViaStop;

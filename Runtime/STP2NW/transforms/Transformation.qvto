@@ -8,14 +8,12 @@ main() {
 }
 
 mapping MMStationPlan::StationPlan :: StationPlan2Network() : MMNetwork::Network {
-  --TODO: Implement
   name := self.identifier;
   stations := self.trainStations->map TrainStation2Station();
   legs := source.objectsOfType(MMStationPlan::Connection)->map Connection2Leg();
 }
 
 mapping MMStationPlan::TrainStation :: TrainStation2Station() : MMNetwork::Station {
-  --TODO: Implement
   name := self.identifier;
   
   legs := self.outgoingConnections.late resolve (MMNetwork::Leg); 
@@ -24,7 +22,6 @@ mapping MMStationPlan::TrainStation :: TrainStation2Station() : MMNetwork::Stati
 
 
 mapping MMStationPlan::Connection :: Connection2Leg() : MMNetwork::Leg { 
-   --TODO: Implement
    name := self.identifier;
    
    stations := self.sourceStation.resolve (MMNetwork::Station);
