@@ -72,26 +72,26 @@ public class TimetableItemProviderAdapterFactory extends TimetableAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.mdse.pts.timetable.Timetable} instances.
+	 * This keeps track of the one adapter used for all {@link org.mdse.pts.timetable.TimeTableSystem} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TimetableItemProvider timetableItemProvider;
+	protected TimeTableSystemItemProvider timeTableSystemItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.mdse.pts.timetable.Timetable}.
+	 * This creates an adapter for a {@link org.mdse.pts.timetable.TimeTableSystem}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createTimetableAdapter() {
-		if (timetableItemProvider == null) {
-			timetableItemProvider = new TimetableItemProvider(this);
+	public Adapter createTimeTableSystemAdapter() {
+		if (timeTableSystemItemProvider == null) {
+			timeTableSystemItemProvider = new TimeTableSystemItemProvider(this);
 		}
 
-		return timetableItemProvider;
+		return timeTableSystemItemProvider;
 	}
 
 	/**
@@ -268,7 +268,7 @@ public class TimetableItemProviderAdapterFactory extends TimetableAdapterFactory
 	 */
 	@Override
 	public void dispose() {
-		if (timetableItemProvider != null) timetableItemProvider.dispose();
+		if (timeTableSystemItemProvider != null) timeTableSystemItemProvider.dispose();
 		if (tableItemProvider != null) tableItemProvider.dispose();
 		if (arrivalItemProvider != null) arrivalItemProvider.dispose();
 		if (departureItemProvider != null) departureItemProvider.dispose();

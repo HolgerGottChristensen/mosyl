@@ -22,17 +22,17 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import org.mdse.pts.timetable.Timetable;
+import org.mdse.pts.timetable.TimeTableSystem;
 import org.mdse.pts.timetable.TimetableFactory;
 import org.mdse.pts.timetable.TimetablePackage;
 
 /**
- * This is the item provider adapter for a {@link org.mdse.pts.timetable.Timetable} object.
+ * This is the item provider adapter for a {@link org.mdse.pts.timetable.TimeTableSystem} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class TimetableItemProvider 
+public class TimeTableSystemItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -46,7 +46,7 @@ public class TimetableItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TimetableItemProvider(AdapterFactory adapterFactory) {
+	public TimeTableSystemItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -77,7 +77,7 @@ public class TimetableItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(TimetablePackage.Literals.TIMETABLE__TABLE);
+			childrenFeatures.add(TimetablePackage.Literals.TIME_TABLE_SYSTEM__TABLE);
 		}
 		return childrenFeatures;
 	}
@@ -96,14 +96,14 @@ public class TimetableItemProvider
 	}
 
 	/**
-	 * This returns Timetable.gif.
+	 * This returns TimeTableSystem.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Timetable"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/TimeTableSystem"));
 	}
 
 	/**
@@ -114,7 +114,7 @@ public class TimetableItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Timetable_type");
+		return getString("_UI_TimeTableSystem_type");
 	}
 
 
@@ -129,8 +129,8 @@ public class TimetableItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Timetable.class)) {
-			case TimetablePackage.TIMETABLE__TABLE:
+		switch (notification.getFeatureID(TimeTableSystem.class)) {
+			case TimetablePackage.TIME_TABLE_SYSTEM__TABLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -150,7 +150,7 @@ public class TimetableItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(TimetablePackage.Literals.TIMETABLE__TABLE,
+				(TimetablePackage.Literals.TIME_TABLE_SYSTEM__TABLE,
 				 TimetableFactory.eINSTANCE.createTable()));
 	}
 

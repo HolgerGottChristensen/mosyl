@@ -162,6 +162,7 @@ import org.eclipse.ui.actions.WorkspaceModifyOperation;
 import org.mdse.pts.depot.provider.DepotItemProviderAdapterFactory;
 
 import org.mdse.pts.network.provider.NetworkItemProviderAdapterFactory;
+
 import org.mdse.pts.time.provider.TimeItemProviderAdapterFactory;
 
 

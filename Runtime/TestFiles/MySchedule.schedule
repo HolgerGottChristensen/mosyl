@@ -1,6 +1,6 @@
-schedule for MyNetwork with MyDepot, MyDepot;
+schedule for MyNetwork with MyDepot;
 
-schedule train ICE120 on Monday at 10:10 and Tuesday at 23:53:
+schedule train ICE120 on Monday at 10:50 and Tuesday at 23:53:
 	start at "Copenhagen Central" on platform "7"
 	terminate at "Vejle Station" on platform "1"
 ;

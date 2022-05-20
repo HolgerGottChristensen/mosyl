@@ -1,0 +1,610 @@
+<html>
+	<head>
+		<style>
+			.styled-table {
+			    border-collapse: collapse;
+			    margin: 25px 0;
+			    font-size: 0.9em;
+			    font-family: sans-serif;
+			    min-width: 400px;
+			    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+			}
+			.styled-table thead tr {
+			    background-color: #009879;
+			    color: #ffffff;
+			    text-align: left;
+			}
+			.styled-table th {
+				padding: 12px 15px;
+			}
+			.styled-table td {
+			    padding: 12px 15px;
+			    border-left: thin solid #dddddd;
+			}
+			.styled-table tbody tr {
+			    border-bottom: thin solid #dddddd;
+			    
+			}
+			.styled-table tbody tr:nth-of-type(even) {
+			    background-color: #f3f3f3;
+			}
+			
+			.styled-table tbody tr:last-of-type {
+			    border-bottom: 2px solid #009879;
+			}
+			.styled-table tbody tr.active-row {
+			    font-weight: bold;
+			    color: #009879;
+			}
+		</style>
+	</head>
+	<body>
+	<h1>Copenhagen Central</h1>
+	<h2>Arrivals</h2>
+	<table class="styled-table">
+		<thead>
+		  <tr>
+		    <th>Weekday</th>
+		    <th>Time</th>
+		    <th>Train</th>
+		    <th>Origin</th>
+		    <th>Information</th>
+		    <th>Platform</th>
+		  </tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>Saturday</td>
+		  <td>00:32</td>
+		  <td>ICE120</td>
+		  <td>Roskilde Station</td>
+		  <td></td>
+		  <td>3</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>07:41</td>
+		  <td>ICE120</td>
+		  <td>Vejle Station</td>
+		  <td></td>
+		  <td>23</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>08:01</td>
+		  <td>ICE120</td>
+		  <td>Vejle Station</td>
+		  <td></td>
+		  <td>23</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>22:12</td>
+		  <td>ICE120</td>
+		  <td>Roskilde Station</td>
+		  <td></td>
+		  <td>22</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>23:12</td>
+		  <td>ICE120</td>
+		  <td>Roskilde Station</td>
+		  <td></td>
+		  <td>22</td>
+		</tr>
+		<tr>
+			<td>Sunday</td>
+		  <td>00:32</td>
+		  <td>ICE120</td>
+		  <td>Roskilde Station</td>
+		  <td></td>
+		  <td>3</td>
+		</tr>
+		<tr>
+			<td>Sunday</td>
+		  <td>03:17</td>
+		  <td>ICE120</td>
+		  <td>Vejle Station</td>
+		  <td></td>
+		  <td>23</td>
+		</tr>
+		<tr>
+			<td>Sunday</td>
+		  <td>04:14</td>
+		  <td>ICE120</td>
+		  <td>Vejle Station</td>
+		  <td></td>
+		  <td>23</td>
+		</tr>
+		</tbody>
+	</table>
+	
+	<h2>Departures</h2>
+	<table class="styled-table">
+		<thead>
+		  <tr>
+		    <th>Weekday</th>
+		    <th>Time</th>
+		    <th>Train</th>
+		    <th>Destination</th>
+		    <th>Information</th>
+		    <th>Platform</th>
+		  </tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>Monday</td>
+		  <td>10:50</td>
+		  <td>ICE120</td>
+		  <td>Vejle Station</td>
+		  <td></td>
+		  <td>7</td>
+		</tr>
+		<tr>
+			<td>Monday</td>
+		  <td>12:32</td>
+		  <td>ICE120</td>
+		  <td>Roskilde Station</td>
+		  <td></td>
+		  <td>7</td>
+		</tr>
+		<tr>
+			<td>Tuesday</td>
+		  <td>23:53</td>
+		  <td>ICE120</td>
+		  <td>Vejle Station</td>
+		  <td></td>
+		  <td>7</td>
+		</tr>
+		<tr>
+			<td>Tuesday</td>
+		  <td>23:53</td>
+		  <td>ICE120</td>
+		  <td>Roskilde Station</td>
+		  <td></td>
+		  <td>7</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>22:02</td>
+		  <td>ICE120</td>
+		  <td>Vejle Station</td>
+		  <td></td>
+		  <td>22</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>22:35</td>
+		  <td>ICE120</td>
+		  <td>Vejle Station</td>
+		  <td></td>
+		  <td>23</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>23:02</td>
+		  <td>ICE120</td>
+		  <td>Vejle Station</td>
+		  <td></td>
+		  <td>22</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>23:35</td>
+		  <td>ICE120</td>
+		  <td>Vejle Station</td>
+		  <td></td>
+		  <td>23</td>
+		</tr>
+		</tbody>
+	</table>
+	<hr>
+	<h1>Odense Station</h1>
+	<h2>Arrivals</h2>
+	<p>No arrivals for station</p>
+	
+	<h2>Departures</h2>
+	<table class="styled-table">
+		<thead>
+		  <tr>
+		    <th>Weekday</th>
+		    <th>Time</th>
+		    <th>Train</th>
+		    <th>Destination</th>
+		    <th>Information</th>
+		    <th>Platform</th>
+		  </tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>Friday</td>
+		  <td>23:32</td>
+		  <td>ICE120</td>
+		  <td>Roskilde Station</td>
+		  <td></td>
+		  <td>fefa</td>
+		</tr>
+		<tr>
+			<td>Friday</td>
+		  <td>23:32</td>
+		  <td>ICE120</td>
+		  <td>Roskilde Station</td>
+		  <td></td>
+		  <td>fefa</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>23:32</td>
+		  <td>ICE120</td>
+		  <td>Roskilde Station</td>
+		  <td></td>
+		  <td>fefa</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>23:32</td>
+		  <td>ICE120</td>
+		  <td>Roskilde Station</td>
+		  <td></td>
+		  <td>fefa</td>
+		</tr>
+		</tbody>
+	</table>
+	<hr>
+	<h1>Roskilde Station</h1>
+	<h2>Arrivals</h2>
+	<table class="styled-table">
+		<thead>
+		  <tr>
+		    <th>Weekday</th>
+		    <th>Time</th>
+		    <th>Train</th>
+		    <th>Origin</th>
+		    <th>Information</th>
+		    <th>Platform</th>
+		  </tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>Monday</td>
+		  <td>12:42</td>
+		  <td>ICE120</td>
+		  <td>Copenhagen Central</td>
+		  <td></td>
+		  <td>7</td>
+		</tr>
+		<tr>
+			<td>Wednesday</td>
+		  <td>00:03</td>
+		  <td>ICE120</td>
+		  <td>Copenhagen Central</td>
+		  <td></td>
+		  <td>7</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>00:12</td>
+		  <td>ICE120</td>
+		  <td>Odense Station</td>
+		  <td></td>
+		  <td>fefa</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>00:12</td>
+		  <td>ICE120</td>
+		  <td>Odense Station</td>
+		  <td></td>
+		  <td>fefa</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>22:48</td>
+		  <td>ICE120</td>
+		  <td>Vejle Station</td>
+		  <td></td>
+		  <td>23</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>23:48</td>
+		  <td>ICE120</td>
+		  <td>Vejle Station</td>
+		  <td></td>
+		  <td>23</td>
+		</tr>
+		<tr>
+			<td>Sunday</td>
+		  <td>00:12</td>
+		  <td>ICE120</td>
+		  <td>Odense Station</td>
+		  <td></td>
+		  <td>fefa</td>
+		</tr>
+		<tr>
+			<td>Sunday</td>
+		  <td>00:12</td>
+		  <td>ICE120</td>
+		  <td>Odense Station</td>
+		  <td></td>
+		  <td>fefa</td>
+		</tr>
+		</tbody>
+	</table>
+	
+	<h2>Departures</h2>
+	<table class="styled-table">
+		<thead>
+		  <tr>
+		    <th>Weekday</th>
+		    <th>Time</th>
+		    <th>Train</th>
+		    <th>Destination</th>
+		    <th>Information</th>
+		    <th>Platform</th>
+		  </tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>Saturday</td>
+		  <td>00:22</td>
+		  <td>ICE120</td>
+		  <td>Copenhagen Central</td>
+		  <td></td>
+		  <td>3</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>00:44</td>
+		  <td>ICE120</td>
+		  <td>Vejle Station</td>
+		  <td></td>
+		  <td>fref</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>06:55</td>
+		  <td>ICE120</td>
+		  <td>Vejle Station</td>
+		  <td></td>
+		  <td>1</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>07:15</td>
+		  <td>ICE120</td>
+		  <td>Vejle Station</td>
+		  <td></td>
+		  <td>1</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>22:02</td>
+		  <td>ICE120</td>
+		  <td>Copenhagen Central</td>
+		  <td></td>
+		  <td>22</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>23:02</td>
+		  <td>ICE120</td>
+		  <td>Vejle Station</td>
+		  <td></td>
+		  <td>22</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>23:02</td>
+		  <td>ICE120</td>
+		  <td>Copenhagen Central</td>
+		  <td></td>
+		  <td>22</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>23:59</td>
+		  <td>ICE120</td>
+		  <td>Vejle Station</td>
+		  <td></td>
+		  <td>22</td>
+		</tr>
+		<tr>
+			<td>Sunday</td>
+		  <td>00:22</td>
+		  <td>ICE120</td>
+		  <td>Copenhagen Central</td>
+		  <td></td>
+		  <td>3</td>
+		</tr>
+		<tr>
+			<td>Sunday</td>
+		  <td>00:44</td>
+		  <td>ICE120</td>
+		  <td>Vejle Station</td>
+		  <td></td>
+		  <td>fref</td>
+		</tr>
+		</tbody>
+	</table>
+	<hr>
+	<h1>Vejle Station</h1>
+	<h2>Arrivals</h2>
+	<table class="styled-table">
+		<thead>
+		  <tr>
+		    <th>Weekday</th>
+		    <th>Time</th>
+		    <th>Train</th>
+		    <th>Origin</th>
+		    <th>Information</th>
+		    <th>Platform</th>
+		  </tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>Monday</td>
+		  <td>10:55</td>
+		  <td>ICE120</td>
+		  <td>Copenhagen Central</td>
+		  <td></td>
+		  <td>7</td>
+		</tr>
+		<tr>
+			<td>Tuesday</td>
+		  <td>23:58</td>
+		  <td>ICE120</td>
+		  <td>Copenhagen Central</td>
+		  <td></td>
+		  <td>7</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>04:31</td>
+		  <td>ICE120</td>
+		  <td>Roskilde Station</td>
+		  <td></td>
+		  <td>fref</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>07:13</td>
+		  <td>ICE120</td>
+		  <td>Roskilde Station</td>
+		  <td></td>
+		  <td>1</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>07:33</td>
+		  <td>ICE120</td>
+		  <td>Roskilde Station</td>
+		  <td></td>
+		  <td>1</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>22:07</td>
+		  <td>ICE120</td>
+		  <td>Copenhagen Central</td>
+		  <td></td>
+		  <td>22</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>22:40</td>
+		  <td>ICE120</td>
+		  <td>Copenhagen Central</td>
+		  <td></td>
+		  <td>23</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>23:07</td>
+		  <td>ICE120</td>
+		  <td>Copenhagen Central</td>
+		  <td></td>
+		  <td>22</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>23:40</td>
+		  <td>ICE120</td>
+		  <td>Copenhagen Central</td>
+		  <td></td>
+		  <td>23</td>
+		</tr>
+		<tr>
+			<td>Sunday</td>
+		  <td>02:49</td>
+		  <td>ICE120</td>
+		  <td>Roskilde Station</td>
+		  <td></td>
+		  <td>22</td>
+		</tr>
+		<tr>
+			<td>Sunday</td>
+		  <td>03:46</td>
+		  <td>ICE120</td>
+		  <td>Roskilde Station</td>
+		  <td></td>
+		  <td>22</td>
+		</tr>
+		<tr>
+			<td>Sunday</td>
+		  <td>04:31</td>
+		  <td>ICE120</td>
+		  <td>Roskilde Station</td>
+		  <td></td>
+		  <td>fref</td>
+		</tr>
+		</tbody>
+	</table>
+	
+	<h2>Departures</h2>
+	<table class="styled-table">
+		<thead>
+		  <tr>
+		    <th>Weekday</th>
+		    <th>Time</th>
+		    <th>Train</th>
+		    <th>Destination</th>
+		    <th>Information</th>
+		    <th>Platform</th>
+		  </tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>Saturday</td>
+		  <td>07:36</td>
+		  <td>ICE120</td>
+		  <td>Copenhagen Central</td>
+		  <td></td>
+		  <td>23</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>07:56</td>
+		  <td>ICE120</td>
+		  <td>Copenhagen Central</td>
+		  <td></td>
+		  <td>23</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>22:30</td>
+		  <td>ICE120</td>
+		  <td>Roskilde Station</td>
+		  <td></td>
+		  <td>23</td>
+		</tr>
+		<tr>
+			<td>Saturday</td>
+		  <td>23:30</td>
+		  <td>ICE120</td>
+		  <td>Roskilde Station</td>
+		  <td></td>
+		  <td>23</td>
+		</tr>
+		<tr>
+			<td>Sunday</td>
+		  <td>03:12</td>
+		  <td>ICE120</td>
+		  <td>Copenhagen Central</td>
+		  <td></td>
+		  <td>23</td>
+		</tr>
+		<tr>
+			<td>Sunday</td>
+		  <td>04:09</td>
+		  <td>ICE120</td>
+		  <td>Copenhagen Central</td>
+		  <td></td>
+		  <td>23</td>
+		</tr>
+		</tbody>
+	</table>
+	<hr>
+	</body>
+</html>
