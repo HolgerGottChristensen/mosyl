@@ -1,11 +1,11 @@
 schedule for MyNetwork with MyDepot, MyDepot;
 
-schedule train ICE111 on Monday at 12:32 and Tuesday at 23:53:
+schedule train ICE120 on Monday at 10:10 and Tuesday at 23:53:
 	start at "Copenhagen Central" on platform "7"
 	terminate at "Vejle Station" on platform "1"
 ;
 
-schedule train ICE111 on Monday at 12:32 and Tuesday at 23:53:
+schedule train ICE120 on Monday at 12:32 and Tuesday at 23:53:
 	start at "Copenhagen Central" on platform "7"
 	terminate at "Roskilde Station" on platform "3"
 ;
@@ -16,29 +16,29 @@ schedule train ICE120 on Saturday at 06:55, 07:15:
 	terminate at "Copenhagen Central" on platform "42"
 ;
 
-schedule train ICE111 on Saturday at 23:59, 23:02:
+schedule train ICE120 on Saturday at 23:59, 23:02:
 	start at "Roskilde Station" on platform "22"
 	stop at "Vejle Station" on platform "23" for 23 min
 	terminate at "Copenhagen Central" on platform "42"
 ;
 
-schedule train ICE111 on Saturday at 22:02, 23:02:
+schedule train ICE120 on Saturday at 22:02, 23:02:
 	start at "Roskilde Station" on platform "22"
 	stop at "Copenhagen Central" on platform "23" for 23 min
 	terminate at "Vejle Station" on platform "42"
 ;
 
-schedule train ICE111 on Saturday at 22:02, 23:02:
+schedule train ICE120 on Saturday at 22:02, 23:02:
 	start at "Copenhagen Central" on platform "22"
 	stop at "Vejle Station" on platform "23" for 23 min
 	drive via "R22" and terminate at "Roskilde Station" on platform "42"
 ;
 
-schedule train ICE111 on Friday , Saturday at 12:32:
+/*schedule train ICE120 on Friday , Saturday at 12:32:
 	start at "Vejle Station" on platform "fefa"
 	stop at "Roskilde Station" on platform "fref" for 32 min and reverse
 	terminate at "Copenhagen Central" on platform "fesaw"
-;
+;*/
 	
 schedule train ICE120 on Friday , Saturday at 23:32:
 	start at "Odense Station" on platform "fefa"

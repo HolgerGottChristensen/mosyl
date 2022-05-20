@@ -4,7 +4,7 @@
     <semanticResources>MyDepot.depot</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_uq1wAMWvEeyUFK50AcKtlg">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_u3wxsMWvEeyUFK50AcKtlg" name="new Depot Diagram Representation" repPath="#_u3vjkMWvEeyUFK50AcKtlg" changeId="75f1a7b3-6ec1-43b9-a46d-cbf868fff047">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_u3wxsMWvEeyUFK50AcKtlg" name="new Depot Diagram Representation" repPath="#_u3vjkMWvEeyUFK50AcKtlg" changeId="775238ef-6c4c-4d8f-809c-b83719cfe2ac">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.mdse.pts.depot.dsl/description/Depot.odesign#//@ownedViewpoints[name='Depot%20Viewpoint']/@ownedRepresentations[name='Depot%20Diagram%20Representation']"/>
         <target xmi:type="depot:Depot" href="MyDepot.depot#//@depot"/>
       </ownedRepresentationDescriptors>
@@ -114,7 +114,7 @@
                 <styles xmi:type="notation:DrawerStyle" xmi:id="_-7cEFNUuEeyo_sX8eSdQ7w"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_-7bdAdUuEeyo_sX8eSdQ7w" fontName=".AppleSystemUIFont" fontHeight="12" bold="true"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-7bdAtUuEeyo_sX8eSdQ7w" y="107"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-7bdAtUuEeyo_sX8eSdQ7w" y="106"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_FuOmgNUvEeyo_sX8eSdQ7w" type="3008" element="_FuJuANUvEeyo_sX8eSdQ7w">
               <children xmi:type="notation:Node" xmi:id="_FuPNkNUvEeyo_sX8eSdQ7w" type="5005"/>
@@ -164,7 +164,7 @@
                 <styles xmi:type="notation:DrawerStyle" xmi:id="_FuPNlNUvEeyo_sX8eSdQ7w"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_FuOmgdUvEeyo_sX8eSdQ7w" fontName=".AppleSystemUIFont" fontHeight="12" bold="true"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FuOmgtUvEeyo_sX8eSdQ7w" y="214"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FuOmgtUvEeyo_sX8eSdQ7w" y="213"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_u3-NEsWvEeyUFK50AcKtlg"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_u3-NE8WvEeyUFK50AcKtlg"/>
