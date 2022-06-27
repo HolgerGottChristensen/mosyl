@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.mdse.pts.schedule.SchedulePackage;
 import org.mdse.pts.schedule.StartTime;
-import org.mdse.pts.schedule.Time;
 import org.mdse.pts.time.Weekday;
 
 /**
@@ -55,7 +54,7 @@ public class StartTimeImpl extends MinimalEObjectImpl.Container implements Start
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Time> timestamps;
+	protected EList<org.mdse.pts.time.Time> timestamps;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -95,9 +94,9 @@ public class StartTimeImpl extends MinimalEObjectImpl.Container implements Start
 	 * @generated
 	 */
 	@Override
-	public EList<Time> getTimestamps() {
+	public EList<org.mdse.pts.time.Time> getTimestamps() {
 		if (timestamps == null) {
-			timestamps = new EObjectContainmentEList<Time>(Time.class, this, SchedulePackage.START_TIME__TIMESTAMPS);
+			timestamps = new EObjectContainmentEList<org.mdse.pts.time.Time>(org.mdse.pts.time.Time.class, this, SchedulePackage.START_TIME__TIMESTAMPS);
 		}
 		return timestamps;
 	}
@@ -147,7 +146,7 @@ public class StartTimeImpl extends MinimalEObjectImpl.Container implements Start
 				return;
 			case SchedulePackage.START_TIME__TIMESTAMPS:
 				getTimestamps().clear();
-				getTimestamps().addAll((Collection<? extends Time>)newValue);
+				getTimestamps().addAll((Collection<? extends org.mdse.pts.time.Time>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

@@ -47,7 +47,7 @@ StartTime:
 	"at" timestamps+=Time ("," timestamps+=Time)*
 ;
 
-Time:
+Time returns time::Time:
 	hour=INT ":" minute=INT
 ;
 

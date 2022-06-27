@@ -18,7 +18,6 @@ import org.mdse.pts.schedule.ScheduleFactory;
 import org.mdse.pts.schedule.SchedulePackage;
 import org.mdse.pts.schedule.StartTime;
 import org.mdse.pts.schedule.Stop;
-import org.mdse.pts.schedule.Time;
 import org.mdse.pts.schedule.TrainSchedule;
 import org.mdse.pts.time.TimePackage;
 import org.mdse.pts.timetable.TimetablePackage;
@@ -50,13 +49,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	private EClass startTimeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass timeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -248,36 +240,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 	 * @generated
 	 */
 	@Override
-	public EClass getTime() {
-		return timeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getTime_Hour() {
-		return (EAttribute)timeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getTime_Minute() {
-		return (EAttribute)timeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getStop() {
 		return stopEClass;
 	}
@@ -375,10 +337,6 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 		createEAttribute(startTimeEClass, START_TIME__WEEKDAYS);
 		createEReference(startTimeEClass, START_TIME__TIMESTAMPS);
 
-		timeEClass = createEClass(TIME);
-		createEAttribute(timeEClass, TIME__HOUR);
-		createEAttribute(timeEClass, TIME__MINUTE);
-
 		stopEClass = createEClass(STOP);
 		createEAttribute(stopEClass, STOP__PLATFORM);
 		createEAttribute(stopEClass, STOP__STOPPED_TIME);
@@ -434,11 +392,7 @@ public class SchedulePackageImpl extends EPackageImpl implements SchedulePackage
 
 		initEClass(startTimeEClass, StartTime.class, "StartTime", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStartTime_Weekdays(), theTimePackage.getWeekday(), "weekdays", null, 1, -1, StartTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getStartTime_Timestamps(), this.getTime(), null, "timestamps", null, 1, -1, StartTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(timeEClass, Time.class, "Time", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTime_Hour(), ecorePackage.getEInt(), "hour", null, 1, 1, Time.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTime_Minute(), ecorePackage.getEInt(), "minute", null, 1, 1, Time.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStartTime_Timestamps(), theTimePackage.getTime(), null, "timestamps", null, 1, -1, StartTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stopEClass, Stop.class, "Stop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStop_Platform(), ecorePackage.getEString(), "platform", null, 1, 1, Stop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -213,52 +213,6 @@ public interface SchedulePackage extends EPackage {
 	int START_TIME_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.mdse.pts.schedule.impl.TimeImpl <em>Time</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.mdse.pts.schedule.impl.TimeImpl
-	 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getTime()
-	 * @generated
-	 */
-	int TIME = 3;
-
-	/**
-	 * The feature id for the '<em><b>Hour</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME__HOUR = 0;
-
-	/**
-	 * The feature id for the '<em><b>Minute</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME__MINUTE = 1;
-
-	/**
-	 * The number of structural features of the '<em>Time</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Time</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link org.mdse.pts.schedule.impl.StopImpl <em>Stop</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -266,7 +220,7 @@ public interface SchedulePackage extends EPackage {
 	 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getStop()
 	 * @generated
 	 */
-	int STOP = 4;
+	int STOP = 3;
 
 	/**
 	 * The feature id for the '<em><b>Platform</b></em>' attribute.
@@ -451,38 +405,6 @@ public interface SchedulePackage extends EPackage {
 	EReference getStartTime_Timestamps();
 
 	/**
-	 * Returns the meta object for class '{@link org.mdse.pts.schedule.Time <em>Time</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Time</em>'.
-	 * @see org.mdse.pts.schedule.Time
-	 * @generated
-	 */
-	EClass getTime();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.mdse.pts.schedule.Time#getHour <em>Hour</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Hour</em>'.
-	 * @see org.mdse.pts.schedule.Time#getHour()
-	 * @see #getTime()
-	 * @generated
-	 */
-	EAttribute getTime_Hour();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.mdse.pts.schedule.Time#getMinute <em>Minute</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Minute</em>'.
-	 * @see org.mdse.pts.schedule.Time#getMinute()
-	 * @see #getTime()
-	 * @generated
-	 */
-	EAttribute getTime_Minute();
-
-	/**
 	 * Returns the meta object for class '{@link org.mdse.pts.schedule.Stop <em>Stop</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -663,32 +585,6 @@ public interface SchedulePackage extends EPackage {
 		 * @generated
 		 */
 		EReference START_TIME__TIMESTAMPS = eINSTANCE.getStartTime_Timestamps();
-
-		/**
-		 * The meta object literal for the '{@link org.mdse.pts.schedule.impl.TimeImpl <em>Time</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.mdse.pts.schedule.impl.TimeImpl
-		 * @see org.mdse.pts.schedule.impl.SchedulePackageImpl#getTime()
-		 * @generated
-		 */
-		EClass TIME = eINSTANCE.getTime();
-
-		/**
-		 * The meta object literal for the '<em><b>Hour</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TIME__HOUR = eINSTANCE.getTime_Hour();
-
-		/**
-		 * The meta object literal for the '<em><b>Minute</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TIME__MINUTE = eINSTANCE.getTime_Minute();
 
 		/**
 		 * The meta object literal for the '{@link org.mdse.pts.schedule.impl.StopImpl <em>Stop</em>}' class.

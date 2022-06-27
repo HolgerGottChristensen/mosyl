@@ -22,6 +22,7 @@ import org.mdse.pts.depot.Locomotive;
 import org.mdse.pts.depot.Root;
 import org.mdse.pts.network.Leg;
 import org.mdse.pts.network.Station;
+import org.mdse.pts.time.TimePackage;
 
 
 public class ScheduleValidator extends EObjectValidator implements IStartup {
@@ -53,7 +54,7 @@ public class ScheduleValidator extends EObjectValidator implements IStartup {
 			TrainSchedule trainSchedule = (TrainSchedule) eObject;
 			modelIsValid &= validateTrainSchedule(trainSchedule);
 		}
-		if (SchedulePackage.eINSTANCE.getTime().equals(eClass)) {
+		if (TimePackage.eINSTANCE.getTime().equals(eClass)) {
 			Time time = (Time) eObject;
 			modelIsValid &= validateTime(time);
 		}

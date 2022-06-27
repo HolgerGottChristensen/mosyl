@@ -4,7 +4,7 @@
     <semanticResources>Time.ecore</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_WPa4ENHmEeytSqnXtl9TnQ">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_X7iboNHmEeytSqnXtl9TnQ" name="time class diagram" repPath="#_X60C4NHmEeytSqnXtl9TnQ" changeId="e36fa90f-2866-46a0-8870-ad64f1c821ec">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_X7iboNHmEeytSqnXtl9TnQ" name="time class diagram" repPath="#_X60C4NHmEeytSqnXtl9TnQ" changeId="6a81ff32-2787-439e-8c32-a9f9efc5deb6">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="Time.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -92,7 +92,7 @@
     <ownedDiagramElements xmi:type="diagram:DNodeList" uid="_fvvXwNHmEeytSqnXtl9TnQ" name="Time" tooltipText="" width="12" height="10">
       <target xmi:type="ecore:EClass" href="Time.ecore#//Time"/>
       <semanticElements xmi:type="ecore:EClass" href="Time.ecore#//Time"/>
-      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_yy_mQNHmEeytSqnXtl9TnQ" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_FMxwsfYoEeyfiJor75IUEA" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,252,216">
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']"/>

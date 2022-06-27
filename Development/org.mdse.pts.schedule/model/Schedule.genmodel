@@ -23,10 +23,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//StartTime/weekdays"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Schedule.ecore#//StartTime/timestamps"/>
     </genClasses>
-    <genClasses ecoreClass="Schedule.ecore#//Time">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Time/hour"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Time/minute"/>
-    </genClasses>
     <genClasses ecoreClass="Schedule.ecore#//Stop">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Stop/platform"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Schedule.ecore#//Stop/stoppedTime"/>

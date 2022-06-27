@@ -8,7 +8,6 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import org.eclipse.internal.xtend.expression.ast.LetExpression;
 import org.mdse.pts.depot.Train;
 import org.mdse.pts.depot.TrainType;
 import org.mdse.pts.network.Leg;
@@ -82,7 +81,7 @@ public class Scheduler2TimetableConverter {
 			
 			for(StartTime startTime : ts.getStarttimes()) {
 				for(Weekday weekday : startTime.getWeekdays()) {
-					for(org.mdse.pts.schedule.Time time : startTime.getTimestamps()) {
+					for(Time time : startTime.getTimestamps()) {
 						
 						//TODO: set time
 						int currentTime = time.getHour() * 60 + time.getMinute(); // convert start time to minutes

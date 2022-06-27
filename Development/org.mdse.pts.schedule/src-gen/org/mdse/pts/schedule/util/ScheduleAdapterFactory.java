@@ -80,10 +80,6 @@ public class ScheduleAdapterFactory extends AdapterFactoryImpl {
 				return createStartTimeAdapter();
 			}
 			@Override
-			public Adapter caseTime(Time object) {
-				return createTimeAdapter();
-			}
-			@Override
 			public Adapter caseStop(Stop object) {
 				return createStopAdapter();
 			}
@@ -146,20 +142,6 @@ public class ScheduleAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStartTimeAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.mdse.pts.schedule.Time <em>Time</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.mdse.pts.schedule.Time
-	 * @generated
-	 */
-	public Adapter createTimeAdapter() {
 		return null;
 	}
 

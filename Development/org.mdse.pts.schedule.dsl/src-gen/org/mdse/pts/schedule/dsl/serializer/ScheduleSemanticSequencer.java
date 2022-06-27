@@ -18,9 +18,10 @@ import org.mdse.pts.schedule.Schedule;
 import org.mdse.pts.schedule.SchedulePackage;
 import org.mdse.pts.schedule.StartTime;
 import org.mdse.pts.schedule.Stop;
-import org.mdse.pts.schedule.Time;
 import org.mdse.pts.schedule.TrainSchedule;
 import org.mdse.pts.schedule.dsl.services.ScheduleGrammarAccess;
+import org.mdse.pts.time.Time;
+import org.mdse.pts.time.TimePackage;
 
 @SuppressWarnings("all")
 public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequencer {
@@ -64,11 +65,14 @@ public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequenc
 					return; 
 				}
 				else break;
-			case SchedulePackage.TIME:
-				sequence_Time(context, (Time) semanticObject); 
-				return; 
 			case SchedulePackage.TRAIN_SCHEDULE:
 				sequence_TrainSchedule(context, (TrainSchedule) semanticObject); 
+				return; 
+			}
+		else if (epackage == TimePackage.eINSTANCE)
+			switch (semanticObject.eClass().getClassifierID()) {
+			case TimePackage.TIME:
+				sequence_Time(context, (Time) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -174,10 +178,10 @@ public class ScheduleSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 */
 	protected void sequence_Time(ISerializationContext context, Time semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SchedulePackage.Literals.TIME__HOUR) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SchedulePackage.Literals.TIME__HOUR));
-			if (transientValues.isValueTransient(semanticObject, SchedulePackage.Literals.TIME__MINUTE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SchedulePackage.Literals.TIME__MINUTE));
+			if (transientValues.isValueTransient(semanticObject, TimePackage.Literals.TIME__HOUR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TimePackage.Literals.TIME__HOUR));
+			if (transientValues.isValueTransient(semanticObject, TimePackage.Literals.TIME__MINUTE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, TimePackage.Literals.TIME__MINUTE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getTimeAccess().getHourINTTerminalRuleCall_0_0(), semanticObject.getHour());

@@ -657,7 +657,7 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Assignment cMinuteAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cMinuteINTTerminalRuleCall_2_0 = (RuleCall)cMinuteAssignment_2.eContents().get(0);
 		
-		//Time:
+		//Time returns time::Time:
 		//    hour=INT ":" minute=INT
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -925,7 +925,7 @@ public class ScheduleGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		return getStartTimeAccess().getRule();
 	}
 	
-	//Time:
+	//Time returns time::Time:
 	//    hour=INT ":" minute=INT
 	//;
 	public TimeElements getTimeAccess() {

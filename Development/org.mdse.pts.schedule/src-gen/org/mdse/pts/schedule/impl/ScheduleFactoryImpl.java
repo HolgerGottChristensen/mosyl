@@ -59,7 +59,6 @@ public class ScheduleFactoryImpl extends EFactoryImpl implements ScheduleFactory
 			case SchedulePackage.SCHEDULE: return createSchedule();
 			case SchedulePackage.TRAIN_SCHEDULE: return createTrainSchedule();
 			case SchedulePackage.START_TIME: return createStartTime();
-			case SchedulePackage.TIME: return createTime();
 			case SchedulePackage.STOP: return createStop();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -97,17 +96,6 @@ public class ScheduleFactoryImpl extends EFactoryImpl implements ScheduleFactory
 	public StartTime createStartTime() {
 		StartTimeImpl startTime = new StartTimeImpl();
 		return startTime;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Time createTime() {
-		TimeImpl time = new TimeImpl();
-		return time;
 	}
 
 	/**

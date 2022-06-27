@@ -20,12 +20,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="weekdays" lowerBound="1"
         upperBound="-1" eType="ecore:EEnum ../../org.mdse.pts.time/model/Time.ecore#//Weekday"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="timestamps" lowerBound="1"
-        upperBound="-1" eType="#//Time" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Time">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hour" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minute" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        upperBound="-1" eType="ecore:EClass ../../org.mdse.pts.time/model/Time.ecore#//Time" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Stop">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="platform" lowerBound="1"

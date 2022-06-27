@@ -5,6 +5,7 @@ package org.mdse.pts.schedule;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
+import org.mdse.pts.time.Time;
 import org.mdse.pts.time.Weekday;
 
 /**
@@ -41,7 +42,7 @@ public interface StartTime extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Timestamps</b></em>' containment reference list.
-	 * The list contents are of type {@link org.mdse.pts.schedule.Time}.
+	 * The list contents are of type {@link org.mdse.pts.time.Time}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Timestamps</em>' containment reference list.
